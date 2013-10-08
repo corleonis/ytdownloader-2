@@ -6,7 +6,8 @@
     <string name="title_activity_about">关于</string>
     <string name="title_activity_donate">捐赠</string>
     <string name="title_activity_tutorials">教学</string>
-    <string name="title_activity_translators_show">翻译者</string>    
+    <string name="title_activity_translators_show">翻译者</string>
+    <string name="title_activity_dashboard">Dashboard</string>
 
     <!-- ### ShareActivity ### -->
 
@@ -26,6 +27,7 @@
     <string name="invalid_url">无法取得网站页面。连结可能无效。</string>
     <string name="invalid_url_short">无法取得网站页面。</string>
     <string name="invalid_response">无效的 HTTP 伺服器回应。</string>
+    <string name="rtmpe_streams">Invalid HTTP server response.</string>
     <string name="bad_link">检查提供的连结。</string>
     <string name="bad_link_dialog_msg">YouTube 连结无效。</string>
     <string name="no_net">没有可用的网路连线。</string>
@@ -57,11 +59,13 @@
     <string name="notification_downloading_pt2">影片档案</string>
     <string name="notification_no_downloads">没有正在进行中的下载</string>
     <string name="long_click_title">处理选择的连结：</string>
-    <string name="extsdcard_info_title">非标准的目的地路径</string>
-    <string name="extsdcard_info_msg">正在下载档案至标准下载资料夹。之后会移动档案至选择的目的地。</string>
     <string name="ffmpeg_ready">已准备 FFmpeg。</string>
     <string name="confirm_audio_checkbox1">下载后提取音效</string>
     <string name="confirm_audio_checkbox2">\n（和设定中的设置一样）</string>
+    <string name="login_required">Login to YouTube may be required.</string>
+    <string name="encrypted_streams">Encrypted video stream</string>
+    <string name="no_video_available">No video available.</string>
+    <string name="retry_button_text">Retry</string>
     
     <string-array name="long_click_entries">
         <item>复制至剪贴板</item>
@@ -77,7 +81,6 @@
     <!-- ### SettingsActivity ### -->
 
     <string name="attention">注意！</string>
-    <string name="extsdcard_warning">无法读写可拆卸 SD 卡里的档案。 \n回到标准 SD 卡。</string>
     <string name="system_warning_title">这是系统资料夹</string>
     <string name="system_warning_msg">选择的路径将会回到标准 SD 卡的下载资料夹。</string>
     <string name="sdcard_unmounted_warning">SD 卡未挂载</string>
@@ -112,9 +115,9 @@
     <!-- ### DownloadsService ### -->
     
     <string name="ytd_video">YTD 影片</string>
-    <string name="copy_error">复制时错误</string>
+    <string name="copy_error">Error during copy.</string>
     <string name="copy_progress">正在复制档案&#8230;</string>
-    <string name="copy_ok">复制完成。</string>
+    <string name="copy_ok">File copy completed.</string>
     <string name="download_remove_failed">错误：临时下载档案未移除！</string>
     <string name="download_failed">下载失败！</string>
     <string name="audio_extr_progress">正在提取音效&#8230;</string>
@@ -127,22 +130,110 @@
     <!-- ### DonateActivity ### -->
     
     <string name="paypal_item_name">YTD 捐赠</string>
-    <string name="paypal_title">PayPal</string>
 	<string name="paypal_summary">用捐赠支持 YTD 的开发者</string>
+	<string name="flattr_summary">Flattr this App</string>
 	
 	<!-- ### FfmpegDownloadService ### -->
 	<string name="ffmpeg_install_failed">FFmpeg 安装失败。</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Completed</string>
+	<string name="json_status_failed">Failed</string>
+	<string name="json_status_in_progress">In Progress</string>
+	<string name="json_status_paused">Paused</string>
+	<string name="json_status_imported">Imported</string>
+	<string name="menu_search">search&#8230;</string>
+	<string name="menu_backup">Backup</string>
+	<string name="menu_restore">Restore</string>
+	<string name="menu_import">Import a video</string>
+	<string name="menu_import_double">Video already added.</string>
+	<string name="menu_backup_info">Choose a folder to Backup Dashboard\'s data</string>
+	<string name="menu_restore_info">Restore Dashboard\'s data from file</string>
+	<string name="menu_restore_info_msg">Present data will be overwritten.</string>
+	<string name="menu_import_info">Import a video and manage it from the Dashboard</string>
+	<string name="menu_backup_result_ok">Dashboard data backup OK.</string>
+	<string name="menu_backup_result_failed">Error during backup.</string>
+	<string name="menu_restore_result_ok">Dashboard data restored.</string>
+	<string name="menu_restore_result_failed">Error during restore.</string>
+	<string name="unsupported_operation">Unsupported operation.</string>
+	<string name="invalid_data">Invalid data.</string>
+	<string name="open_chooser_title">Open with:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Open</item>
+	    <item>Extract audio only</item>
+        <item>Extract and encode audio to mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Open</item>
+        <item>Encode to mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Open</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg not installed or enabled:</string>
+	<string name="ffmpeg_not_enabled_msg">Open settings?</string>
+	<string name="remove_video">Delete video after audio extraction (no confirmation!)</string>
+	<string name="remove_original_audio">Delete audio after conversion (no confirmation!)</string>
+	<string name="edit_id3_tags">Edit ID3 tags</string>
+	<string name="id3_album">Album</string>
+	<string name="id3_artist">Artist</string>
+	<string name="id3_title">Title</string>
+	<string name="id3_year">Year</string>
+	<string name="id3_genre">Genre</string>
+	
+	<string name="audio_extr_info">Contained audio stream:</string>
+	
+	<string name="dashboard_long_click_entry_0">Copy</string>
+	<string name="dashboard_long_click_entry_1">Move</string>
+	<string name="dashboard_long_click_entry_2">Delete</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Copy</item>
+	    <item>Move</item>
+        <item>Rename</item>
+        <item>Re-download the video</item>
+        <item>Remove from Dashboard</item>
+        <item>Remove and delete file</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Copy</item>
+	    <item>Move</item>
+        <item>Rename</item>
+        <item>Re-download the video</item>
+        <item>Remove from Dashboard</item>
+        <item>Remove and delete file</item>
+        <item>Pause/Resume</item>
+    </string-array>
+    
+	<string name="move_error">Error during move.</string>
+    <string name="move_progress">File move in progress&#8230;</string>
+    <string name="move_ok">File move completed.</string>
+    <string name="long_press_warning_title">Operation not executed:</string>
+    <string name="long_press_warning_msg">Source and destination folders overlap.</string>
+    <string name="long_press_warning_msg2">A copy already exists in this folder.</string>
+    <string name="audio_extr_warning_msg">Same audio file already extracted.</string>
+
+	<string name="delete_video_confirm">Confirm you want to delete this video?</string>
+	<string name="remove_video_confirm">Confirm you want to remove this video?</string>
+	<string name="delete_video_ok">%1$s successfully deleted.</string>
+	<string name="delete_video_failed">Error: %1$s not deleted.</string>
+	
+	<string name="empty_dashboard">No downloaded video.</string>
 
     <!-- ### preferences ### -->
 
     <!-- -->
-    <string name="dm_title">下载</string>
-    <string name="dm_summary">开启系统下载管理员</string>
+    <string name="dashboard_summary">Open YTD\'s Dashboard</string>
 
     <!-- -->
     <string name="settings_cat_ui">用户界面</string>
     <string name="lang_title">语言</string>
-    <string name="lang_dialog_title">语言（需要重新启动程式）：</string>
+    <string name="lang_dialog_title">Choose UI language:</string>
     <string name="choose_theme_title">选择主题</string>
     <string-array name="choose_theme_entries">
         <item>黑暗</item>
@@ -163,13 +254,6 @@
     <string name="ssh_info_summary">显示快速提示关于从 SSH 控制下载</string>
     <string name="audio_tutorial_title">音效提取教学</string>
     <string name="audio_tutorial_summary">开启一个关于音效提取功能的简略指南</string>
-    <string name="audio_tutorial_text">要从已下载的影片提取音效和转换至mp3：
-\n\n*) 允许音效设定并下载 FFmpeg；
-\n\n*) 选择提取类型：
-\n\n\"只提取\" 会保存原本在影片里的音频（WebM 档案含有\"Ogg Vorbis\" 音频；MP4、3GPP 和大/中FLV 影片含有\"AAC\" 音频；小FLV 含有\"mp3\"）；
-\n\n\"提取并编码至mp3\" 会转换提取的音效至mp3，透过选择的频率编码。
-\n\n从现在开始，一个复选框将会显示在下载确认箱当你从YTD 的影片目录按下一个项目。选择后，音效提取将会在影片下载完成后开始（要隐藏复选框，关闭音效提取选项）。
-\n\n从设定选择如果你想要在成功音效提取后移除影片档案。</string>
     
     <!-- -->
     <string name="settings_cat_folder">下载资料夹</string>
@@ -190,35 +274,20 @@
     <string name="show_size_list_summary">取得目录里所有影片选项的档案大小（更慢）</string>
     <string name="show_thumb_title">显示预览相片</string>
     <string name="show_thumb_summary">同时下载预览相片和影片目录</string>
+    <string name="show_resolutions_title">Show video resolutions</string>
+    <string name="show_resolutions_summary">Replace the quality indication with the video resolution</string>
     
     <!-- -->
-    <string name="settings_cat_audio">音效</string>
-    <string name="enable_audio_extraction_title">允许音效提取</string>
-    <string name="enable_audio_extraction_summary">从下载的影片中提取并转换音效（只限装置下载）</string>
-    <string name="mp3_bitrate_title">编码 MP3 码率 (kbps)</string>
+    <string name="settings_cat_advanced">高级</string>
+    <string name="enable_advanced_features_title">Enable Advanced Features</string>
+    <string name="enable_advanced_features_summary">Download FFmpeg \"plugin\"</string>
+    <string name="mp3_bitrate_title">Mp3 encoding bitrate:</string>
     <string name="audio_extraction_type_title">提取类型</string>
-    <string name="enable_audio_q_suffix_title">附上音效音质词尾</string>
-    <string name="enable_audio_q_suffix_summary">在档案名称后面增加音效音质</string>
     <string name="remove_video_title">移除影片</string>
     <string name="remove_video_summary">允许在音效提取成功后删除影片档案（警告：没有确认）</string>
-
-    <string-array name="audio_extraction_type_entries">
-        <item>只提取</item>
-        <item>提取并编码至 mp3</item>
-    </string-array>
     
     <!-- -->
     <string name="settings_cat_notifications">通知</string>
-    <string name="enable_own_notification_title">允许自己的通知</string>
-    <string name="enable_own_notification_summary">显示关于所有 YTD 下载的全面的通知</string>
-    <string name="download_manager_notification_title">管理系统通知</string>
-    <string name="download_manager_notification_dialog_title">显示系统下载管理员通知：</string>
-    
-    <string-array name="download_manager_notification_entries">
-        <item>当进行中和完成后</item>
-        <item>当进行中</item>
-        <item>永不</item>
-    </string-array>
     
     <string name="notification_defaults_title">预设通知</string>
     <string name="notification_defaults_dialog_title">YTD 自行的预设通知</string>
@@ -243,59 +312,10 @@
     <string name="settings_cat_app">应用程序</string>
     <string name="settings_cat_about_condensed">关于</string>
     <string name="title_changelog">更新纪录</string>
-    <string name="screen_licences_code_title">执照和原始码</string>
-
-    <!-- -->
     <string name="settings_cat_licenses">执照</string>
 
     <string name="credits_title">感谢</string>
     <string name="title_activity_credits_show">其他执照和翻译</string>
-    
-    <string name="credits_text0">\tMain Licenses
-\n\n
-This App is released under the GPL-3.0.
-\n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
-\n\n
-The FFmpeg binary (<http>http://www.ffmpeg.org/index.html</http>), 
-used for the audio extraction feature, is released under the GPL-3.0.
-\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
-\n\n
-The filechooser library is released under the MIT license.
-\n(android-filechooser Copyright &#169; 2012 Hai Bison).
-\n\n
-The liblame library, used to compile FFmpeg, is released under the LGPL.
-A GitHub project, <http>https://github.com/intervigilium/liblame</http>, 
-has been used to compile the lame libraries for Android.
-\n(liblame Copyright &#169; 2010 Ethan Chen)
-\n(LAME Copyright &#169; 1999-2007 The LAME Project,
-\nCopyright &#169; 1999-2001 Mark Taylor,
-\nCopyright &#169; 1998 Micheal Cheng)
-\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
-\n\n
-YTD\'s mp3 tags are written with MyID3: a Java ID3 Tag Library
-(<http>http://www.fightingquaker.com/myid3</http> and <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
-released under the LGPL, as its dependency Jakarta Regexp library.
-\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
-\n\n
-For more informations, refer to the dedicated menus and to the license files 
-available from this project\'s source code.
-\n</string>
-    
-    <string name="credits_text1">\tCode excerpts Licenses
-\n\n
-This App uses some code snippets from: 
-\n\n
-1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
-\nCopyright &#169; 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license.
-\nThe text of the license can be found in the LICENSE_GPL file or at <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
-\n\n
-2) Stack Overflow (<http>http://stackoverflow.com</http>), a question and answer site for programmers where all 
-the content is CC BY-SA 3.0 licensed (see <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
-\n\n
-For more details, look for comments in YTD\'s Java code.</string>
-    <string name="credits_translators">\n\t翻译
-\n\n同时，更多的在地化 感谢：</string>
-    <string name="translators_info">\n更多资讯：</string>
         
     <!-- -->
     <string name="settings_cat_code">原始码</string>
@@ -311,7 +331,7 @@ For more details, look for comments in YTD\'s Java code.</string>
 \n下载YouTube 影片的免费、开放原始码 Android 程式！
 \nhttps://sourceforge.net/projects/ytdownloader/files/</string>
 	<string name="help_translate_title">帮忙翻译此程式</string>
-    <string name="help_translate_summary">请至 www.getlocalization.com/ytdownloader</string>
+    <string name="xda_title">Thread on XDA forum</string>
     
     <!-- -->
     <string name="settings_cat_ssh">SSH</string>
@@ -323,7 +343,13 @@ For more details, look for comments in YTD\'s Java code.</string>
 	<string name="ssh_to_longpress_menu_summary">将\"透过SSH传送\"移至影片目录的长按选项</string>
 	
     <!-- -->
-	<string name="settings_cat_advanced">高级</string>
+	<string name="settings_cat_system">System</string>
 	<string name="enable_logging_title">允许纪录</string>
 	<string name="enable_logging_summary">包括 YTD 的资讯进入系统纪录。强制传送 logcat 至开发者。</string>
+	<string name="clear_dashboard_title">Empty the Dashboard</string>
+	<string name="clear_dashboard_summary">Clear all dashboard\'s references (may fix some crashes)</string>
+	<string name="clear_dashboard_msg">Are you sure?\nThis will clear all the list in the Dashboard.</string>
+	<string name="clear_dashboard_ok">Dashboard cleared.</string>
+	<string name="clear_dashboard_failed">Dashboard emptying failed.</string>
+	
 </resources>

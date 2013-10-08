@@ -12,6 +12,6 @@
 		android:layout_height="wrap_content"
 		android:typeface="monospace"
 		android:autoLink="web"
-		android:text="@string/lgpl_show_text" />
+		android:text="@string/lgpl_text" />
 
 </ScrollView>

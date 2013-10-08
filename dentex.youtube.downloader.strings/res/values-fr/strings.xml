@@ -6,7 +6,8 @@
     <string name="title_activity_about">A propos</string>
     <string name="title_activity_donate">Faire un don</string>
     <string name="title_activity_tutorials">Tutoriels</string>
-    <string name="title_activity_translators_show">Traducteurs</string>    
+    <string name="title_activity_translators_show">Traducteurs</string>
+    <string name="title_activity_dashboard">Accueil</string>
 
     <!-- ### ShareActivity ### -->
 
@@ -21,11 +22,12 @@
     <string name="information">Information</string>
     <string name="dialogs_negative">Annuler</string>
     <string name="wait">Veuillez patienter&#8230;</string>
-    <string name="no_downloads_sys_app">\"Downloads\" system App not found.</string>
-    <string name="ytd_useless">YTD cannot download files on this device.</string>
+    <string name="no_downloads_sys_app">Application système \"Téléchargements\" non trouvée.</string>
+    <string name="ytd_useless">Taux d\'échantillonnage Mp3 en-cours d\'encodage</string>
     <string name="invalid_url">Impossible de récupérer la page web. L\'URL est peut-être invalide.</string>
     <string name="invalid_url_short">Impossible de récupérer la page web.</string>
     <string name="invalid_response">Réponse HTTP du serveur invalide.</string>
+    <string name="rtmpe_streams">Invalid HTTP server response.</string>
     <string name="bad_link">Vérifiez le lien saisi.</string>
     <string name="bad_link_dialog_msg">Ceci n\'est pas un lien YouTube valide.</string>
     <string name="no_net">Connexion indisponible.</string>
@@ -59,11 +61,13 @@ COLLEZ la commande (utilisez le bouton menu) et pressez ENTRÉE.</string>
     <string name="notification_downloading_pt2">fichier(s) vidéo(s)</string>
     <string name="notification_no_downloads">Aucun téléchargements en cours</string>
     <string name="long_click_title">Gérer le lien sélectionné:</string>
-    <string name="extsdcard_info_title">Chemin de destination non standard</string>
-    <string name="extsdcard_info_msg">Le fichier est d\'abord téléchargé dans le dossier Download, puis sera déplacé vers la destination sélectionnée.</string>
     <string name="ffmpeg_ready">FFmpeg prêt.</string>
     <string name="confirm_audio_checkbox1">Extraire l\'audio après le téléchargement</string>
     <string name="confirm_audio_checkbox2">\n(comme défini dans les options)</string>
+    <string name="login_required">L\'identification à YouTube peut être requis.</string>
+    <string name="encrypted_streams">Encrypted video stream</string>
+    <string name="no_video_available">Pas de vidéo disponible.</string>
+    <string name="retry_button_text">Réessayer</string>
     
     <string-array name="long_click_entries">
         <item>Copier dans le presse-papier</item>
@@ -79,7 +83,6 @@ COLLEZ la commande (utilisez le bouton menu) et pressez ENTRÉE.</string>
     <!-- ### SettingsActivity ### -->
 
     <string name="attention">Attention!</string>
-    <string name="extsdcard_warning">Impossible d\'écrire les fichiers sur la sdcard amovible.\nRepli sur la sdcard standard.</string>
     <string name="system_warning_title">Ceci est un dossier système</string>
     <string name="system_warning_msg">Le chemin sélectionné va se retomber sur le dossier Download de la sdcard standard.</string>
     <string name="sdcard_unmounted_warning">Sdcard NON montée</string>
@@ -114,9 +117,9 @@ COLLEZ la commande (utilisez le bouton menu) et pressez ENTRÉE.</string>
     <!-- ### DownloadsService ### -->
     
     <string name="ytd_video">Vidéo YTD</string>
-    <string name="copy_error">Erreur pendant la copie</string>
+    <string name="copy_error">Erreur pendant la copie.</string>
     <string name="copy_progress">Copie des fichiers en cours&#8230;</string>
-    <string name="copy_ok">Copie terminée.</string>
+    <string name="copy_ok">Copie du fichier terminée.</string>
     <string name="download_remove_failed">Erreur: fichier temporaire téléchargé non supprimé.</string>
     <string name="download_failed">Téléchargement échoué!</string>
     <string name="audio_extr_progress">Extraction audio en cours&#8230;</string>
@@ -129,22 +132,110 @@ COLLEZ la commande (utilisez le bouton menu) et pressez ENTRÉE.</string>
     <!-- ### DonateActivity ### -->
     
     <string name="paypal_item_name">Don à YTD</string>
-    <string name="paypal_title">PayPal</string>
 	<string name="paypal_summary">Supporter le travail du développeur par un don</string>
+	<string name="flattr_summary">E-paiement Flattr</string>
 	
 	<!-- ### FfmpegDownloadService ### -->
 	<string name="ffmpeg_install_failed">Erreur lors de l\'installation de FFmpeg.</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Terminé</string>
+	<string name="json_status_failed">Échec </string>
+	<string name="json_status_in_progress">En cours</string>
+	<string name="json_status_paused">Paused</string>
+	<string name="json_status_imported">Imported</string>
+	<string name="menu_search">Recherche&amp;#8230</string>
+	<string name="menu_backup">Backup</string>
+	<string name="menu_restore">Restore</string>
+	<string name="menu_import">Import a video</string>
+	<string name="menu_import_double">Video already added.</string>
+	<string name="menu_backup_info">Choose a folder to Backup Dashboard\'s data</string>
+	<string name="menu_restore_info">Restore Dashboard\'s data from file</string>
+	<string name="menu_restore_info_msg">Present data will be overwritten.</string>
+	<string name="menu_import_info">Import a video and manage it from the Dashboard</string>
+	<string name="menu_backup_result_ok">Dashboard data backup OK.</string>
+	<string name="menu_backup_result_failed">Error during backup.</string>
+	<string name="menu_restore_result_ok">Dashboard data restored.</string>
+	<string name="menu_restore_result_failed">Error during restore.</string>
+	<string name="unsupported_operation">Unsupported operation.</string>
+	<string name="invalid_data">Invalid data.</string>
+	<string name="open_chooser_title">Open with:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Ouvrir</item>
+	    <item>Extraire le son uniquement</item>
+        <item>Extraire et encoder l\'audio en mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Ouvrir</item>
+        <item>Convertir en MP3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Open</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg n\'est pas installé ou activé :</string>
+	<string name="ffmpeg_not_enabled_msg">Ouvrir les paramètres ?</string>
+	<string name="remove_video">Supprimer la vidéo après extraction de l\'audio (pas de confirmation !)</string>
+	<string name="remove_original_audio">Supprimer l\'audio après conversion (pas de confirmation !)</string>
+	<string name="edit_id3_tags">Éditer les tags ID3</string>
+	<string name="id3_album">Album</string>
+	<string name="id3_artist">Artiste</string>
+	<string name="id3_title">Titre</string>
+	<string name="id3_year">Année</string>
+	<string name="id3_genre">Genre</string>
+	
+	<string name="audio_extr_info">Contained audio stream:</string>
+	
+	<string name="dashboard_long_click_entry_0">Copier</string>
+	<string name="dashboard_long_click_entry_1">Déplacer</string>
+	<string name="dashboard_long_click_entry_2">Supprimer</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Copier</item>
+	    <item>Déplacer</item>
+        <item>Renommer</item>
+        <item>Télécharger à nouveau la vidéo</item>
+        <item>Retirer de l\'Accueil</item>
+        <item>Retirer et supprimer le fichier</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Copier</item>
+	    <item>Déplacer</item>
+        <item>Renommer</item>
+        <item>Télécharger à nouveau la vidéo</item>
+        <item>Retirer de l\'Accueil</item>
+        <item>Retirer et supprimer le fichier</item>
+        <item>Pause/Resume</item>
+    </string-array>
+    
+	<string name="move_error">Erreur pendant le déplacement.</string>
+    <string name="move_progress">Fichier en-cours de déplacement&#8230;</string>
+    <string name="move_ok">Déplacement du fichier terminé.</string>
+    <string name="long_press_warning_title">Echec de l\'opération:</string>
+    <string name="long_press_warning_msg">Dossiers source et de destination identiques.</string>
+    <string name="long_press_warning_msg2">Une copie existe déjà dans ce dossier.</string>
+    <string name="audio_extr_warning_msg">Fichier audio identique déjà extrait.</string>
+
+	<string name="delete_video_confirm">Voulez-vous supprimer cette vidéo ?</string>
+	<string name="remove_video_confirm">Voulez-vous supprimer cette vidéo ?</string>
+	<string name="delete_video_ok">%1$s est supprimé.</string>
+	<string name="delete_video_failed">Erreur : %1$s n\'a pas été supprimé.</string>
+	
+	<string name="empty_dashboard">Pas de vidéos téléchargées.</string>
 
     <!-- ### preferences ### -->
 
     <!-- -->
-    <string name="dm_title">Téléchargements</string>
-    <string name="dm_summary">Ouvrir le gestionnaire de téléchargements du système</string>
+    <string name="dashboard_summary">Ouvrir l\'accueil YTD</string>
 
     <!-- -->
     <string name="settings_cat_ui">Interface utilisateur</string>
     <string name="lang_title">Langue</string>
-    <string name="lang_dialog_title">Langue (nécessite un redémarrage de l\'application):</string>
+    <string name="lang_dialog_title">Choisir la langue utilisateur</string>
     <string name="choose_theme_title">Choisir le thème</string>
     <string-array name="choose_theme_entries">
         <item>Sombre</item>
@@ -165,16 +256,6 @@ COLLEZ la commande (utilisez le bouton menu) et pressez ENTRÉE.</string>
     <string name="ssh_info_summary">Montrer des explications rapides à propos du téléchargement via SSH</string>
     <string name="audio_tutorial_title">Tutoriel d\'extraction audio</string>
     <string name="audio_tutorial_summary">Ouvrir un guide simple sur la fonction d\'extraction audio</string>
-    <string name="audio_tutorial_text">Pour extraire ou convertir l\'audio vers mp3 depuis une vidéo téléchargée:
-\n\n*) Enable the audio preference and download FFmpeg;
-\n\n*) Choose the extraction type: 
-\n\n\"extract only\" will conserve the audio stream from the video as is (WebM files contain an \"Ogg Vorbis\" 
-audio; MP4, 3GPP and large/medium FLV video hold an \"AAC\" audio stream; FLV small holds an \"mp3\");
-\n\n\"extract and encode to mp3\" will convert the extracted audio in an mp3, encoding it with the selected bitrate.
-\n\nFrom now on, a checkbox will appear in the download confirmation box visible when you click an item 
-in the YTD\'s video list. When checked, the audio extraction job will start upon video download completion 
-(to hide the checkbox, disable the audio extraction option).
-\n\nChoose from settings if you want to remove the video file after a successful audio extraction.</string>
     
     <!-- -->
     <string name="settings_cat_folder">Dossier des téléchargements</string>
@@ -195,35 +276,20 @@ in the YTD\'s video list. When checked, the audio extraction job will start upon
     <string name="show_size_list_summary">Récupère le poids des fichiers pour chaque élément de la liste des vidéos disponibles (beaucoup plus lent)</string>
     <string name="show_thumb_title">Montrer l\'aperçu</string>
     <string name="show_thumb_summary">Télécharger une image d\'aperçu avec la liste des vidéos</string>
+    <string name="show_resolutions_title">Afficher les résolutions vidéo</string>
+    <string name="show_resolutions_summary">Remplacer l\'indicateur de qualité par la résolution vidéo</string>
     
     <!-- -->
-    <string name="settings_cat_audio">Audio</string>
-    <string name="enable_audio_extraction_title">Activer l\'extraction audio</string>
-    <string name="enable_audio_extraction_summary">Extraire et convertir l\'audio des vidéos téléchargées (téléchargements locaux uniquement)</string>
-    <string name="mp3_bitrate_title">Débit binaire pour l\'encodage MP3 (kbps)</string>
+    <string name="settings_cat_advanced">Paramètres avancés</string>
+    <string name="enable_advanced_features_title">Activer les fonctions avancées</string>
+    <string name="enable_advanced_features_summary">Télécharger le \"plugin\" FFmpeg</string>
+    <string name="mp3_bitrate_title">Codage du bitrate mp3</string>
     <string name="audio_extraction_type_title">Type d\'extraction</string>
-    <string name="enable_audio_q_suffix_title">Ajouter la qualité audio en suffixe</string>
-    <string name="enable_audio_q_suffix_summary">Ajouter la qualité de l\'audio à la fin du nom du fichier</string>
     <string name="remove_video_title">Suppression vidéo</string>
     <string name="remove_video_summary">Activer la suppression du fichier vidéo après avoir correctement extrait l\'audio (attention : pas de confirmation)</string>
-
-    <string-array name="audio_extraction_type_entries">
-        <item>Extraire seulement</item>
-        <item>Extraire et encoder en MP3</item>
-    </string-array>
     
     <!-- -->
     <string name="settings_cat_notifications">Notifications</string>
-    <string name="enable_own_notification_title">Activer notifications YTD</string>
-    <string name="enable_own_notification_summary">Afficher des notifications pour tous les téléchargements via YTD</string>
-    <string name="download_manager_notification_title">Gérer les notifications du système</string>
-    <string name="download_manager_notification_dialog_title">Afficher les notifications du gestionnaire de téléchargements du système:</string>
-    
-    <string-array name="download_manager_notification_entries">
-        <item>Pendant le téléchargement et une fois complété</item>
-        <item>Pendant le téléchargement seulement</item>
-        <item>Jamais</item>
-    </string-array>
     
     <string name="notification_defaults_title">Notification par défaut de YTD</string>
     <string name="notification_defaults_dialog_title">Notification par défaut de YTD</string>
@@ -248,58 +314,10 @@ in the YTD\'s video list. When checked, the audio extraction job will start upon
     <string name="settings_cat_app">Application</string>
     <string name="settings_cat_about_condensed">A propos</string>
     <string name="title_changelog">Changelog</string>
-    <string name="screen_licences_code_title">Licences et Code</string>
-
-    <!-- -->
     <string name="settings_cat_licenses">Licences</string>
 
-    <string name="credits_title">Autres crédits</string>
+    <string name="credits_title">Crédits</string>
     <string name="title_activity_credits_show">Autres licences et traductions</string>
-    
-    <string name="credits_text0">\tLicences principales
-\n\n
-Cette app est publiée sous GPL-3.0.
-\n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
-\n\n
-Le binaire FFmpeg (<http>http://www.ffmpeg.org/index.html</http>), 
-utilisé pour la fonction d\'extraction audio, est publiée sous GPL-3.0.
-\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
-\n\n
-La librairie du sélectionneur est publiée sous la licence MIT.
-\n(android-filechooser Copyright &#169; 2012 Hai Bison).
-\n\n
-La librairie liblame, utilisée pour compiler FFmpeg, est publiée sous LGPL.
-Un projet GitHub, <http>https://github.com/intervigilium/liblame</http>, 
-a été utilisé pour compiler les librairies lame pour Android.
-\n(liblame Copyright &#169; 2010 Ethan Chen)
-\n(LAME Copyright &#169; 1999-2007 The LAME Project,
-\nCopyright &#169; 1999-2001 Mark Taylor,
-\nCopyright &#169; 1998 Micheal Cheng)
-\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
-\n\n
-Les tags mp3 de YTD\'s mp3 tags sont écrits avec MyID3: a Java ID3 Tag Library
-(<http>http://www.fightingquaker.com/myid3</http> and <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
-released under the LGPL, as its dependency Jakarta Regexp library.
-\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
-\n\n
-Pour plus d\'informations, référez-vous aix menus dédiés et aux fichiers de licence disponibles depuis le code source de ce projet.
-\n</string>
-    
-    <string name="credits_text1">\t License de certains extraits de code
-\n\n
-Cette application utilise des extraits du code de
-\n\n
-1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
-\nCopyright &#169; 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license.
-\nThe text of the license can be found in the LICENSE_GPL file or at <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
-\n\n
-2) Stack Overflow (<http>http://stackoverflow.com</http>), a question and answer site for programmers where all 
-the content is CC BY-SA 3.0 licensed (see <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
-\n\n
-Pour plus d\'informations, reportez-vous aux commentaires dans le code Java de YTD</string>
-    <string name="credits_translators">\n\tTraductions
-\n\nMerci pour les localisations additionnelles:</string>
-    <string name="translators_info">\nPour plus d\'informations:</string>
         
     <!-- -->
     <string name="settings_cat_code">Code source</string>
@@ -315,7 +333,7 @@ Pour plus d\'informations, reportez-vous aux commentaires dans le code Java de Y
 \nUne application Android gratuite et open source pour télécharger des vidéos YouTube!
 \nhttps://sourceforge.net/projects/ytdownloader/files/</string>
 	<string name="help_translate_title">Aider à traduire cette application</string>
-    <string name="help_translate_summary">Visiter www.getlocalization.com/ytdownloader</string>
+    <string name="xda_title">Thread on XDA forum</string>
     
     <!-- -->
     <string name="settings_cat_ssh">SSH</string>
@@ -328,7 +346,13 @@ pour coller dans le terminal distant (fonctionnera SEULEMENT si le PC de destina
 	<string name="ssh_to_longpress_menu_summary">Déplacer l\'action  \"Envoyer via SSH\" vers le menu (appui long) disponible depuis la liste des vidéos</string>
 	
     <!-- -->
-	<string name="settings_cat_advanced">Paramètres avancés</string>
+	<string name="settings_cat_system">Système</string>
 	<string name="enable_logging_title">Activer la journalisation (logs)</string>
 	<string name="enable_logging_summary">Ajouter les messages d\'YTD dans le journal système. Obligatoire pour l\'envoi d\'un rapport au développeur.</string>
+	<string name="clear_dashboard_title">Empty the Dashboard</string>
+	<string name="clear_dashboard_summary">Clear all dashboard\'s references (may fix some crashes)</string>
+	<string name="clear_dashboard_msg">Are you sure?\nThis will clear all the list in the Dashboard.</string>
+	<string name="clear_dashboard_ok">Dashboard cleared.</string>
+	<string name="clear_dashboard_failed">Dashboard emptying failed.</string>
+	
 </resources>

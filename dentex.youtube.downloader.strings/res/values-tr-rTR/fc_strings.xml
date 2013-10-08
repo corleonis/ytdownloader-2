@@ -10,7 +10,7 @@
 
     <string name="afc_lib_name">android-dosyaseçici</string>
     <string name="afc_cmd_advanced_selection_all">Hepsi</string>
-    <string name="afc_cmd_advanced_selection_invert">Diğerlerini seç</string>
+    <string name="afc_cmd_advanced_selection_invert">Seçimi ters çevir</string>
     <string name="afc_cmd_advanced_selection_none">Hiçbiri</string>
     <string name="afc_cmd_clear">Temizle</string>
     <string name="afc_cmd_grid_view">Izgara görünümü</string>
@@ -33,28 +33,28 @@
     <string name="afc_msg_app_doesnot_have_permission_to_delete_files">Bu uygulamanın dosya/klasör silme izni yok</string>
     <string name="afc_msg_cancelled">İptal edildi</string>
     <string name="afc_msg_cannot_connect_to_file_provider_service">Dosya sağlayıcısına  bağlanılamıyor</string>
-    <string name="afc_msg_done">Tamam</string>
+    <string name="afc_msg_done">Bitti</string>
     <string name="afc_msg_empty">&#8230;boş</string>
     <string name="afc_msg_filename_is_empty">Dosya adı boş</string>
     <string name="afc_msg_loading">Yükleniyor&#8230;</string>
-    <string name="afc_pmsg_cannot_access_dir">Erişilemiyor \"%1$s\"</string>
-    <string name="afc_pmsg_cannot_create_folder">Dosya oluşturulamıyor \"%1$s\"</string>
-    <string name="afc_pmsg_cannot_delete_file">Silinemiyor %1$s \"%2$s\"</string>
-    <string name="afc_pmsg_confirm_delete_file">Bunu %1$s \"%2$s\" silmek istediğinize emin misiniz?</string>
-    <string name="afc_pmsg_confirm_replace_file">Bu dosya \"%1$s\"  zaten var.\n\n Bunu değiştirmek istiyor musunuz?</string>
-    <string name="afc_pmsg_deleting_file">Siliniyor %1$s \"%2$s\"…</string>
-    <string name="afc_pmsg_file_has_been_deleted">…%1$s \"%2$s\" silindi</string>
+    <string name="afc_pmsg_cannot_access_dir">\"%1$s\" erişilemiyor</string>
+    <string name="afc_pmsg_cannot_create_folder">\"%1$s\" dosyası oluşturulamıyor</string>
+    <string name="afc_pmsg_cannot_delete_file">%1$s \"%2$s\" silinemiyor </string>
+    <string name="afc_pmsg_confirm_delete_file">%1$s \"%2$s\" silinecek, emin misiniz?</string>
+    <string name="afc_pmsg_confirm_replace_file">\"%1$s\"  zaten var.\n\n Değiştirmek istiyor musunuz?</string>
+    <string name="afc_pmsg_deleting_file">%1$s \"%2$s\"&#8230; siliniyor</string>
+    <string name="afc_pmsg_file_has_been_deleted">&#8230;%1$s \"%2$s\" silindi</string>
     <string name="afc_pmsg_filename_is_directory">\"%1$s\" bir klasördür</string>
     <string name="afc_pmsg_filename_is_invalid">Dosya adı  \"%1$s\" geçersiz</string>
-    <string name="afc_pmsg_max_file_count_allowed">…daha fazla dosya var, maksimum izin verilen: %1$,d</string>
+    <string name="afc_pmsg_max_file_count_allowed">&#8230;çok fazla dosyaya sahip, en fazla izin verilen: %1$,d</string>
     <string name="afc_pmsg_unknown_error">Bilinmeyen hata: %1$s</string>
-    <string name="afc_pmsg_xxx_items">%1$,d items</string>
-    <string name="afc_root">Root</string>
+    <string name="afc_pmsg_xxx_items">%1$,d nesne</string>
+    <string name="afc_root">Kök</string>
     <string name="afc_title_advanced_selection">Seç&#8230;</string>
-    <string name="afc_title_alert">Uyar</string>
+    <string name="afc_title_alert">Uyarı</string>
     <string name="afc_title_choose_directories">Bir klasör seçin</string>
-    <string name="afc_title_choose_files">Bir dosya seçin</string>
-    <string name="afc_title_choose_files_and_directories">Bir dosya seçin&#8230;</string>
+    <string name="afc_title_choose_files">Dosyaları seçiniz&#8230;</string>
+    <string name="afc_title_choose_files_and_directories">Dosyaları/klasörleri seçiniz&#8230;</string>
     <string name="afc_title_confirmation">Onay</string>
     <string name="afc_title_date">Tarih</string>
     <string name="afc_title_error">Hata</string>
@@ -63,7 +63,7 @@
     <string name="afc_title_name">Isim</string>
     <string name="afc_title_save_as">Farklı kaydet&#8230;</string>
     <string name="afc_title_size">Boyut</string>
-    <string name="afc_title_sort_by">Olarak Sırala&#8230;</string>
+    <string name="afc_title_sort_by">Sırala&#8230;</string>
     <string name="afc_yesterday">Dün</string>
 
 </resources>

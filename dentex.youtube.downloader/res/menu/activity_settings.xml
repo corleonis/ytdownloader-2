@@ -18,10 +18,10 @@
         android:orderInCategory="15"
         android:showAsAction="collapseActionView" />
 
-    <item android:id="@+id/menu_dm"
-        android:title="@string/dm_title"
-        android:titleCondensed="@string/dm_title"
+    <!-- <item android:id="@+id/menu_dashboard"
+        android:title="@string/title_activity_dashboard"
+        android:titleCondensed="@string/title_activity_dashboard"
         android:orderInCategory="10"
-        android:showAsAction="collapseActionView" />
+        android:showAsAction="collapseActionView" /> -->
     
 </menu>

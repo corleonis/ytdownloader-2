@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # ---- config ----
-ASSETS="$HOME/workspace_master/dentex.youtube.downloader/assets"
+DIR=`pwd`
+ASSETS="$DIR/dentex.youtube.downloader/assets"
 # ----------------
 
 LANG_FILE=$ASSETS/languages
@@ -19,5 +20,10 @@ curl --user $ID:$PW https://api.getlocalization.com/ytdownloader/api/translation
 
 for i in `cat $LANG_FILE`; do
 	curl --user $ID:$PW https://api.getlocalization.com/ytdownloader/api/translators/$i/json/ | \
-	sed 's/{"username": "dentex".*username=dentex"}, //' > $ASSETS/$i;
+
+	if [ "$i" != "it" ]; then	
+		sed -e 's/{"username": "dentex".*username=dentex"}, //' -e 's/{"username": "tetter".*username=tetter"}, //' > $ASSETS/$i;
+	else
+		sed 's/{"username": "tetter".*username=tetter"}, //' > $ASSETS/$i;
+	fi
 done

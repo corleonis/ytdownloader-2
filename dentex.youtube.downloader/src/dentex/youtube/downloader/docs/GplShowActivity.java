@@ -1,4 +1,3 @@
-
 /***
  	Copyright (c) 2012-2013 Samuele Rini
  	
@@ -29,9 +28,6 @@ package dentex.youtube.downloader.docs;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
-import android.view.MenuItem;
-import android.view.Window;
 import dentex.youtube.downloader.R;
 import dentex.youtube.downloader.utils.Utils;
 
@@ -41,27 +37,26 @@ public class GplShowActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+		//getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
 		
 		// Theme init
     	Utils.themeInit(this);
     	
 		setContentView(R.layout.activity_gpl_show);
-		setupActionBar();
+		//setupActionBar();
 	}
 	
-	private void setupActionBar() {
+	/*private void setupActionBar() {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			NavUtils.navigateUpFromSameTask(this);
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+	public boolean onOptionsItemSelected(android.view.MenuItem item) {
+	    if (item.getItemId() == android.R.id.home) {
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
+	    }
+	    return super.onOptionsItemSelected(item);
+	}*/
 
 }

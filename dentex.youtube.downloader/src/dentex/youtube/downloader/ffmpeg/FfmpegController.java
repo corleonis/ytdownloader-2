@@ -16,13 +16,14 @@ import java.util.List;
 import java.util.Map;
 
 import android.content.Context;
+import android.os.SystemClock;
 import android.util.Log;
+import dentex.youtube.downloader.YTD;
 import dentex.youtube.downloader.utils.Utils;
 
 public class FfmpegController {
 
 	private final static String DEBUG_TAG = "FfmpegController";
-	public static final String ffmpegBinName = "ffmpeg";
 	
 	public File mBinFileDir;
 	public String mFfmpegBinPath;
@@ -32,7 +33,7 @@ public class FfmpegController {
 		mContext = context;
 		
 		mBinFileDir = context.getDir("bin", 0);
-		mFfmpegBinPath = new File(mBinFileDir, ffmpegBinName).getAbsolutePath();
+		mFfmpegBinPath = new File(mBinFileDir, YTD.ffmpegBinName).getAbsolutePath();
 	}
 	
 	public void execFFMPEG (List<String> cmd, ShellUtils.ShellCallback sc) {
@@ -41,9 +42,10 @@ public class FfmpegController {
 	}
 	
 	public  void execChmod(String filepath, String code) {
-		Utils.logger("d", "Trying to chmod '" + filepath + "' to: " + code, DEBUG_TAG);
+		Utils.logger("v", "Trying to chmod '" + filepath + "' to: " + code, DEBUG_TAG);
 		try {
 			Runtime.getRuntime().exec("chmod " + code + " " + filepath);
+			SystemClock.sleep(500);
 		} catch (IOException e) {
 			Log.e(DEBUG_TAG, "Error changing file permissions!", e);
 		}
@@ -70,7 +72,7 @@ public class FfmpegController {
     	boolean started = true;
     	try {
     		
-    		process = pb.start();    
+    		process = pb.start();
     	
     		// any error message?
     		StreamGobbler errorGobbler = new 
@@ -89,11 +91,11 @@ public class FfmpegController {
     		sc.processComplete(exitVal);
     		
     	} catch (Exception e) {
-    		Log.e(DEBUG_TAG, "Error executing ffmpeg command! - ", e);
+    		Log.e(DEBUG_TAG, "Error executing ffmpeg command", e);
     		started = false;
     	} finally {
     		if (process != null) {
-    			Utils.logger("w", "destroyng process", DEBUG_TAG);
+    			Utils.logger("v", "destroyng process", DEBUG_TAG);
     			process.destroy();
     		}
     		sc.processNotStartedCheck(started);
@@ -101,7 +103,7 @@ public class FfmpegController {
         return exitVal;
 	}
 	
-	public void extractAudio (File videoIn, File audioOut, String type, String mp3BitRate, 
+	public void extractAudio (File videoIn, File audioOut, String bitrateType, String bitrateValue, 
 			ShellUtils.ShellCallback sc) throws IOException, InterruptedException {
 		
 		List<String> cmd = new ArrayList<String>();
@@ -113,10 +115,14 @@ public class FfmpegController {
 		cmd.add("-vn");
 		cmd.add("-acodec");
 		
-		if (type.equals("conv")) {
+		if (bitrateValue != null) {
 			cmd.add("libmp3lame"); 
-			cmd.add("-ab"); 
-			cmd.add(mp3BitRate);
+			if (bitrateType.equals("CBR")) {
+				cmd.add("-ab");
+			} else {
+				cmd.add("-aq");
+			}
+			cmd.add(bitrateValue);
 		} else {
 			cmd.add("copy");
 		}

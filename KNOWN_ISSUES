@@ -1,0 +1,5 @@
+	[x] Downloads running:
+		- for a long time (around 20 or 30 minutes)
+		AND 
+		- without having the Dashboard Activity to the front
+		may be forced to PAUSE. In this case a manual resume is needed

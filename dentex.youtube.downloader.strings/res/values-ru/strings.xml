@@ -6,7 +6,8 @@
     <string name="title_activity_about">О программе</string>
     <string name="title_activity_donate">Пожертвования</string>
     <string name="title_activity_tutorials">Руководства</string>
-    <string name="title_activity_translators_show">Переводчики</string>    
+    <string name="title_activity_translators_show">Переводчики</string>
+    <string name="title_activity_dashboard">Инструм. панель</string>
 
     <!-- ### ShareActivity ### -->
 
@@ -26,6 +27,7 @@
     <string name="invalid_url">Невозможно открыть веб-страницу. Возможно, неверный адрес.</string>
     <string name="invalid_url_short">Невозможно открыть веб-страницу. </string>
     <string name="invalid_response">Неверный ответ HTTP-сервера.</string>
+    <string name="rtmpe_streams">Неверный ответ HTTP-сервера.</string>
     <string name="bad_link">Проверьте ссылку.</string>
     <string name="bad_link_dialog_msg">Неверная ссылка YouTube.</string>
     <string name="no_net">Нет соединения.</string>
@@ -59,11 +61,13 @@
     <string name="notification_downloading_pt2">видео файлы</string>
     <string name="notification_no_downloads">Отсутствуют активные загрузки</string>
     <string name="long_click_title">Обработать выбранную ссылку:</string>
-    <string name="extsdcard_info_title">Нестандартное расположение</string>
-    <string name="extsdcard_info_msg">Файл загружается в стандартную папку загрузок и потом будет перемещён в выбранное расположение.</string>
     <string name="ffmpeg_ready">FFmpeg готов.</string>
     <string name="confirm_audio_checkbox1">Извлекать аудио после загрузки</string>
     <string name="confirm_audio_checkbox2">\n(как определено в настройках)</string>
+    <string name="login_required">Может потребоваться войти в аккаунт YouTube.</string>
+    <string name="encrypted_streams">Закодированный поток видео</string>
+    <string name="no_video_available">Нет доступных видео.</string>
+    <string name="retry_button_text">Повторить</string>
     
     <string-array name="long_click_entries">
         <item>Скопировать в буфер обмена</item>
@@ -79,7 +83,6 @@
     <!-- ### SettingsActivity ### -->
 
     <string name="attention">Внимание!</string>
-    <string name="extsdcard_warning">Невозможно записать файлы на внешнюю карту памяти.\nСброс к стандартной карте.</string>
     <string name="system_warning_title">Это системная папка</string>
     <string name="system_warning_msg">Выбранный путь будет сброшен и изменён на стандартную папку загрузок карты памяти.</string>
     <string name="sdcard_unmounted_warning">Карта памяти НЕ подключена</string>
@@ -114,9 +117,9 @@
     <!-- ### DownloadsService ### -->
     
     <string name="ytd_video">Видео YTD</string>
-    <string name="copy_error">Ошибка при копировании</string>
+    <string name="copy_error">Ошибка при копировании.</string>
     <string name="copy_progress">Копирование файла в процессе&#8230;</string>
-    <string name="copy_ok">Копирование завершено.</string>
+    <string name="copy_ok">Копирование файла выполнено.</string>
     <string name="download_remove_failed">Ошибка: временно загруженный файл не удалён!</string>
     <string name="download_failed">Загрузка не удалась!</string>
     <string name="audio_extr_progress">Извлечение аудио в процессе&#8230;</string>
@@ -129,22 +132,110 @@
     <!-- ### DonateActivity ### -->
     
     <string name="paypal_item_name">Пожертвование YTD</string>
-    <string name="paypal_title">PayPal</string>
 	<string name="paypal_summary">Поддержать разработчика YTD пожертвованием</string>
+	<string name="flattr_summary">Пожертвовать через Flattr</string>
 	
 	<!-- ### FfmpegDownloadService ### -->
 	<string name="ffmpeg_install_failed">Установка FFmpeg не удалась.</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Выполнено</string>
+	<string name="json_status_failed">Не удалось</string>
+	<string name="json_status_in_progress">В процессе</string>
+	<string name="json_status_paused">Пауза</string>
+	<string name="json_status_imported">Импортировано</string>
+	<string name="menu_search">поиск&#8230;</string>
+	<string name="menu_backup">Резервное копирование</string>
+	<string name="menu_restore">Восстановление</string>
+	<string name="menu_import">Импортировать видео</string>
+	<string name="menu_import_double">Видео уже добавлено.</string>
+	<string name="menu_backup_info">Выбрать папку для резервного копирования данных инстр. панели</string>
+	<string name="menu_restore_info">Восстановить данные инстр. панели из файла</string>
+	<string name="menu_restore_info_msg">Текущие данные будут переписаны.</string>
+	<string name="menu_import_info">Импорт видео и управление им из инстр. панели</string>
+	<string name="menu_backup_result_ok">Копия данных инстр. панели ОК.</string>
+	<string name="menu_backup_result_failed">Ошибка рез. копирования.</string>
+	<string name="menu_restore_result_ok">Данные инстр. панели восстановлены.</string>
+	<string name="menu_restore_result_failed">Ошибка восстановления.</string>
+	<string name="unsupported_operation">Неподдерж. операция</string>
+	<string name="invalid_data">Неверные данные.</string>
+	<string name="open_chooser_title">Открыть с помощью:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Oткрыть</item>
+	    <item>Только извлечь аудио</item>
+        <item>Извлечь и кодировать аудио в mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Oткрыть</item>
+        <item>Извлечь и кодировать аудио в mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Открыть</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg не установлен или не включён:</string>
+	<string name="ffmpeg_not_enabled_msg">Открыть настройки?</string>
+	<string name="remove_video">Удалить видео после извлечения аудио (без подтверждения)</string>
+	<string name="remove_original_audio">Удалить аудио после конвертирования (без подтверждения!)</string>
+	<string name="edit_id3_tags">Редактировать тэги ID3</string>
+	<string name="id3_album">Альбом</string>
+	<string name="id3_artist">Исполнитель</string>
+	<string name="id3_title">Название</string>
+	<string name="id3_year">Год</string>
+	<string name="id3_genre">Жанр</string>
+	
+	<string name="audio_extr_info">Включённый поток аудио:</string>
+	
+	<string name="dashboard_long_click_entry_0">Копировать</string>
+	<string name="dashboard_long_click_entry_1">Переместить</string>
+	<string name="dashboard_long_click_entry_2">Удалить</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Копировать</item>
+	    <item>Переместить</item>
+        <item>Переименовать</item>
+        <item>Повторная загрузка видео</item>
+        <item>Убрать с панели</item>
+        <item>Убрать и удалить файл</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Копировать</item>
+	    <item>Переместить</item>
+        <item>Переименовать</item>
+        <item>Повторная загрузка видео</item>
+        <item>Убрать с панели</item>
+        <item>Убрать и удалить файл</item>
+        <item>Пауза/возобновить</item>
+    </string-array>
+    
+	<string name="move_error">Ошибка при перемещении.</string>
+    <string name="move_progress">Перемещение файла в процессе&#8230;</string>
+    <string name="move_ok">Перемещение файла выполнено.</string>
+    <string name="long_press_warning_title">Операция не выполнена:</string>
+    <string name="long_press_warning_msg">Папки источника и назначения совпадают.</string>
+    <string name="long_press_warning_msg2">Копия уже существует в этой папке.</string>
+    <string name="audio_extr_warning_msg">Такой файл аудио уже извлечён.</string>
+
+	<string name="delete_video_confirm">Подтвердить удаление видео?</string>
+	<string name="remove_video_confirm">Подтвердить перемещение видео?</string>
+	<string name="delete_video_ok">%1$s успешно удалено.</string>
+	<string name="delete_video_failed">Ошибка: %1$s не удалено.</string>
+	
+	<string name="empty_dashboard">Нет загруженных видео.</string>
 
     <!-- ### preferences ### -->
 
     <!-- -->
-    <string name="dm_title">Загрузки</string>
-    <string name="dm_summary">Открыть системный диспетчер загрузок</string>
+    <string name="dashboard_summary">Открыть инструментальную панель YTD</string>
 
     <!-- -->
     <string name="settings_cat_ui">Пользовательский интерфейс</string>
     <string name="lang_title">Язык</string>
-    <string name="lang_dialog_title">Язык (необходима перезагрузка приложения):</string>
+    <string name="lang_dialog_title">Выбрать язык интерфейса:</string>
     <string name="choose_theme_title">Выбрать тему</string>
     <string-array name="choose_theme_entries">
         <item>Тёмная</item>
@@ -165,16 +256,6 @@
     <string name="ssh_info_summary">Показывать быстрый совет об удалённой загрузке через SSH</string>
     <string name="audio_tutorial_title">Руководство по извлечению аудио</string>
     <string name="audio_tutorial_summary">Открыть краткое руководство по извлечению аудио</string>
-    <string name="audio_tutorial_text">Для извлечения аудио из загруженного видео файла или его конвертирования в  mp3:
-\n\n*) Включить в настройках аудио и скачать FFmpeg;
-\n\n*) Выбрать тип извлечения: 
-\n\n\"только извлечение\" сохранит поток аудио как есть (файлы WebM содержат аудио \"Ogg Vorbis\"
-; MP4, 3GPP и большие/средние видео FLV содержат поток аудио \"AAC\" ; небольшие FLV содержат \"mp3\");
-\n\n\"извлечение и кодирование в mp3\" конвертирует извлечённое аудио в mp3, используя выбранный битрейт.
-\n\nПосле этого, в окне подтверждения загрузки, появляющемся при нажатии на элемент списка 
- YTD, надо поставить галочку. Тогда извлечение аудио начнется после завершения загрузки видео файла 
-(чтобы скрыть подтверждение, отключите опцию извлечения аудио).
-\n\nВ настройках выберите, хотите ли Вы удалить видео файл после успешного извлечения аудио.</string>
     
     <!-- -->
     <string name="settings_cat_folder">Папка загрузок</string>
@@ -195,35 +276,20 @@
     <string name="show_size_list_summary">Получить размеры файлов для каждого элемента списка доступного видео (намного медленнее)</string>
     <string name="show_thumb_title">Включить предпросмотр</string>
     <string name="show_thumb_summary">Загружать изображение предварительного просмотра вместе со списком видео</string>
+    <string name="show_resolutions_title">Показать разрешение видео</string>
+    <string name="show_resolutions_summary">Заменить показатель качества на разрешение видео</string>
     
     <!-- -->
-    <string name="settings_cat_audio">Аудио</string>
-    <string name="enable_audio_extraction_title">Включить извлечение аудио</string>
-    <string name="enable_audio_extraction_summary">Извлекать и конвертировать аудио из загруженного видео (только для локальных загрузок)</string>
-    <string name="mp3_bitrate_title">Битрейт кодирования mp3 (кб/с)</string>
+    <string name="settings_cat_advanced">Дополнительно</string>
+    <string name="enable_advanced_features_title">Включить дополнительные функции</string>
+    <string name="enable_advanced_features_summary">Скачать \"плагин\" FFmpeg</string>
+    <string name="mp3_bitrate_title">Битрейт кодирования mp3:</string>
     <string name="audio_extraction_type_title">Тип извлечения</string>
-    <string name="enable_audio_q_suffix_title">Прикрепить суффикс качества аудио</string>
-    <string name="enable_audio_q_suffix_summary">Добавить качество аудио в конце имени файла</string>
     <string name="remove_video_title">Удаление видео</string>
     <string name="remove_video_summary">Включить удаление видео после успешного извлечения аудио (предупреждение: без подтверждения)</string>
-
-    <string-array name="audio_extraction_type_entries">
-        <item>Только извлечение</item>
-        <item>Извлечение и кодирование в mp3</item>
-    </string-array>
     
     <!-- -->
     <string name="settings_cat_notifications">Уведомления</string>
-    <string name="enable_own_notification_title">Включить своё уведомление</string>
-    <string name="enable_own_notification_summary">Показать полную информацию о всех загрузках программы</string>
-    <string name="download_manager_notification_title">Управление системными уведомлениями</string>
-    <string name="download_manager_notification_dialog_title">Показать уведомления системного диспетчера загрузки:</string>
-    
-    <string-array name="download_manager_notification_entries">
-        <item>В процессе и после завершения</item>
-        <item>Только в процессе</item>
-        <item>Никогда</item>
-    </string-array>
     
     <string name="notification_defaults_title">Умолчания для уведомлений</string>
     <string name="notification_defaults_dialog_title">Умолчания для уведомлений YTD</string>
@@ -248,59 +314,10 @@
     <string name="settings_cat_app">Приложение</string>
     <string name="settings_cat_about_condensed">О программе</string>
     <string name="title_changelog">История изменений</string>
-    <string name="screen_licences_code_title">Лицензии и код</string>
-
-    <!-- -->
     <string name="settings_cat_licenses">Лицензии</string>
 
     <string name="credits_title">Благодарности</string>
     <string name="title_activity_credits_show">Другие лицензии и переводы</string>
-    
-    <string name="credits_text0">\tОсновные лицензии
-\n\n
-Это приложение выпущено в соответствии с GPL-3.0.
-\n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
-\n\n
-Бинарный файл FFmpeg (<http>http://www.ffmpeg.org/index.html</http>), 
-для функции извлечения аудио, выпущен в соответствии с GPL-3.0.
-\n(FFmpeg версия 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
-\n\n
-Библиотека выбора файлов выпущена в соответствии с лицензией MIT.
-\n(android-filechooser Copyright &#169; 2012 Hai Bison).
-\n\n
-Библиотека liblame, используемая для сборки FFmpeg, выпущена в соответствии с LGPL.
-Проект GitHub , <http>https://github.com/intervigilium/liblame</http>, 
-используется для компиляции библиотек lame для Android.
-\n(liblame Copyright &#169; 2010 Ethan Chen)
-\n(LAME Copyright &#169; 1999-2007 The LAME Project,
-\nCopyright &#169; 1999-2001 Mark Taylor,
-\nCopyright &#169; 1998 Micheal Cheng)
-\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
-\n\n
-YTD mp3 теги написаны  с MyID3: библиотека тегов Java ID3
-(<http>http://www.fightingquaker.com/myid3</http> and <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
-выпущено в соответствии с LGPL, как зависимая библиотека Jakarta Regexp.
-\n(MyID3 Copyright &#169; 2008 Charles M. Chen, адаптировано для Android  Romulus Urakagi Ts\'ai).
-\n\n
-Для дополнительной информации, смотрите в соответствующих меню и файлах лицензий 
-исходного кода данного проекта.
-\n</string>
-    
-    <string name="credits_text1">\tИспользованные лицензионные коды
-\n\n
-Приложение использует некоторые фрагменты кодов от: 
-\n\n
-1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
-\nCopyright &#169; 2012 The CyanogenMod Project, лицензирован GNU GPLv2.
-\nТекст лицензии можно найти в файле LICENSE_GPL  или на <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
-\n\n
-2) Stack Overflow (<http>http://stackoverflow.com</http>), сайт вопросов и ответов для программистов, где всё 
-содержание лицензировано CC BY-SA 3.0 (см. <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
-\n\n
-Для дополнительных деталей, смотрите комментарии  кода Java YTD.</string>
-    <string name="credits_translators">\n\tПереводы
-\n\nКроме того, спасибо за дополнительную локализацию:</string>
-    <string name="translators_info">\nДля дополнительной информации:</string>
         
     <!-- -->
     <string name="settings_cat_code">Исходный код</string>
@@ -316,7 +333,7 @@ YTD mp3 теги написаны  с MyID3: библиотека тегов Jav
 \nБесплатное приложение Андроид с открытым исходным кодом зля загрузки видео с You Tube!
 \nhttps://sourceforge.net/projects/ytdownloader/files/</string>
 	<string name="help_translate_title">Помогите с переводом приложения</string>
-    <string name="help_translate_summary">Перейти к www.getlocalization.com/ytdownloader</string>
+    <string name="xda_title">Тема на XDA</string>
     
     <!-- -->
     <string name="settings_cat_ssh">SSH</string>
@@ -329,7 +346,13 @@ YTD mp3 теги написаны  с MyID3: библиотека тегов Jav
 	<string name="ssh_to_longpress_menu_summary">Поместить действие \"Послать через SSH\" в меню длительного нажатия в списке видео</string>
 	
     <!-- -->
-	<string name="settings_cat_advanced">Дополнительно</string>
+	<string name="settings_cat_system">Система</string>
 	<string name="enable_logging_title">Включить журнал</string>
 	<string name="enable_logging_summary">Включать сообщения YTD в журнал системы. Обязательно при отправке логката разработчику.</string>
+	<string name="clear_dashboard_title">Очистить инстр. панель</string>
+	<string name="clear_dashboard_summary">Очистить все ссылки инструментальной панели (может исправить некоторые сбои)</string>
+	<string name="clear_dashboard_msg">Вы уверены?\nЭто очистит весь список инстр. панели.</string>
+	<string name="clear_dashboard_ok">Инструм. панель очищена.</string>
+	<string name="clear_dashboard_failed">Очистка инстр. панели не удалась.</string>
+	
 </resources>

@@ -1,85 +1,156 @@
 YouTube Downloader for Android _ by dentex
 ================================================================
 
-Android 3+ App to download videos from YouTube
+Download YouTube video and extract or convert audio to mp3.
+For Android 4+ 
 
-*Free and without ads*
+*Free and without Ads*
 
 ################################################################
 
-`versionCode="61"`
+`versionCode="62"`
 
-`versionName="2.7"`
+`versionName="3.0"`
 
-MD5 checksum: `a0347a6948a1ee2ed6eb14eada625ba5` dentex.youtube.downloader_v2.7.apk
+MD5 checksum: `4a38e2703bd7c3b90becd64b3e17c0e4` dentex.youtube.downloader_v3.0.apk
 
-Copyright (C) 2012 - 2013  Samuele Rini
-
-USER AGREEMENT
+NOTICE
 ================================================================
-You, the user, accept the full responsibility for the usage of this application, 
-excluding the developer from any liability about any consequence that may derive. 
-Thus, this application has to be considered as a mere technical service provider.
+    Complying with the GPL below is mandatory.
+    It's not that difficult: just give proper credits 
+    to this sources and release your modified ones.
+
+LICENSE
+================================================================
+Copyright (C) 2012-2013  Samuele Rini
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 
 OTHER LICENSES
 ================================================================
-     The FFmpeg binary (http://www.ffmpeg.org/index.html), 
-     used for the audio extraction feature, is released under the LGPL.
-    (FFmpeg version 1.2 Copyright (C) 2000-2013 the FFmpeg developers). 
-    
-     The filechooser library is released under the MIT license. 
-    (android-filechooser Copyright (C) 2012 Hai Bison). 
-    
-     The liblame library, used to compile FFmpeg, is released under the LGPL. 
-     A GitHub project, https://github.com/intervigilium/liblame, 
-     has been used to compile the lame libraries for Android. 
+    Additional licenses informations about code used in this project
+    is available from within the App's "About" menu:
+
+    	Main Licenses 
+     
+    This App is released under the GPL-3.0. 
+    (YouTubeDownloader for Android Copyright (C) 2012-2013 Samuele Rini) 
+     
+    The FFmpeg binary (http://www.ffmpeg.org/index.html), 
+    used for the audio extraction feature, is released under the GPL-3.0. 
+    (FFmpeg version 2.0.1 Copyright (C) 2000-2013 the FFmpeg developers) 
+     
+    The filechooser library is released under the MIT license. 
+    (android-filechooser Copyright (C) 2012 Hai Bison) 
+     
+    The liblame library, used to compile FFmpeg, is released under the LGPL. 
+    A GitHub project, https://github.com/intervigilium/liblame, 
+    has been used to compile the lame libraries for Android. 
     (liblame Copyright (C) 2010 Ethan Chen) 
     (LAME Copyright (C) 1999-2007 The LAME Project, 
     Copyright (C) 1999-2001 Mark Taylor, 
     Copyright (C) 1998 Micheal Cheng) 
-    (mpglib Copyright (C) 1995-1997 Michael Hipp). 
+    (mpglib Copyright (C) 1995-1997 Michael Hipp) 
+     
+    YTD`s mp3 tags are written with MyID3: a Java ID3 Tag Library 
+    (http://www.fightingquaker.com/myid3 and 
+    https://sites.google.com/site/eternalsandbox/myid3-for-android)
+    released under the Apache license, as its dependency Jakarta Regexp library. 
+    (MyID3 Copyright (C) 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts`ai) 
+     
+    Picasso: Image downloading and caching library
+    Copyright 2013 Square, Inc. - http://square.github.io/picasso/ 
+     
+    Launcher and notification icons by Sam Plane: http://samplane123.deviantart.com/, 
+    released under the CC BY-NC-ND (http://creativecommons.org/licenses/by-nc-nd/3.0) 
+     
+    Credits for the custom download manager to Hiroshi Matsunaga (matsuhiro): 
+    https://github.com/matsuhiro/AndroidDownloadManger (released "unlicensed"). 
+     
+     	Code excerpts Licenses 
+     
+    Stack Overflow (http://stackoverflow.com), a question and answer site for programmers where
+    all the content is CC BY-SA 3.0 licensed (see http://creativecommons.org/licenses/by-sa/3.0) 
+     
+    checkMD5(...) &amp; calculateMD5(...): 
+    https://github.com/CyanogenMod/android_packages_apps_CMUpdater
+    Copyright (C) 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license 
+     
+    FfmpegController.java: GPL-3.0 - Copyright (C) 2009, Nathan Freitas, Orbot / The Guardian Project
+    http://openideals.com/guardian - https://github.com/guardianproject/android-ffmpeg-java 
+     
+    Observer.java: reference - https://gist.github.com/shirou/659180 
+     
+    SectionedAdapter.java: GPL-3.0
+    Copyright (C) 2008-2010 CommonsWare, LLC - portions Copyright (C) 2008 Jeffrey Sharkey 
+     
+    Utils.getCpuInfo(): http://www.roman10.net/how-to-get-cpu-information-on-android/ - by Liu Feipeng 
+     
+    Utils.scanMedia(...):
+    http://www.grokkingandroid.com/adding-files-to-androids-media-library-using-the-mediascanner/
+    by Wolfram Rittmeyer 
+     
+    DashboardAdapter.java &amp; DashboardListItem.java: 
+    code adapted from https://github.com/survivingwithandroid/Surviving-with-android/
+    by Francesco Azzola (JFrankie) 
+     
+    Rhino.jar: open-source implementation of JavaScript written entirely in Java;
+    https://developer.mozilla.org/en-US/docs/Rhino - license: http://www.mozilla.org/MPL/2.0/ 
+     
+    Javascript function `decryptSignature` from the Greasemonkey script 
+    http://userscripts.org/scripts/show/25105 (MIT License) - by Gantt 
     
-     YTD`s mp3 tags are written with MyID3: a Java ID3 Tag Library 
-     (http://www.fightingquaker.com/myid3 and 
-     https://sites.google.com/site/eternalsandbox/myid3-for-android) 
-     released under the LGPL, as its dependency Jakarta Regexp library. 
-    (MyID3 Copyright (C) 2008 Charles M. Chen, 
-    adapted for Android by Romulus Urakagi Ts`ai).     
-  
-     This App uses some code snippets from Stack Overflow (http://stackoverflow.com),
-     a question and answer site for programmers where all the content is CC BY-SA 3.0 licensed 
-    (see http://creativecommons.org/licenses/by-sa/3.0),
-    and from other available resources over the Internet;
-
-    i.e.:
-    *)  Observer.java: reference - https://gist.github.com/shirou/659180
-    *)  Utils.getCpuInfo(): http://www.roman10.net/how-to-get-cpu-information-on-android/ - by Liu Feipeng
-    *)  Utils.scanMedia(...): 
-        http://www.grokkingandroid.com/adding-files-to-androids-media-library-using-the-mediascanner/
-        by Wolfram Rittmeyer
-    *)  js-14.jar - Rhino: open-source implementation of JavaScript written entirely in Java; 
-        https://developer.mozilla.org/en-US/docs/Rhino - license: http://www.mozilla.org/MPL/2.0/
-    *)  Javascript function "decryptSignature" from the Greasemonkey script 
-        http://userscripts.org/scripts/show/25105 (MIT License) - by Gantt
-
-    Furthermore:
-    1) the device-framed screenshots in the project's directory have 
-    been generated with the "Device Frame Generator" Android App by 
-    Prateek Srivastava, available at 
-    <https://github.com/f2prateek/Device-Frame-Generator/>.
-    The generated artwork is released ander the "Creative Commons 
-    Attribution 3.0 Unported" license (CC BY).
-
-    2) the launcher and the status icons for YTD have been created by
-    Sam Plane, <http://samplane123.deviantart.com/>, released under the 
-    "Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported" 
-    license (CC BY-NC-ND).
-
-    For further details, <http://creativecommons.org/licenses/>.
+     For more details, look for comments in YTD`s Java code. 
+     
+     	Translations 
+    
+    For more info go to: 
+    www.getlocalization.com/ytdownloader 
+    forum.xda-developers.com/showthread.php?p=37708791
 
 CHANGELOG
 ================================================================
     
+     v3.0 - Oct 08 2013 
+    ----------------------------------- 
+    [x] Dashboard for interaction 
+     with downloaded video: 
+     - show status/progress/speed 
+     - click to: 
+      ^ open video/audio file 
+      ^ audio extraction/conversion 
+     - long-click to manage files: 
+      ^ copy 
+      ^ move 
+      ^ rename 
+      ^ redownload 
+      ^ remove 
+      ^ delete 
+      ^ pause/resume 
+    [x] Custom download manager 
+     supporting: 
+     - pause/resume 
+     - YouTube link validation on 
+     resume through different 
+     networks and/or expire time 
+    [x] new translations: 
+     - Slovak 
+     - Slovenian 
+     - Vietnamese 
+     - Finnish 
+     
      v2.7 - Aug 20 2013 
     ----------------------------------- 
     [x] auto-patch experimental 
@@ -88,13 +159,13 @@ CHANGELOG
      
      v2.6.2 - Aug 08 2013 
     ----------------------------------- 
-    [x] experimantal signature patch 
+    [x] experimental signature patch 
      
      v2.6.1 - Jul 26 2013 
     ----------------------------------- 
     [x] option to show resolutions 
      into the video list 
-    [x] experimantal signature patch 
+    [x] experimental signature patch 
      
      v2.6 - Jul 17 2013 
     ----------------------------------- 
@@ -245,8 +316,9 @@ CHANGELOG
      
      v1.7 - Mar 03 2012 
     ----------------------------------- 
-    [x] Italian translation 
-    [x] Portuguese (Portugal) transl. 
+    [x] translations: 
+     - Italian 
+     - Portuguese (Portugal) 
     [x] option to force the locale 
      
      v1.6 - Mar 01 2013 
@@ -325,7 +397,22 @@ CHANGELOG
 TO-DO LIST
 ================================================================
 
-    [v] downloads dashboard (WIP)
-    [ ] default format/filter selection for video download
-    [ ] use icon/logo to identify codecs available
-    [ ] make the App tablet friendly
+	[ ] implement other FFmpeg functions
+	[ ] compile FFmpeg to support x86 Android ABI
+	[ ] option for automatic audio extraction after download
+	[ ] default format/filter selection for video download
+	[ ] use icon/logo to identify codecs available (expand the custom ShareActivity adapter)
+	[ ] make the App tablet friendly
+	[ ] handle SourceForge servers down; fallback on GitHub for apk download:
+	    page: https://github.com/dentex/ytdownloader
+	    file: https://github.com/dentex/ytdownloader/blob/master/dentex.youtube.downloader_v.*.apk?raw=true
+	[ ] use custom DM for other download tasks (apk update, ffmpeg binary [wip])
+	[ ] option to include downloaded videos into dashboard backup (or make menu entry "archive")
+
+KNOWN ISSUES
+================================================================
+	[x] Downloads running:
+		- for a long time (around 20 or 30 minutes)
+		AND 
+		- without having the Dashboard Activity to the front
+		may be forced to PAUSE. In this case a manual resume is needed

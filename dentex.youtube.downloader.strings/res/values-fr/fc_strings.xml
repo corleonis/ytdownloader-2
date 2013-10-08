@@ -33,7 +33,7 @@
     <string name="afc_msg_app_doesnot_have_permission_to_delete_files">Cette application n\'a pas la permission de supprimer des fichiers/dossiers</string>
     <string name="afc_msg_cancelled">Annulé</string>
     <string name="afc_msg_cannot_connect_to_file_provider_service">Impossible de se connecter au service de fichier</string>
-    <string name="afc_msg_done">Fait</string>
+    <string name="afc_msg_done">Terminé</string>
     <string name="afc_msg_empty">&#8230;vide</string>
     <string name="afc_msg_filename_is_empty">Le nom du fichier est vide</string>
     <string name="afc_msg_loading">Chargement&#8230;</string>

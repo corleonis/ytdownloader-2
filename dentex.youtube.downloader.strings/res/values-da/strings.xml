@@ -7,6 +7,7 @@
     <string name="title_activity_donate">Donationer</string>
     <string name="title_activity_tutorials">Guides</string>
     <string name="title_activity_translators_show">Oversættere</string>
+    <string name="title_activity_dashboard">Instrumentbræt</string>
 
     <!-- ### ShareActivity ### -->
 
@@ -26,6 +27,7 @@
     <string name="invalid_url">Ikke muligt at hente websiden. URL\'en kan være ugyldig.</string>
     <string name="invalid_url_short">Ikke muligt at hente websiden.</string>
     <string name="invalid_response">Ugyldigt HTTP server-svar</string>
+    <string name="rtmpe_streams">Invalid HTTP server response.</string>
     <string name="bad_link">Tjek det fremviste link.</string>
     <string name="bad_link_dialog_msg">Ikke et gyldigt YouTube-link.</string>
     <string name="no_net">Ingen tilgængelig forbindelse.</string>
@@ -59,13 +61,11 @@ KOPIÈR derefter kommandoen (brug menuknappen) og tryk ENTER.</string>
     <string name="notification_downloading_pt2">Videofiler</string>
     <string name="notification_no_downloads">Ingen igangværende downloads</string>
     <string name="long_click_title">Håndter valgte link:</string>
-    <string name="extsdcard_info_title">Ikke en standard placeringssti</string>
-    <string name="extsdcard_info_msg">Filen downloades først i den standard download-mappe, og vil derefter blive flyttet til den valgte placering.</string>
     <string name="ffmpeg_ready">FFmpeg klar.</string>
     <string name="confirm_audio_checkbox1">Ekstrakt lyd efter download</string>
     <string name="confirm_audio_checkbox2">\n(som defineret i indstillinger)</string>
-    <string name="login_required">Login til YouTube er påkrævet</string>
-    <string name="login_required_dialog_msg">YTD kan ikke håndtere denne video.</string>
+    <string name="login_required">Login to YouTube may be required.</string>
+    <string name="encrypted_streams">Encrypted video stream</string>
     <string name="no_video_available">Ingen video tilgængelig.</string>
     <string name="retry_button_text">Forsøg igen</string>
     
@@ -83,7 +83,6 @@ KOPIÈR derefter kommandoen (brug menuknappen) og tryk ENTER.</string>
     <!-- ### SettingsActivity ### -->
 
     <string name="attention">Vær opmærksom!</string>
-    <string name="extsdcard_warning">Ikke muligt at skrive filer på det eksterne hukommelseskort.\nVender tilbage til standard hukommelseskort.</string>
     <string name="system_warning_title">Dette er en systemmappe</string>
     <string name="system_warning_msg">Den valgte sti vil falde tilbage til download-mappen i standard-hukommelseskortet.</string>
     <string name="sdcard_unmounted_warning">Hukommelseskort er IKKE sat i.</string>
@@ -133,11 +132,105 @@ KOPIÈR derefter kommandoen (brug menuknappen) og tryk ENTER.</string>
     <!-- ### DonateActivity ### -->
     
     <string name="paypal_item_name">YTD-donation</string>
-    <string name="paypal_title">PayPal</string>
 	<string name="paypal_summary">Støt YTD\'s udviklere med en donation</string>
+	<string name="flattr_summary">Flattr this App</string>
 	
 	<!-- ### FfmpegDownloadService ### -->
 	<string name="ffmpeg_install_failed">Installation af FFmpeg mislykkedes.</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Gennemført</string>
+	<string name="json_status_failed">Mislykket</string>
+	<string name="json_status_in_progress">I gang</string>
+	<string name="json_status_paused">Paused</string>
+	<string name="json_status_imported">Imported</string>
+	<string name="menu_search">søg&#8230;</string>
+	<string name="menu_backup">Backup</string>
+	<string name="menu_restore">Restore</string>
+	<string name="menu_import">Import a video</string>
+	<string name="menu_import_double">Video already added.</string>
+	<string name="menu_backup_info">Choose a folder to Backup Dashboard\'s data</string>
+	<string name="menu_restore_info">Restore Dashboard\'s data from file</string>
+	<string name="menu_restore_info_msg">Present data will be overwritten.</string>
+	<string name="menu_import_info">Import a video and manage it from the Dashboard</string>
+	<string name="menu_backup_result_ok">Dashboard data backup OK.</string>
+	<string name="menu_backup_result_failed">Error during backup.</string>
+	<string name="menu_restore_result_ok">Dashboard data restored.</string>
+	<string name="menu_restore_result_failed">Error during restore.</string>
+	<string name="unsupported_operation">Unsupported operation.</string>
+	<string name="invalid_data">Invalid data.</string>
+	<string name="open_chooser_title">Open with:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Open</item>
+	    <item>Extract audio only</item>
+        <item>Udtræk og kod lyd til mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Open</item>
+        <item>Encode to mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Open</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg er ikke installeret eller aktiveret:</string>
+	<string name="ffmpeg_not_enabled_msg">Åbn indstillinger?</string>
+	<string name="remove_video">Slet video efter lydekstration (ingen bekræftelse!)</string>
+	<string name="remove_original_audio">Delete audio after conversion (no confirmation!)</string>
+	<string name="edit_id3_tags">Slet ID3-tags</string>
+	<string name="id3_album">Album</string>
+	<string name="id3_artist">Artist</string>
+	<string name="id3_title">Title</string>
+	<string name="id3_year">Year</string>
+	<string name="id3_genre">Genre</string>
+	
+	<string name="audio_extr_info">Contained audio stream:</string>
+	
+	<string name="dashboard_long_click_entry_0">Kopier</string>
+	<string name="dashboard_long_click_entry_1">Flyt</string>
+	<string name="dashboard_long_click_entry_2">Slet</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Kopier</item>
+	    <item>Flyt</item>
+        <item>Omdøb</item>
+        <item>Re-download the video</item>
+        <item>Remove from Dashboard</item>
+        <item>Remove and delete file</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Kopier</item>
+	    <item>Flyt</item>
+        <item>Omdøb</item>
+        <item>Re-download the video</item>
+        <item>Remove from Dashboard</item>
+        <item>Remove and delete file</item>
+        <item>Pause/Resume</item>
+    </string-array>
+    
+	<string name="move_error">Fejl under flytning</string>
+    <string name="move_progress">Flytning af fil i gang&#8230;</string>
+    <string name="move_ok">Flytning af fil gennemført.</string>
+    <string name="long_press_warning_title">Handlingen er ikke udført:</string>
+    <string name="long_press_warning_msg">Overlapning af kilde- og placeringsmapper.</string>
+    <string name="long_press_warning_msg2">En kopi eksisterer allerede i denne mappe.</string>
+    <string name="audio_extr_warning_msg">Same audio file already extracted.</string>
+
+	<string name="delete_video_confirm">Bekræft, at du vil slette denne video.</string>
+	<string name="remove_video_confirm">Confirm you want to remove this video?</string>
+	<string name="delete_video_ok">%1$s succesfuldt slettet.</string>
+	<string name="delete_video_failed">Fejl: %1$s er ikke slettet.</string>
+	
+	<string name="empty_dashboard">Ingen downloadet video.</string>
+
+    <!-- ### preferences ### -->
+
+    <!-- -->
+    <string name="dashboard_summary">Åbn YTD\'s instrumentbræt</string>
 
     <!-- -->
     <string name="settings_cat_ui">Brugerflade</string>
@@ -163,17 +256,6 @@ KOPIÈR derefter kommandoen (brug menuknappen) og tryk ENTER.</string>
     <string name="ssh_info_summary">Vis et hurtigt tip om fjernstyring af download via SSH</string>
     <string name="audio_tutorial_title">Guide til lydekstration</string>
     <string name="audio_tutorial_summary">Åbn en kort guide om funktionen til lydekstration</string>
-    <string name="audio_tutorial_text">For at udstrække eller konvertere lyden fra en downloadet video til mp3:
-\n\n*) Aktiver lydindstillingerne og download FFmpeg;
-\n\n*) Vælg ekstrationstypen: 
-\n\n\"Ekstrakt kun\" vil besvare lyden fra videoen som det er (WebM-filer indeholder en \"Ogg Vorbis\"-lyd;
- MP4, 3GPP og store/medium FLV-videoer indeholder en \"AAC\"-lydstrøm; FLV små indeholder en \"mp3\");
-\n\n\"ekstration, og kodning til mp3" vil konvertere den udstrakte lyd til en mp3 kodet med forskellige bitrater.
-\n\nFra nu af vil et afkrydsningsfelt dukke op under bekræftelse af download, når du klikker på en video
-i YTD\'s videoliste.
-Når afkrydset, lydekstrationen vil begynde efter færdiggørelse af download. 
-(for at skjule afkrydsningsfeltet skal du deaktivere muligheden for lydekstration).
-\n\nVælg i indstillingerne, hvis du vil fjerne videofilen efter en succesfuld lydekstration.</string>
     
     <!-- -->
     <string name="settings_cat_folder">Download-mappe</string>
@@ -194,9 +276,13 @@ Når afkrydset, lydekstrationen vil begynde efter færdiggørelse af download.
     <string name="show_size_list_summary">Hent filstørrelsen for hvert element i listen a tilgængelige videoer (meget langsommere)</string>
     <string name="show_thumb_title">Vis forhåndsvisninger af billeder</string>
     <string name="show_thumb_summary">Download forhåndsvisning af billede sammen med videolisten</string>
+    <string name="show_resolutions_title">Show video resolutions</string>
+    <string name="show_resolutions_summary">Replace the quality indication with the video resolution</string>
     
     <!-- -->
     <string name="settings_cat_advanced">Avanceret</string>
+    <string name="enable_advanced_features_title">Aktiver avancerede funktioner</string>
+    <string name="enable_advanced_features_summary">Download FFmpeg \"plugin\"</string>
     <string name="mp3_bitrate_title">Mp3 encoding bitrate:</string>
     <string name="audio_extraction_type_title">Ekstraktionstype</string>
     <string name="remove_video_title">Fjernelse af video</string>
@@ -204,14 +290,6 @@ Når afkrydset, lydekstrationen vil begynde efter færdiggørelse af download.
     
     <!-- -->
     <string name="settings_cat_notifications">Notifikationer</string>
-    <string name="download_manager_notification_title">Administrer systemsnotifikationer</string>
-    <string name="download_manager_notification_dialog_title">Vis notifikationer for downloads:</string>
-    
-    <string-array name="download_manager_notification_entries">
-        <item>Mens i gang og efter færdiggørelse</item>
-        <item>Mens i gang kun</item>
-        <item>Aldrig</item>
-    </string-array>
     
     <string name="notification_defaults_title">Standardnotifikation</string>
     <string name="notification_defaults_dialog_title">YTD\'s egen standardnotifikation</string>
@@ -236,57 +314,10 @@ Når afkrydset, lydekstrationen vil begynde efter færdiggørelse af download.
     <string name="settings_cat_app">Applikation</string>
     <string name="settings_cat_about_condensed">Om</string>
     <string name="title_changelog">Ændringslog</string>
-    <string name="screen_licences_code_title">Licenser og kode</string>
-
-    <!-- -->
     <string name="settings_cat_licenses">Licenser</string>
 
     <string name="credits_title">Kreditter</string>
     <string name="title_activity_credits_show">Andre licenser og oversættelser</string>
-    
-    <string name="credits_text0">\tOverordnede licenser
-\n\n
-Denne app er udgivet under GPL-3.0.
-\n(YouTubeDownloader til Android-ophavsret &#169; 2013 Samuele Rini).
-\n\n
-FFmpeg-binæret (<http>http://www.ffmpeg.org/index.html</http>), 
-brugt til lydekstrations-funktionen er udgivet under GPL-3.0.
-\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 FFmpeg-udviklerne).
-\n\n
-Filvælgeren er udgivet under MIT-licensen.
-\n(android-filechooser Copyright &#169; 2012 Hai Bison).
-\n\n
-Liblame-bibliotektet brugt til at kompilere FFmpeg er udgivet under LGPL.
-Et GibHub-projekt, <http>https://github.com/intervigilium/liblame</http>, 
-er blevet brugt til at kompilere lame-bibliotekterne til Android.
-\n(liblame Copyright &#169; 2010 Ethan Chen)
-\n(LAME Copyright &#169; 1999-2007 The LAME Project,
-\nCopyright &#169; 1999-2001 Mark Taylor,
-\nCopyright &#169; 1998 Micheal Cheng)
-\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
-\n\n
-YTD\'s mp3-tags er skrevet med MyID3: et Java-ID3-tag-bibliotek
-(<http>http://www.fightingquaker.com/myid3</http> og <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
-udgivet under LGPL som dets afhængige Jakarta Regexp-bibliotek.
-\n(MyID3 Copyright &#169; 2008 Charles M. Chen, tilpasset til Android af Romulus Urakagi Ts\'ai).
-\n\n
-For flere informationer henvises til de dedikerede menuer og til licensfilerne fra dette projekts kildekode
-\n</string>
-    
-    <string name="credits_text1">\tKodeuddrag-licenser
-\n\n
-Denne app bruger nogle kodestumper fra: 
-\n\n
-1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
-\nCopyright &#169; 2012 The CyanogenMod Project, licenseret under GNU GPLv2-licensen.
-\nTeksten for licensen kan findes i LICENSE_GPL-filen eller på <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
-\n\n
-2) Stack Overflow (<http>http://stackoverflow.com</http>), et spørgsmål-og-svar-side for programmører, hvor al indhold er CC BY-SA 3.0-licenseret (se <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
-\n\n
-For flere detaljer, kig efter kommentarerne i YTD\'s Java-kode.</string>
-    <string name="credits_translators">\n\tOversættelser
-\n\nYderligere lokaliseringer takket være:</string>
-    <string name="translators_info">\nFor mere info:</string>
         
     <!-- -->
     <string name="settings_cat_code">Kildekode</string>
@@ -302,7 +333,7 @@ For flere detaljer, kig efter kommentarerne i YTD\'s Java-kode.</string>
 \nGratis og open source Android-app til at downloade YouTube-videoer!
 \nhttps://sourceforge.net/projects/ytdownloader/files/</string>
 	<string name="help_translate_title">Hjælp med at oversætte denne app</string>
-    <string name="help_translate_summary">Gå til www.getlocalization.com/ytdownloader</string>
+    <string name="xda_title">Thread on XDA forum</string>
     
     <!-- -->
     <string name="settings_cat_ssh">SSH</string>
@@ -315,6 +346,13 @@ at indsætte i remote shell (vil KUN virke, hvis placerings-PC\'en er bosat det 
 	<string name="ssh_to_longpress_menu_summary">Flyt \"Send via SSH\"-handling ind i langt tryk-menuen ud fra videolisten</string>
 	
     <!-- -->
+	<string name="settings_cat_system">System</string>
 	<string name="enable_logging_title">Aktiver logning</string>
 	<string name="enable_logging_summary">Inkluder YTD\'s beseder i system-loggen. Obligatorisk for at sende en logcat til udvikleren.</string>
+	<string name="clear_dashboard_title">Empty the Dashboard</string>
+	<string name="clear_dashboard_summary">Clear all dashboard\'s references (may fix some crashes)</string>
+	<string name="clear_dashboard_msg">Are you sure?\nThis will clear all the list in the Dashboard.</string>
+	<string name="clear_dashboard_ok">Dashboard cleared.</string>
+	<string name="clear_dashboard_failed">Dashboard emptying failed.</string>
+	
 </resources>

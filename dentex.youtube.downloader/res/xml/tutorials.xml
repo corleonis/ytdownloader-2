@@ -18,9 +18,9 @@
        	android:summary="@string/ssh_info_summary"
        	android:defaultValue="true"/>
    	
-   	<Preference 
+   	<!-- <Preference 
         android:key="audio_tutorial"
         android:title="@string/audio_tutorial_title" 
-        android:summary="@string/audio_tutorial_summary"/>
+        android:summary="@string/audio_tutorial_summary"/> -->
 
 </PreferenceScreen>

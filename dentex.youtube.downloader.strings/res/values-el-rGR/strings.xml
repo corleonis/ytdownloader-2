@@ -7,7 +7,7 @@
     <string name="title_activity_donate">Δωρεές</string>
     <string name="title_activity_tutorials">Οδηγοί</string>
     <string name="title_activity_translators_show">Μεταφραστές</string>
-    <string name="title_activity_dashboard">Πίνακας ελέγχου</string>
+    <string name="title_activity_dashboard">Πίνακας Ελέγχου</string>
 
     <!-- ### ShareActivity ### -->
 
@@ -27,6 +27,7 @@
     <string name="invalid_url">Αδυναμία ανάκτησης ιστοσελίδας. Η URL μπορεί να μην είναι έγκυρη.</string>
     <string name="invalid_url_short">Αδυναμία ανάκτησης ιστοσελίδας.</string>
     <string name="invalid_response">Μη έγκυρη απόκριση διακομιστή HTTP.</string>
+    <string name="rtmpe_streams">Μη έγκυρη απόκριση διακομιστή HTTP.</string>
     <string name="bad_link">Ελέγξτε τον παρεχόμενο σύνδεσμο.</string>
     <string name="bad_link_dialog_msg">Μη έγκυρος σύνδεσμος YouTube.</string>
     <string name="no_net">Δεν υπάρχει σύνδεση.</string>
@@ -60,13 +61,11 @@
     <string name="notification_downloading_pt2">αρχείων βίντεο</string>
     <string name="notification_no_downloads">Καμία λήψη σε εξέλιξη</string>
     <string name="long_click_title">Χειρισμός επιλεγμένου συνδέσμου:</string>
-    <string name="extsdcard_info_title">Μη τυπική διαδρομή προορισμού</string>
-    <string name="extsdcard_info_msg">Το αρχείο λαμβάνεται αρχικά στον τυπικό φάκελο λήψεων και μετά θα μετακινηθεί στον επιλεγμένο προορισμό.</string>
     <string name="ffmpeg_ready">FFmpeg έτοιμος.</string>
     <string name="confirm_audio_checkbox1">Εξαγωγή ήχου μετά τη λήψη</string>
     <string name="confirm_audio_checkbox2">\n(όπως καθορίστηκε στις ρυθμίσεις)</string>
-    <string name="login_required">Η σύνδεση στο YouTube είναι απαραίτητη.</string>
-    <string name="login_required_dialog_msg">Το YTD δεν μπορεί να διαχειριστεί αυτό το βίντεο.</string>
+    <string name="login_required">Μπορεί να χρειάζεται σύνδεση στο YouTube.</string>
+    <string name="encrypted_streams">Κρυπτογραφημένη ροή βίντεο</string>
     <string name="no_video_available">Κανένα βίντεο διαθέσιμο.</string>
     <string name="retry_button_text">Επανάληψη</string>
     
@@ -84,7 +83,6 @@
     <!-- ### SettingsActivity ### -->
 
     <string name="attention">Προσοχή!</string>
-    <string name="extsdcard_warning">Αδυναμία εγγραφής αρχείων στην αφαιρούμενη κάρτα μνήμης.\nΕπιστροφή στην τυπική κάρτα μνήμης.</string>
     <string name="system_warning_title">Αυτός είναι ένας φάκελος συστήματος</string>
     <string name="system_warning_msg">Η επιλεγμένη διαδρομή θα επιστρέψει στο φάκελο λήψεων της τυπικής κάρτας μνήμης.</string>
     <string name="sdcard_unmounted_warning">Η κάρτα μνήμης ΔΕΝ έχει τοποθετηθεί</string>
@@ -134,8 +132,8 @@
     <!-- ### DonateActivity ### -->
     
     <string name="paypal_item_name">Δωρεά YTD</string>
-    <string name="paypal_title">PayPal</string>
 	<string name="paypal_summary">Υποστήριξη προγραμματιστή του YTD με μια δωρεά</string>
+	<string name="flattr_summary">Flattr αυτή την εφαρμογή</string>
 	
 	<!-- ### FfmpegDownloadService ### -->
 	<string name="ffmpeg_install_failed">Αποτυχία εγκατάστασης FFmpeg.</string>
@@ -144,7 +142,24 @@
 	<string name="json_status_completed">Ολοκληρώθηκε</string>
 	<string name="json_status_failed">Αποτυχία</string>
 	<string name="json_status_in_progress">Σε εξέλιξη</string>
+	<string name="json_status_paused">Παύση</string>
+	<string name="json_status_imported">Εισήχθη</string>
 	<string name="menu_search">αναζήτηση&#8230;</string>
+	<string name="menu_backup">Λήψη αντιγράφου ασφαλείας</string>
+	<string name="menu_restore">Επαναφορά</string>
+	<string name="menu_import">Εισαγωγή βίντεο</string>
+	<string name="menu_import_double">Το βίντεο έχει ήδη προστεθεί.</string>
+	<string name="menu_backup_info">Επιλέξτε ένα φάκελο για αποθήκευση των δεδομένων του Πίνακα Ελέγχου</string>
+	<string name="menu_restore_info">Επαναφορά των δεδομένων του Πίνακα Ελέγχου από αρχείο</string>
+	<string name="menu_restore_info_msg">Τα υπάρχοντα δεδομένα θα διαγραφούν.</string>
+	<string name="menu_import_info">Εισαγωγή βίντεο και διαχείριση του από τον Πίνακα Ελέγχου</string>
+	<string name="menu_backup_result_ok">Η λήψη αντιγράφου ασφαλείας του Πίνακα Ελέγχου ολοκληρώθηκε.</string>
+	<string name="menu_backup_result_failed">Σφάλμα κατά τη λήψη αντιγράφου ασφαλείας.</string>
+	<string name="menu_restore_result_ok">Τα δεδομένα του Πίνακα Ελέγχου ανακτήθηκαν.</string>
+	<string name="menu_restore_result_failed">Σφάλμα κατά την ανάκτηση.</string>
+	<string name="unsupported_operation">Μη υποστηριζόμενη λειτουργία.</string>
+	<string name="invalid_data">Μη έγκυρα δεδομένα.</string>
+	<string name="open_chooser_title">Άνοιγμα με:</string>
 	
 	<string-array name="dashboard_click_entries">
 	    <item>Άνοιγμα</item>
@@ -157,22 +172,44 @@
         <item>Κωδικοποίηση σε mp3</item>
     </string-array>
     
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Άνοιγμα</item>
+    </string-array>
+    
 	<string name="ffmpeg_not_enabled_title">Το FFmpeg δεν είναι εγκατεστημένο ή ενεργοποιημένο:</string>
 	<string name="ffmpeg_not_enabled_msg">Άνοιγμα ρυθμίσεων;</string>
 	<string name="remove_video">Διαγραφή βίντεο μετά την εξαγωγή ήχου (χωρίς επιβεβαίωση!)</string>
-	<string name="edit_id3_tags">Τροποποίηση ετικετών ID3</string>
 	<string name="remove_original_audio">Διαγραφή ήχου μετά την μετατροπή (χωρίς επιβεβαίωση!)</string>
+	<string name="edit_id3_tags">Τροποποίηση ετικετών ID3</string>
+	<string name="id3_album">Άλμπουμ</string>
+	<string name="id3_artist">Καλλιτέχνης</string>
+	<string name="id3_title">Τίτλος</string>
+	<string name="id3_year">Έτος</string>
+	<string name="id3_genre">Είδος</string>
+	
+	<string name="audio_extr_info">Περιεχόμενη ροή ήχου:</string>
 	
 	<string name="dashboard_long_click_entry_0">Αντιγραφή</string>
 	<string name="dashboard_long_click_entry_1">Μετακίνηση</string>
 	<string name="dashboard_long_click_entry_2">Διαγραφή</string>
 	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Αντιγραφή</item>
+	    <item>Μετακίνηση</item>
+        <item>Μετονομασία</item>
+        <item>Εκ νέου λήψη του βίντεο</item>
+        <item>Απομάκρυνση από τον Πίνακα Ελέγχου</item>
+        <item>Απομάκρυνση και διαγραφή αρχείου</item>
+    </string-array> -->
+
 	<string-array name="dashboard_long_click_entries">
 	    <item>Αντιγραφή</item>
 	    <item>Μετακίνηση</item>
         <item>Μετονομασία</item>
-        <item>Remove from Dashboard</item>
-        <item>Remove and delete file</item>
+        <item>Εκ νέου λήψη του βίντεο</item>
+        <item>Απομάκρυνση από τον Πίνακα Ελέγχου</item>
+        <item>Απομάκρυνση και διαγραφή αρχείου</item>
+        <item>Παύση/Συνέχιση</item>
     </string-array>
     
 	<string name="move_error">Σφάλμα κατά τη μετακίνηση.</string>
@@ -181,8 +218,10 @@
     <string name="long_press_warning_title">Η διεργασία δεν εκτελέστηκε:</string>
     <string name="long_press_warning_msg">Οι φάκελοι προέλευσης και προορισμού συμπίπτουν.</string>
     <string name="long_press_warning_msg2">Υπάρχει ήδη ένα αντίγραφο σε αυτό το φάκελο.</string>
+    <string name="audio_extr_warning_msg">Το ίδιο αρχείο ήχου έχει ήδη εξαχθεί.</string>
 
 	<string name="delete_video_confirm">Είστε σίγουρος ότι θέλετε να διαγράψετε αυτό το βίντεο;</string>
+	<string name="remove_video_confirm">Είστε σίγουρος ότι θέλετε να απομακρύνετε αυτό το βίντεο;</string>
 	<string name="delete_video_ok">%1$s διαγράφτηκε επιτυχώς.</string>
 	<string name="delete_video_failed">Σφάλμα: %1$s δε διαγράφτηκε.</string>
 	
@@ -191,7 +230,7 @@
     <!-- ### preferences ### -->
 
     <!-- -->
-    <string name="dashboard_summary">Ανοίγει τον πίνακα ελέγχου του YTD</string>
+    <string name="dashboard_summary">Ανοίγει τον Πίνακα Ελέγχου του YTD</string>
 
     <!-- -->
     <string name="settings_cat_ui">Διεπαφή χρήστη</string>
@@ -217,16 +256,6 @@
     <string name="ssh_info_summary">Εμφάνιση σύντομης οδηγίας για λήψη μέσω SSH</string>
     <string name="audio_tutorial_title">Οδηγός εξαγωγής ήχου</string>
     <string name="audio_tutorial_summary">Ανοίγει ένας σύντομος οδηγός για την εξαγωγή ήχου</string>
-    <string name="audio_tutorial_text">Για να εξάγετε ή να μετατρέψετε σε mp3 τον ήχο από ένα ληφθέν βίντεο:
-\n\n*) Ενεργοποιείστε την επιλογή ήχου και κατεβάστε τον FFmpeg,
-\n\n*) Επιλέξτε τον τύπο εξαγωγής:
-\n\n\"Μόνο εξαγωγή\" διατηρεί τον ήχο από το βίντεο ως έχει (τα αρχεία WebM περιέχουν ήχο Ogg Vorbis, 
-τα MP4, 3GPP και μεγάλα/μεσαία FLV περιέχουν ήχο AAC, τα μικρά FLV περιέχουν ήχο mp3)
-\n\n\"Εξαγωγή και κωδικοποίηση σε mp3\" μετατρέπει τον εξαχθέντα ήχο σε mp3, στο επιλεχθέν bitrate.
-\n\nΑπό εδώ και στο εξής, ένα πλαίσιο επιλογής θα εμφανίζεται στο μήνυμα επιβεβαίωσης λήψης βίντεο.
-Όταν θα επιλέγεται, η διαδικασία εξαγωγής του ήχου θα ξεκινάει μετά την ολοκλήρωση λήψης του βίντεο
-(για να κρύψετε το πλαίσιο επιλογής, απενεργοποιείστε την επιλογή εξαγωγής ήχου).
-\n\nΕπιλέξτε στις ρυθμίσεις αν θέλετε να διαγράφεται το βίντεο μετά την επιτυχημένη εξαγωγή ήχου.</string>
     
     <!-- -->
     <string name="settings_cat_folder">Φάκελος λήψεων</string>
@@ -247,6 +276,8 @@
     <string name="show_size_list_summary">Εμφάνιση του μεγέθους αρχείου για κάθε αντικείμενο στη λίστα των διαθέσιμων βίντεο (πιο αργό)</string>
     <string name="show_thumb_title">Εμφάνιση εικόνας προεπισκόπησης </string>
     <string name="show_thumb_summary">Λήψη εικόνας προεπισκόπησης μαζί με τη λίστα βίντεο</string>
+    <string name="show_resolutions_title">Εμφάνιση αναλύσεων βίντεο</string>
+    <string name="show_resolutions_summary">Αντικατάσταση της ένδειξης ποιότητας με την αναλύση του βίντεο</string>
     
     <!-- -->
     <string name="settings_cat_advanced">Για προχωρημένους</string>
@@ -259,14 +290,6 @@
     
     <!-- -->
     <string name="settings_cat_notifications">Ειδοποιήσεις</string>
-    <string name="download_manager_notification_title">Διαχείριση ειδοποιήσεων συστήματος</string>
-    <string name="download_manager_notification_dialog_title">Εμφάνιση ειδοποιήσεων διαχειριστή λήψεων συστήματος:</string>
-    
-    <string-array name="download_manager_notification_entries">
-        <item>Κατά τη διάρκεια και μετά την ολοκλήρωση</item>
-        <item>Μόνο κατά τη διάρκεια</item>
-        <item>Ποτέ</item>
-    </string-array>
     
     <string name="notification_defaults_title">Προεπιλογές ειδοποιήσεων</string>
     <string name="notification_defaults_dialog_title">Προεπιλογές ειδοποιήσεων του YTD</string>
@@ -291,59 +314,10 @@
     <string name="settings_cat_app">Εφαρμογή</string>
     <string name="settings_cat_about_condensed">Σχετικά</string>
     <string name="title_changelog">Αρχείο αλλαγών</string>
-    <string name="screen_licences_code_title">Άδειες και Κώδικας</string>
-
-    <!-- -->
     <string name="settings_cat_licenses">Άδειες</string>
 
     <string name="credits_title">Ευχαριστίες</string>
     <string name="title_activity_credits_show">Άλλες άδειες και μεταφράσεις</string>
-    
-    <string name="credits_text0">\tΚύριες Άδειες
-\n\n
-Αυτή η εφαρμογή έχει κυκλοφορήσει υπό την GPL-3.0.
-\n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
-\n\n
-Ο κώδικας FFmpeg (<http>http://www.ffmpeg.org/index.html</http>), 
-που χρησιμοποιείται για την εξαγωγή ήχου, έχει κυκλοφορήσει υπό την GPL-3.0.
-\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
-\n\n
-Η βιβλιοθήκη επιλογέα αρχείων έχει κυκλοφορήσει υπό την άδεια MIT.
-\n(android-filechooser Copyright &#169; 2012 Hai Bison).
-\n\n
-Η βιβλιοθήκη liblame, που χρησιμοποιείται για τη μεταγλώττιση του FFmpeg, έχει κυκλοφορήσει υπό την LGPL.
-A GitHub project, <http>https://github.com/intervigilium/liblame</http>,  
-έχει χρησιμοποιηθεί για τη μεταγλώττιση των βιβλιοθηκών lame για το Android.
-\n(liblame Copyright &#169; 2010 Ethan Chen)
-\n(LAME Copyright &#169; 1999-2007 The LAME Project,
-\nCopyright &#169; 1999-2001 Mark Taylor,
-\nCopyright &#169; 1998 Micheal Cheng)
-\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
-\n\n
-Οι ετικέτες mp3 του YTD έχουν γραφτεί με το MyID3: μια Java βιβλιοθήκη ID3 ετικετών
-(<http>http://www.fightingquaker.com/myid3</http> και <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>)
-που έχει κυκλοφορήσει υπό την LGPL, όπως και η βιβλιοθήκη Jakarta Regexp.
-\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
-\n\n
-Για περισσότερες πληροφορίες, ανατρέξτε στα σχετικά μενού και στα διαθέσιμα αρχεία αδειών
-στον πηγαίο κώδικα αυτού του project.
-\n</string>
-    
-    <string name="credits_text1">\tΆδειες αποσπασμάτων κώδικα
-\n\n
-Αυτή η εφαρμογή χρησιμοποιεί ορισμένα τμήματα κώδικα από:
-\n\n
-1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
-\nCopyright &#169; 2012 The CyanogenMod Project, με την άδεια της GNU GPLv2.
-\nΤο κείμενο της άδειας μπορεί να βρεθεί στο αρχείο LICENSE_GPL ή στον <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
-\n\n
-2) Stack Overflow (<http>http://stackoverflow.com</http>), ένας ιστοτόπος ερωταποκρίσεων, όπου όλο το περιεχόμενο
-είναι αδειοδοτημένο κατά CC BY-SA 3.0 (δείτε <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
-\n\n
-Για περισσότερες λεπτομέρειες, κοιτάξτε τα σχόλια στον κώδικα Java του YTD. </string>
-    <string name="credits_translators">\n\tΜεταφράσεις
-\n\nΕπιπλέον, επιπρόσθετες μεταφράσεις χάρη στους:</string>
-    <string name="translators_info">\nΓια περισσότερες πληροφορίες:</string>
         
     <!-- -->
     <string name="settings_cat_code">Πηγαίος Κώδικας</string>
@@ -359,7 +333,7 @@ A GitHub project, <http>https://github.com/intervigilium/liblame</http>,
 \nΔωρεάν και Ανοιχτού Κώδικα εφαρμογή Android για λήψη βίντεο του YouTube!
 \nhttps://sourceforge.net/projects/ytdownloader/files/</string>
 	<string name="help_translate_title">Βοηθήστε στη μετάφραση της εφαρμογής</string>
-    <string name="help_translate_summary">Μετάβαση στον www.getlocalization.com/ytdownloader</string>
+    <string name="xda_title">Ενότητα στο φόρουμ XDA</string>
     
     <!-- -->
     <string name="settings_cat_ssh">SSH</string>
@@ -375,4 +349,10 @@ A GitHub project, <http>https://github.com/intervigilium/liblame</http>,
 	<string name="settings_cat_system">Σύστημα</string>
 	<string name="enable_logging_title">Ενεργοποίηση καταγραφής</string>
 	<string name="enable_logging_summary">Συμπερίληψη μηνυμάτων του YTD στο αρχείο καταγραφής συστήματος. Υποχρεωτικό για αποστολή logcat στον προγραμματιστή.</string>
+	<string name="clear_dashboard_title">Άδειασμα του Πίνακα Ελέγχου</string>
+	<string name="clear_dashboard_summary">Καθαρισμός όλων των αναφορών του Πίνακα Ελέγχου (μπορεί να διορθώσει μερικές καταρρεύσεις) </string>
+	<string name="clear_dashboard_msg">Είστε σίγουρος;\nΑυτό θα καθαρίσει όλη τη λίστα του Πίνακα Ελέγχου</string>
+	<string name="clear_dashboard_ok">Ο Πίνακας Ελέγχου άδειασε.</string>
+	<string name="clear_dashboard_failed">Αποτυχία αδειάσματος Πίνακα Ελέγχου.</string>
+	
 </resources>

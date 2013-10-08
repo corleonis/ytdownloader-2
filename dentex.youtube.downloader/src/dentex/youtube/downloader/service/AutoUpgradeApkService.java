@@ -38,8 +38,6 @@ import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.bugsense.trace.BugSenseHandler;
-
 import android.app.DownloadManager;
 import android.app.DownloadManager.Query;
 import android.app.DownloadManager.Request;
@@ -61,8 +59,10 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.bugsense.trace.BugSenseHandler;
+
 import dentex.youtube.downloader.R;
-import dentex.youtube.downloader.ShareActivity;
 import dentex.youtube.downloader.YTD;
 import dentex.youtube.downloader.utils.Utils;
 
@@ -74,15 +74,12 @@ public class AutoUpgradeApkService extends Service {
 	private DownloadManager downloadManager;
 	File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 	private static String webPage;
-	public long enqueue;
+	private long enqueue;
 	private Uri fileUri;
 	private AsyncUpdate asyncAutoUpdate;
-	public String onlineVersion;
-	public String onlineChangelog;
 	public static String matchedVersion;
 	public static String matchedChangeLog;
-	public String matchedMd5;
-	boolean isAsyncTaskRunning = false;
+	private String matchedMd5;
 	private String compRes = "init";
 	
 	@Override
@@ -94,6 +91,7 @@ public class AutoUpgradeApkService extends Service {
 	public void onCreate() {
 		Utils.logger("d", "service created", DEBUG_TAG);
 		BugSenseHandler.initAndStartSession(this, YTD.BugsenseApiKey);
+		BugSenseHandler.leaveBreadcrumb("AutoUpgradeApkService_onCreate");
 		registerReceiver(apkReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 		
 		try {
@@ -131,9 +129,9 @@ public class AutoUpgradeApkService extends Service {
 	
 	private class AsyncUpdate extends AsyncTask<String, Void, Integer> {
 		
-		protected void onPreExecute() {
+		/*protected void onPreExecute() {
 			isAsyncTaskRunning = true;
-		}
+		}*/
 
     	protected Integer doInBackground(String... urls) {
             // params comes from the execute() call: params[0] is the url.
@@ -154,7 +152,7 @@ public class AutoUpgradeApkService extends Service {
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("User-Agent","<em>" + ShareActivity.USER_AGENT_FIREFOX + "</em>");
+                conn.setRequestProperty("User-Agent","<em>" + YTD.USER_AGENT_FIREFOX + "</em>");
                 conn.setReadTimeout(20000 /* milliseconds */);
                 conn.setConnectTimeout(30000 /* milliseconds */);
                 conn.setInstanceFollowRedirects(false);

@@ -31,8 +31,11 @@ import group.pals.android.lib.ui.filechooser.io.localfile.LocalFile;
 import group.pals.android.lib.ui.filechooser.services.IFileProvider;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Stack;
+
+import com.bugsense.trace.BugSenseHandler;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -57,32 +60,31 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-import dentex.youtube.downloader.ffmpeg.FfmpegController;
+import dentex.youtube.downloader.menu.AboutActivity;
+import dentex.youtube.downloader.menu.DonateActivity;
+import dentex.youtube.downloader.menu.TutorialsActivity;
 import dentex.youtube.downloader.service.AutoUpgradeApkService;
 import dentex.youtube.downloader.service.FfmpegDownloadService;
+import dentex.youtube.downloader.utils.Json;
 import dentex.youtube.downloader.utils.PopUps;
 import dentex.youtube.downloader.utils.Utils;
 
 public class SettingsActivity extends Activity {
 	
 	public static final String DEBUG_TAG = "SettingsActivity";
-	private static final int _ReqChooseFile = 0;
 	public static String chooserSummary;
-	static SharedPreferences settings = YTD.settings;
-	static final String PREFS_NAME = YTD.PREFS_NAME;
-	public static Activity mActivity;
+	public static Activity sSettings;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+        BugSenseHandler.leaveBreadcrumb("SettingsActivity_onCreate");
         this.setTitle(R.string.title_activity_settings);
-        
-    	settings = getSharedPreferences(PREFS_NAME, 0);
 
     	// Theme init
     	Utils.themeInit(this);
@@ -92,7 +94,7 @@ public class SettingsActivity extends Activity {
     	
         // Load default preferences values
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
-
+        
         // Display the fragment as the main content.
         getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new SettingsFragment())
@@ -115,14 +117,9 @@ public class SettingsActivity extends Activity {
         	case R.id.menu_about:
         		startActivity(new Intent(this, AboutActivity.class));
         		return true;
-        	case R.id.menu_dm:
-        		Intent viewIntent = new Intent(android.app.DownloadManager.ACTION_VIEW_DOWNLOADS);
-        		if(viewIntent.resolveActivity(getPackageManager()) != null) {
-        			startActivity(viewIntent);
-        		} else {
-        			Toast.makeText(this, getString(R.string.no_downloads_sys_app), Toast.LENGTH_LONG).show();
-        		}
-        		return true;
+        	/*case R.id.menu_dashboard:
+        		startActivity(new Intent(this, DashboardActivity.class));
+        		return true;*/
         	case R.id.menu_tutorials:
         		startActivity(new Intent(this, TutorialsActivity.class));
         		return true;
@@ -133,21 +130,29 @@ public class SettingsActivity extends Activity {
 
 	public static class SettingsFragment extends PreferenceFragment implements OnSharedPreferenceChangeListener {
     	
-		//private Preference dm;
+		private Preference dashboard;
 		private Preference filechooser;
 		private Preference up;
-		private CheckBoxPreference ownNot;
 		private Preference th;
 		private Preference lang;
-		private static CheckBoxPreference audio;
-		protected int cpuVers;
-		public static String link;
-		public CheckBoxPreference bs;
-		//public WebView webview;
+		private static CheckBoxPreference advanced;
+		private int cpuVers;
+		private String link;
+		private Preference clear;
 
 		public static final int YTD_SIG_HASH = -1892118308; // final string
 		//public static final int YTD_SIG_HASH = -118685648; // dev test: desktop
 		//public static final int YTD_SIG_HASH = 1922021506; // dev test: laptop
+		
+		private File srcDir;
+		private File srcFile;
+		private File dstDir;
+		private File dstFile;
+		
+		/*private NotificationCompat.Builder aBuilder;
+		private NotificationManager aNotificationManager;
+		private int progress;
+		private long id;*/
 		
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -156,36 +161,93 @@ public class SettingsActivity extends Activity {
             addPreferencesFromResource(R.xml.settings);
             
             final ContextThemeWrapper boxThemeContextWrapper = new ContextThemeWrapper(getActivity(), R.style.BoxTheme);
-            mActivity = getActivity();
+            sSettings = getActivity();
             
-            //webview = new WebView(getActivity());
+            srcDir = getActivity().getExternalFilesDir(null);
+            srcFile = new File(srcDir, YTD.ffmpegBinName);
+            dstDir = getActivity().getDir("bin", 0);
+    		dstFile = new File(dstDir, YTD.ffmpegBinName);
 
-            String cf = settings.getString("CHOOSER_FOLDER", "");
+            String cf = YTD.settings.getString("CHOOSER_FOLDER", "");
             if (cf.isEmpty() && cf != null) {
             	chooserSummary = getString(R.string.chooser_location_summary);
             } else {
-            	chooserSummary = settings.getString("CHOOSER_FOLDER", "");
+            	chooserSummary = YTD.settings.getString("CHOOSER_FOLDER", "");
             }
             initSwapPreference();
-            initSizePreference();
+            //initSizePreference();
             
             for(int i=0;i<getPreferenceScreen().getPreferenceCount();i++){
                 initSummary(getPreferenceScreen().getPreference(i));
             }
 
-            /*dm = (Preference) findPreference("dm");
-            dm.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+            dashboard = (Preference) findPreference("dashboard");
+            dashboard.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             	
                 public boolean onPreferenceClick(Preference preference) {
-                	Intent viewIntent = new Intent(android.app.DownloadManager.ACTION_VIEW_DOWNLOADS);
-	        		if(viewIntent.resolveActivity(getPackageManager()) != null) {
-	        			startActivity(viewIntent);
-	        		} else {
-	        			Toast.makeText(getActivity(), getActivity().getString(R.string.error), Toast.LENGTH_LONG).show();
-	        		}
+                	startActivity(new Intent(getActivity(), DashboardActivity.class));
                     return true;
                 }
-            });*/
+            });
+            
+            clear = (Preference) findPreference("clear_dashboard");
+            clear.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+            	
+            	public boolean onPreferenceClick(Preference preference) {
+                	
+            		String previousJson = Json.readJsonDashboardFile(sSettings);
+            		boolean smtInProgressOrPaused = (previousJson.contains(YTD.JSON_DATA_STATUS_IN_PROGRESS) || 
+            										 previousJson.contains(YTD.JSON_DATA_STATUS_PAUSED)) ;
+            		
+    	        	if (YTD.JSON_FILE.exists() && !previousJson.equals("{}\n") && !smtInProgressOrPaused) {
+    	        		
+	            		AlertDialog.Builder adb = new AlertDialog.Builder(boxThemeContextWrapper);
+	                    adb.setIcon(android.R.drawable.ic_dialog_info);
+	                    adb.setTitle(getString(R.string.information));
+	                    adb.setMessage(getString(R.string.clear_dashboard_msg));
+	                    
+	                    adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	                    	
+	                        public void onClick(DialogInterface dialog, int which) {
+	                        	if (YTD.JSON_FILE.delete()) {
+	                        		Toast.makeText(getActivity(), getString(R.string.clear_dashboard_ok), Toast.LENGTH_SHORT).show();
+	                        		Utils.logger("v", "Dashboard cleared", DEBUG_TAG);
+	                        		
+	                        		// clean thumbnails dir
+		                        	File thFolder = sSettings.getDir(YTD.THUMBS_FOLDER, 0);
+		                        	for(File file: thFolder.listFiles()) file.delete();
+		                        	
+		                        	// clear the videoinfo shared pref
+		                        	YTD.videoinfo.edit().clear().apply();
+	                        	} else {
+	                        		Toast.makeText(getActivity(), getString(R.string.clear_dashboard_failed), Toast.LENGTH_LONG).show();
+	                        		Utils.logger("w", "clear_dashboard_failed", DEBUG_TAG);
+	                        	}
+	                        }
+	                    });
+	                    
+	                    adb.setNegativeButton(getString(R.string.dialogs_negative), new DialogInterface.OnClickListener() {
+	                    	
+	                    	public void onClick(DialogInterface dialog, int which) {
+	                        	// cancel
+	                        }
+	                    });
+	
+	                    AlertDialog helpDialog = adb.create();
+	                    if (! (getActivity()).isFinishing()) {
+	                    	helpDialog.show();
+	                    }
+    	        	} else {
+    	        		Toast.makeText(sSettings, getString(R.string.long_press_warning_title) + 
+    	        				"\n- " + getString(R.string.notification_downloading_pt1) + " (" + 
+    	        				getString(R.string.json_status_paused) + "/" + getString(R.string.json_status_in_progress) + " )" + 
+    	        				"\n- " + getString(R.string.empty_dashboard), 
+    	        				Toast.LENGTH_LONG).show();
+    	        	}
+            		
+                    return true;
+            	}
+            });
             
             filechooser = (Preference) getPreferenceScreen().findPreference("open_chooser");
             filechooser.setOnPreferenceClickListener(new OnPreferenceClickListener() {
@@ -195,7 +257,7 @@ public class SettingsActivity extends Activity {
                 	if (intent != null) {
 	            		intent.putExtra(FileChooserActivity._Rootpath, (Parcelable) new LocalFile(Environment.getExternalStorageDirectory()));
 	            		intent.putExtra(FileChooserActivity._FilterMode, IFileProvider.FilterMode.DirectoriesOnly);
-	            		startActivityForResult(intent, _ReqChooseFile);
+	            		startActivityForResult(intent, 0);
                 	} 
                 	return true;
                 }
@@ -205,31 +267,18 @@ public class SettingsActivity extends Activity {
             up.setOnPreferenceClickListener(new OnPreferenceClickListener() {
             	
                 public boolean onPreferenceClick(Preference preference) {
-                	Intent intent = new Intent(getActivity(),  UpgradeApkActivity.class);
-    		        startActivity(intent);
+    		        startActivity(new Intent(getActivity(),  UpgradeApkActivity.class));
 		            return true;
                 }
             });
             
             initUpdate();
             
-            ownNot = (CheckBoxPreference) findPreference("enable_own_notification");
-            ownNot.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-            	
-                public boolean onPreferenceClick(Preference preference) {
-                	if (!ownNot.isChecked() && ShareActivity.mId == 1) {
-                		ShareActivity.mNotificationManager.cancelAll();
-                		ShareActivity.mId = 0;
-                	}
-					return true;
-                }
-            });
-            
             th = (Preference) findPreference("choose_theme");
 			th.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 				
 				public boolean onPreferenceChange(Preference preference, Object newValue) {
-					String theme = settings.getString("choose_theme", "D");
+					String theme = YTD.settings.getString("choose_theme", "D");
 			    	if (theme.equals("D")) {
 			    		getActivity().setTheme(R.style.AppThemeDark);
 			    	} else {
@@ -245,28 +294,27 @@ public class SettingsActivity extends Activity {
 			lang.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 				
 				public boolean onPreferenceChange(Preference preference, Object newValue) {
-					String language = settings.getString("lang", "default");
+					String language = YTD.settings.getString("lang", "default");
 					if (!language.equals(newValue)) Utils.reload(getActivity());
 					return true;
 				}
 			});
 
-			audio = (CheckBoxPreference) findPreference("enable_audio_extraction");
-			audio.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+			advanced = (CheckBoxPreference) findPreference("enable_advanced_features");
+			advanced.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 				
 				public boolean onPreferenceChange(Preference preference, Object newValue) {
-					boolean audioExtrEnabled = settings.getBoolean("enable_audio_extraction", false);
-					File binDir = getActivity().getDir("bin", 0);
-					boolean ffmpegInstalled = new File(binDir, "ffmpeg").exists();
+					boolean audioExtrEnabled = YTD.settings.getBoolean("enable_advanced_features", false);
+					boolean ffmpegInstalled = new File(dstDir, "ffmpeg").exists();
 					if (!audioExtrEnabled) {
 						cpuVers = armCpuVersion();
 						boolean isCpuSupported = (cpuVers > 0) ? true : false;
 						Utils.logger("d", "isCpuSupported: " + isCpuSupported, DEBUG_TAG);
 						
 						if (!isCpuSupported) {
-							audio.setEnabled(false);
-							audio.setChecked(false);
-							settings.edit().putBoolean("FFMPEG_SUPPORTED", false).commit();
+							advanced.setEnabled(false);
+							advanced.setChecked(false);
+							YTD.settings.edit().putBoolean("FFMPEG_SUPPORTED", false).commit();
 
 							AlertDialog.Builder adb = new AlertDialog.Builder(boxThemeContextWrapper);
 	                        adb.setIcon(android.R.drawable.ic_dialog_alert);
@@ -311,7 +359,7 @@ public class SettingsActivity extends Activity {
 	                        	helpDialog.show();
 	                        }	                            
 						} else {
-							settings.edit().putBoolean("FFMPEG_SUPPORTED", true).commit();
+							YTD.settings.edit().putBoolean("FFMPEG_SUPPORTED", true).commit();
 						}
 						
 						Utils.logger("d", "ffmpegInstalled: " + ffmpegInstalled, DEBUG_TAG);
@@ -341,15 +389,14 @@ public class SettingsActivity extends Activity {
 	                            	
 	                            	File sdcardAppDir = getActivity().getExternalFilesDir(null);
 	                            	if (sdcardAppDir != null) {
-	                            		File src = new File(getActivity().getExternalFilesDir(null), FfmpegController.ffmpegBinName);
-	                            		File dst = new File(getActivity().getDir("bin", 0), FfmpegController.ffmpegBinName);
-	                            		if (!src.exists()) {
+	                            		if (!srcFile.exists()) {
 			                            	Intent intent = new Intent(getActivity(), FfmpegDownloadService.class);
 			                            	intent.putExtra("CPU", cpuVers);
 			                            	intent.putExtra("DIR", sdcardAppDir.getAbsolutePath());
 			                            	getActivity().startService(intent);
+	                            			//downloadFfmpeg();
 	                            		} else {
-	                            			FfmpegDownloadService.copyFfmpegToAppDataDir(getActivity(), src, dst);
+	                            			copyFfmpegToAppDataDir(getActivity(), srcFile, dstFile);
 	                            		}
 	                            	} else {
 	                            		Utils.logger("w", getString(R.string.unable_save_dialog_msg), DEBUG_TAG);
@@ -378,9 +425,94 @@ public class SettingsActivity extends Activity {
 					}
 				}
 			});
-			
-			initAudioPreference();
 		}
+        
+        /*private void downloadFfmpeg() {
+    		String link = getString(R.string.ffmpeg_download_dialog_msg_link_bitbucket, cpuVers);
+    		Utils.logger("d", "FFmpeg download link: " + link, DEBUG_TAG);
+            
+            DownloadTaskListener dtl = new DownloadTaskListener() {
+            	
+    			@Override
+    			public void finishDownload(DownloadTask task) {
+
+    				String md5 = null;
+    				if (cpuVers == 7) md5 = "33fcf4d5a3b2e5193bd42c2c1fc2abc7";
+    				if (cpuVers == 5) md5 = "0606931cfbaca351a47e59ab198bc81e";
+    				
+    				if (Utils.checkMD5(md5, srcFile)) {
+    					copyFfmpegToAppDataDir(sSettings, srcFile, dstFile);
+    				} else {
+    					SettingsActivity.SettingsFragment.touchAdvPref(true, false);
+    					srcFile.delete();
+    					Toast.makeText(sSettings, getString(R.string.download_failed), Toast.LENGTH_LONG).show();
+    				}
+    				
+    				aNotificationManager.cancel(3);
+    			}
+
+    			@Override
+    			public void preDownload(DownloadTask task) {
+    				aBuilder =  new NotificationCompat.Builder(sSettings);
+    				aNotificationManager = (NotificationManager) sSettings.getSystemService(Context.NOTIFICATION_SERVICE);
+    				aBuilder.setSmallIcon(R.drawable.ic_stat_ytd);
+    				aBuilder.setContentTitle(YTD.ffmpegBinName);
+    				aBuilder.setContentText(getString(R.string.ffmpeg_download_notification));
+    				aNotificationManager.notify(3, aBuilder.build());
+    				
+    				SettingsActivity.SettingsFragment.touchAdvPref(false, false);
+    			}
+    			
+    			@Override
+    			public void updateProcess(DownloadTask task) {
+    				progress = Maps.mDownloadPercentMap.get(id);
+    				aBuilder.setProgress(100, progress, false);
+    				aNotificationManager.notify(3, aBuilder.build());
+    			}
+
+    			@Override
+    			public void errorDownload(DownloadTask task, Throwable error) {
+    				Log.e(DEBUG_TAG, YTD.ffmpegBinName + " download FAILED");
+    				Toast.makeText(sSettings,  YTD.ffmpegBinName + ": " + getString(R.string.download_failed), Toast.LENGTH_LONG).show();
+    				
+    				dstFile.delete();
+    				File temp = new File(dstFile.getAbsolutePath() + DownloadTask.TEMP_SUFFIX);
+    				temp.delete();
+    				
+    				SettingsActivity.SettingsFragment.touchAdvPref(true, false);
+    			}
+
+    			@Override
+    			public void resumeFromDifferentIp(DownloadTask task, Throwable error) {
+    				// nothing to do
+    			}
+            	
+            };
+            
+            id = System.currentTimeMillis();
+            try {
+            	DownloadTask dt = new DownloadTask(sSettings, id, link, YTD.ffmpegBinName, srcDir.getPath(), dtl, false);
+    			Maps.dtMap.put(id, dt);
+    			dt.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    		} catch (MalformedURLException e) {
+    			Log.e(DEBUG_TAG, "unable to start Download Manager -> " + e.getMessage());
+    		}
+    	}*/
+    	
+    	public static void copyFfmpegToAppDataDir(Context context, File src, File dst) {
+    		try {
+    			Toast.makeText(context, "YTD: " + context.getString(R.string.ffmpeg_install), Toast.LENGTH_LONG).show();
+    			Utils.logger("i", "trying to copy FFmpeg binary to private App dir", DEBUG_TAG);
+    			Utils.copyFile(src, dst);
+    			
+    			Toast.makeText(context, "YTD: " + context.getString(R.string.ffmpeg_ready), Toast.LENGTH_LONG).show();
+    			touchAdvPref(true, true);
+    		} catch (IOException e) {
+    			Toast.makeText(context, "YTD: " + context.getString(R.string.ffmpeg_install_failed), Toast.LENGTH_LONG).show();
+    			Log.e(DEBUG_TAG, "ffmpeg copy to app_bin failed. " + e.getMessage());
+    			touchAdvPref(true, false);
+    		}
+    	}
         
         private int armCpuVersion() {
         	String cpuAbi = Build.CPU_ABI;
@@ -395,7 +527,7 @@ public class SettingsActivity extends Activity {
 		}
 
 		public void initUpdate() {
-			int prefSig = settings.getInt("APP_SIGNATURE", 0);
+			int prefSig = YTD.settings.getInt("APP_SIGNATURE", 0);
 			Utils.logger("d", "prefSig: " + prefSig, DEBUG_TAG);
 			
 			if (prefSig == 0 ) {
@@ -403,7 +535,7 @@ public class SettingsActivity extends Activity {
 					Utils.logger("d", "Found YTD signature: update check possile", DEBUG_TAG);
 					up.setEnabled(true);
 					
-					if (settings.getBoolean("autoupdate", false)) {
+					if (YTD.settings.getBoolean("autoupdate", false)) {
 						Utils.logger("i", "autoupdate enabled", DEBUG_TAG);
 						autoUpdate(getActivity());
 					}
@@ -412,7 +544,7 @@ public class SettingsActivity extends Activity {
 		    		up.setEnabled(false);
 		    		up.setSummary(R.string.update_disabled_summary);
 		    	}
-				SharedPreferences.Editor editor = settings.edit();
+				SharedPreferences.Editor editor = YTD.settings.edit();
 		    	editor.putInt("APP_SIGNATURE", Utils.currentHashCode);
 		    	if (editor.commit()) Utils.logger("d", "saving sig pref...", DEBUG_TAG);
 			} else {
@@ -420,7 +552,7 @@ public class SettingsActivity extends Activity {
 					Utils.logger("d", "YTD signature in PREFS: update check possile", DEBUG_TAG);
 					up.setEnabled(true);
 					
-					if (settings.getBoolean("autoupdate", false)) {
+					if (YTD.settings.getBoolean("autoupdate", false)) {
 						Utils.logger("i", "autoupdate enabled", DEBUG_TAG);
 						autoUpdate(getActivity());
 					}
@@ -432,7 +564,7 @@ public class SettingsActivity extends Activity {
 		}
 
 		private void initSwapPreference() {
-			boolean swap = settings.getBoolean("swap_location", false);
+			boolean swap = YTD.settings.getBoolean("swap_location", false);
 			PreferenceScreen p = (PreferenceScreen) findPreference("open_chooser");
             if (swap == true) {
             	p.setEnabled(true);
@@ -441,7 +573,7 @@ public class SettingsActivity extends Activity {
             }
 		}
 		
-		private void initSizePreference() {
+		/*private void initSizePreference() {
 			CheckBoxPreference s = (CheckBoxPreference) findPreference("show_size");
 			CheckBoxPreference l = (CheckBoxPreference) findPreference("show_size_list");
             if (l.isChecked()) {
@@ -450,22 +582,7 @@ public class SettingsActivity extends Activity {
             } else {
             	s.setEnabled(true);
             }
-		}
-		
-		private void initAudioPreference() {
-			boolean ffmpegSupported = settings.getBoolean("FFMPEG_SUPPORTED", true);
-			if (ffmpegSupported) {
-				String encode = settings.getString("audio_extraction_type", "extr");
-				Preference p = (Preference) findPreference("mp3_bitrate");
-				if (encode.equals("conv") == true) {
-					p.setEnabled(true);
-				} else {
-					p.setEnabled(false);
-				}
-			} else {
-				touchAudioExtrPref(false, false);
-			}
-		}
+		}*/
         
 		/*@Override
 	    public void onStart() {
@@ -498,8 +615,7 @@ public class SettingsActivity extends Activity {
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         	updatePrefSummary(findPreference(key));
         	initSwapPreference();
-        	initSizePreference();
-        	initAudioPreference();
+        	//initSizePreference();
         }
 
 		private void initSummary(Preference p){
@@ -525,9 +641,9 @@ public class SettingsActivity extends Activity {
 
         @Override
 		public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            switch (requestCode) {
-            case _ReqChooseFile:
+        	if (requestCode == 0) {
                 if (resultCode == RESULT_OK) {
+                	BugSenseHandler.leaveBreadcrumb("SettingsActivity_filechooser_RESULT_OK");
                     @SuppressWarnings("unchecked")
 					List<LocalFile> files = (List<LocalFile>) data.getSerializableExtra(FileChooserActivity._Results);
                     	
@@ -535,14 +651,14 @@ public class SettingsActivity extends Activity {
 					chooserSummary = chooserFolder.toString();
                 	Utils.logger("d", "file-chooser selection: " + chooserSummary, DEBUG_TAG);
                 	
-                	switch (pathCheck(chooserFolder)) {
+                	switch (Utils.pathCheck(chooserFolder)) {
                 		case 0:
                 			// Path on standard sdcard
                 			setChooserPrefAndSummary();
 	                		break;
                 		case 1:
                 			// Path not writable
-                			chooserSummary = ShareActivity.dir_Downloads.getAbsolutePath();
+                			chooserSummary = YTD.dir_Downloads.getAbsolutePath();
                 			setChooserPrefAndSummary();
                 			PopUps.showPopUp(getString(R.string.system_warning_title), getString(R.string.system_warning_msg), "alert", getActivity());
                 			//Toast.makeText(getActivity(), getString(R.string.system_warning_title), Toast.LENGTH_SHORT).show();
@@ -552,7 +668,6 @@ public class SettingsActivity extends Activity {
                 			Toast.makeText(getActivity(), getString(R.string.sdcard_unmounted_warning), Toast.LENGTH_SHORT).show();
                 	}
                 }
-                break;
             }
         }
 
@@ -560,47 +675,32 @@ public class SettingsActivity extends Activity {
 			for(int i=0;i<getPreferenceScreen().getPreferenceCount();i++){
 				initSummary(getPreferenceScreen().getPreference(i));
 			}
-			settings.edit().putString("CHOOSER_FOLDER", chooserSummary).apply();
+			YTD.settings.edit().putString("CHOOSER_FOLDER", chooserSummary).apply();
 		}
         
-        public int pathCheck(File path) {
-            String state = Environment.getExternalStorageState();
-            if (Environment.MEDIA_MOUNTED.equals(state)) {
-            	if (path.canWrite()) {
-					return 0;
-				} else {
-					Utils.logger("w", "Path not writable", DEBUG_TAG);
-					return 1;
-				}
-            } else {
-            	Utils.logger("w", "Path not mounted", DEBUG_TAG);
-            	return 2;
-            }
-        }
-        
         public static void autoUpdate(Context context) {
-	        long storedTime = settings.getLong("time", 0); // final string
+	        long storedTime = YTD.settings.getLong("time", 0); // final string
 	        //long storedTime = 10000; // dev test: forces auto update
 	        
 	        boolean shouldCheckForUpdate = !DateUtils.isToday(storedTime);
 	        Utils.logger("i", "shouldCheckForUpdate: " + shouldCheckForUpdate, DEBUG_TAG);
 	        if (shouldCheckForUpdate) {
-	        	//if (settings.getBoolean("DOWNLOAD_PROVIDER_.apk", true)) {
+	        	//if (YTD.settings.getBoolean("DOWNLOAD_PROVIDER_.apk", true)) {
 	        		Intent intent = new Intent(context, AutoUpgradeApkService.class);
 		        	context.startService(intent);
 	    		//}
 	        }
 	        
 	        long time = System.currentTimeMillis();
-	        if (settings.edit().putLong("time", time).commit()) Utils.logger("i", "time written in prefs", DEBUG_TAG);
+	        if (YTD.settings.edit().putLong("time", time).commit()) Utils.logger("i", "time written in prefs", DEBUG_TAG);
 		}
 
-		public static void touchAudioExtrPref(final boolean enable, final boolean check) {
-			mActivity.runOnUiThread(new Runnable() {
+		public static void touchAdvPref(final boolean enable, final boolean check) {
+			sSettings.runOnUiThread(new Runnable() {
 				public void run() {
-					Utils.logger("d", "audio-extraction-checkbox: " + "enabled: " + enable + " / checked: " + check, DEBUG_TAG);
-					audio.setEnabled(enable);
-					audio.setChecked(check);
+					Utils.logger("d", "adv-features-checkbox: " + "enabled: " + enable + " / checked: " + check, DEBUG_TAG);
+					advanced.setEnabled(enable);
+					advanced.setChecked(check);
 			    }
 			});
 		}
@@ -613,6 +713,7 @@ public class SettingsActivity extends Activity {
 		 * A: http://stackoverflow.com/users/1473663/nobu-games
 		 */
 		public Intent createEmailOnlyChooserIntent(Intent source, CharSequence chooserTitle) {
+			BugSenseHandler.leaveBreadcrumb("createEmailOnlyChooserIntent");
 			Stack<Intent> intents = new Stack<Intent>();
 	        Intent i = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",
 	        		"info@domain.com", null));

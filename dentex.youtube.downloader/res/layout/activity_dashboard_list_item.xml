@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboard_list_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true" >
+    -->
+
+    <ImageView
+        android:id="@+id/thumb"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/thumb_preview_descr"
+        android:padding="3dp" />
+
+    <!--
+    <ImageView
+            android:id="@+id/overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:alpha="0.85"
+            android:layout_gravity="center"
+            android:contentDescription="@string/thumb_preview_descr" />
+    
+    </FrameLayout>
+    -->
+
+    <LinearLayout
+        android:id="@+id/text"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/thumb"
+        android:orientation="vertical"
+        android:padding="3dp" >
+
+        <TextView
+            android:id="@+id/filename_D"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            android:textIsSelectable="false"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/filename_L"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="false"
+            android:textSize="18sp" />
+
+        <ProgressBar
+            android:id="@+id/pb"
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+        
+		<RelativeLayout
+            android:id="@+id/h"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+			
+	    
+			<TextView
+                android:id="@+id/speed"
+                
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:textIsSelectable="false" />
+			
+			<TextView
+	            android:id="@+id/size"
+	            android:layout_toLeftOf="@id/speed"
+	            android:layout_width="fill_parent"
+	            android:layout_height="match_parent"
+	            android:textIsSelectable="false"
+	            android:textStyle="bold" />
+   
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/path"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textIsSelectable="false"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textIsSelectable="false"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

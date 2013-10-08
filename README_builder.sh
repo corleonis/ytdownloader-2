@@ -5,9 +5,10 @@ dest=README.md
 echo "YouTube Downloader for Android _ by dentex
 ================================================================
 
-Android 3+ App to download videos from YouTube
+Download YouTube video and extract or convert audio to mp3.
+For Android 4+ 
 
-*Free, OpenSource and AdFree*
+*Free and without Ads*
 
 ################################################################
 " > $dest
@@ -27,13 +28,13 @@ echo -e "\nMD5 checksum: \`"$md5 >> $dest
 echo "
 NOTICE
 ================================================================
-    Please comply with the GPL below. 
+    Complying with the GPL below is mandatory.
     It's not that difficult: just give proper credits 
     to this sources and release your modified ones.
 
 LICENSE
 ================================================================
-Copyright (C) 2012  Samuele Rini
+Copyright (C) 2012-2013  Samuele Rini
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -55,43 +56,18 @@ OTHER LICENSES
     Additional licenses informations about code used in this project
     is available from within the App's \"About\" menu:" >> $dest
 
-text0=`sed -n '/string name="credits_text0"/,/<\/string>/p' dentex.youtube.downloader.strings/res/values/strings.xml | grep -v -E '\/string|string name'`
+text0=`sed -n '/string name="credits_text"/,/<\/string>/p' dentex.youtube.downloader/res/values/donottranslate.xml | grep -v -E '\/string|string name'`
 echo -e $text0 | sed -e 's/^/    /' -e 's/&#169;/(C)/g' -e 's/<http>//g' -e 's/<\/http>//g' -e 's/\\./`/g' >> $dest
 
-text1=`sed -n '/string name="credits_text1"/,/<\/string>/p' dentex.youtube.downloader.strings/res/values/strings.xml | grep -v -E '\/string|string name'`
-echo -e $text1 | sed -e 's/^/    /' -e 's/&#169;/(C)/g' -e 's/<http>//g' -e 's/<\/http>//g' -e 's/\\./`/g' >> $dest
-
-echo "
-    i.e.:
-    *)  FfmpegController.java: GPL-3.0 - Copyright (C) 2009, Nathan Freitas, Orbot / The Guardian Project
-        http://openideals.com/guardian - https://github.com/guardianproject/android-ffmpeg-java
-    *)  Observer.java: reference - https://gist.github.com/shirou/659180
-    *)  SectionedAdapter.java: GPL-3.0 - Copyright (C) 2008-2010 CommonsWare, LLC
-        portions Copyright (C) 2008 Jeffrey Sharkey
-    *)  Utils.getCpuInfo(): http://www.roman10.net/how-to-get-cpu-information-on-android/ - by Liu Feipeng
-    *)  Utils.scanMedia(...): 
-        http://www.grokkingandroid.com/adding-files-to-androids-media-library-using-the-mediascanner/
-        by Wolfram Rittmeyer
-    *)  js-14.jar - Rhino: open-source implementation of JavaScript written entirely in Java; 
-        https://developer.mozilla.org/en-US/docs/Rhino - license: http://www.mozilla.org/MPL/2.0/
-    *)  Javascript function \"decryptSignature\" from the Greasemonkey script 
-        http://userscripts.org/scripts/show/25105 (MIT License) - by Gantt
-
-    Furthermore:
-    1) the device-framed screenshots in the project's directory have 
-    been generated with the \"Device Frame Generator\" Android App by 
-    Prateek Srivastava, available at 
-    <https://github.com/f2prateek/Device-Frame-Generator/>.
-    The generated artwork is released ander the \"Creative Commons 
-    Attribution 3.0 Unported\" license (CC BY).
-
-    2) the launcher and the status icons for YTD have been created by
-    Sam Plane, <http://samplane123.deviantart.com/>, released under the 
-    \"Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported\" 
-    license (CC BY-NC-ND).
-
-    For further details, <http://creativecommons.org/licenses/>.
-" >> $dest
+#echo "
+#    Additional note:
+#    1) the device-framed screenshots in the project's directory have 
+#    been generated with the \"Device Frame Generator\" Android App by 
+#    Prateek Srivastava, available at 
+#    <https://github.com/f2prateek/Device-Frame-Generator/>.
+#    The generated artwork is released ander the \"Creative Commons 
+#    Attribution 3.0 Unported\" license (CC BY).
+#" >> $dest
 
 echo "
 CHANGELOG
@@ -99,10 +75,16 @@ CHANGELOG
 
 changelog=`sed -n '/string name="changelog"/,/<\/string>/p' dentex.youtube.downloader/res/values/donottranslate.xml | grep -v -E '\/string|string name'`
 
-echo -e $changelog | sed 's/^/    /' >> $dest
+echo -e $changelog | sed -e 's/^ \^ /  \^ /g' -e 's/^/    /'>> $dest
 
 echo "
 TO-DO LIST
 ================================================================" >> $dest
 
 cat TODO >> $dest
+
+echo "
+KNOWN ISSUES
+================================================================" >> $dest
+
+cat KNOWN_ISSUES >> $dest

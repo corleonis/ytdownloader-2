@@ -6,7 +6,8 @@
     <string name="title_activity_about">Über</string>
     <string name="title_activity_donate">Spenden</string>
     <string name="title_activity_tutorials">Tutorials</string>
-    <string name="title_activity_translators_show">Übersetzer</string>    
+    <string name="title_activity_translators_show">Übersetzer</string>
+    <string name="title_activity_dashboard">Dashboard</string>
 
     <!-- ### ShareActivity ### -->
 
@@ -26,6 +27,7 @@
     <string name="invalid_url">Kann Webseite nicht laden. Möglicherweise ist der Link falsch.</string>
     <string name="invalid_url_short">Kann Webseite nicht laden.</string>
     <string name="invalid_response">Ungültige HTTP-Antwort.</string>
+    <string name="rtmpe_streams">Ungültige HTTP-Serverantwort.</string>
     <string name="bad_link">Angegebenen Link überprüfen:</string>
     <string name="bad_link_dialog_msg">Kein gültiger YouTube-Link.</string>
     <string name="no_net">Keine Verbindung vorhanden.</string>
@@ -59,11 +61,13 @@ Verzeichnis, füge den Befehl ein (verwende den Menü-Knopf) und drücke ENTER.<
     <string name="notification_downloading_pt2">Video-Dateien</string>
     <string name="notification_no_downloads">Keine aktiven Downloads</string>
     <string name="long_click_title">Bearbeite ausgewählten Link:</string>
-    <string name="extsdcard_info_title">Kein Standard Zielordner</string>
-    <string name="extsdcard_info_msg">Die Datei wird anfänglich in das Standard Download-Verzeichnis heruntergeladen und anschließend an den gewählte Ort verschoben.</string>
     <string name="ffmpeg_ready">FFmpeg bereit.</string>
     <string name="confirm_audio_checkbox1">Extrahiere Tonspur nach dem Download</string>
     <string name="confirm_audio_checkbox2">\n(wie in den Einstellungen definiert)</string>
+    <string name="login_required">Das Einloggen bei YouTube könnte erforderlich sein.</string>
+    <string name="encrypted_streams">Verschlüsselter Videostream</string>
+    <string name="no_video_available">Video nicht verfügbar!</string>
+    <string name="retry_button_text">Wiederholen</string>
     
     <string-array name="long_click_entries">
         <item>In die Zwischenablage kopieren</item>
@@ -73,13 +77,12 @@ Verzeichnis, füge den Befehl ein (verwende den Menü-Knopf) und drücke ENTER.<
     <string-array name="long_click_entries2">
         <item>In Zwischenablage kopieren</item>
         <item>Als Text teilen</item>
-        <item>Via SSH senden</item>
+        <item>Mit SSH senden</item>
     </string-array>
     
     <!-- ### SettingsActivity ### -->
 
     <string name="attention">Achtung!</string>
-    <string name="extsdcard_warning">Schreiben auf die externe SD-Karte unmöglich.\nInterne Standard SD-Karte wird wieder verwendet.</string>
     <string name="system_warning_title">Dies ist ein System-Ordner</string>
     <string name="system_warning_msg">Der gewählte Pfad wird durch das Standard Download Verzeichnis der internen SD-Karte ersetzt.</string>
     <string name="sdcard_unmounted_warning">SD-Karte ist nicht eingebunden</string>
@@ -90,8 +93,8 @@ Verzeichnis, füge den Befehl ein (verwende den Menü-Knopf) und drücke ENTER.<
     <string name="ffmpeg_download_dialog_title">Weitere Dateien werden benötigt. Sollen diese nun heruntergeladen werden?</string>
     <string name="ffmpeg_download_dialog_msg">Web link:</string>
     <string name="ffmpeg_device_not_supported">Dieses Gerät wird zurzeit nicht unterstützt.</string>
-    <string name="ffmpeg_support_mail">E-Mail an den Entwickler schicken?
-Du kannst alle Daten in deiner E-Mail App einsehen, bevor sie gesendet werden.</string>
+    <string name="ffmpeg_support_mail">E-mail an den Entwickler schreiben?
+\nDu kannst alle Daten in deiner E-mail App einsehen bevor sie gesendet werden.</string>
     <string name="ffmpeg_download_notification">FFmpeg herunterladen</string>
     <string name="ffmpeg_install">Installiere FFmpeg Daten&#8230;</string>
     <string name="email_via">Senden per Mail:</string>
@@ -114,9 +117,9 @@ Du kannst alle Daten in deiner E-Mail App einsehen, bevor sie gesendet werden.</
     <!-- ### DownloadsService ### -->
     
     <string name="ytd_video">YTD-Video</string>
-    <string name="copy_error">Fehler beim Kopieren</string>
+    <string name="copy_error">Fehler beim Kopieren!</string>
     <string name="copy_progress">Dateien werden kopiert&#8230;</string>
-    <string name="copy_ok">Kopieren abgeschlossen.</string>
+    <string name="copy_ok">Datei vollständig kopiert.</string>
     <string name="download_remove_failed">Fehler: temporäre Download-Datei wurde nicht gelöscht!</string>
     <string name="download_failed">Download fehlgeschlagen!</string>
     <string name="audio_extr_progress">Tonspur wird extrahiert&#8230;</string>
@@ -129,26 +132,114 @@ Du kannst alle Daten in deiner E-Mail App einsehen, bevor sie gesendet werden.</
     <!-- ### DonateActivity ### -->
     
     <string name="paypal_item_name">YTD Spenden</string>
-    <string name="paypal_title">PayPal</string>
 	<string name="paypal_summary">Unterstütze YDT\'s Entwickler mit einer Spende</string>
+	<string name="flattr_summary">Flattr diese App</string>
 	
 	<!-- ### FfmpegDownloadService ### -->
 	<string name="ffmpeg_install_failed">FFmpeg Installation fehlgeschlagen.</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Beendet</string>
+	<string name="json_status_failed">Fehlgeschlagen</string>
+	<string name="json_status_in_progress">In Bearbeitung</string>
+	<string name="json_status_paused">Angehalten</string>
+	<string name="json_status_imported">Importiert</string>
+	<string name="menu_search">Suche&#8230;</string>
+	<string name="menu_backup">Sicherung</string>
+	<string name="menu_restore">Wiederherstellen</string>
+	<string name="menu_import">Video importieren</string>
+	<string name="menu_import_double">Video bereits hinzugefügt!</string>
+	<string name="menu_backup_info">Ordner für Dashboard-Daten Sicherung festlegen</string>
+	<string name="menu_restore_info">Dashboard-Daten aus Datei wiederherstellen</string>
+	<string name="menu_restore_info_msg">Aktuelle Daten werden überschrieben!</string>
+	<string name="menu_import_info">Video importieren und über Dashboard verwalten</string>
+	<string name="menu_backup_result_ok">Dashboard Datensicherung erfolgreich</string>
+	<string name="menu_backup_result_failed">Fehler beim Sichern!</string>
+	<string name="menu_restore_result_ok">Dashboard Datensicherung wiederhergestellt</string>
+	<string name="menu_restore_result_failed">Fehler beim Wiederherstellen!</string>
+	<string name="unsupported_operation">Nichtunterstützte Operation.</string>
+	<string name="invalid_data">Ungültige Daten.</string>
+	<string name="open_chooser_title">Öffnen mit:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Öffnen</item>
+	    <item>Nur Audio extrahieren</item>
+        <item>Audio extrahieren und in MP3 umwandeln</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Öffnen</item>
+        <item>In Mp3 umwandeln</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Öffnen</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg nicht installiert oder aktiviert!</string>
+	<string name="ffmpeg_not_enabled_msg">Einstellungen offenen?</string>
+	<string name="remove_video">Videodatei-Löschung nach Tonspur-Extraktion (Ohne Bestätigung!)</string>
+	<string name="remove_original_audio">Audiodatei-Löschung nach Umwandlung (Ohne Bestätigung!)</string>
+	<string name="edit_id3_tags">ID3-Tags bearbeiten</string>
+	<string name="id3_album">Album</string>
+	<string name="id3_artist">Künstler</string>
+	<string name="id3_title">Titel</string>
+	<string name="id3_year">Jahr</string>
+	<string name="id3_genre">Genre</string>
+	
+	<string name="audio_extr_info">Beinhaltender Audio Stream:</string>
+	
+	<string name="dashboard_long_click_entry_0">Kopieren</string>
+	<string name="dashboard_long_click_entry_1">Verschieben</string>
+	<string name="dashboard_long_click_entry_2">Löschen</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Kopieren</item>
+	    <item>Verschieben</item>
+        <item>Umbenennen</item>
+        <item>Video erneut herunterladen</item>
+        <item>Vom Dashboard entfernen</item>
+        <item>Datei entfernen und löschen</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Kopieren</item>
+	    <item>Verschieben</item>
+        <item>Umbenennen</item>
+        <item>Video erneut herunterladen</item>
+        <item>Vom Dashboard entfernen</item>
+        <item>Datei entfernen und löschen</item>
+        <item>Pause/Wiedergeben</item>
+    </string-array>
+    
+	<string name="move_error">Fehler beim Verschieben!</string>
+    <string name="move_progress">Datei wird verschoben&#8230;</string>
+    <string name="move_ok">Verschieben der Datei abgeschlossen.</string>
+    <string name="long_press_warning_title">Nicht ausgeführt:</string>
+    <string name="long_press_warning_msg">Quelle- &amp; Zielordner sind gleich!</string>
+    <string name="long_press_warning_msg2">Datei in diesem Ordner bereits vorhanden!</string>
+    <string name="audio_extr_warning_msg">Diese Audio Datei existiert bereits.</string>
+
+	<string name="delete_video_confirm">Möchten Sie das Video wirklich löschen?</string>
+	<string name="remove_video_confirm">Möchten Sie das Video wirklich entfernen?</string>
+	<string name="delete_video_ok">%1$s erfolgreich gelöscht!</string>
+	<string name="delete_video_failed">Fehler: %1$s nicht gelöscht!</string>
+	
+	<string name="empty_dashboard">Keine heruntergeladenen Videos!</string>
 
     <!-- ### preferences ### -->
 
     <!-- -->
-    <string name="dm_title">Downloads</string>
-    <string name="dm_summary">Öffne System Download Manager</string>
+    <string name="dashboard_summary">YTDs Dashboard öffnen</string>
 
     <!-- -->
     <string name="settings_cat_ui">Benutzeroberfläche</string>
     <string name="lang_title">Sprache</string>
-    <string name="lang_dialog_title">Sprache (benötigt App-Neustart):</string>
+    <string name="lang_dialog_title">UI-Sprache auswählen:</string>
     <string name="choose_theme_title">Thema auswählen</string>
     <string-array name="choose_theme_entries">
         <item>Dunkel</item>
-        <item>Licht</item>
+        <item>Hell</item>
     </string-array>
     
     <!-- -->
@@ -156,8 +247,8 @@ Du kannst alle Daten in deiner E-Mail App einsehen, bevor sie gesendet werden.</
     <string name="quick_start_summ">Starte kurze Einführung</string>
     <string name="quick_start_text">Hier finden Sie nur die Einstellungen für \'YouTube Downloader\'.
 \n\nDie eigentliche App kann über den Share Button in der YouTube App aufgerufen werden, während das Video läuft.
-\n\nDann \'YouTube Downloader\' wählen und du erhältst weitere Benutzerhilfe.
-\n\nDu kannst auch jeden YouTube Klartext Link über jede App teilen, z.B. deinen Browser.</string>
+\n\nDann \'YouTube Downloader\' wählen und Sie erhalten weitere Benutzerhilfe.
+\n\nSie können auch jeden YouTube Klartext Link über jede App teilen, z.B. einen Browser.</string>
     <string name="general_info_title">Aktiviere Allgemeine Anleitung</string>
     <string name="general_info_summary">Starte allgemeine Anleitung beim öffnen</string>
     <string name="show_again_checkbox">Nächstes Mal nochmal anzeigen.</string>
@@ -165,16 +256,6 @@ Du kannst alle Daten in deiner E-Mail App einsehen, bevor sie gesendet werden.</
     <string name="ssh_info_summary">Zeige einen Hinweis über Remote Downloads via SSH</string>
     <string name="audio_tutorial_title">Tonspur Extraktions-Anleitung</string>
     <string name="audio_tutorial_summary">Öffne eine kurze Anleitung über die Tonspur Extraktionsfunktion</string>
-    <string name="audio_tutorial_text">Um die Tonspur aus der Videodatei zu extrahieren oder in MP3 zu konvertieren:
-\n\n*) Aktiviere die Tonspur-Einstellungen und lade FFmpeg herunter;
-\n\n*) Wähle den Extraktionstypen:
-\n\n\"nur extrahieren\" es wird die Tonspur des Videos erhalten wie sie ist (WebM Dateien beinhalten \"Ogg Vorbis\"
-Kodierung; MP4, 3GPP und große/mittelgroße FLV Videodateien enthalten eine \"AAC\"; kleine FLV Videodateien enthalten \"MP3\");
-\n\n\"Extrahieren und in MP3 kodieren\" es wird die extrahierte Tonspur mit der gewählten Bitrate in MP3 kodiert.
-\n\nVon nun an kann in der Downloadbestätigungs-Benachrichtigung ein Haken gesetzt werden wenn ein Eintrag
-in der YTD\'s Video Liste angeklickt wird. Ist der Haken gesetzt, wird die Tonspur-Extraktion starten, sobald der Videodownload abgeschlossen ist
-(zum verstecken der Option, deaktiviere die Audio Extraktions-Option).
-\n\nWähle in den Einstellungen, wenn die Video Datei nach erfolgreicher Tonspur-Extraktion gelöscht werden soll.</string>
     
     <!-- -->
     <string name="settings_cat_folder">Download-Ordner:</string>
@@ -195,35 +276,20 @@ in der YTD\'s Video Liste angeklickt wird. Ist der Haken gesetzt, wird die Tonsp
     <string name="show_size_list_summary">Lese die Dateigröße für jedes Stück in der Liste der verfügbaren Videos aus (viel langsamer)</string>
     <string name="show_thumb_title">Vorschaubild anzeigen</string>
     <string name="show_thumb_summary">Ein Vorschaubild zusammen mit der Video-Liste herunterladen.</string>
+    <string name="show_resolutions_title">Videoauflösung anzeigen</string>
+    <string name="show_resolutions_summary">Qualitätsindikation der Videoauflösung ersetzen</string>
     
     <!-- -->
-    <string name="settings_cat_audio">Audio</string>
-    <string name="enable_audio_extraction_title">Aktiviere Tonspur-Extraktion</string>
-    <string name="enable_audio_extraction_summary">Extrahiere und konvertiere die Tonspur vom heruntergeladenen Video (nur für den lokalen Download)</string>
-    <string name="mp3_bitrate_title">Bitrate für MP3 Kodierung (kbps)</string>
+    <string name="settings_cat_advanced">Erweitert</string>
+    <string name="enable_advanced_features_title">Erweiterte Funktionen aktivieren</string>
+    <string name="enable_advanced_features_summary">FFmpeg-\"Plugin\" herunterladen</string>
+    <string name="mp3_bitrate_title">Mp3-Encoding Bitrate:</string>
     <string name="audio_extraction_type_title">Extraktionstyp</string>
-    <string name="enable_audio_q_suffix_title">Hänge Qualitätshinweis an</string>
-    <string name="enable_audio_q_suffix_summary">Füge die Audioqualität am Ende des Dateinamens an</string>
     <string name="remove_video_title">Video entfernen</string>
     <string name="remove_video_summary">Aktiviere Videodatei-Löschung nach erfolgreicher Tonspur-Extraktion (Achtung: ohne Bestätigung)</string>
-
-    <string-array name="audio_extraction_type_entries">
-        <item>Nur extrahieren</item>
-        <item>Extrahieren und als MP3 kodieren</item>
-    </string-array>
     
     <!-- -->
     <string name="settings_cat_notifications">Benachrichtigungen</string>
-    <string name="enable_own_notification_title">Eigene Benachrichtigungen aktivieren</string>
-    <string name="enable_own_notification_summary">Zeige eine ausführliche Benachrichtigung über alle YTD Downloads</string>
-    <string name="download_manager_notification_title">System-Benachrichtigungen verwalten</string>
-    <string name="download_manager_notification_dialog_title">System-Benachrichtigungen des Download-Managers anzeigen</string>
-    
-    <string-array name="download_manager_notification_entries">
-        <item>Während des Downloads und nach Fertigstellung</item>
-        <item>Nur während des Downloads</item>
-        <item>Nie</item>
-    </string-array>
     
     <string name="notification_defaults_title">Benachrichtigungs-Standard</string>
     <string name="notification_defaults_dialog_title">YTD\'s eigene Benachrichtigungs-Standards</string>
@@ -239,7 +305,7 @@ in der YTD\'s Video Liste angeklickt wird. Ist der Haken gesetzt, wird die Tonsp
     </string-array>   
     
     <!-- -->
-    <string name="settings_cat_updates">Aktualisieren</string>
+    <string name="settings_cat_updates">Aktualisierungen</string>
     <string name="update_title">Nach Update suchen</string>
     <string name="autoupdate_title">Auto-Update aktivieren</string>
     <string name="autoupdate_summary">Beim ersten Start der App nach Updates suchen (neue Version wird automatisch heruntergeladen)</string>
@@ -248,59 +314,10 @@ in der YTD\'s Video Liste angeklickt wird. Ist der Haken gesetzt, wird die Tonsp
     <string name="settings_cat_app">Anwendung</string>
     <string name="settings_cat_about_condensed">Über</string>
     <string name="title_changelog">Changelog</string>
-    <string name="screen_licences_code_title">Lizenzen und Code</string>
-
-    <!-- -->
     <string name="settings_cat_licenses">Lizenzen</string>
 
     <string name="credits_title">Mitwirkende</string>
     <string name="title_activity_credits_show">Andere Lizenzen und Übersetzungen</string>
-    
-    <string name="credits_text0">\tHauptlizenz
-\n\n
-Diese App wird unter der GPL-3.0 Lizenz veröffentlicht.
-\n(YouTube Downloader für Android Copyright &#169; 2013 Samuele Rini).
-\n\n
-Die FFmpeg Binärdateien (<http>http://www.ffmpeg.org/index.html</http>), 
-verwendet für die Tonspur-Extraktions-Funktion, wird unter der GPL-3.0 Lizenz veröffentlicht.
-\n(FFmpeg Version 1.2 Copyright &#169; 2000-2013 the FFmpeg Entwickler).
-\n\n
-Die Filechooser Library wird unter der MIT Lizenz veröffentlicht.
-\n(android-filechooser Copyright &#169; 2012 Hai Bison).
-\n\n
-Die Liblame Library, verwendet um FFmpeg zu kompilieren, wird unter der LGPL Lizenz  veröffentlicht.
-Ein GitHub Projekt, <http>https://github.com/intervigilium/liblame</http>,
-wurde verwendet um die Lame Libraries für Android zu kompilieren.
-\n(liblame Copyright &#169; 2010 Ethan Chen)
-\n(LAME Copyright &#169; 1999-2007 The LAME Project,
-\nCopyright &#169; 1999-2001 Mark Taylor,
-\nCopyright &#169; 1998 Micheal Cheng)
-\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
-\n\n
-YTD\'s mp3 Tags wurden geschrieben mit MyID3: a Java ID3 Tag Library
-(<http>http://www.fightingquaker.com/myid3</http> und <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
-veröffentlicht unter der LGPL Lizenz, wie seine Abhängigkeit Jakarta Regexp Library.
-\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adaptiert für Android von Romulus Urakagi Ts\'ai).
-\n\n
-Für weitere Informationen, siehe die entsprechenden Menüs und die Lizenz Dateien
-diesen Projekts Quellcode.
-\n</string>
-    
-    <string name="credits_text1">\tQuellcode beinhaltet
-\n\n
-Diese App verwendet einige Codeteile von:
-\n\n
-1) CyanogenMod Custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
-\nCopyright &#169; 2012 The CyanogenMod Project, lizensiert unter der GNU GPLv2 Lizenz.
-\nDie Leizenz kann in der LICENSE_GPL Datei oder bei <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>  eingesehen werden
-\n\n
-2) Stack Overflow (<http>http://stackoverflow.com</http>), eine Frage und Antwort Seite für Programmierer, deren gesamter
-Inhalt unter der CC BY-SA 3.0 lizensiert ist (siehe <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
-\n\n
-Für weitere Details, siehe die Kommentare in YTD\s Java Code.</string>
-    <string name="credits_translators">\n\tÜbersetzungen
-\n\nWeitere, zusätzliche Lokalisierungen, Danke an:</string>
-    <string name="translators_info">\nFür mehr Informationen:</string>
         
     <!-- -->
     <string name="settings_cat_code">Quellcode</string>
@@ -316,7 +333,7 @@ Für weitere Details, siehe die Kommentare in YTD\s Java Code.</string>
 \nFreie und Open-Source Android App, um YouTube-Videos herunterzuladen!
 \nhttps://sourceforge.net/projects/ytdownloader/files/</string>
 	<string name="help_translate_title">Hilf mit bei der Übersetzung</string>
-    <string name="help_translate_summary">Gehe zu www.getlocalization.com/ytdownloader</string>
+    <string name="xda_title">Diskussion im XDA-Forum</string>
     
     <!-- -->
     <string name="settings_cat_ssh">SSH</string>
@@ -329,7 +346,13 @@ Einfügen in die Remote Shell (funktioniert NUR, wenn der Ziel-PC sich im gleich
 	<string name="ssh_to_longpress_menu_summary">Verschiebe die \"Senden über SSH\" Funktion in das Lang-Drück-Menü (Longpress-Menü), verfügbar über die Video Liste</string>
 	
     <!-- -->
-	<string name="settings_cat_advanced">Erweitert</string>
+	<string name="settings_cat_system">System</string>
 	<string name="enable_logging_title">Protokollierung einschalten</string>
 	<string name="enable_logging_summary">Füge YTD\'s Meldungen in die System Logs ein. Erforderlich um Logcat an den Entwickler zu senden.</string>
+	<string name="clear_dashboard_title">Dashboard leeren</string>
+	<string name="clear_dashboard_summary">Alle Dashboard-Verlinkungen löschen (Hilft bei manchen Abstürzen)</string>
+	<string name="clear_dashboard_msg">Sind Sie sich sicher?\nDashboard wird vollständig geleert!</string>
+	<string name="clear_dashboard_ok">Dashboard geleert!</string>
+	<string name="clear_dashboard_failed">Leeren des Dashboard fehlgeschlagen!</string>
+	
 </resources>

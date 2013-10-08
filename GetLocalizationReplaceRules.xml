@@ -55,4 +55,16 @@
 		<from>cs-CZ</from>
 		<to>cs-rCZ</to>
 	</replaceItem>
+	<replaceItem>
+		<from>sk-SK</from>
+		<to>sk</to>
+	</replaceItem>
+	<replaceItem>
+		<from>th-TH</from>
+		<to>th</to>
+	</replaceItem>
+	<replaceItem>
+		<from>sl-SL</from>
+		<to>sl</to>
+	</replaceItem>
 </items>

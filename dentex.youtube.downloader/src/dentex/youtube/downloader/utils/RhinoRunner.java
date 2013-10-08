@@ -9,7 +9,7 @@ public class RhinoRunner {
 	static String DEBUG_TAG = "RhinoRunner";
 	
 	/*
-	 * method runner() adapted from Stack Overflow:
+	 * methods adapted from Stack Overflow:
 	 * http://stackoverflow.com/questions/3995897/rhino-how-to-call-js-function-from-java/3996115#3996115
 	 * 
 	 * Q:http://stackoverflow.com/users/391441/instantsetsuna
@@ -45,7 +45,7 @@ public class RhinoRunner {
 		}
 	}
 	
-	public static String decipher2(String S, String a, String function) {
+	/*public static String decipher2(String S, String a, String function) {
 		Context rhino = Context.enter();
 		rhino.setOptimizationLevel(-1);
 		try {
@@ -61,7 +61,7 @@ public class RhinoRunner {
 		} finally {
 		    Context.exit();
 		}   
-	}
+	}*/
 	
 	public static String[] obtainDecryptionArray(String code, String function) {
 		Context rhino = Context.enter();

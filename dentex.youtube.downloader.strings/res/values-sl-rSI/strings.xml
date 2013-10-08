@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_settings">Nastavitve</string>
+    <string name="title_activity_upgrade_apk">Nadgradnja</string>
+    <string name="title_activity_about">O programu</string>
+    <string name="title_activity_donate">Donacije</string>
+    <string name="title_activity_tutorials">Vodiči</string>
+    <string name="title_activity_translators_show">Prevajalci</string>
+    <string name="title_activity_dashboard">Upravljalna plošča</string>
+
+    <!-- ### ShareActivity ### -->
+
+    <string name="tutorial_title">Osnovni vodič aplikacije</string>
+	<string name="tutorial_msg_new">Sedaj boste videli seznam z vsemi kodeki in kvalitetami, ki so na voljo za izbrani video. Lahko:
+\n\n*) Kliknete na predmet, da prenesete video lokalno (na napravi) ali pa pošljete prenos preko SSH na oddaljen PC.
+\nZahteve ciljne naprave: Bash in Wget. Dodatne SSH informacije vnaprej;
+\n\n*) Dolgo pridrži predmet, da izberetemed kopiranjem na odložišče ali pa delite povezavo kot besedilo (npr. pošljite v drugo aplikacijo).
+\nProsim pomnite, da tako povezavo (različno od takrat, ko jo pošljete preko SSH) so lahko uporabljene samo z iste naprave kjer so bile narejene ALI z iste LAN, če jo delite na drugo napravo.\n</string>
+    <string name="loading">Nalaganje&#8230;</string>
+    <string name="error">Napaka!</string>
+    <string name="information">Informacije</string>
+    <string name="dialogs_negative">Prekliči</string>
+    <string name="wait">Prosim počakajte&#8230;</string>
+    <string name="no_downloads_sys_app">Sistemska aplikacija \"Downloads\" ni bila najdena.</string>
+    <string name="ytd_useless">YTD ne more prenašati datotek na to napravo.</string>
+    <string name="invalid_url">Neuspelo pridobivanje spletne strani. Najbrž je URL neveljaven.</string>
+    <string name="invalid_url_short">Neuspelo pridobivanje spletne strani.</string>
+    <string name="invalid_response">Neveljaven odziv HTTP strežnika.</string>
+    <string name="rtmpe_streams">Neveljaven odziv HTTP strežnika.</string>
+    <string name="bad_link">Preverite ponujeno povezavo.</string>
+    <string name="bad_link_dialog_msg">Neveljavna YouTube povezava.</string>
+    <string name="no_net">Ni povezave.</string>
+    <string name="no_net_dialog_msg">Najprej omogočite spletno povezavo.</string>
+    <string name="no_market">Tržiščna aplikacija ni na voljo.</string>
+    <string name="no_market_dialog_msg">Prosim namestite Google Play</string>
+    <string name="list_click_dialog_title">Potrdi prenos za:</string>
+    <string name="list_click_download_local">Prenesi tukaj</string>
+    <string name="list_click_download_ssh">Pošlji po SSH</string>
+    <string name="rename_dialog_title">Novo ime datoteke:</string>
+    <string name="rename_dialog_msg">Ne dodajaj končnice datoteke (naprimer: .mp4, .flv).</string>
+    <string name="unable_save">Ni mogoče shraniti videa!</string>
+    <string name="unable_save_dialog_msg">Ciljna mapa NI na voljo in/ali vanjo NI mogoče pisati.</string>
+    <string name="ssh_info_tutorial_title">Pošlji po SSH - Kako?</string>
+    <string name="ssh_info_tutorial_msg">En dolg ukaz je bil naložen v odložišče. 
+\n\nIzberi profil in ConnectBot in ko ste v oddaljeni lupini, prebrskajte do željene ciljne lokacije, PRILEPITE ukaz (uporabite menijsko tipko) in kliknite POTRDI.</string>
+    <string name="callConnectBot_dialog_title">%1$s ni nameščen!</string>
+    <string name="callConnectBot_dialog_msg">Potrebujete to brezplačno aplikacijo, da lahko pošljete preneseni video po SSH.</string>
+    <string name="callConnectBot_dialog_positive">Prenos</string>
+    <string name="download_complete_dialog_msg1">YouTube video:\n</string>
+    <string name="download_complete_dialog_msg2">\nUspešno preneseno.</string>
+    <string name="download_complete_dialog_positive">Odpri</string>
+    <string name="downloading">Prenašanje&#8230;</string>
+    <string name="cancel_download_dialog_title">Prekličem prenašanje?</string>
+    <string name="video_list_error_toast">Napaka v seznamu videov</string>
+    <string name="codec">\n\n\tKodek:</string>
+    <string name="quality">\n\tKvaliteta:</string>
+    <string name="size">\n\tVelikost:</string>
+    <string name="notification_downloading_pt1">Prenašanje</string>
+    <string name="notification_downloading_pt2">video datoteke</string>
+    <string name="notification_no_downloads">Ni potekajočih prenosov</string>
+    <string name="long_click_title">Naredi z izbrano povezavo:</string>
+    <string name="ffmpeg_ready">FFmpeg pripravljen.</string>
+    <string name="confirm_audio_checkbox1">Izlušči audio po prenosu</string>
+    <string name="confirm_audio_checkbox2">\n(kot je določeno v nastavitvah)</string>
+    <string name="login_required">Mogoče bo potrebna prijava v YouTube</string>
+    <string name="encrypted_streams">Kriptiran stream videa</string>
+    <string name="no_video_available">Noben video ni na voljo</string>
+    <string name="retry_button_text">Poskusi ponovno</string>
+    
+    <string-array name="long_click_entries">
+        <item>Kopiraj v odložišče</item>
+        <item>Deli kot tekst</item>
+    </string-array>
+    
+    <string-array name="long_click_entries2">
+        <item>Kopiraj v odložišče</item>
+        <item>Deli kot tekst</item>
+        <item>Pošlji po SSH</item>
+    </string-array>
+    
+    <!-- ### SettingsActivity ### -->
+
+    <string name="attention">Pozor!</string>
+    <string name="system_warning_title">To je sistemska mapa</string>
+    <string name="system_warning_msg">Izbrana pot bo šla direktno na sdcard-ino mapo Prenosi.</string>
+    <string name="sdcard_unmounted_warning">Sd kartica NI montirana</string>
+    <string name="update_disabled_summary">Najden drugačen podpis (F-Droid?)</string>
+    <string name="failed_download">Pokvarjen prenos odstranjen</string>
+    <string name="new_v_download">Najdeno. Prenašanje&#8230;</string>
+    <string name="new_v_install">preneseno. Klikni za namestitev</string>
+    <string name="ffmpeg_download_dialog_title">Potrebna je dodatna datoteka. Jo prenesem zdaj?</string>
+    <string name="ffmpeg_download_dialog_msg">Spletna povezava:</string>
+    <string name="ffmpeg_device_not_supported">Napava še ni podprta.</string>
+    <string name="ffmpeg_support_mail">Pošljem e-pošto razvijalcu?
+\nPreden boste poslali kakršnekoli podatke boste lahko pregledali vsebino e-poštnega sporočila.</string>
+    <string name="ffmpeg_download_notification">Prenašanje FFmpeg</string>
+    <string name="ffmpeg_install">Nameščanje FFmpeg binarijev&#8230;</string>
+    <string name="email_via">Pošlji e-pošto preko:</string>
+    
+    <!-- ### UpgradeApkActivity ### -->
+    
+    <string name="upgrade_button_init">Posodobi</string>
+    <string name="upgrade_button_download">Prenesi\nin namesti</string>
+    <string name="upgrade_uppertext_searching">Iskanje&#8230;</string>
+    <string name="upgrade_uppertext_init">Nameščena različica:\n</string>
+
+    <string name="upgrade_latest">Zadnja:\t</string>
+    <string name="upgrade_installed">\nNameščeno:\t</string>
+    <string name="upgraded_dialog_msg">Nova različica shranjena v standardno sdcard \'Download\' mapo.\n\nNamestim zdaj?</string>
+    <string name="upgraded_dialog_negative">Kasneje\n(ročno)</string>
+    <string name="upgrade_latest_installed">Zadnja različica je že nameščena!</string>
+    <string name="upgrade_network_error">Neuspelo pridobivanje posodobitvenih podatkov.\nPoskusi kasneje.</string>
+    <string name="upgrade_bad_md5_dialog_msg">Pokvarjen prenesen paket.\nSedaj bo izbrisan.\nKliknite OK, da prenesete še enkrat.</string>
+    
+    <!-- ### DownloadsService ### -->
+    
+    <string name="ytd_video">YTD video</string>
+    <string name="copy_error">Napaka med kopiranjem</string>
+    <string name="copy_progress">Poteka kopiranje datoteke&#8230;</string>
+    <string name="copy_ok">Kopiranje datoteke končano</string>
+    <string name="download_remove_failed">Napaka: začasno prenesena datoteka ni bila odstranjena!</string>
+    <string name="download_failed">Prenos ni uspel!</string>
+    <string name="audio_extr_progress">Izluščevanje audia v poteku&#8230;</string>
+    <string name="audio_conv_progress">Kodiranje zvoka v mp3 v poteku&#8230;</string>
+    <string name="audio_extr_completed">Izluščevanje zvočne datoteke zaključeno.</string>
+    <string name="audio_conv_completed">Kodiranje zvoka v mp3 končano.</string>
+    <string name="audio_extr_error">Napaka med izluščevanjem audia.</string>
+    <string name="audio_conv_error">Napaka med kodiranjem audia v mp3.</string>
+    
+    <!-- ### DonateActivity ### -->
+    
+    <string name="paypal_item_name">YTD Donacija</string>
+	<string name="paypal_summary">Podprite YTD razvijalca z donacijo</string>
+	<string name="flattr_summary">Flattr-aj to aplikacijo</string>
+	
+	<!-- ### FfmpegDownloadService ### -->
+	<string name="ffmpeg_install_failed">Nameščanje FFmpeg ni uspelo.</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Končano</string>
+	<string name="json_status_failed">Neuspešno</string>
+	<string name="json_status_in_progress">V poteku</string>
+	<string name="json_status_paused">Pauzirano</string>
+	<string name="json_status_imported">Uvoženo</string>
+	<string name="menu_search">išči&#8230;</string>
+	<string name="menu_backup">Varnostno kopiraj</string>
+	<string name="menu_restore">Obnovi</string>
+	<string name="menu_import">Uvozi video</string>
+	<string name="menu_import_double">Video je že dodan.</string>
+	<string name="menu_backup_info">Izberite mapo za podatke varnostne kopije upravljalne plošče.</string>
+	<string name="menu_restore_info">Obnovi podatke upravljalne plošče z datoteke</string>
+	<string name="menu_restore_info_msg">Trenutni podatki bodo prepisani</string>
+	<string name="menu_import_info">Uvozi video in ga upravljaj preko upravljalne plošče</string>
+	<string name="menu_backup_result_ok">Varnostna kopija upravljalne plošče je OK.</string>
+	<string name="menu_backup_result_failed">Napaka med varnostnim kopiranjem.</string>
+	<string name="menu_restore_result_ok">Podatki upravljalne plošče obnovljeni.</string>
+	<string name="menu_restore_result_failed">Napaka med obnavljanjem.</string>
+	<string name="unsupported_operation">Nepodprta operacija</string>
+	<string name="invalid_data">Neveljavni podatki</string>
+	<string name="open_chooser_title">Odpri z:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Odpri</item>
+	    <item>Izlušči le audio</item>
+        <item>Izlušči in kodiraj audio v mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Odpri</item>
+        <item>Kodiraj v mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Odpri</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg ni nameščen ali omogočen</string>
+	<string name="ffmpeg_not_enabled_msg">Odprem nastavitve?</string>
+	<string name="remove_video">Izbriši video po audio izluščevanju (brez potrditve!)</string>
+	<string name="remove_original_audio">Izbriši audio po pretvarjanju (brez potrditve!)</string>
+	<string name="edit_id3_tags">Uredi ID3 etikete</string>
+	<string name="id3_album">Album</string>
+	<string name="id3_artist">Izvajalec</string>
+	<string name="id3_title">Naslov</string>
+	<string name="id3_year">Leto</string>
+	<string name="id3_genre">Žanr</string>
+	
+	<string name="audio_extr_info">Zajet audio stream</string>
+	
+	<string name="dashboard_long_click_entry_0">Kopiraj</string>
+	<string name="dashboard_long_click_entry_1">Premakni</string>
+	<string name="dashboard_long_click_entry_2">Izbriši</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Kopiraj</item>
+	    <item>Premakni</item>
+        <item>Preimenuj</item>
+        <item>Še enkrat prenesi ta video</item>
+        <item>Odstrani z upravljalne plošče</item>
+        <item>Odstrani in izbriši datoteko</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Kopiraj</item>
+	    <item>Premakni</item>
+        <item>Preimenuj</item>
+        <item>Še enkrat prenesi ta video</item>
+        <item>Odstrani z upravljalne plošče</item>
+        <item>Odstrani in izbriši datoteko</item>
+        <item>Pavziraj/Nadaljuj</item>
+    </string-array>
+    
+	<string name="move_error">Napaka med premikanjem</string>
+    <string name="move_progress">Premikanje datoteke v poteku&#8230;</string>
+    <string name="move_ok">Premik datoteke uspešen</string>
+    <string name="long_press_warning_title">Dejanje ni izvedeno</string>
+    <string name="long_press_warning_msg">Izvorna in ciljna mapa se prekrivajo</string>
+    <string name="long_press_warning_msg2">Kopija že obstaja v tej mapi</string>
+    <string name="audio_extr_warning_msg">Ista audio datoteka že izluščena</string>
+
+	<string name="delete_video_confirm">Potrdite, da želite izbrisati ta video?</string>
+	<string name="remove_video_confirm">Potrdite, da želite ostraniti ta video?</string>
+	<string name="delete_video_ok">%1$s uspešno izbrisan</string>
+	<string name="delete_video_failed">Napaka: %1$s ni izbrisan.</string>
+	
+	<string name="empty_dashboard">Ni prenesenega videa</string>
+
+    <!-- ### preferences ### -->
+
+    <!-- -->
+    <string name="dashboard_summary">Odpri YTD-jevo upravljalno ploščo</string>
+
+    <!-- -->
+    <string name="settings_cat_ui">Uporabniški vmesnik</string>
+    <string name="lang_title">Jezik</string>
+    <string name="lang_dialog_title">Izberi jezik UI-ja:</string>
+    <string name="choose_theme_title">Izberi temo</string>
+    <string-array name="choose_theme_entries">
+        <item>Temno</item>
+        <item>Svetlo</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="quick_start_title">Hitri zagon</string>
+    <string name="quick_start_summ">Odpri vodič za hitri zagon</string>
+    <string name="quick_start_text">Tu so samo nastavitve za \'YouTube Downloader\'.
+\n\nSama aplikacija je dostopna preko gumba Deli v YouTubovi aplikaciji, medtem, ko si ogledujete video.
+\n\nNato izberite \'YouTube Downloader\' in imeli boste nadaljna navodila za uporabo.
+\n\nDelite lahko tudi katerokoli tekstovno YouTube povezavo preko katerekoli druge aplikacije: npr. vašega brskalnika.</string>
+    <string name="general_info_title">Omogoči osnovni vodič aplikacije</string>
+    <string name="general_info_summary">Ob zagonu prikaži osnovni vodič aplikacije</string>
+    <string name="show_again_checkbox">Naslednjič ponovno prikaži</string>
+    <string name="ssh_info_title">Omogoči vodič za SSH</string>
+    <string name="ssh_info_summary">Pokaži hitri namig o prenašanju preko SSH</string>
+    <string name="audio_tutorial_title">Vodič izluščevanja audia</string>
+    <string name="audio_tutorial_summary">Odpri kratek vodič o lastnosti izluščevanju audia</string>
+    
+    <!-- -->
+    <string name="settings_cat_folder">Prenesi mapo</string>
+    <string name="standard_location_title">Izberi običajno mapo</string>
+    <string name="chooser_swap_title">Zamenjaj izbirnika</string>
+    <string name="chooser_location_title">Odpri izbirnika datotek</string>
+    <string name="chooser_location_summary">Dolgo pridrži, da izbereš mapo</string>
+	
+    <!-- -->
+    <string name="settings_cat_files">Video datoteke</string>
+    <string name="enable_q_suffix_title">Dodaj končnico kvalitete</string>
+    <string name="enable_q_suffix_summary">Dodaj kvaliteto videa na konec imena datoteke</string>
+    <string name="enable_rename_title">Omogoči preimenovanje datotek</string>
+    <string name="enable_rename_summary">Preimenuj video pred prenašanjem (samo za lokalne prenose)</string>
+    <string name="show_size_title">Prikaži velikost datoteke</string>
+    <string name="show_size_summary">Pridobi velikost videa na potrditvenem okencu prenosa (počasnejše)</string>
+    <string name="show_size_list_title">Prikaži vse velikosti videov</string>
+    <string name="show_size_list_summary">Pridobi velikosti datotek za vsak dostopen video (veliko počasneje)</string>
+    <string name="show_thumb_title">Prikaži predogledno sliko</string>
+    <string name="show_thumb_summary">Prenesi predogledno sliko skupaj s seznamom videov</string>
+    <string name="show_resolutions_title">Prikaži ločljivosti videov</string>
+    <string name="show_resolutions_summary">Zamenjaj pokazatelja kvalitete z resolucijo videa</string>
+    
+    <!-- -->
+    <string name="settings_cat_advanced">Napredno</string>
+    <string name="enable_advanced_features_title">Omogočite Napredne nastavitve</string>
+    <string name="enable_advanced_features_summary">Prenesi FFmpeg \"vtičnik\"</string>
+    <string name="mp3_bitrate_title">Hitrost kodirane Mp3 datoteke</string>
+    <string name="audio_extraction_type_title">Tip izluščevanja</string>
+    <string name="remove_video_title">Odstranitev videa</string>
+    <string name="remove_video_summary">Omogoči izbris video datoteke po uspešnem izluščenju audia (opozorilo: ni potrdila!)</string>
+    
+    <!-- -->
+    <string name="settings_cat_notifications">Obvestila</string>
+    
+    <string name="notification_defaults_title">Osnovne nastavitve obveščanja</string>
+    <string name="notification_defaults_dialog_title">YTD-jeve snovne nastavitve obveščanja</string>
+    <string-array name="notification_defaults_entries">
+        <item>Zvok in vibriranje</item>
+        <item>Zvok in lučke</item>
+        <item>Vibriranje in lučke</item>
+        <item>Zvok, vibriranje in lučke</item>
+        <item>Zvok</item>
+        <item>Vibriranje</item>
+        <item>Lučke</item>
+        <item>Nič</item>
+    </string-array>   
+    
+    <!-- -->
+    <string name="settings_cat_updates">Posodobitve</string>
+    <string name="update_title">Preveri za posodobitvami</string>
+    <string name="autoupdate_title">Omogoči avtomatsko posodabljanje</string>
+    <string name="autoupdate_summary">Preveri za posodobitvami ob prvem zagonu aplikacije v dnevu (nov paket bo samodejno prenesen)</string>
+
+    <!-- -->
+    <string name="settings_cat_app">Aplikacija</string>
+    <string name="settings_cat_about_condensed">O programu</string>
+    <string name="title_changelog">Dnevnik sprememb</string>
+    <string name="settings_cat_licenses">Licence</string>
+
+    <string name="credits_title">Zasluge</string>
+    <string name="title_activity_credits_show">Druge licence in prevodi</string>
+        
+    <!-- -->
+    <string name="settings_cat_code">Izvorna koda</string>
+    <string name="ytd_code_git_title">YTD na GitHub-u</string>
+    <string name="ytd_code_hg_title">YTD na Sourceforge-u</string>
+
+    <!-- -->
+    <string name="settings_cat_social">Družbeno</string>
+    <string name="share_title">Deli aplikacijo</string>
+    <string name="share_summary">preko Twitterja, Facebooka, Gmaila, itd&#8230;</string>
+    <string name="share_warning">Ni najdenih primerni aplikacij</string>
+    <string name="share_message">#YouTubeDownloader
+\nBrezplačna in odprtokodna Android aplikacija za prenašanje YouTube videov!
+\nhttps://sourceforge.net/projects/ytdownloader/files/</string>
+	<string name="help_translate_title">Pomagaj prevesti aplikacijo</string>
+    <string name="xda_title">Tema na XDA forumu</string>
+    
+    <!-- -->
+    <string name="settings_cat_ssh">SSH</string>
+    <string name="connectbot_flavour_title">Verzija ConnectBot-a za uporabo</string>
+	<string name="connectbot_flavour_dialog_title">Izberi ConnectBotFork za pošiljanje videa preko SSH</string>
+	<string name="enable_connectbot_short_cmd_title">Omogoči SSH kratek cmd</string>
+	<string name="enable_connectbot_short_cmd_summary">Uporabi rahlo krajšo a hitrejšo komando za prilepljanje v oddaljeno lupino (dela SAMO če je ciljni PC v istem LAN omrežju)</string>
+	<string name="ssh_to_longpress_menu_title">Dodaj SSH-pošlji v meni dolgega držanja v video seznamu</string>
+	<string name="ssh_to_longpress_menu_summary">Premakni \"Pošlji preko SSH\" v meni dolgega držanja, ki je dostopen v video seznamu</string>
+	
+    <!-- -->
+	<string name="settings_cat_system">Sistem</string>
+	<string name="enable_logging_title">Omogoči shranjevanje dnevnika</string>
+	<string name="enable_logging_summary">Vključi YTD-jeva sporočila v sistemski dnevnik. To je potrebno, da se dnevnik pošlje razvijalcu.</string>
+	<string name="clear_dashboard_title">Izprazni upravljalno ploščo</string>
+	<string name="clear_dashboard_summary">Počisti vse reference upravljalne plošče (lahko popravi nekaj sesutij)</string>
+	<string name="clear_dashboard_msg">Ste prepričani?\nTo bo počistilo vse sezname v upravljalni plošči</string>
+	<string name="clear_dashboard_ok"> Upravljalna plošča počiščena.</string>
+	<string name="clear_dashboard_failed">Čiščenje upravljalne plošče ni uspelo.</string>
+	
+</resources>

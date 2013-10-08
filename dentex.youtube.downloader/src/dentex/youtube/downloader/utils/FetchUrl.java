@@ -22,12 +22,12 @@ public class FetchUrl {
             return downloadWebPage(url);
         } catch (IOException e) {
         	Log.e(DEBUG_TAG, "doFetch: " + e.getMessage());
-	    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> doFetch: ", e.getMessage(), e);
-            return null;
+	    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> doFetch", e.getMessage(), e);
+            return "e";
         } catch (RuntimeException re) {
         	Log.e(DEBUG_TAG, "doFetch: " + re.getMessage());
-	    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> doFetch: ", re.getMessage(), re);
-	    	return null;
+	    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> doFetch", re.getMessage(), re);
+	    	return "e";
         }
     }
 

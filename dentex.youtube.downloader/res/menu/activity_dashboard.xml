@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:id="@+id/menu_search"
+        android:title="@string/menu_search"
+        android:titleCondensed="@string/menu_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:orderInCategory="25"
+        android:showAsAction="ifRoom"/>
+    
+    <item android:id="@+id/menu_import"
+        android:title="@string/menu_import"
+        android:titleCondensed="@string/menu_import"
+        android:orderInCategory="20"
+        android:showAsAction="collapseActionView" />
+    
+    <item android:id="@+id/menu_restore"
+        android:title="@string/menu_restore"
+        android:titleCondensed="@string/menu_restore"
+        android:orderInCategory="15"
+        android:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_backup"
+        android:title="@string/menu_backup"
+        android:titleCondensed="@string/menu_backup"
+        android:orderInCategory="10"
+        android:showAsAction="collapseActionView" />
+    
+</menu>

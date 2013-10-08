@@ -27,15 +27,18 @@
 package dentex.youtube.downloader.utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.nio.channels.FileChannel;
 import java.security.MessageDigest;
@@ -43,19 +46,26 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
+import com.bugsense.trace.BugSenseHandler;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Notification;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.Signature;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.media.MediaScannerConnection;
 import android.media.MediaScannerConnection.OnScanCompletedListener;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.provider.MediaStore.MediaColumns;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import dentex.youtube.downloader.R;
@@ -64,12 +74,8 @@ import dentex.youtube.downloader.YTD;
 
 public class Utils {
 	
-	static final String DEBUG_TAG = "Utils";
-	static SharedPreferences settings = YTD.settings;
-	static final String PREFS_NAME = YTD.PREFS_NAME;
-	InputStream isFromString;
+	static String DEBUG_TAG = "Utils";
 	static MediaScannerConnection msc;
-	static String onlineVersion;
 	
 	public static void reload(Activity activity) {
     	Intent intent = activity.getIntent();
@@ -81,8 +87,7 @@ public class Utils {
     }
     
     public static void themeInit(Context context) {
-    	settings = context.getSharedPreferences(PREFS_NAME, 0);
-		String theme = settings.getString("choose_theme", "D");
+		String theme = YTD.settings.getString("choose_theme", "D");
     	if (theme.equals("D")) {
     		context.setTheme(R.style.AppThemeDark);
     	} else {
@@ -91,14 +96,14 @@ public class Utils {
 	}
     
     public static void langInit(Context context) {
-    	String storedDefLang = settings.getString("DEF_LANG", "");
+    	String storedDefLang = YTD.settings.getString("DEF_LANG", "");
     	if (storedDefLang.isEmpty() && storedDefLang != null) {	
     		Locale defLocale = Locale.getDefault();
     		String defLang = defLocale.getLanguage();
-    		settings.edit().putString("DEF_LANG", defLang).commit();
+    		YTD.settings.edit().putString("DEF_LANG", defLang).commit();
     	}
     		
-		String lang  = settings.getString("lang", "default");
+		String lang  = YTD.settings.getString("lang", "default");
         Locale locale;
 		if (!lang.equals("default")) {
 			String[] fLang = filterLang(lang);
@@ -107,7 +112,7 @@ public class Utils {
 	        Configuration config = new Configuration();
 	        config.locale = locale;
         } else {
-        	locale = new Locale(settings.getString("DEF_LANG", ""));
+        	locale = new Locale(YTD.settings.getString("DEF_LANG", ""));
         	Locale.setDefault(locale);
         }
         Configuration config = new Configuration();
@@ -123,6 +128,7 @@ public class Utils {
 			lang.equals("pl_PL") ||
 			lang.equals("pt_BR") || 
 			lang.equals("pt_PT") || 
+			lang.equals("sl_SI") || 
 			lang.equals("tr_TR") || 
 			lang.equals("zh_CN") ||
 			lang.equals("zh_HK") ||
@@ -132,7 +138,7 @@ public class Utils {
 	}
 
 	public static void logger(String type, String msg, String tag) {
-    	if (settings.getBoolean("enable_logging", false)) {
+    	if (YTD.settings.getBoolean("enable_logging", false)) {
 	    	if (type.equals("v")) {
 	    		Log.v(tag, msg);
 	    	} else if (type.equals("d")) {
@@ -145,8 +151,22 @@ public class Utils {
     	}
     }
     
-    public static void createLogFile(File destDir, String filename, String content) {
-    	File file = new File(destDir, filename);
+	public static int pathCheck(File path) {
+		String state = Environment.getExternalStorageState();
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+			if (path.canWrite()) {
+				return 0;
+			} else {
+				logger("w", "Path not writable", DEBUG_TAG);
+				return 1;
+			}
+		} else {
+			logger("w", "Path not mounted", DEBUG_TAG);
+			return 2;
+		}
+	 }
+	
+	 public static void writeToFile(File file, String content) {
     	try {
 	        InputStream is = new ByteArrayInputStream(content.getBytes("UTF-8"));
 	        OutputStream os = new FileOutputStream(file);
@@ -156,7 +176,7 @@ public class Utils {
 	        is.close();
 	        os.close();
 		} catch (IOException e) {
-			Log.e(DEBUG_TAG, "Error creating '" + filename + "' Log file", e);
+			Log.e(DEBUG_TAG, "Error creating '" + file.getName() + "' Log file", e);
 		}
 	}
     
@@ -193,7 +213,82 @@ public class Utils {
 		}
     }
     
+    public static void removeIdUpdateNotification(long id) {
+    	try {
+	    	if (id != 0) {
+				if (YTD.sequence.remove(id)) {
+					logger("d", "ID " + id + " REMOVED from Notification", DEBUG_TAG);
+				} else {
+					logger("d", "ID " + id + " Already REMOVED from Notification", DEBUG_TAG);
+				}
+			} else {
+				Utils.logger("w", "ID  not found!", DEBUG_TAG);
+			}
+			
+			setNotificationDefaults(YTD.mBuilder);
+
+			if (YTD.sequence.size() > 0) {
+				YTD.mBuilder.setContentText(YTD.pt1 + " " + YTD.sequence.size() + " " + YTD.pt2).setOngoing(true);
+				YTD.mNotificationManager.notify(1, YTD.mBuilder.build());
+			} else {
+				YTD.mBuilder.setContentText(YTD.noDownloads).setOngoing(false);
+				YTD.mNotificationManager.notify(1, YTD.mBuilder.build());
+				Utils.logger("d", "No downloads in progress.", DEBUG_TAG);
+			}
+		} catch (NullPointerException e) {
+			Log.e(DEBUG_TAG, "NPE at removeIdUpdateNotification: " + e.getMessage());
+			BugSenseHandler.sendExceptionMessage("NPE at removeIdUpdateNotification", e.getMessage(), e);
+		}
+	}
+    
     // --------------------------------------------------------------------------
+    
+    /*
+     * method readFromFile adapted from Stack Overflow:
+	 * http://stackoverflow.com/questions/2902689/how-can-i-read-a-text-file-from-the-sd-card-in-android
+	 * 
+	 * Q: http://stackoverflow.com/users/349664/rsss
+	 * A: http://stackoverflow.com/users/3171/dave-webb
+	 */
+    
+    public static String readFromFile(File file) throws IOException {
+ 
+        StringBuilder text = null;
+        if(file.exists()) {   
+            text = new StringBuilder();  
+            BufferedReader br = new BufferedReader(new FileReader(file));  
+            String line;  
+            while ((line = br.readLine()) != null) {  
+                text.append(line);  
+                text.append('\n');  
+            }
+            br.close();
+        }
+        return text.toString();
+    }
+    
+    /*
+     * method MakeSizeHumanReadable(int bytes, boolean si) from Stack Overflow:
+	 * http://stackoverflow.com/questions/3758606/how-to-convert-byte-size-into-human-readable-format-in-java
+	 * 
+	 * Q: http://stackoverflow.com/users/404615/iimuhin
+	 * A: http://stackoverflow.com/users/276052/aioobe
+	 */
+	 
+	@SuppressLint("DefaultLocale")
+	public static String MakeSizeHumanReadable(long bytes, boolean decimal) {
+		String hr = "-";
+		int unit = decimal ? 1000 : 1024;
+	    if (bytes < unit) {
+	    	hr = bytes + " B";
+		} else {
+			int exp = (int) (Math.log(bytes) / Math.log(unit));
+			String pre = (decimal ? "kMGTPE" : "KMGTPE").charAt(exp-1) + (decimal ? "" : "i");
+			hr = String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
+		}
+		hr = hr.replace("-1 B", "-").replace("0 B", "-");
+	    return hr;
+	}
     
 	/* class VersionComparator from Stack Overflow:
 	 * 
@@ -388,7 +483,129 @@ public class Utils {
     		@Override
     		public void onScanCompleted(String path, Uri uri) {
     			Log.v(DEBUG_TAG, "file " + path + " was scanned seccessfully: " + uri);
+    			//YTD.videoinfo.edit().putString(path, uri.toString()).apply();
     		}
     	});
     }
+    
+    //-----------
+    
+    public static String getFileNameWithoutExt(String filename) {
+    	int index = filename.lastIndexOf('.');
+    	if (index > 0 && index <= filename.length() - 2) {
+    		return filename.substring(0, index);
+    	}  
+    	return filename;
+	}
+    
+    public static String getExtFromFileName(String filename) {
+    	int index = filename.lastIndexOf('.');
+    	if (index > 0 && index <= filename.length() - 2) {
+    		return filename.substring(index + 1);
+    	}
+    	return filename;
+    }
+    
+    
+    /* 
+     * 'getContentUriFromFilePath' and 'getFilePathFromContentUri' adapted from StackOverflow:
+     * http://stackoverflow.com/a/11603899/1865860
+     * 
+     * Q: http://stackoverflow.com/users/315998/stealthcopter
+     * A: http://stackoverflow.com/users/429108/jon-o
+     */
+    
+    /**
+     * Gets the MediaStore video ID of a given file on external storage
+     * @param filePath The path (on external storage) of the file to resolve the ID of
+     * @param contentResolver The content resolver to use to perform the query.
+     * @return the video ID as a long
+     */
+    public static String getContentUriFromFilePath(String filePath, ContentResolver contentResolver) {
+        long videoId;
+        logger("d","Loading file " + filePath, DEBUG_TAG);
+
+        String[] vprojection = {MediaStore.Video.VideoColumns._ID};
+        String[] aprojection = {MediaStore.Audio.AudioColumns._ID};
+        
+        String ext = getExtFromFileName(filePath);
+        //logger("d","ext: " + ext, DEBUG_TAG);
+        
+        Uri videosUri = null;
+        String[] projection = null;
+        String dataType = null;
+        if (ext.equals("mp4") || ext.equals("3gpp") || ext.equals("webm")) {
+        	videosUri = MediaStore.Video.Media.getContentUri("external");
+        	projection = vprojection;
+        	dataType = MediaStore.Video.VideoColumns.DATA;
+        } else if (ext.equals("mp3") || ext.equals("ogg") || ext.equals("aac")){
+        	videosUri = MediaStore.Audio.Media.getContentUri("external");
+        	projection = aprojection;
+        	dataType = MediaStore.Audio.AudioColumns.DATA;
+        } else if (ext.equals("flv")) {
+        	logger("w", " -> videoUri not available [FLV video]", DEBUG_TAG);
+        	return null;
+        }
+        
+		Cursor cursor = contentResolver.query(videosUri, projection, dataType + " LIKE ?", new String[] { filePath }, null);
+        cursor.moveToFirst();
+
+        int columnIndex = cursor.getColumnIndex(projection[0]);
+        String videoUri = null;
+		try {
+        	videoId = cursor.getLong(columnIndex);
+        	videoUri = videosUri + "/" + videoId; 
+        	logger("d", " -> videoUri: " + videoUri, DEBUG_TAG);
+        } catch (IndexOutOfBoundsException e) {
+        	logger("w", " -> videoUri not available", DEBUG_TAG);
+        } finally {
+        	cursor.close();
+        }
+		
+        return videoUri;
+    }
+    
+    /**
+     * Gets the corresponding path to a file from the given content:// URI
+     * @param selectedVideoUri The content:// URI to find the file path from
+     * @param contentResolver The content resolver to use to perform the query.
+     * @return the file path as a string
+     */
+    public static String getFilePathFromContentUri(Uri selectedVideoUri, ContentResolver contentResolver) {
+        String filePath;
+        String[] filePathColumn = {MediaColumns.DATA};
+
+        Cursor cursor = contentResolver.query(selectedVideoUri, filePathColumn, null, null, null);
+        cursor.moveToFirst();
+
+        int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+        filePath = cursor.getString(columnIndex);
+        cursor.close();
+        return filePath;
+    }
+    
+    public static void appendStringToFile(File file, String text) {
+    	PrintWriter out = null;
+    	try {
+    	    out = new PrintWriter(new BufferedWriter(new FileWriter(file.getAbsolutePath(), true)));
+    	    out.println("\n" + text);
+    	} catch (IOException e) {
+    	    Log.e(DEBUG_TAG, "appendStringToFile: " + e.getMessage());
+    	} finally {
+    	    if (out != null) {
+    	        out.close();
+    	    }
+    	} 
+    }
 }
+
+// ---------------------------------------------------------
+
+	/*
+	 *  to get the name of an executing method, 
+	 *  call this from inside the method itself:
+	 *  
+	 *  String name = new Exception().getStackTrace()[0].getMethodName();
+	 *  Log.i(DEBUG_TAG, "==> " + name);
+	 */
+	

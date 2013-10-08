@@ -28,7 +28,6 @@
 package dentex.youtube.downloader.service;
 
 import java.io.File;
-import java.io.IOException;
 
 import android.app.DownloadManager;
 import android.app.DownloadManager.Query;
@@ -50,7 +49,6 @@ import com.bugsense.trace.BugSenseHandler;
 import dentex.youtube.downloader.R;
 import dentex.youtube.downloader.SettingsActivity;
 import dentex.youtube.downloader.YTD;
-import dentex.youtube.downloader.ffmpeg.FfmpegController;
 import dentex.youtube.downloader.utils.Observer;
 import dentex.youtube.downloader.utils.Utils;
 
@@ -58,13 +56,11 @@ public class FfmpegDownloadService extends Service {
 	
 	private static final String DEBUG_TAG = "FfmpegDownloadService";
 	public static Context nContext;
-	public long enqueue;
-	public String ffmpegBinName = FfmpegController.ffmpegBinName;
 	private int cpuVers;
 	private String sdCardAppDir;
 	public static String DIR;
 	private DownloadManager dm;
-	public Observer.YtdFileObserver ffmpegBinObserver;
+	private Observer.YtdFileObserver ffmpegBinObserver;
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -75,6 +71,7 @@ public class FfmpegDownloadService extends Service {
 	public void onCreate() {
 		Utils.logger("d", "service created", DEBUG_TAG);
 		BugSenseHandler.initAndStartSession(this, YTD.BugsenseApiKey);
+		BugSenseHandler.leaveBreadcrumb("FfmpegDownloadService_onCreate");
 		nContext = getBaseContext();	
 		registerReceiver(ffmpegReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 	}
@@ -109,20 +106,19 @@ public class FfmpegDownloadService extends Service {
 		Utils.logger("d", "FFmpeg download link: " + link, DEBUG_TAG);
 		
         Request request = new Request(Uri.parse(link));
-        request.setDestinationInExternalFilesDir(nContext, null, ffmpegBinName);
+        request.setDestinationInExternalFilesDir(nContext, null, YTD.ffmpegBinName);
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
-        request.setVisibleInDownloadsUi(false);
         request.setTitle(getString(R.string.ffmpeg_download_notification));
         dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
         try {
-        	enqueue = dm.enqueue(request);
+        	dm.enqueue(request);
         } catch (IllegalArgumentException e) {
 	    	Log.e(DEBUG_TAG, "downloadFfmpeg: " + e.getMessage());
 	    	Toast.makeText(this,  this.getString(R.string.no_downloads_sys_app), Toast.LENGTH_LONG).show();
 	    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> downloadFfmpeg", e.getMessage(), e);
 	    } catch (SecurityException se) {
-	    	request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, ffmpegBinName);
-	    	enqueue = dm.enqueue(request);
+	    	request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, YTD.ffmpegBinName);
+	    	dm.enqueue(request);
 	    	DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
 	    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> downloadFfmpeg", se.getMessage(), se);
 	    } catch (NullPointerException ne) {
@@ -133,21 +129,6 @@ public class FfmpegDownloadService extends Service {
         
 		ffmpegBinObserver = new Observer.YtdFileObserver(DIR);
         ffmpegBinObserver.startWatching();
-	}
-	
-	public static void copyFfmpegToAppDataDir(Context context, File src, File dst) {
-		try {
-			Toast.makeText(context, "YTD: " + context.getString(R.string.ffmpeg_install), Toast.LENGTH_LONG).show();
-			Utils.logger("i", "trying to copy FFmpeg binary to private App dir", DEBUG_TAG);
-			Utils.copyFile(src, dst);
-			
-			Toast.makeText(context, "YTD: " + context.getString(R.string.ffmpeg_ready), Toast.LENGTH_LONG).show();
-			SettingsActivity.SettingsFragment.touchAudioExtrPref(true, true);
-		} catch (IOException e) {
-			Toast.makeText(context, "YTD: " + context.getString(R.string.ffmpeg_install_failed), Toast.LENGTH_LONG).show();
-			Log.e(DEBUG_TAG, "ffmpeg copy to app_bin failed. " + e.getMessage());
-			SettingsActivity.SettingsFragment.touchAudioExtrPref(true, false);
-		}
 	}
 
 	BroadcastReceiver ffmpegReceiver = new BroadcastReceiver() {
@@ -172,32 +153,32 @@ public class FfmpegDownloadService extends Service {
 					
 					case DownloadManager.STATUS_SUCCESSFUL:
 	    		
-						File src = new File(DIR, ffmpegBinName);
-						File dst = new File(nContext.getDir("bin", 0), ffmpegBinName);
+						File src = new File(DIR, YTD.ffmpegBinName);
+						File dst = new File(nContext.getDir("bin", 0), YTD.ffmpegBinName);
 						
 						String md5 = null;
 						if (cpuVers == 7) md5 = "33fcf4d5a3b2e5193bd42c2c1fc2abc7";
 						if (cpuVers == 5) md5 = "0606931cfbaca351a47e59ab198bc81e";
 						
 						if (Utils.checkMD5(md5, src)) {
-							copyFfmpegToAppDataDir(context, src, dst);
+							SettingsActivity.SettingsFragment.copyFfmpegToAppDataDir(context, src, dst);
 						} else {
-							SettingsActivity.SettingsFragment.touchAudioExtrPref(true, false);
+							SettingsActivity.SettingsFragment.touchAdvPref(true, false);
 							deleteBadDownload(id);
 						}
 						break;
 						
 					case DownloadManager.STATUS_FAILED:
-						Log.e(DEBUG_TAG, ffmpegBinName + ", _ID " + id + " FAILED (status " + status + ")");
+						Log.e(DEBUG_TAG, YTD.ffmpegBinName + ", _ID " + id + " FAILED (status " + status + ")");
 						Log.e(DEBUG_TAG, " Reason: " + reason);
-						Toast.makeText(nContext,  ffmpegBinName + ": " + getString(R.string.download_failed), Toast.LENGTH_LONG).show();
+						Toast.makeText(nContext,  YTD.ffmpegBinName + ": " + getString(R.string.download_failed), Toast.LENGTH_LONG).show();
 						
-						SettingsActivity.SettingsFragment.touchAudioExtrPref(true, false);
+						SettingsActivity.SettingsFragment.touchAdvPref(true, false);
 						deleteBadDownload(id);
 						break;
 						
 					default:
-						Utils.logger("w", ffmpegBinName + ", _ID " + id + " completed with status " + status, DEBUG_TAG);
+						Utils.logger("w", YTD.ffmpegBinName + ", _ID " + id + " completed with status " + status, DEBUG_TAG);
 					}
 				}
     		//}

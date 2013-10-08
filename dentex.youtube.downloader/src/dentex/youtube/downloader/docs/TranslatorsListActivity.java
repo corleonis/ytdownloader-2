@@ -45,7 +45,6 @@ import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -74,11 +73,12 @@ public class TranslatorsListActivity extends ListActivity {
 		
 		setupActionBar();
 		
-		String[] languagesArray = getLanguages();
+		String[] languagesArray = getLanguages(false);
+		String[] decodedLanguagesArray = getLanguages(true);
 		
 		for (int i = 0; i < languagesArray.length; i++) {
 			String[] list = getTranslatorsNames(languagesArray[i]);
-			adapter.addSection(languagesArray[i], new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list));
+			adapter.addSection(decodedLanguagesArray[i], new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list));
 		}
 
 		setListAdapter(adapter);
@@ -89,18 +89,18 @@ public class TranslatorsListActivity extends ListActivity {
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			NavUtils.navigateUpFromSameTask(this);
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+	public boolean onOptionsItemSelected(android.view.MenuItem item) {
+	    if (item.getItemId() == android.R.id.home) {
+	        NavUtils.navigateUpFromSameTask(this);
+	        return true;
+	    }
+	    return super.onOptionsItemSelected(item);
 	}
 
-	private String[] getLanguages() {
+	private String[] getLanguages(boolean chooseDecoded) {
 		assMan = getAssets();
 		String[] languagesArray = { "All" };
+		String[] decodedLanguagesArray = { "All" };
 		try {
         	InputStream in = assMan.open("languages");
         	InputStreamReader is = new InputStreamReader(in);
@@ -112,13 +112,49 @@ public class TranslatorsListActivity extends ListActivity {
 			    read = br.readLine();
 			}
 			String languages = sb.toString();
+			String ianaDecodedLanguages = ianaDecode(languages);
         	languagesArray = languages.split("_");
-        	Log.i(DEBUG_TAG, languages);
+        	decodedLanguagesArray = ianaDecodedLanguages.split("_");
+        	//Log.i(DEBUG_TAG, languages);
+        	//Log.i(DEBUG_TAG, ianaDecodedLanguages);
         	
 		} catch (IOException e) {
 			Log.e(DEBUG_TAG, e.getMessage());
 		}
-		return languagesArray; 
+		if (chooseDecoded) {
+			return decodedLanguagesArray;
+		} else {
+			return languagesArray;
+		}
+	}
+	
+	private String ianaDecode(String encoded) {
+		encoded = encoded
+					.replaceFirst("ar", "ar  (Arabic)")
+					.replaceFirst("zh-CN", "zh-CN  (Chinese, China)")
+			        .replaceFirst("zh-HK", "zh-HK  (Chinese, Hong Kong)")
+			        .replaceFirst("zh-TW", "zh-TW  (Chinese, Taiwan)")
+			        .replaceFirst("da", "da  (Danish)")
+			        .replaceFirst("nl", "nl  (Dutch)")
+			        .replaceFirst("fr", "fr  (French)")
+			        .replaceFirst("de", "de  (German)")
+			        .replaceFirst("grk", "grk  (Greek)")
+			        .replaceFirst("he", "he  (Hebrew)")
+			        .replaceFirst("hu-HU", "hu-HU  (Hungarian, Hungary)")
+			        .replaceFirst("it", "it  (Italian)")
+			        .replaceFirst("ko", "ko  (Korean)")
+			        .replaceFirst("pl-PL", "pl-PL  (Polish, Poland)")
+			        .replaceFirst("pt-BR", "pt-BR  (Portuguese, Brazil)")
+			        .replaceFirst("pt-PT", "pt-PT  (Portuguese, Portugal)")
+			        .replaceFirst("ru", "ru  (Russian)")
+			        .replaceFirst("sk-SK", "sk-SK  (Slovak)")
+			        .replaceFirst("sl-SI", "sl-SI  (Slovenian)")
+			        .replaceFirst("es", "es  (Spanish)")
+			        .replaceFirst("tr-TR", "tr-TR  (Turkish)")
+			        .replaceFirst("vi", "vi  (Vietnamese)")
+			        .replaceFirst("pes-IR", "pes-IR  (Western Farsi, Iran)");
+		
+		return encoded;
 	}
 	
 	private String[] getTranslatorsNames(String assetName) {

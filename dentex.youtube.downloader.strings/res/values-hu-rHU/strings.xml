@@ -6,7 +6,8 @@
     <string name="title_activity_about">Névjegy</string>
     <string name="title_activity_donate">Adományok</string>
     <string name="title_activity_tutorials">Oktatások</string>
-    <string name="title_activity_translators_show">Fordítók</string>    
+    <string name="title_activity_translators_show">Fordítók</string>
+    <string name="title_activity_dashboard">Dashboard</string>
 
     <!-- ### ShareActivity ### -->
 
@@ -26,6 +27,7 @@
     <string name="invalid_url">Weboldal nem elérhető. Hibás URL?</string>
     <string name="invalid_url_short">Weboldal nem elérhető.</string>
     <string name="invalid_response">Érvénytelen HTTP szerver válasz.</string>
+    <string name="rtmpe_streams">Invalid HTTP server response.</string>
     <string name="bad_link">Kattints a linkre.</string>
     <string name="bad_link_dialog_msg">Nem érvényes YouTube link.</string>
     <string name="no_net">Nincs elérhető kapcsolat.</string>
@@ -59,11 +61,13 @@ illeszd be a parancsot (a menü gombal), és nyomd meg az ENTER-t.</string>
     <string name="notification_downloading_pt2">videófájlok</string>
     <string name="notification_no_downloads">Nincsenek folyamatban letöltések</string>
     <string name="long_click_title">Kiválasztott link kezelése:</string>
-    <string name="extsdcard_info_title">Nem alapértelmezett letöltési hely</string>
-    <string name="extsdcard_info_msg">A fájl először a letöltések mappába lesz letöltve, majd át lesz helyezve a kiválasztott könyvtárba.</string>
     <string name="ffmpeg_ready">FFmpeg kész.</string>
     <string name="confirm_audio_checkbox1">Hang kicsomagolása letöltése után</string>
     <string name="confirm_audio_checkbox2">\n(ahogy a beállításokban meg lett adva)</string>
+    <string name="login_required">Login to YouTube may be required.</string>
+    <string name="encrypted_streams">Encrypted video stream</string>
+    <string name="no_video_available">No video available.</string>
+    <string name="retry_button_text">Retry</string>
     
     <string-array name="long_click_entries">
         <item>Másolás a vágólapra</item>
@@ -79,7 +83,6 @@ illeszd be a parancsot (a menü gombal), és nyomd meg az ENTER-t.</string>
     <!-- ### SettingsActivity ### -->
 
     <string name="attention">Figyelem!</string>
-    <string name="extsdcard_warning">Sikertelen a fájlok írásra a külső SD kártyára.\nBelső tárhely használata folyamatban.</string>
     <string name="system_warning_title">Ez egy rendszermappa</string>
     <string name="system_warning_msg">A kiválasztott könyvtár helyett az alapértelmezett letöltési mappa lesz használva.</string>
     <string name="sdcard_unmounted_warning">Az SD kártya nincs csatlakoztatva</string>
@@ -114,9 +117,9 @@ illeszd be a parancsot (a menü gombal), és nyomd meg az ENTER-t.</string>
     <!-- ### DownloadsService ### -->
     
     <string name="ytd_video">YTD videó</string>
-    <string name="copy_error">Hiba másolás közben</string>
+    <string name="copy_error">Error during copy.</string>
     <string name="copy_progress">Fájl másolás folyamatban&#8230;</string>
-    <string name="copy_ok">Sikeres másolás.</string>
+    <string name="copy_ok">File copy completed.</string>
     <string name="download_remove_failed">Hiba: az ideiglenesen letörölt fájl nem lett letörölve.</string>
     <string name="download_failed">Sikertelen letöltés!</string>
     <string name="audio_extr_progress">Hang kicsomagolása folyamatban&#8230;</string>
@@ -129,22 +132,110 @@ illeszd be a parancsot (a menü gombal), és nyomd meg az ENTER-t.</string>
     <!-- ### DonateActivity ### -->
     
     <string name="paypal_item_name">YTD adományozás</string>
-    <string name="paypal_title">PayPal</string>
 	<string name="paypal_summary">Támogasd a YTD fejlesztőjét adománnyal</string>
+	<string name="flattr_summary">Flattr this App</string>
 	
 	<!-- ### FfmpegDownloadService ### -->
 	<string name="ffmpeg_install_failed">FFmpeg telepítése sikertelen</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Completed</string>
+	<string name="json_status_failed">Failed</string>
+	<string name="json_status_in_progress">In Progress</string>
+	<string name="json_status_paused">Paused</string>
+	<string name="json_status_imported">Imported</string>
+	<string name="menu_search">search&#8230;</string>
+	<string name="menu_backup">Backup</string>
+	<string name="menu_restore">Restore</string>
+	<string name="menu_import">Import a video</string>
+	<string name="menu_import_double">Video already added.</string>
+	<string name="menu_backup_info">Choose a folder to Backup Dashboard\'s data</string>
+	<string name="menu_restore_info">Restore Dashboard\'s data from file</string>
+	<string name="menu_restore_info_msg">Present data will be overwritten.</string>
+	<string name="menu_import_info">Import a video and manage it from the Dashboard</string>
+	<string name="menu_backup_result_ok">Dashboard data backup OK.</string>
+	<string name="menu_backup_result_failed">Error during backup.</string>
+	<string name="menu_restore_result_ok">Dashboard data restored.</string>
+	<string name="menu_restore_result_failed">Error during restore.</string>
+	<string name="unsupported_operation">Unsupported operation.</string>
+	<string name="invalid_data">Invalid data.</string>
+	<string name="open_chooser_title">Open with:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Open</item>
+	    <item>Extract audio only</item>
+        <item>Extract and encode audio to mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Open</item>
+        <item>Encode to mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Open</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg not installed or enabled:</string>
+	<string name="ffmpeg_not_enabled_msg">Open settings?</string>
+	<string name="remove_video">Delete video after audio extraction (no confirmation!)</string>
+	<string name="remove_original_audio">Delete audio after conversion (no confirmation!)</string>
+	<string name="edit_id3_tags">Edit ID3 tags</string>
+	<string name="id3_album">Album</string>
+	<string name="id3_artist">Artist</string>
+	<string name="id3_title">Title</string>
+	<string name="id3_year">Year</string>
+	<string name="id3_genre">Genre</string>
+	
+	<string name="audio_extr_info">Contained audio stream:</string>
+	
+	<string name="dashboard_long_click_entry_0">Copy</string>
+	<string name="dashboard_long_click_entry_1">Move</string>
+	<string name="dashboard_long_click_entry_2">Delete</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Copy</item>
+	    <item>Move</item>
+        <item>Rename</item>
+        <item>Re-download the video</item>
+        <item>Remove from Dashboard</item>
+        <item>Remove and delete file</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Copy</item>
+	    <item>Move</item>
+        <item>Rename</item>
+        <item>Re-download the video</item>
+        <item>Remove from Dashboard</item>
+        <item>Remove and delete file</item>
+        <item>Pause/Resume</item>
+    </string-array>
+    
+	<string name="move_error">Error during move.</string>
+    <string name="move_progress">File move in progress&#8230;</string>
+    <string name="move_ok">File move completed.</string>
+    <string name="long_press_warning_title">Operation not executed:</string>
+    <string name="long_press_warning_msg">Source and destination folders overlap.</string>
+    <string name="long_press_warning_msg2">A copy already exists in this folder.</string>
+    <string name="audio_extr_warning_msg">Same audio file already extracted.</string>
+
+	<string name="delete_video_confirm">Confirm you want to delete this video?</string>
+	<string name="remove_video_confirm">Confirm you want to remove this video?</string>
+	<string name="delete_video_ok">%1$s successfully deleted.</string>
+	<string name="delete_video_failed">Error: %1$s not deleted.</string>
+	
+	<string name="empty_dashboard">No downloaded video.</string>
 
     <!-- ### preferences ### -->
 
     <!-- -->
-    <string name="dm_title">Letöltések</string>
-    <string name="dm_summary">Letöltéskezelő megnyitása (rendszer)</string>
+    <string name="dashboard_summary">Open YTD\'s Dashboard</string>
 
     <!-- -->
     <string name="settings_cat_ui">Felhasználói felület</string>
     <string name="lang_title">Nyelv</string>
-    <string name="lang_dialog_title">Nyelv (újraindítást igényel):</string>
+    <string name="lang_dialog_title">Choose UI language:</string>
     <string name="choose_theme_title">Téma választása</string>
     <string-array name="choose_theme_entries">
         <item>Sötét</item>
@@ -165,15 +256,6 @@ illeszd be a parancsot (a menü gombal), és nyomd meg az ENTER-t.</string>
     <string name="ssh_info_summary">Gyors tipp mutatása az SSH használatáról</string>
     <string name="audio_tutorial_title">Audio kicsomagolási oktatás</string>
     <string name="audio_tutorial_summary">Nyisd meg a tudnivalókat a hang kicsomagolásról</string>
-    <string name="audio_tutorial_text">Hogy kicsomagolhasd a hangot és mp3ra konvertálhasd,
-\n\n*) Engedélyezd a hangbeállítást, és töltsd le az FFmpeg-et;
-\n\n*) Válaszd ki a kicsomagolás típusát:
-\n\n\"csak kicsomagolás\" meghagyja a hang eredeti formátumát (WebM fájlokat \"Ogg Vorbis\"-ként; 
-MP4, 3GPP és közepes/nagy FLV videókat  \"AAC\" formátumuként; a kis FLV fájlokat pedig \"mp3\"-ként);
-\n\n\"kicsomagolás és konvertálás mp3-ra\" átkonvertálja a kiválasztott fájlt mp3 formátumban, a beállított minőségben.
-\n\nMostantól kezdve, ha rákattintasz egy elemre, kiválaszthatod, hogy letöltés után mp3-ba konvertálja át a hangsávot
-(kapcsold ki a hang kicsomagolása opciót, hogy ezt megszüntesd).
-\n\nÁllítsd be a beállításokban, ha törölni akarod a videót a hangra konvertálás után.</string>
     
     <!-- -->
     <string name="settings_cat_folder">Letöltési mappa</string>
@@ -194,35 +276,20 @@ MP4, 3GPP és közepes/nagy FLV videókat  \"AAC\" formátumuként; a kis FLV f�
     <string name="show_size_list_summary">Minden fájl méretének mutatása az elérhető videók listáján (nagyon lassú)</string>
     <string name="show_thumb_title">Előzetes kép mutatása</string>
     <string name="show_thumb_summary">Előzetes kép letöltése a videólistával</string>
+    <string name="show_resolutions_title">Show video resolutions</string>
+    <string name="show_resolutions_summary">Replace the quality indication with the video resolution</string>
     
     <!-- -->
-    <string name="settings_cat_audio">Hang</string>
-    <string name="enable_audio_extraction_title">Hang kicsomagolásának engedélyezése</string>
-    <string name="enable_audio_extraction_summary">Hang kicsomagolása és konvertálása a letöltött videóból (csak helyi letöltés esetén)</string>
-    <string name="mp3_bitrate_title">MP3 bitráta (kbps)</string>
+    <string name="settings_cat_advanced">Speciális beállítások</string>
+    <string name="enable_advanced_features_title">Enable Advanced Features</string>
+    <string name="enable_advanced_features_summary">Download FFmpeg \"plugin\"</string>
+    <string name="mp3_bitrate_title">Mp3 encoding bitrate:</string>
     <string name="audio_extraction_type_title">Kicsomagolás típúsa</string>
-    <string name="enable_audio_q_suffix_title">Hangminőség utótag mellékelése</string>
-    <string name="enable_audio_q_suffix_summary">Hangminőség hozzáadása a fájlnévhez</string>
     <string name="remove_video_title">Videó eltávolítás</string>
     <string name="remove_video_summary">Videó törlésének engedélyezése sikeres hang kicsomagoláskor (figyelem: nincs megerősítés)</string>
-
-    <string-array name="audio_extraction_type_entries">
-        <item>Csak kicsomagolás</item>
-        <item>Kicsomagolás és konvertálás mp3-ba</item>
-    </string-array>
     
     <!-- -->
     <string name="settings_cat_notifications">Értesítések</string>
-    <string name="enable_own_notification_title">Saját értesítés engedélyezése</string>
-    <string name="enable_own_notification_summary">Átfogó értesítés mutatása minden letöltésről</string>
-    <string name="download_manager_notification_title">Rendszerértesítések kezelése</string>
-    <string name="download_manager_notification_dialog_title">A rendszer letöltéskezelőjének értesítéseinek mutatása</string>
-    
-    <string-array name="download_manager_notification_entries">
-        <item>Folyamat közben, valamint annak végeztével</item>
-        <item>Csak folyamat közben</item>
-        <item>Soha</item>
-    </string-array>
     
     <string name="notification_defaults_title">Értesítési alapbeállítások</string>
     <string name="notification_defaults_dialog_title">YTD értesítési alapbeállítások</string>
@@ -247,59 +314,10 @@ MP4, 3GPP és közepes/nagy FLV videókat  \"AAC\" formátumuként; a kis FLV f�
     <string name="settings_cat_app">Alkalmazás</string>
     <string name="settings_cat_about_condensed">Névjegy</string>
     <string name="title_changelog">Változások listája</string>
-    <string name="screen_licences_code_title">Licenszek és kód</string>
-
-    <!-- -->
     <string name="settings_cat_licenses">Licenszek</string>
 
     <string name="credits_title">Készítők</string>
     <string name="title_activity_credits_show">Egyéb licenszek és fordítások</string>
-    
-    <string name="credits_text0">\tFő licenszek
-\n\n
-This App is released under the GPL-3.0.
-\n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
-\n\n
-The FFmpeg binary (<http>http://www.ffmpeg.org/index.html</http>), 
-used for the audio extraction feature, is released under the GPL-3.0.
-\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
-\n\n
-The filechooser library is released under the MIT license.
-\n(android-filechooser Copyright &#169; 2012 Hai Bison).
-\n\n
-The liblame library, used to compile FFmpeg, is released under the LGPL.
-A GitHub project, <http>https://github.com/intervigilium/liblame</http>, 
-has been used to compile the lame libraries for Android.
-\n(liblame Copyright &#169; 2010 Ethan Chen)
-\n(LAME Copyright &#169; 1999-2007 The LAME Project,
-\nCopyright &#169; 1999-2001 Mark Taylor,
-\nCopyright &#169; 1998 Micheal Cheng)
-\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
-\n\n
-YTD\'s mp3 tags are written with MyID3: a Java ID3 Tag Library
-(<http>http://www.fightingquaker.com/myid3</http> and <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
-released under the LGPL, as its dependency Jakarta Regexp library.
-\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
-\n\n
-For more informations, refer to the dedicated menus and to the license files 
-available from this project\'s source code.
-\n</string>
-    
-    <string name="credits_text1">\tIdézetek a licenszből
-\n\n
-Ez az alkalmazás licensz részeket használ innen:
-\n\n
-1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
-\nCopyright &#169; 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license.
-\nThe text of the license can be found in the LICENSE_GPL file or at <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
-\n\n
-2) Stack Overflow (<http>http://stackoverflow.com</http>), a question and answer site for programmers where all 
-the content is CC BY-SA 3.0 licensed (see <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
-\n\n
-További infóért nézd meg a YTD Java kódját</string>
-    <string name="credits_translators">\n\tFordítások
-\n\nTovábbi fordításokért köszönet:</string>
-    <string name="translators_info">\nTovábbi infó:</string>
         
     <!-- -->
     <string name="settings_cat_code">Forráskód</string>
@@ -315,7 +333,7 @@ További infóért nézd meg a YTD Java kódját</string>
 \nIngyenes és nyílt forráskódú app, mellyel YouTube videók tölthetőek le!
 \nhttps://sourceforge.net/projects/ytdownloader/files/</string>
 	<string name="help_translate_title">Segíts a fordításban</string>
-    <string name="help_translate_summary">Menj a www.getlocalization.com/ytdownloader oldalra</string>
+    <string name="xda_title">Thread on XDA forum</string>
     
     <!-- -->
     <string name="settings_cat_ssh">SSH</string>
@@ -328,7 +346,13 @@ SSH-n való küldéshez (csak akkor működik, ha a céleszköz ugyanazon a hál
 	<string name="ssh_to_longpress_menu_summary">\"Send via SSH\" művelet áthelyezése a hosszan nyomva előjövő menübe.</string>
 	
     <!-- -->
-	<string name="settings_cat_advanced">Speciális beállítások</string>
+	<string name="settings_cat_system">System</string>
 	<string name="enable_logging_title">Naplózás engedélyezése</string>
 	<string name="enable_logging_summary">YTD üzeneteinek felvétele a rendszernaplóba. Kötelező logcat küldéséhez a fejlesztőnek.</string>
+	<string name="clear_dashboard_title">Empty the Dashboard</string>
+	<string name="clear_dashboard_summary">Clear all dashboard\'s references (may fix some crashes)</string>
+	<string name="clear_dashboard_msg">Are you sure?\nThis will clear all the list in the Dashboard.</string>
+	<string name="clear_dashboard_ok">Dashboard cleared.</string>
+	<string name="clear_dashboard_failed">Dashboard emptying failed.</string>
+	
 </resources>

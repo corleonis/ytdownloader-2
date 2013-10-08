@@ -60,6 +60,8 @@ public class PopUps {
 	    AlertDialog helpDialog = helpBuilder.create();
 	    if (! ((Activity) context).isFinishing()) {
 	    	helpDialog.show();
+	    } else {
+	    	Utils.logger("w", "PopUp not showed", "PopUps");
 	    }
 	}
 }

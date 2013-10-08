@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/id3_tv_artist"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/id3_artist" />
+
+        <EditText
+            android:id="@+id/id3_et_artist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textCapWords|textNoSuggestions"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/id3_tv_album"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/id3_album" />
+
+        <EditText
+            android:id="@+id/id3_et_album"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textCapWords|textNoSuggestions"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/id3_tv_title"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/id3_title" />
+
+        <EditText
+            android:id="@+id/id3_et_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textCapWords|textNoSuggestions" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/id3_tv_genre"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/id3_genre" />
+
+        <EditText
+            android:id="@+id/id3_et_genre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10" 
+            android:inputType="textCapWords|textNoSuggestions"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/id3_tv_year"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/id3_year" />
+
+        <EditText
+            android:id="@+id/id3_et_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number|textNoSuggestions" />
+
+    </LinearLayout>
+
+</LinearLayout>

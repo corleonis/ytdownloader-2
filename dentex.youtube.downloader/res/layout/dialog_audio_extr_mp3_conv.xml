@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/bitrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/mp3_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingRight="10dp"
+            android:text="@string/mp3_bitrate_title" 
+            android:textAppearance="@android:style/TextAppearance.Widget.TextView"/>
+
+        <Spinner
+            android:id="@+id/mp3_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="right"
+            android:entries="@array/mp3_bitrate_entries"
+            android:saveEnabled="true"/>
+        
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/id3_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/edit_id3_tags" 
+        android:onClick="editId3Tags"/>
+    
+    <CheckBox
+        android:id="@+id/rem_video_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="@string/remove_video"
+        android:padding="10dp"/>
+
+</LinearLayout>

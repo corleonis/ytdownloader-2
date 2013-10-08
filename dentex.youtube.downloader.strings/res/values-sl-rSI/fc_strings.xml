@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2012 Hai Bison
+
+    See the file LICENSE at the root directory of this project for copying
+    permission.
+-->
+
+<resources>
+
+    <string name="afc_lib_name">Izbirnik datotek Android</string>
+    <string name="afc_cmd_advanced_selection_all">Vse</string>
+    <string name="afc_cmd_advanced_selection_invert">Zamenjaj izbiro</string>
+    <string name="afc_cmd_advanced_selection_none">Brez</string>
+    <string name="afc_cmd_clear">Počisti</string>
+    <string name="afc_cmd_grid_view">Mrežni pogled</string>
+    <string name="afc_cmd_home">Domov</string>
+    <string name="afc_cmd_list_view">Seznamski pogled</string>
+    <string name="afc_cmd_new_folder">Nova mapa&#8230;</string>
+    <string name="afc_cmd_reload">Ponovno naloži</string>
+    <string name="afc_cmd_remove_from_list">Odstrani s seznama</string>
+    <string name="afc_cmd_select_all_files">Izberi vse datoteke</string>
+    <string name="afc_cmd_select_all_folders">Izberi vse mape</string>
+    <string name="afc_cmd_sort">Sortiraj&#8230;</string>
+    <string name="afc_cmd_switch_viewmode">Preklopi način pogleda</string>
+    <string name="afc_ellipsize">&#8230;</string>
+    <string name="afc_file">datoteka</string>
+    <string name="afc_folder">Mala</string>
+    <string name="afc_hint_double_tap_to_select_file">Dvokliknite da izberete datoteko/mapo</string>
+    <string name="afc_hint_folder_name">ime mape</string>
+    <string name="afc_hint_save_as_filename">ime datoteke</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_create_files">Ta aplikacija nima dovoljenja za ustvarjanje datotek/map</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_delete_files">Ta aplikacija nima dovoljenja za Izbris datotek/map</string>
+    <string name="afc_msg_cancelled">Prekinjeno</string>
+    <string name="afc_msg_cannot_connect_to_file_provider_service">Ne morem se povezati na ponudnika datoteke</string>
+    <string name="afc_msg_done">Urejeno</string>
+    <string name="afc_msg_empty">&#8230;prazno</string>
+    <string name="afc_msg_filename_is_empty">Ime datoteke je prazno</string>
+    <string name="afc_msg_loading">Nalaganje&#8230;</string>
+    <string name="afc_pmsg_cannot_access_dir">Ne morem dostopati do \"%1$s\"</string>
+    <string name="afc_pmsg_cannot_create_folder">Ne morem ustvariti mape \"%1$s\"</string>
+    <string name="afc_pmsg_cannot_delete_file">Ne morem izbrisati %1$s \"%2$s\"</string>
+    <string name="afc_pmsg_confirm_delete_file">Ste prepričani, da želite izbrisati %1$s \"%2$s\"?</string>
+    <string name="afc_pmsg_confirm_replace_file">Ta datoteka \"%1$s\" že obstaja.\n\nAli jo želite zamenjati?</string>
+    <string name="afc_pmsg_deleting_file">Brisanje %1$s \"%2$s\"&#8230;</string>
+    <string name="afc_pmsg_file_has_been_deleted">&#8230;%1$s \"%2$s\" je bila izbrisana</string>
+    <string name="afc_pmsg_filename_is_directory">\"%1$s\" je mapa.</string>
+    <string name="afc_pmsg_filename_is_invalid">Ime datoteke \"%1$s\" ni veljavno</string>
+    <string name="afc_pmsg_max_file_count_allowed">&#8230;ima več datotek, največ dovoljenih: %1$,d</string>
+    <string name="afc_pmsg_unknown_error">Neznana napaka: %1$s</string>
+    <string name="afc_pmsg_xxx_items">%1$,d predmeti</string>
+    <string name="afc_root">Koren</string>
+    <string name="afc_title_advanced_selection">Izberi&#8230;</string>
+    <string name="afc_title_alert">Opozorilo</string>
+    <string name="afc_title_choose_directories">Izberite mapo</string>
+    <string name="afc_title_choose_files">Izberi datoteke&#8230;</string>
+    <string name="afc_title_choose_files_and_directories">Izberi datoteke/mape&#8230;</string>
+    <string name="afc_title_confirmation">Potrdilo</string>
+    <string name="afc_title_date">Datum</string>
+    <string name="afc_title_error">Napaka</string>
+    <string name="afc_title_history">Zgodovina</string>
+    <string name="afc_title_info">Informacije</string>
+    <string name="afc_title_name">Ime</string>
+    <string name="afc_title_save_as">Shrani kot&#8230;</string>
+    <string name="afc_title_size">Velikost</string>
+    <string name="afc_title_sort_by">Sortiraj po&#8230;</string>
+    <string name="afc_yesterday">Včeraj</string>
+
+</resources>

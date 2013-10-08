@@ -77,29 +77,27 @@ public class UpgradeApkActivity extends Activity {
 	private String currentVersion;
 	private String apkFilename;
 	private static final String DEBUG_TAG = "UpgradeApkActivity";
-	public boolean buttonClickedOnce = false;
-	public TextView tv;
-	public TextView cl;
-	public Button upgradeButton;
+	private boolean buttonClickedOnce = false;
+	private TextView tv;
+	private TextView cl;
+	private Button upgradeButton;
 	private DownloadManager downloadManager;
-	File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+	private File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 	private String webPage;
-	public long enqueue;
+	private long enqueue;
 	private Uri fileUri;
 	private AsyncUpdate asyncUpdate;
-	public String onlineVersion;
-	public String onlineChangelog;
-	public String matchedVersion;
-	public String matchedChangeLog;
-	public String matchedMd5;
-	boolean isAsyncTaskRunning = false;
+	private String matchedVersion;
+	private String matchedChangeLog;
+	private String matchedMd5;
+	private boolean isAsyncTaskRunning = false;
 	private String compRes = "init";
-	ContextThemeWrapper boxThemeContextWrapper = new ContextThemeWrapper(this, R.style.BoxTheme);
+	private ContextThemeWrapper boxThemeContextWrapper = new ContextThemeWrapper(this, R.style.BoxTheme);
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		BugSenseHandler.leaveBreadcrumb("UpgradeApkActivity_onCreate");
 		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
 		
 		// Theme init
@@ -239,7 +237,7 @@ public class UpgradeApkActivity extends Activity {
             try {
                 URL url = new URL(myurl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestProperty("User-Agent","<em>" + ShareActivity.USER_AGENT_FIREFOX + "</em>");
+                conn.setRequestProperty("User-Agent","<em>" + YTD.USER_AGENT_FIREFOX + "</em>");
                 conn.setReadTimeout(20000 /* milliseconds */);
                 conn.setConnectTimeout(30000 /* milliseconds */);
                 conn.setInstanceFollowRedirects(false);

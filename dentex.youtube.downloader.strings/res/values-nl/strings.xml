@@ -6,7 +6,8 @@
     <string name="title_activity_about">Over</string>
     <string name="title_activity_donate">Schenkingen</string>
     <string name="title_activity_tutorials">Tutorials</string>
-    <string name="title_activity_translators_show">Translators</string>    
+    <string name="title_activity_translators_show">Vertalers</string>
+    <string name="title_activity_dashboard">Dashboard</string>
 
     <!-- ### ShareActivity ### -->
 
@@ -21,11 +22,12 @@
     <string name="information">Informatie</string>
     <string name="dialogs_negative">Annuleren</string>
     <string name="wait">Een moment geduld a.u.b. &#8230;</string>
-    <string name="no_downloads_sys_app">\"Downloads\" system App not found.</string>
-    <string name="ytd_useless">YTD cannot download files on this device.</string>
+    <string name="no_downloads_sys_app">\"Downloads\" systeem App niet gevonden.</string>
+    <string name="ytd_useless">YTD kan geen bestanden downloaden op dit toestel</string>
     <string name="invalid_url">Niet in staat om de pagina te laden. URL wellicht ongeldig.</string>
     <string name="invalid_url_short">Niet in staat om de pagina te laden.</string>
     <string name="invalid_response">Ongeldige HTTP server terugkoppeling.</string>
+    <string name="rtmpe_streams">Invalide HTTP server antwoord.</string>
     <string name="bad_link">Controleer de opgegeven link.</string>
     <string name="bad_link_dialog_msg">Ongeldige YouTube link.</string>
     <string name="no_net">Geen verbinding beschikbaar.</string>
@@ -43,9 +45,9 @@
     <string name="ssh_info_tutorial_msg">Een enkele lange commando is geladen in het klembord.
 \n\nKies een profiel in ConnectBot en een keer in je remote shell, bladert u naar de gewenste
 map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
-    <string name="callConnectBot_dialog_title">%1$s not installed!</string>
+    <string name="callConnectBot_dialog_title">%1$s niet geinstalleerd</string>
     <string name="callConnectBot_dialog_msg">Deze gratis App is vereist voor het versturen van de video via het SSH protocol.</string>
-    <string name="callConnectBot_dialog_positive">Download</string>
+    <string name="callConnectBot_dialog_positive">Downloaden</string>
     <string name="download_complete_dialog_msg1">YouTube Video:\n</string>
     <string name="download_complete_dialog_msg2">\nDownload voltooid</string>
     <string name="download_complete_dialog_positive">Openen</string>
@@ -59,11 +61,13 @@ map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
     <string name="notification_downloading_pt2">video bestanden</string>
     <string name="notification_no_downloads">Geen downloads in behandeling</string>
     <string name="long_click_title">Hanteer geselecteerde link:</string>
-    <string name="extsdcard_info_title">Geen standaard pad naar bestemmingsmap</string>
-    <string name="extsdcard_info_msg">Bestand wordt gedownload naar de standaard map Downloads, daarna zal het verplaatst worden naar de gekozen bestemming.</string>
-    <string name="ffmpeg_ready">FFmpeg ready.</string>
-    <string name="confirm_audio_checkbox1">Extract audio after download</string>
-    <string name="confirm_audio_checkbox2">\n(as defined in settings)</string>
+    <string name="ffmpeg_ready">FFmpeg klaar.</string>
+    <string name="confirm_audio_checkbox1">Audio uittrekken na download</string>
+    <string name="confirm_audio_checkbox2">\n(als ingesteld in instellingen)</string>
+    <string name="login_required">Inloggen bij YouTube kan nodig zijn</string>
+    <string name="encrypted_streams">Geencrypteerde video stream</string>
+    <string name="no_video_available">Geen video beschikbaar</string>
+    <string name="retry_button_text">Opnieuw</string>
     
     <string-array name="long_click_entries">
         <item>Kopieer naar klembord</item>
@@ -71,15 +75,14 @@ map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
     </string-array>
     
     <string-array name="long_click_entries2">
-        <item>Copy to clipboard</item>
-        <item>Share as text</item>
-        <item>Send via SSH</item>
+        <item>Kopieer naar klembord</item>
+        <item>Deel als tekst</item>
+        <item>Verzend via SSH</item>
     </string-array>
     
     <!-- ### SettingsActivity ### -->
 
     <string name="attention">Let op!</string>
-    <string name="extsdcard_warning">Niet in staat om bestanden te schrijven op de verwijderbare sdkaart.\nTerug vallen op de standaard sdkaart.</string>
     <string name="system_warning_title">Dit is een systeemmap</string>
     <string name="system_warning_msg">Gekozen pad valt terug op de standaard sdkaart. Download map.</string>
     <string name="sdcard_unmounted_warning">Sdkaart niet gemonteerd</string>
@@ -114,37 +117,125 @@ map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
     <!-- ### DownloadsService ### -->
     
     <string name="ytd_video">YTD video</string>
-    <string name="copy_error">Fout tijdens het kopiëren</string>
+    <string name="copy_error">Fout tijdens kopieren</string>
     <string name="copy_progress">Bezig met kopiëren van bestand&#8230;</string>
-    <string name="copy_ok">Kopiëren voltooid. </string>
+    <string name="copy_ok">Bestand kopieren compleet</string>
     <string name="download_remove_failed">Fout: tijdelijk gedownload bestand niet verwijderd!</string>
     <string name="download_failed">Download mislukt!</string>
-    <string name="audio_extr_progress">Audio extraction in progress&#8230;</string>
-    <string name="audio_conv_progress">Audio encoding to mp3 in progress&#8230;</string>
+    <string name="audio_extr_progress">Audio extractie bezig&#8230;</string>
+    <string name="audio_conv_progress">Audio encoderen naar mp3 bezig&#8230;</string>
     <string name="audio_extr_completed">Uitpakken audio voltooid.</string>
-    <string name="audio_conv_completed">Audio encoding to mp3 completed.</string>
-    <string name="audio_extr_error">Error during audio extraction.</string>
-    <string name="audio_conv_error">Error during audio encoding to mp3.</string>
+    <string name="audio_conv_completed">Audio coderen naar mp3 compleet</string>
+    <string name="audio_extr_error">Fout tijdens audio extractie.</string>
+    <string name="audio_conv_error">Fout tijdens audio codering naar mp3.</string>
     
     <!-- ### DonateActivity ### -->
     
     <string name="paypal_item_name">YTD Schenking</string>
-    <string name="paypal_title">PayPal</string>
 	<string name="paypal_summary">Steun de ontwikkelaar van YTD door een schenking</string>
+	<string name="flattr_summary">Flattr deze App</string>
 	
 	<!-- ### FfmpegDownloadService ### -->
 	<string name="ffmpeg_install_failed">FFmpeg installatie mislukt.</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Voltooid</string>
+	<string name="json_status_failed">Mislukt</string>
+	<string name="json_status_in_progress">In Uitvoering</string>
+	<string name="json_status_paused">Gepauzeerd.</string>
+	<string name="json_status_imported">Geimporteerd</string>
+	<string name="menu_search">Zoeken&#8230;</string>
+	<string name="menu_backup">Back-up </string>
+	<string name="menu_restore">Herstellen</string>
+	<string name="menu_import">Importeer een video</string>
+	<string name="menu_import_double">Video reeds toegevoegd.</string>
+	<string name="menu_backup_info">Kies een map om Dashboard\'s date op te slaan.</string>
+	<string name="menu_restore_info">Herstel Dashboard\'s data uit bestand</string>
+	<string name="menu_restore_info_msg">Huidige data wordt overschreven</string>
+	<string name="menu_import_info">Importeer een video en bewerk hem vanuit het Dashboard</string>
+	<string name="menu_backup_result_ok">Dashboard data backup OK.</string>
+	<string name="menu_backup_result_failed">Fout tijdens back-up</string>
+	<string name="menu_restore_result_ok">Dashboard data hersteld.</string>
+	<string name="menu_restore_result_failed">Fout tijdens herstellen.</string>
+	<string name="unsupported_operation">Niet ondersteunde operatie.</string>
+	<string name="invalid_data">Onjuiste gegevens.</string>
+	<string name="open_chooser_title">Open met:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Openen</item>
+	    <item>Enkel audio extracten</item>
+        <item>Audio extracten en coderen naar mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Openen</item>
+        <item>Coderen naar mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Open</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg niet geïnstalleerd of ingeschakeld:</string>
+	<string name="ffmpeg_not_enabled_msg">Instellingen openen?</string>
+	<string name="remove_video">Video verwijderen na audio extractie (geen bevestiging)</string>
+	<string name="remove_original_audio">Verwijder audio na converteren (geen bevestiging)</string>
+	<string name="edit_id3_tags">Bewerk ID3 tags</string>
+	<string name="id3_album">Album</string>
+	<string name="id3_artist">Artiest</string>
+	<string name="id3_title">Titel</string>
+	<string name="id3_year">Jaar</string>
+	<string name="id3_genre">Genre</string>
+	
+	<string name="audio_extr_info">Ingesloten audio stream:</string>
+	
+	<string name="dashboard_long_click_entry_0">Kopieer</string>
+	<string name="dashboard_long_click_entry_1">Verplaats</string>
+	<string name="dashboard_long_click_entry_2">Verwijder</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Kopiëren</item>
+	    <item>Verplaats</item>
+        <item>Hernoem</item>
+        <item>Her download de video</item>
+        <item>Verwijder van dashboard</item>
+        <item>Verwijder en delete bestand</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Kopiëren</item>
+	    <item>Verplaats</item>
+        <item>Hernoem</item>
+        <item>Her download de video</item>
+        <item>Verwijder van dashboard</item>
+        <item>Verwijder en delete bestand</item>
+        <item>Pauze/Hervatten</item>
+    </string-array>
+    
+	<string name="move_error">Fout bij verplaatsen</string>
+    <string name="move_progress">Bestand verplaatsen bezig&#8230;</string>
+    <string name="move_ok">Bestand verplaatsen compleet</string>
+    <string name="long_press_warning_title">Operatie niet uitgevoerd</string>
+    <string name="long_press_warning_msg">Bron en destinatie mappen overlappen</string>
+    <string name="long_press_warning_msg2">Er bestaat al een kopie in deze folder</string>
+    <string name="audio_extr_warning_msg">Zelfde audio bestand is al geextracteerd</string>
+
+	<string name="delete_video_confirm">Bevestig dat je deze video wil verwijderen?</string>
+	<string name="remove_video_confirm">Bevestig dat je deze video wil verwijderen?</string>
+	<string name="delete_video_ok">%1$s succesvol verwijderd.</string>
+	<string name="delete_video_failed">Fout: %1$s niet verwijderd.</string>
+	
+	<string name="empty_dashboard">Geen gedownloade video\'s</string>
 
     <!-- ### preferences ### -->
 
     <!-- -->
-    <string name="dm_title">Downloads</string>
-    <string name="dm_summary">Open system\'s Download Manager</string>
+    <string name="dashboard_summary">Open YTD\'s Dashboard</string>
 
     <!-- -->
     <string name="settings_cat_ui">Gebruikersinterface</string>
     <string name="lang_title">Taal</string>
-    <string name="lang_dialog_title">Taal (applicatie herstart vereist):</string>
+    <string name="lang_dialog_title">Kies UI taal</string>
     <string name="choose_theme_title">Kies thema</string>
     <string-array name="choose_theme_entries">
         <item>Donker</item>
@@ -163,18 +254,8 @@ map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
     <string name="show_again_checkbox">Volgende keer tonen</string>
     <string name="ssh_info_title">Activeer SSH handleiding</string>
     <string name="ssh_info_summary">Laat een snelle tip zien over op afstand downloaden via SSH</string>
-    <string name="audio_tutorial_title">Audio extraction tutorial</string>
-    <string name="audio_tutorial_summary">Open a brief guide about the audio extraction feature</string>
-    <string name="audio_tutorial_text">To extract or convert to mp3 the audio from a downloaded video:
-        \n\n*) Enable the audio preference and download FFmpeg;
-        \n\n*) Choose the extraction type: 
-        \n\n\"extract only\" will conserve the audio stream from the video as is (WebM files contain an \"Ogg Vorbis\" 
-        audio; MP4, 3GPP and large/medium FLV video hold an \"AAC\" audio stream; FLV small holds an \"mp3\");
-        \n\n\"extract and encode to mp3\" will convert the extracted audio in an mp3, encoding it with the selected bitrate.
-        \n\nFrom now on, a checkbox will appear in the download confirmation box visible when you click an item 
-        in the YTD\'s video list. When checked, the audio extraction job will start upon video download completion 
-        (to hide the checkbox, disable the audio extraction option).
-        \n\nChoose from settings if you want to remove the video file after a successful audio extraction.</string>
+    <string name="audio_tutorial_title">Audio extractie handleiding</string>
+    <string name="audio_tutorial_summary">Open een korte gids over audio extractie functies</string>
     
     <!-- -->
     <string name="settings_cat_folder">Download map</string>
@@ -186,7 +267,7 @@ map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
     <!-- -->
     <string name="settings_cat_files">Video bestanden</string>
     <string name="enable_q_suffix_title">Kwaliteit achtervoegsel toevoegen</string>
-    <string name="enable_q_suffix_summary">Add the video quality at the end of the file name</string>
+    <string name="enable_q_suffix_summary">De video kwaliteit aan het eind van het bestand toevoegen</string>
     <string name="enable_rename_title">Activeer bestand hernoemen</string>
     <string name="enable_rename_summary">Hernoem het video bestand voor het downloaden (alleen voor lokale download)</string>
     <string name="show_size_title">Bestandsgrootte laten zien</string>
@@ -195,47 +276,32 @@ map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
     <string name="show_size_list_summary">Haal de bestandsgrootte op van alle video\'s in de lijst (veel slomer)</string>
     <string name="show_thumb_title">Toon voorbeeld afbeelding</string>
     <string name="show_thumb_summary">Download een voorbeeld afbeelding met de videolijst</string>
+    <string name="show_resolutions_title">Toon video resoluties</string>
+    <string name="show_resolutions_summary">Vervang de kwaliteit indicatie met de video resolutie</string>
     
     <!-- -->
-    <string name="settings_cat_audio">Audio</string>
-    <string name="enable_audio_extraction_title">Uitpakken audio inschakelen</string>
-    <string name="enable_audio_extraction_summary">Extract and convert audio from downloaded video (for the local download only)</string>
-    <string name="mp3_bitrate_title">Bitrate for mp3 encoding (kbps)</string>
-    <string name="audio_extraction_type_title">Extraction type</string>
-    <string name="enable_audio_q_suffix_title">Append audio quality suffix</string>
-    <string name="enable_audio_q_suffix_summary">Add the audio quality at the end of the file name</string>
-    <string name="remove_video_title">Video removal</string>
-    <string name="remove_video_summary">Enable video file deletion after successful audio extraction (warning: no confirmation)</string>
-
-    <string-array name="audio_extraction_type_entries">
-        <item>Extract only</item>
-        <item>Extract and encode to mp3</item>
-    </string-array>
+    <string name="settings_cat_advanced">Geavanceerd</string>
+    <string name="enable_advanced_features_title">Geavanceerde functies inschakelen</string>
+    <string name="enable_advanced_features_summary">Download FFmpeg \"plugin\"</string>
+    <string name="mp3_bitrate_title">Mp3 codering bitrate:</string>
+    <string name="audio_extraction_type_title">Extractie type</string>
+    <string name="remove_video_title">Video verwijdering</string>
+    <string name="remove_video_summary">Inschakelen van video bestand verwijderen na succesvol audio extracten (waarschuwing: geen confirmatie)</string>
     
     <!-- -->
     <string name="settings_cat_notifications">Meldingen</string>
-    <string name="enable_own_notification_title">Activeer eigen meldingen</string>
-    <string name="enable_own_notification_summary">Laat een uitgebreide melding zien over alle YTD downloads</string>
-    <string name="download_manager_notification_title">Beheer system\'s meldingen</string>
-    <string name="download_manager_notification_dialog_title">Laat system\'s Download Manager melding zien:</string>
     
-    <string-array name="download_manager_notification_entries">
-        <item>Tijdens de uitvoering en na voltooiing</item>
-        <item>Tijdens het uitvoering alleen</item>
-        <item>Nooit</item>
-    </string-array>
-    
-    <string name="notification_defaults_title">Notification defaults</string>
-    <string name="notification_defaults_dialog_title">YTD\'s own notification defaults</string>
+    <string name="notification_defaults_title">Notificatie standaardwaarde</string>
+    <string name="notification_defaults_dialog_title">YTD\'s eigen  notificatie Standaardwaarden</string>
     <string-array name="notification_defaults_entries">
-        <item>Sound and Vibration</item>
-        <item>Sound and Lights</item>
-        <item>Vibration and Lights</item>
-        <item>Sound, Vibration and Lights</item>
-        <item>Sound</item>
-        <item>Vibration</item>
-        <item>Lights</item>
-        <item>Nothing</item>
+        <item>Geluid en Vibratie</item>
+        <item>Geluid en Licht</item>
+        <item>Vibratie en Lichten</item>
+        <item>Geluid, Vibratie en Lichten</item>
+        <item>Geluid</item>
+        <item>Vibratie</item>
+        <item>Lichten</item>
+        <item>Niets</item>
     </string-array>   
     
     <!-- -->
@@ -248,60 +314,10 @@ map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
     <string name="settings_cat_app">Applicatie</string>
     <string name="settings_cat_about_condensed">Over</string>
     <string name="title_changelog">Lijst met veranderingen</string>
-    <string name="screen_licences_code_title">Licenties en Regels</string>
-
-    <!-- -->
     <string name="settings_cat_licenses">Licenties</string>
 
     <string name="credits_title">Credits</string>
     <string name="title_activity_credits_show">Andere licentie en vertalingen</string>
-    
-    <string name="credits_text0">\tMain Licenses
-        \n\n
-        This App is released under the GPL-3.0.
-        \n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
-        \n\n
-        The FFmpeg binary (<http>http://www.ffmpeg.org/index.html</http>), 
-        used for the audio extraction feature, is released under the GPL-3.0.
-        \n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
-    	\n\n
-    	The filechooser library is released under the MIT license.
-    	\n(android-filechooser Copyright &#169; 2012 Hai Bison).
-    	\n\n
-    	The liblame library, used to compile FFmpeg, is released under the LGPL.
-    	A GitHub project, <http>https://github.com/intervigilium/liblame</http>, 
-    	has been used to compile the lame libraries for Android.
-    	\n(liblame Copyright &#169; 2010 Ethan Chen)
-    	\n(LAME Copyright &#169; 1999-2007 The LAME Project,
-		\nCopyright &#169; 1999-2001 Mark Taylor,
-		\nCopyright &#169; 1998 Micheal Cheng)
-    	\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
-    	\n\n
-    	YTD\'s mp3 tags are written with MyID3: a Java ID3 Tag Library
-    	(<http>http://www.fightingquaker.com/myid3</http> and <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
-    	released under the LGPL, as its dependency Jakarta Regexp library.
-    	\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
-    	\n\n
-    	For more informations, refer to the dedicated menus and to the license files 
-    	available from this project\'s source code.
-    	\n</string>
-    
-    <string name="credits_text1">\tCode excerpts Licenses
-        \n\n
-        This App uses some code snippets from: 
-        \n\n
-        1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
-        \nCopyright &#169; 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license.
-        \nThe text of the license can be found in the LICENSE_GPL file or at <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
-        \n\n
-        2) Stack Overflow (<http>http://stackoverflow.com</http>), a question and answer site for programmers where all 
-        the content is CC BY-SA 3.0 licensed (see <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
-	    \n\n
-	    For more details, look for comments in YTD\'s Java code.
-	    </string>
-    <string name="credits_translators">\n\tVertalingen
-\n\nMede mogelijk gemaakt door:</string>
-    <string name="translators_info">\nVoor meer informatie:</string>
         
     <!-- -->
     <string name="settings_cat_code">Broncode</string>
@@ -317,20 +333,26 @@ map, PLAK het commando (gebruik de menuknop) en klik ENTER.</string>
 \nGratis en Open-Source Android App om YouTube videos te downloaden!
 \nhttps://sourceforge.net/projects/ytdownloader/files/</string>
 	<string name="help_translate_title">Help deze App te vertalen</string>
-    <string name="help_translate_summary">Ga naar www.getlocalization.com/ytdownloader</string>
+    <string name="xda_title">Thread op XDA forum</string>
     
     <!-- -->
     <string name="settings_cat_ssh">SSH</string>
-    <string name="connectbot_flavour_title">ConnectBot version to use</string>
-	<string name="connectbot_flavour_dialog_title">Choose ConnectBot fork to send video via SSH</string>
-	<string name="enable_connectbot_short_cmd_title">Enable SSH short cmd</string>
-	<string name="enable_connectbot_short_cmd_summary">Use a slightly shorter but faster command to 
-	    paste into the remote shell (will ONLY work if the destination PC resides within the same LAN)</string>
-	<string name="ssh_to_longpress_menu_title">SSH-send to long-press menu</string>
-	<string name="ssh_to_longpress_menu_summary">Move \"Send via SSH\" action into the long-press menu available from the video list</string>
+    <string name="connectbot_flavour_title">ConnectBot versie te gebruiken</string>
+	<string name="connectbot_flavour_dialog_title">Kies ConnectBot vork om video te zenden via SSH</string>
+	<string name="enable_connectbot_short_cmd_title">Activeer SSH korte cmd</string>
+	<string name="enable_connectbot_short_cmd_summary">Gebruik een iets korter maar sneller commando om
+te plakken in de shell op afstand (zal ENKEL werken als de doel-PC in hetzelfde LAN zit)</string>
+	<string name="ssh_to_longpress_menu_title">SSH-verzend naar lang drukken menu</string>
+	<string name="ssh_to_longpress_menu_summary">Verplaats \"Zend via SSH"\ aktie naar lang druk-menu beschikbaar in video lijst</string>
 	
     <!-- -->
-	<string name="settings_cat_advanced">Geavanceerd</string>
+	<string name="settings_cat_system">Systeem</string>
 	<string name="enable_logging_title">Log bijhouden ingeschakeld</string>
 	<string name="enable_logging_summary">YTD berichten opnemen in de systeemlog. Vereist om een logbestand te versturen naar de ontwikkelaar.</string>
+	<string name="clear_dashboard_title">Maak Dashboard leeg</string>
+	<string name="clear_dashboard_summary">Verwijder alle Dashboard referenties (kan crashes herstellen)</string>
+	<string name="clear_dashboard_msg">Bent u het zeker?\n Dit zal de hele lijst wissen in Dashboard.</string>
+	<string name="clear_dashboard_ok">Dashboard leeggemaakt</string>
+	<string name="clear_dashboard_failed">Dashboard leegmaken mislukt</string>
+	
 </resources>

@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="changelog">
+        \n v3.0 - Oct 08 2013
+        \n-----------------------------------
+        \n[x] Dashboard for interaction
+        \n    with downloaded video:
+        \n    - show status/progress/speed
+        \n    - click to:
+        \n      ^ open video/audio file
+        \n      ^ audio extraction/conversion
+        \n    - long-click to manage files:
+        \n      ^ copy
+        \n      ^ move
+        \n      ^ rename
+        \n      ^ redownload
+        \n      ^ remove
+        \n      ^ delete
+        \n      ^ pause/resume
+        \n[x] Custom download manager
+        \n    supporting:
+        \n    - pause/resume
+        \n    - YouTube link validation on
+        \n      resume through different
+        \n      networks and/or expire time
+        \n[x] new translations:
+        \n    - Slovak
+        \n    - Slovenian
+        \n    - Vietnamese 
+        \n    - Finnish
+        \n
         \n v2.7 - Aug 20 2013
         \n-----------------------------------
         \n[x] auto-patch experimental 
@@ -9,13 +37,13 @@
         \n
         \n v2.6.2 - Aug 08 2013
         \n-----------------------------------
-        \n[x] experimantal signature patch
+        \n[x] experimental signature patch
         \n
         \n v2.6.1 - Jul 26 2013
         \n-----------------------------------
         \n[x] option to show resolutions
         \n    into the video list
-        \n[x] experimantal signature patch
+        \n[x] experimental signature patch
         \n
         \n v2.6 - Jul 17 2013
         \n-----------------------------------
@@ -166,8 +194,9 @@
 		\n
 		\n v1.7 - Mar 03 2012
 		\n-----------------------------------
-		\n[x] Italian translation
-		\n[x] Portuguese (Portugal) transl.
+		\n[x] translations:
+		\n    - Italian
+		\n    - Portuguese (Portugal)
 		\n[x] option to force the locale
 		\n
 		\n v1.6 - Mar 01 2013
@@ -245,16 +274,22 @@
 		\n-----------------------------------</string>
 		
     <string name="gpl_title">GPL-3.0</string>
-    <string name="gpl_summary">YTD &amp; FFmpeg</string>
-    <string name="title_activity_gpl_show">GPL-3.0</string>
+    <string name="gpl_summary">YouTubeDownloader\nFFmpeg</string>
 
-    <string name="mit_title">MIT license</string>
-    <string name="mit_summary">android-filechooser &amp; MyID3</string>
-    <string name="title_activity_mit_show">MIT license</string>
+    <string name="mit_title">MIT</string>
+    <string name="mit_summary">android-filechooser</string>
     
-    <string name="lgpl_show_title">LGPL-3.0</string>
-    <string name="lgpl_show_summary">liblame</string>
-    <string name="title_activity_lgpl_show">LGPL-3.0</string>
+    <string name="lgpl_title">LGPL-3.0</string>
+    <string name="lgpl_summary">liblame</string>
+    
+    <string name="apache_title">Apache</string>
+    <string name="apache_summary">Picasso\nMyID3 &amp; Jakarta</string>
+    
+    <string name="cc_title">CC BY-NC-ND 3.0</string>
+    <string name="cc_summary">App\'s icons\nStack Overflow\'s snippets</string>
+    
+    <string name="mpl_title">MPL-2.0</string>
+    <string name="mpl_summary">Rhino</string>
 		
     <string name="gpl_text">GNU GENERAL PUBLIC LICENSE
 		\n\n
@@ -271,7 +306,7 @@
 		You should have received a copy of the GNU General Public License
 		along with this program. If not, see <http>http://www.gnu.org/licenses</http></string>
 		
-    <string name="lgpl_show_text">GNU LESSER GENERAL PUBLIC LICENSE
+    <string name="lgpl_text">GNU LESSER GENERAL PUBLIC LICENSE
 		\n\n
 		This library is free software; you can redistribute it and/or
 		modify it under the terms of the GNU Lesser General Public
@@ -283,9 +318,8 @@
 		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 		Lesser General Public License for more details.
 		\n\n
-		You should have received a copy of the GNU Lesser General Public
-		License along with this library; if not, write to the Free Software
-		Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA</string>
+		You should have received a copy of the GNU General Public License
+    	along with this program.  If not, see <http>http://www.gnu.org/licenses</http></string>
 
     <string name="mit_text">The MIT License (MIT)
 		\n\n
@@ -306,33 +340,160 @@
 		IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 		CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
 		
-    <string name="ytd_code_git_summary">https://github.com/dentex/ytdownloader/</string>
-    <string name="ytd_code_hg_summary">https://sourceforge.net/projects/ytdownloader/</string>
-       
-    <string name="credits_text2">\n\ti.e.:
-        \n\nFfmpegController.java: GPL-3.0 - Copyright &#169; 2009, Nathan Freitas, Orbot / The Guardian Project - http://openideals.com/guardian - https://github.com/guardianproject/android-ffmpeg-java
-        \n\nObserver.java: reference - https://gist.github.com/shirou/659180
-        \n\nSectionedAdapter.java: GPL-3.0 - Copyright &#169; 2008-2010 CommonsWare, LLC - portions Copyright &#169; 2008 Jeffrey Sharkey
-        \n\nUtils.getCpuInfo(): http://www.roman10.net/how-to-get-cpu-information-on-android/ - by Liu Feipeng
-        \n\nUtils.scanMedia(&#8230;): http://www.grokkingandroid.com/adding-files-to-androids-media-library-using-the-mediascanner/ - by Wolfram Rittmeyer
-        \n\nDashboardAdapter.java &amp; DashboardListItem.java: code adapted from https://github.com/survivingwithandroid/Surviving-with-android/ - by Francesco Azzola (JFrankie)
-        \n\nNew icons by Sam Plane (http://samplane123.deviantart.com/), released under the CC BY-NC-ND (http://creativecommons.org/licenses/by-nc-nd/3.0/)
-        \n\njs-14.jar - Rhino: open-source implementation of JavaScript written entirely in Java; https://developer.mozilla.org/en-US/docs/Rhino - license: http://www.mozilla.org/MPL/2.0/
-        \n\nJavascript function \"decryptSignature\" from the Greasemonkey script http://userscripts.org/scripts/show/25105 (MIT License) - by Gantt
+    <string name="apache_text">Apache licence 2.0
+        \n\n
+        Licensed under the Apache License, Version 2.0 (the "License");
+		you may not use this file except in compliance with the License.
+		You may obtain a copy of the License at
+		\n\n
+		\t <http>http://www.apache.org/licenses/LICENSE-2.0</http>
+		\n\n
+		Unless required by applicable law or agreed to in writing, software
+		distributed under the License is distributed on an "AS IS" BASIS,
+		WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+		See the License for the specific language governing permissions and
+		limitations under the License.
     </string>
     
-    <string name="translators_links">
-        \n<http>www.getlocalization.com/ytdownloader</http>
-        \n\n<http>forum.xda-developers.com/showthread.php?p=37708791</http>
+    <string name="cc_text">Attribution-NonCommercial-NoDerivs 3.0 Unported
+		\n
+		\nThis is a human-readable summary of the Legal Code 
+			(the full license: 
+			<http>http://www.creativecommons.org/licenses/by-nc-nd/3.0/legalcode/</http>).
+		\n
+		\nYou are free:
+		\n
+		\n\tto Share - to copy, distribute and transmit the work
+		\n
+		\nUnder the following conditions:
+		\n
+		\n\tAttribution - You must attribute the work in the manner specified by the author or licensor 
+			(but not in any way that suggests that they endorse you or your use of the work).
+		\n
+		\n\tNoncommercial - You may not use this work for commercial purposes.
+		\n
+		\n\tNo Derivative Works - You may not alter, transform, or build upon this work.
+		\n
+		\nWith the understanding that:
+		\n
+		\n\tWaiver - Any of the above conditions can be waived if you get permission from the copyright holder.
+		\n\tPublic Domain - Where the work or any of its elements is in the public domain under applicable law, 
+			that status is in no way affected by the license.
+		\n\tOther Rights - In no way are any of the following rights affected by the license:
+		\n\t\tYour fair dealing or fair use rights, or other applicable copyright exceptions and limitations;
+		\n\t\tThe author\'s moral rights;
+		\n\t\tRights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.
+		\n\tNotice - For any reuse or distribution, you must make clear to others the license terms of this work. 
+			The best way to do this is with a link to this web page.
     </string>
+    
+    <string name="mpl_text">This Source Code Form is subject to the terms of the Mozilla Public License, v2.0. 
+        If a copy of the MPL was not distributed with this file, You can obtain one at 
+        <http>http://mozilla.org/MPL/2.0</http>.</string>
+		
+    <string name="ytd_code_git_summary">https://github.com/dentex/ytdownloader/</string>
+    <string name="ytd_code_hg_summary">https://sourceforge.net/projects/ytdownloader/</string>
+    
+    <string name="credits_text">
+        \tMain Licenses
+        \n
+        \nThis App is released under the GPL-3.0.
+        \n(YouTubeDownloader for Android Copyright &#169; 2012-2013 Samuele Rini)
+        \n
+        \nThe FFmpeg binary (http://www.ffmpeg.org/index.html), 
+        	used for the audio extraction feature, is released under the GPL-3.0.
+        \n(FFmpeg version 2.0.1 Copyright &#169; 2000-2013 the FFmpeg developers)
+    	\n
+    	\nThe filechooser library is released under the MIT license.
+    	\n(android-filechooser Copyright &#169; 2012 Hai Bison)
+    	\n
+    	\nThe liblame library, used to compile FFmpeg, is released under the LGPL.
+    		A GitHub project, https://github.com/intervigilium/liblame, 
+    		has been used to compile the lame libraries for Android.
+    	\n(liblame Copyright &#169; 2010 Ethan Chen)
+    	\n(LAME Copyright &#169; 1999-2007 The LAME Project,
+		\nCopyright &#169; 1999-2001 Mark Taylor,
+		\nCopyright &#169; 1998 Micheal Cheng)
+    	\n(mpglib Copyright &#169; 1995-1997 Michael Hipp)
+    	\n
+    	\nYTD\'s mp3 tags are written with MyID3: a Java ID3 Tag Library
+    		(http://www.fightingquaker.com/myid3 and https://sites.google.com/site/eternalsandbox/myid3-for-android) 
+    		released under the Apache license, as its dependency Jakarta Regexp library.
+    	\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai)
+    	\n
+		\nPicasso: Image downloading and caching library
+			 - Copyright 2013 Square, Inc. - http://square.github.io/picasso/
+		\n
+		\nLauncher and notification icons by Sam Plane: 
+			http://samplane123.deviantart.com/, released under the CC BY-NC-ND 
+			(http://creativecommons.org/licenses/by-nc-nd/3.0)
+		\n
+		\nCredits for the custom download manager to  Hiroshi Matsunaga (matsuhiro): 
+		    https://github.com/matsuhiro/AndroidDownloadManger
+		    (released "unlicensed"). 
+		\n
+		\n
+    	\tCode excerpts Licenses
+        \n
+        \nStack Overflow (http://stackoverflow.com), a question and answer site for programmers where all 
+        	the content is CC BY-SA 3.0 licensed (see http://creativecommons.org/licenses/by-sa/3.0)
+        \n
+        \ncheckMD5(&#8230;) &amp; calculateMD5(&#8230;): 
+        	https://github.com/CyanogenMod/android_packages_apps_CMUpdater
+        	 - Copyright &#169; 2012 The CyanogenMod Project, 
+        	licensed under the GNU GPLv2 license
+        \n
+        \nFfmpegController.java: GPL-3.0 - Copyright &#169; 2009, Nathan Freitas, Orbot / The Guardian Project
+        	 - http://openideals.com/guardian
+        	 - https://github.com/guardianproject/android-ffmpeg-java
+        \n
+		\nObserver.java: reference - https://gist.github.com/shirou/659180
+        \n
+		\nSectionedAdapter.java: GPL-3.0
+			 - Copyright &#169; 2008-2010 CommonsWare, LLC
+			 - portions Copyright &#169; 2008 Jeffrey Sharkey
+        \n
+		\nUtils.getCpuInfo(): http://www.roman10.net/how-to-get-cpu-information-on-android/
+			 - by Liu Feipeng
+        \n
+		\nUtils.scanMedia(&#8230;): 
+			http://www.grokkingandroid.com/adding-files-to-androids-media-library-using-the-mediascanner/
+			 - by Wolfram Rittmeyer
+        \n
+		\nDashboardAdapter.java &amp; DashboardListItem.java: code adapted from 
+			https://github.com/survivingwithandroid/Surviving-with-android/ - by Francesco Azzola (JFrankie)
+        \n
+		\nRhino.jar: open-source implementation of JavaScript written entirely in Java; 
+			https://developer.mozilla.org/en-US/docs/Rhino - license: http://www.mozilla.org/MPL/2.0/
+        \n
+		\nJavascript function \"decryptSignature\" from the Greasemonkey script 
+			http://userscripts.org/scripts/show/25105 (MIT License) - by Gantt
+	    \n\n
+	    For more details, look for comments in YTD\'s Java code.
+	    \n
+	    \n
+	    \tTranslations
+        \n\nFor more info go to:
+        \n<http>www.getlocalization.com/ytdownloader</http>
+        \n<http>forum.xda-developers.com/showthread.php?p=37708791</http>
+    </string>
+    
+    <string name="help_translate_summary">www.getlocalization.com/ytdownloader</string>
+    <string name="xda_summary">forum.xda-developers.com/showthread.php?p=37708791</string>
+    
+    <string name="paypal_title">PayPal</string>
+	<string name="flattr_title">Flattr</string>
 
     <string name="paypal_user">samuele.rini76\@gmail.com</string>
     <string name="paypal_currency_code">EUR</string>
+    
+    <string name="flattr_user">dentex</string>
     
     <string name="tweet_title">Twitter</string>
     <string name="tweet_summary">\@twidentex</string>    
     
     <string name="thumb_preview_descr">Video thumbnail</string>
+    <string name="dashboard_longclick_item_icon_descr">longclick list item\'s icon</string>
 	
     <string name="app_name">YouTube Downloader</string>
     <string name="title_activity_share">YouTube Downloader</string>
@@ -365,14 +526,6 @@
     
     <string name="connectbot_flavour_default">org.connectbot</string>
     
-    <string-array name="download_manager_notification_entry_values">
-        <item>VISIBLE_NOTIFY_COMPLETED</item>
-        <item>VISIBLE</item>
-        <item>HIDDEN</item>
-    </string-array>
-    
-    <string name="download_manager_notification_default">VISIBLE</string>
-    
     <string-array name="choose_theme_entry_values">
         <item>D</item>
         <item>L</item>
@@ -380,31 +533,39 @@
     
     <string name="choose_theme_default">D</string>
     
-    <string-array name="audio_extraction_type_entry_values">
-        <item>extr</item>
-        <item>conv</item>
-    </string-array>
-    
-    <string name="audio_extraction_type_default">extr</string>
-
-    <string-array name="mp3_bitrate_entries">
-        <item>128</item>
-        <item>160</item>
-        <item>192</item>
-        <item>256</item>
-        <item>320</item>
-    </string-array>
-    
     <string-array name="mp3_bitrate_entry_values">
         <item>128k</item>
         <item>160k</item>
         <item>192k</item>
         <item>256k</item>
-        <item>320k</item>
+        <item>7</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
     </string-array>
     
-    <string name="mp3_bitrate_default">192k</string>
+    <string-array name="mp3_bitrate_entries">
+        <item>128k (CBR)</item>
+        <item>160k (CBR)</item>
+        <item>192k (CBR)</item>
+        <item>256k (CBR)</item>
+        <item>100k (VBR)</item>
+        <item>115k (VBR)</item>
+        <item>130k (VBR)</item>
+        <item>165k (VBR)</item>
+        <item>175k (VBR)</item>
+        <item>190k (VBR)</item>
+        <item>225k (VBR)</item>
+        <item>245k (VBR)</item>
+        
+    </string-array>
+	
     <string name="ffmpeg_download_dialog_msg_link">http://sourceforge.net/projects/ytdownloader/files/ffmpeg/ffmpeg_arm%1$s/download</string>
+    <string name="ffmpeg_download_dialog_msg_link_bitbucket">https://bitbucket.org/dentex/ffmpeg_compiled_for_android/src/46f57632886403af8ae2715943bb8572902e16ec/ffmpeg_arm%1$s?at=master</string>
     <string name="ffmpeg_size_arm7">6.0 MB</string>
     <string name="ffmpeg_size_arm5">6.4 MB</string>
     
@@ -419,56 +580,64 @@
         <item>7</item>
     </string-array>
     
-    <string name="notification_defaults_default">0</string>
+    <string name="notification_defaults_default">5</string>
     
     <string-array name="lang_entries">
         <item>Default</item>
         <item>English</item>
         <item>Arabic</item>
+        <item>Chinese (China)</item>
+        <item>Chinese (Hong Kong)</item>
+        <item>Chinese (Taiwan)</item>
         <item>Danish</item>
         <item>Dutch</item>
+        <item>Finnish</item>
         <item>French</item>
+        <item>German</item>
+        <item>Greek</item>
         <item>Hebrew</item>
         <item>Hungarian (Hungary)</item>
         <item>Italian</item>
-        <item>German</item>
-        <item>Greek</item>
         <item>Korean</item>
         <item>Polish (Poland)</item>
         <item>Portuguese (Brazil)</item>
         <item>Portuguese (Portugal)</item>
         <item>Russian</item>
+        <item>Slovak</item>
+        <item>Slovenian</item>
         <item>Spanish</item>
         <item>Turkish</item>
+        <item>Vietnamese</item>
         <item>Western Farsi (Iran)</item>
-        <item>Chinese (China)</item>
-        <item>Chinese (Hong Kong)</item>
-        <item>Chinese (Taiwan)</item>
     </string-array>
     
     <string-array name="lang_entry_values">
         <item>default</item>
         <item>en</item>
         <item>ar</item>
+        <item>zh_CN</item>
+        <item>zh_HK</item>
+        <item>zh_TW</item>
         <item>da</item>
         <item>nl</item>
+        <item>fi</item>
         <item>fr</item>
+        <item>de</item>
+        <item>el_GR</item>
         <item>iw</item>
         <item>hu_HU</item>
         <item>it</item>
-        <item>de</item>
-        <item>el_GR</item>
         <item>ko</item>
         <item>pl_PL</item>
         <item>pt_BR</item>
         <item>pt_PT</item>
         <item>ru</item>
+        <item>sk</item>
+        <item>sl_SI</item>
         <item>es</item>
         <item>tr_TR</item>
+        <item>vi</item>
         <item>fa</item>
-        <item>zh_CN</item>
-        <item>zh_HK</item>
-        <item>zh_TW</item>
     </string-array>
     
     <string name="lang_default">default</string>

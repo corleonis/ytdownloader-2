@@ -29,10 +29,7 @@ package dentex.youtube.downloader.utils;
 import java.io.File;
 
 import android.os.FileObserver;
-import android.util.Log;
 import dentex.youtube.downloader.SettingsActivity;
-import dentex.youtube.downloader.ShareActivity;
-import dentex.youtube.downloader.service.DownloadsService;
 import dentex.youtube.downloader.service.FfmpegDownloadService;
 
 // reference:
@@ -64,9 +61,7 @@ public class Observer {
 				Utils.logger("d", TAG + "file " + path + " CREATED", DEBUG_TAG);
 				
 				if (observedPath.equals(FfmpegDownloadService.DIR)) {
-					SettingsActivity.SettingsFragment.touchAudioExtrPref(false, false);
-				} else {
-					ShareActivity.NotificationHelper();
+					SettingsActivity.SettingsFragment.touchAdvPref(false, false);
 				}
 			}
 			
@@ -74,15 +69,7 @@ public class Observer {
 				Utils.logger("d", TAG + "file " + path + " DELETED", DEBUG_TAG);
 
 				if (observedPath.equals(FfmpegDownloadService.DIR)) {
-					SettingsActivity.SettingsFragment.touchAudioExtrPref(true, false);
-				} else {
-					long id = Utils.settings.getLong(path, 0);
-					Utils.logger("d", TAG + "Retrieved ID: " +  id, DEBUG_TAG);
-					try {
-						DownloadsService.removeIdUpdateNotification(id);
-					} catch (NullPointerException e) {
-						Log.e(DEBUG_TAG, "Nothing to update into notification. ", e.getCause());
-					}
+					SettingsActivity.SettingsFragment.touchAdvPref(true, false);
 				}
 			}
 		}

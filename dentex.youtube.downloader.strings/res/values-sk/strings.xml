@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_settings">Nastavenia</string>
+    <string name="title_activity_upgrade_apk">Aktivovať</string>
+    <string name="title_activity_about">O aplikácii</string>
+    <string name="title_activity_donate">Dary</string>
+    <string name="title_activity_tutorials">Návody</string>
+    <string name="title_activity_translators_show">Prekladatelia</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+
+    <!-- ### ShareActivity ### -->
+
+    <string name="tutorial_title">Všeobecný návod</string>
+	<string name="tutorial_msg_new">Teraz vidíte zoznam s kodekmi a kvalitami dostupnými pre zvolené video. Môžete:
+\n\n*) Kliknúť na položku pre stiahnutie videa do vášho zariadenia, alebo odoslať cez SSH do vzdialeného PC.
+\nPožiadavky pre cieľové zariadenie: Bash a Wget. Ďalšie info o SSH neskôr;
+\n\n*) Dlhšie podržať na položke pre voľbu medzi Kopírovať do schránky alebo Zdieľať odkaz ako text (napr. odoslať do inej aplikácie).
+\nVezmite prosím na vedomie, že takýto odkaz (iný ako pri odoslaní cez SSH) môže byť použitý iba na rovnakom zariadení, kde bol vytvorený alebo na rovnakej sieti LAN, ak ho zdieľate do iného zariadenia.\n</string>
+    <string name="loading">Načítavanie&#8230;</string>
+    <string name="error">Chyba!</string>
+    <string name="information">Informácie</string>
+    <string name="dialogs_negative">Zrušiť</string>
+    <string name="wait">Čakajte prosím&#8230;</string>
+    <string name="no_downloads_sys_app">Systémová aplikácia \"Prevzatia\" nenájdená.</string>
+    <string name="ytd_useless">YTD nemôže stiahnuť súbory na tomto zariadení.</string>
+    <string name="invalid_url">Nemožno načítať webovú stránku. URL môže byť neplatná.</string>
+    <string name="invalid_url_short">Nemožno načítať webovú stránku.</string>
+    <string name="invalid_response">Neplatná odpoveď z HTTP servera.</string>
+    <string name="rtmpe_streams">Neplatná odpoveď z HTTP servera.</string>
+    <string name="bad_link">Skontrolujte váš odkaz.</string>
+    <string name="bad_link_dialog_msg">Nie je platný YouTube odkaz.</string>
+    <string name="no_net">Nie sú dostupné žiadne pripojenia.</string>
+    <string name="no_net_dialog_msg">Prosím, najskôr povoľte internetové pripojenie.</string>
+    <string name="no_market">Aplikácia pre nákup nie je dostupná.</string>
+    <string name="no_market_dialog_msg">Prosím, nainštalujte Google Play</string>
+    <string name="list_click_dialog_title">Potvrďte stiahnutie pre:</string>
+    <string name="list_click_download_local">Stiahnuť tu</string>
+    <string name="list_click_download_ssh">Odoslať cez SSH</string>
+    <string name="rename_dialog_title">Nový názov súboru:</string>
+    <string name="rename_dialog_msg">Nevkladajte príponu súboru (ako .mp4, alebo .flv).</string>
+    <string name="unable_save">Video nie je možné uložiť!</string>
+    <string name="unable_save_dialog_msg">Cieľový priečinok NIE je k dispozícii a/alebo sa doň NEDÁ zapisovať.</string>
+    <string name="ssh_info_tutorial_title">Ako odoslať cez SSH</string>
+    <string name="ssh_info_tutorial_msg">Jeden dlhý príkaz bol vložený do schránky.
+\n\nVyberte profil v ConnectBot a jeden vo vzdialenom shell, prejdite na požadovanú
+adresár, vložte príkaz (použite tlačidlo menu), a stlačte kláves ENTER.</string>
+    <string name="callConnectBot_dialog_title">%1$s nie je nainštalovaný!</string>
+    <string name="callConnectBot_dialog_msg">Potrebujete túto aplikáciu pre poslanie cez SSH.</string>
+    <string name="callConnectBot_dialog_positive">Stiahnuť</string>
+    <string name="download_complete_dialog_msg1">YouTube Video:\n</string>
+    <string name="download_complete_dialog_msg2">\nÚspešne stiahnuté.</string>
+    <string name="download_complete_dialog_positive">Otvoriť</string>
+    <string name="downloading">Sťahovanie&#8230;</string>
+    <string name="cancel_download_dialog_title">Zrušiť sťahovanie?</string>
+    <string name="video_list_error_toast">Chyba v zozname videa</string>
+    <string name="codec">\n\n\tKodek:</string>
+    <string name="quality">\n\tKvalita:</string>
+    <string name="size">\n\tVeľkosť:</string>
+    <string name="notification_downloading_pt1">Sťahovanie</string>
+    <string name="notification_downloading_pt2">video súbory</string>
+    <string name="notification_no_downloads">Žiadne prebiehajúce sťahovanie</string>
+    <string name="long_click_title"> Spracovať vybraný odkaz:</string>
+    <string name="ffmpeg_ready">FFmpeg pripravený.</string>
+    <string name="confirm_audio_checkbox1">Extrahovať audio po stiahnutí</string>
+    <string name="confirm_audio_checkbox2">\n(ako je definované v nastaveniach)</string>
+    <string name="login_required">Je potrebné prihlásenie do YouTube.</string>
+    <string name="encrypted_streams">Šifrovaný video stream</string>
+    <string name="no_video_available">Žiadne video nie je k dispozícii.</string>
+    <string name="retry_button_text">Znova</string>
+    
+    <string-array name="long_click_entries">
+        <item>Skopírovať do schránky</item>
+        <item>Zdieľať ako text</item>
+    </string-array>
+    
+    <string-array name="long_click_entries2">
+        <item>Koírovať do schranky</item>
+        <item>Zdieľať ako text</item>
+        <item>Odoslať cez SSH</item>
+    </string-array>
+    
+    <!-- ### SettingsActivity ### -->
+
+    <string name="attention">Upozornenie!</string>
+    <string name="system_warning_title">Toto je systémový adresár</string>
+    <string name="system_warning_msg">Zvolená cesta sa zmení späť na adresár Download na internej SD-karte.</string>
+    <string name="sdcard_unmounted_warning">SD-karta NIE JE pripojená</string>
+    <string name="update_disabled_summary">Nájdený iný podpis (F-Droid?)</string>
+    <string name="failed_download">Chybné stiahnutie odstránené</string>
+    <string name="new_v_download">nájdené. Sťahovanie&#8230;</string>
+    <string name="new_v_install">stiahnuté. Kliknite pre inštaláciu.</string>
+    <string name="ffmpeg_download_dialog_title">Je potrebný ďalší súbor. Stiahnuť teraz?</string>
+    <string name="ffmpeg_download_dialog_msg">Webový odkaz:</string>
+    <string name="ffmpeg_device_not_supported">Zariadenie nie je podporované.</string>
+    <string name="ffmpeg_support_mail">Poslať e-mail vývojárovi?
+\nZobrazia sa vám všetky informácie vo vašej e-mailovej aplikácii pred odoslaním akýchkoľvek dát.</string>
+    <string name="ffmpeg_download_notification">Sťahovanie FFmpeg</string>
+    <string name="ffmpeg_install">Inštalujem FFmpeg&#8230;</string>
+    <string name="email_via">Odoslať e-mail cez:</string>
+    
+    <!-- ### UpgradeApkActivity ### -->
+    
+    <string name="upgrade_button_init">Aktualizovať</string>
+    <string name="upgrade_button_download">Stiahnuť\na nainštalovať</string>
+    <string name="upgrade_uppertext_searching">Hľadanie&#8230;</string>
+    <string name="upgrade_uppertext_init">Nainštalovaná verzia:\n</string>
+
+    <string name="upgrade_latest">Najnovšia:\t</string>
+    <string name="upgrade_installed">\nNainštalovaná:\t</string>
+    <string name="upgraded_dialog_msg">Nová verzia je uložená na internej SD-karte v adresári \'Download\'.\n\nInštalovať teraz?</string>
+    <string name="upgraded_dialog_negative">Neskôr\n(manuálne)</string>
+    <string name="upgrade_latest_installed">Najnovšia verzia je už nainštalovaná!</string>
+    <string name="upgrade_network_error">Nemožno načítať dáta aktualizácie.\nSkúste neskôr.</string>
+    <string name="upgrade_bad_md5_dialog_msg">Stiahnutý balíček je poškodený.\nBude vymazaný.\nKliknite na OK a stiahne sa znova.</string>
+    
+    <!-- ### DownloadsService ### -->
+    
+    <string name="ytd_video">YTD video</string>
+    <string name="copy_error">Chyba počas kopírovania.</string>
+    <string name="copy_progress">Prebieha kopírovanie súboru&#8230;</string>
+    <string name="copy_ok">Kopírovanie dokončené.</string>
+    <string name="download_remove_failed">Chyba: dočasný súbor nebol odstránený!</string>
+    <string name="download_failed">Sťahovanie zlyhalo!</string>
+    <string name="audio_extr_progress">Prebieha extrahovanie audia&#8230;</string>
+    <string name="audio_conv_progress">Prebieha konvertovanie audia do mp3&#8230;</string>
+    <string name="audio_extr_completed">Extrahovanie zvuku dokončené.</string>
+    <string name="audio_conv_completed">Konvertovanie audia do mp3 dokončené.</string>
+    <string name="audio_extr_error">Chyba pri extrahovaní audia.</string>
+    <string name="audio_conv_error">Chyba pri konvertovaní audia do mp3.</string>
+    
+    <!-- ### DonateActivity ### -->
+    
+    <string name="paypal_item_name">Podporiť YTD</string>
+	<string name="paypal_summary">Podporte YTD vývojára darom</string>
+	<string name="flattr_summary">Podporiť ez Flattr</string>
+	
+	<!-- ### FfmpegDownloadService ### -->
+	<string name="ffmpeg_install_failed">Inštalácia FFmpeg zlyhala.</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Dokončené</string>
+	<string name="json_status_failed">Zlyhanie</string>
+	<string name="json_status_in_progress">Prebieha</string>
+	<string name="json_status_paused">Pozastavené</string>
+	<string name="json_status_imported">Naimportované</string>
+	<string name="menu_search">hľadať&#8230;</string>
+	<string name="menu_backup">Zálohovať</string>
+	<string name="menu_restore">Obnoviť</string>
+	<string name="menu_import">Importovať video</string>
+	<string name="menu_import_double">Video je už pridané.</string>
+	<string name="menu_backup_info">Zvoľte adresár na zálohu Dashboard údajov</string>
+	<string name="menu_restore_info">Obnoviť Dashboard údaje zo súboru</string>
+	<string name="menu_restore_info_msg">Súčasné údaje budú prepísané.</string>
+	<string name="menu_import_info">Importovať video a spravovať cez Dashboard</string>
+	<string name="menu_backup_result_ok">Zálohovanie Dashboard údajov je OK.</string>
+	<string name="menu_backup_result_failed">Chyba počas zálohovania.</string>
+	<string name="menu_restore_result_ok">Dashboard údaje obnovené.</string>
+	<string name="menu_restore_result_failed">Chyba počas obnovovania.</string>
+	<string name="unsupported_operation">Nepodporovaná operácia.</string>
+	<string name="invalid_data">Neplatné údaje.</string>
+	<string name="open_chooser_title">Otvoriť s:</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Otvoriť</item>
+	    <item>Iba extrahovať audio</item>
+        <item>Extrahovať a konvertovať audio do mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Otvoriť</item>
+        <item>Konvertovať do mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_imported">
+	    <item>Otvoriť</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">FFmpeg nie je nainštalovaný, alebo povolený:</string>
+	<string name="ffmpeg_not_enabled_msg">Otvoriť nastavenia?</string>
+	<string name="remove_video">Vymazať video po extrahovaní audia (bez potvrdenia!)</string>
+	<string name="remove_original_audio">Vymazať audio po konvertovaní (bez potvrdenia!)</string>
+	<string name="edit_id3_tags">Upraviť ID3 tagy</string>
+	<string name="id3_album">Album</string>
+	<string name="id3_artist">Interprét</string>
+	<string name="id3_title">Názov</string>
+	<string name="id3_year">Rok</string>
+	<string name="id3_genre">Žáner</string>
+	
+	<string name="audio_extr_info">Obsiahnuté audio streamy:</string>
+	
+	<string name="dashboard_long_click_entry_0">Kopírovať</string>
+	<string name="dashboard_long_click_entry_1">Presunúť</string>
+	<string name="dashboard_long_click_entry_2">Vymazať</string>
+	
+	<!-- <string-array name="dashboard_long_click_entries">
+	    <item>Kopírovať</item>
+	    <item>Presunúť</item>
+        <item>Premenovať</item>
+        <item>Stiahnuť znovu video</item>
+        <item>Odstrániť z Dashboard</item>
+        <item>Odstrániť a vymazať súbor</item>
+    </string-array> -->
+
+	<string-array name="dashboard_long_click_entries">
+	    <item>Kopírovať</item>
+	    <item>Presunúť</item>
+        <item>Premenovať</item>
+        <item>Stiahnuť znovu video</item>
+        <item>Odstrániť z Dashboard</item>
+        <item>Odstrániť a vymazať súbor</item>
+        <item>Pozastaviť/Spustiť</item>
+    </string-array>
+    
+	<string name="move_error">Chyba počas presúvania.</string>
+    <string name="move_progress">Prebieha presúvanie súboru&#8230;</string>
+    <string name="move_ok">Presúvanie dokončené.</string>
+    <string name="long_press_warning_title">Operácia nie je vykonaná:</string>
+    <string name="long_press_warning_msg">Zdrojový a cieľový adresár sa prekrývajú.</string>
+    <string name="long_press_warning_msg2">Kópia už v tomto adresári existuje.</string>
+    <string name="audio_extr_warning_msg">Rovnaký audio súbor už je extrahovaný.</string>
+
+	<string name="delete_video_confirm">Ste si istý, že sa má video vymazať?</string>
+	<string name="remove_video_confirm">Ste si istý, že sa má odstrániť toto video?</string>
+	<string name="delete_video_ok">%1$s úspešne zmazané.</string>
+	<string name="delete_video_failed">Chyba: %1$s nie je zmazané.</string>
+	
+	<string name="empty_dashboard">Žiadne stiahnuté video.</string>
+
+    <!-- ### preferences ### -->
+
+    <!-- -->
+    <string name="dashboard_summary">Otvoriť YTD Dashboard</string>
+
+    <!-- -->
+    <string name="settings_cat_ui">Užívateľské rozhranie</string>
+    <string name="lang_title">Jazyk</string>
+    <string name="lang_dialog_title">Zvoľte jazyk:</string>
+    <string name="choose_theme_title">Zvoliť tému</string>
+    <string-array name="choose_theme_entries">
+        <item>Tmavá</item>
+        <item>Svetlá</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="quick_start_title">Rýchly štart</string>
+    <string name="quick_start_summ">Otvorí návod pre rýchly štart</string>
+    <string name="quick_start_text">Tu sú iba nastavenia pre \'YouTube Downloader\'.
+\n\nSamotná aplikácia je prístupná cez tlačítko Zdieľať v aplikácii YouTube pri sledovaní videa.
+\n\nPotom zvoľte \'YouTube Downloader\' a zobrazia sa vám ďalšie informácie.
+\n\nTaktiež môžete zdieľať YouTube odkaz cez akúkoľvek aplikáciu, napr. internetový prehliadač.</string>
+    <string name="general_info_title">Povoliť všeobecný návod</string>
+    <string name="general_info_summary">Zobraziť všeobecný návod pri spustení</string>
+    <string name="show_again_checkbox">Zobraziť aj nabudúce</string>
+    <string name="ssh_info_title">Zobraziť SSH návod</string>
+    <string name="ssh_info_summary">Zobraziť rýchly tip ako diaľkovo sťahovať cez SSH</string>
+    <string name="audio_tutorial_title">Návod pre extrahovanie audia</string>
+    <string name="audio_tutorial_summary">Otvorí stručného sprievodcu ohľadom extrahovaní audia</string>
+    
+    <!-- -->
+    <string name="settings_cat_folder">Zložka pre stiahnutie</string>
+    <string name="standard_location_title">Zvoľte štandardný adresár</string>
+    <string name="chooser_swap_title">Zvoliť vlastný adresár</string>
+    <string name="chooser_location_title">Zvoľte vlastný adresár</string>
+    <string name="chooser_location_summary">Podržte dlhšie pre zvolenie adresára</string>
+	
+    <!-- -->
+    <string name="settings_cat_files">Video súbory</string>
+    <string name="enable_q_suffix_title">Pridať kvalitu</string>
+    <string name="enable_q_suffix_summary">Pridať kvalitu videa na koniec názvu súboru</string>
+    <string name="enable_rename_title">Povoliť zmenu názvu súboru</string>
+    <string name="enable_rename_summary">Premenovať názov súboru pred stiahnutím (iba pre lokálne uloženie)</string>
+    <string name="show_size_title">Zobraziť veľkosť súboru</string>
+    <string name="show_size_summary">Načítať veľkosť súboru v správe potvrdenia (pomalé)</string>
+    <string name="show_size_list_title">Zobraziť všetky veľkosti videa</string>
+    <string name="show_size_list_summary">Načítať veľkosť súborov pre každú položku v zozname dostupných videí (veľmi pomalé)</string>
+    <string name="show_thumb_title">Zobraziž obrázok náhľadu</string>
+    <string name="show_thumb_summary">Stiahnuť obrázok náhľadu spolu so zoznamom videa</string>
+    <string name="show_resolutions_title">Zobraziť rozlíšenie videa</string>
+    <string name="show_resolutions_summary">Zameniť indikátor kvality za rozlíšenie videa</string>
+    
+    <!-- -->
+    <string name="settings_cat_advanced">Pokročilé</string>
+    <string name="enable_advanced_features_title">Povoliť pokročilé funkcie</string>
+    <string name="enable_advanced_features_summary">Stiahnuť FFmpeg \"plugin\"</string>
+    <string name="mp3_bitrate_title">Bitrate pre mp3:</string>
+    <string name="audio_extraction_type_title">Druh extrahovania</string>
+    <string name="remove_video_title">Odstránenie videa</string>
+    <string name="remove_video_summary">Povoliť odstánenie video súboru po úspešnom extrahovaní audia (upozornenie: bez potvrdenia)</string>
+    
+    <!-- -->
+    <string name="settings_cat_notifications">Oznámenia</string>
+    
+    <string name="notification_defaults_title">Prednastavenia oznámení</string>
+    <string name="notification_defaults_dialog_title">Prednastavenia YTD vlastných oznámení</string>
+    <string-array name="notification_defaults_entries">
+        <item>Zvuk a vibrácie</item>
+        <item>Zvuk a svetlá</item>
+        <item>Vibrácie a svetlá</item>
+        <item>Zvuk, vibrácie a svetlá</item>
+        <item>Zvuk</item>
+        <item>Vibrácie</item>
+        <item>Svetlá</item>
+        <item>Nič</item>
+    </string-array>   
+    
+    <!-- -->
+    <string name="settings_cat_updates">Aktualizácie</string>
+    <string name="update_title">Kontrola aktualizácií</string>
+    <string name="autoupdate_title">Povoliť automatickú aktualizáciu</string>
+    <string name="autoupdate_summary">Skontrolovať aktualizáciu pri prvom spustení aplikácie (nový balíček bude automaticky stiahnutý)</string>
+
+    <!-- -->
+    <string name="settings_cat_app">Aplikácia</string>
+    <string name="settings_cat_about_condensed">O aplikácii</string>
+    <string name="title_changelog">Zoznam zmien</string>
+    <string name="settings_cat_licenses">Licencie</string>
+
+    <string name="credits_title">Autor</string>
+    <string name="title_activity_credits_show">Ostatné licencie a preklady</string>
+        
+    <!-- -->
+    <string name="settings_cat_code">Zdrojový kód</string>
+    <string name="ytd_code_git_title">YTD na GitHub</string>
+    <string name="ytd_code_hg_title">YTD na Sourceforge</string>
+
+    <!-- -->
+    <string name="settings_cat_social">Sociálne siete</string>
+    <string name="share_title">Zdieľať túto apl.</string>
+    <string name="share_summary">cez Twitter, Facebook, Gmail, atď&#8230;</string>
+    <string name="share_warning">Nenašli sa žiadne vhodné apl.</string>
+    <string name="share_message">#YouTubeDownloader
+\nVoľná Android aplikácia na sťahovanie YouTube videí!
+\nhttps://sourceforge.net/projects/ytdownloader/files/</string>
+	<string name="help_translate_title">Pomôžte preložiť túto aplikáciu</string>
+    <string name="xda_title">Téma na XDA fóre</string>
+    
+    <!-- -->
+    <string name="settings_cat_ssh">SSH</string>
+    <string name="connectbot_flavour_title">Použiť verziu ConnectBot</string>
+	<string name="connectbot_flavour_dialog_title">Zvoľte verziu ConnectBot pre odoslanie videa cez SSH</string>
+	<string name="enable_connectbot_short_cmd_title">Povoliť krátky SSH príkaz</string>
+	<string name="enable_connectbot_short_cmd_summary">Použije mierne skrátený, ale rýchlejší príkaz pre vloženie do vzdialeného shellu (funguje IBA ak je cieľové PC na rovnakej LAN sieti)</string>
+	<string name="ssh_to_longpress_menu_title">Presunúť Poslať cez SSH do kontextového menu</string>
+	<string name="ssh_to_longpress_menu_summary">Presunie akciu \"Poslať cez SSH\" do kontextového menu v zozname videí</string>
+	
+    <!-- -->
+	<string name="settings_cat_system">Systém</string>
+	<string name="enable_logging_title">Povoliť logovanie</string>
+	<string name="enable_logging_summary">Vložiť správy z YTD do systemového logu. Potrebné pre odosielanie logcat pre vývojára.</string>
+	<string name="clear_dashboard_title">Vyprázdniť Dashboard</string>
+	<string name="clear_dashboard_summary">Vymazať všetky odkazy z Dashboard (môže opraviť niektoré chyby)</string>
+	<string name="clear_dashboard_msg">Ste si istý?\nCelý zoznam v Dashboard bude vymazaný.</string>
+	<string name="clear_dashboard_ok">Dashboard vyprázdnený.</string>
+	<string name="clear_dashboard_failed">Vyprázdňovanie Dashboard zlyhalo.</string>
+	
+</resources>
