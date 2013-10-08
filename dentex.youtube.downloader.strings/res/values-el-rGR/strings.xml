@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_settings">Ρυθμίσεις</string>
+    <string name="title_activity_upgrade_apk">Αναβάθμιση</string>
+    <string name="title_activity_about">Σχετικά</string>
+    <string name="title_activity_donate">Δωρεές</string>
+    <string name="title_activity_tutorials">Οδηγοί</string>
+    <string name="title_activity_translators_show">Μεταφραστές</string>
+    <string name="title_activity_dashboard">Πίνακας ελέγχου</string>
+
+    <!-- ### ShareActivity ### -->
+
+    <string name="tutorial_title">Γενικός οδηγός εφαρμογής</string>
+	<string name="tutorial_msg_new">Τώρα θα δείτε μια λίστα με όλους τους διαθέσιμους κωδικοποιητές και τις ποιότητες του επιλεγμένου βίντεο. Μπορείτε να:
+\n\n*) Επιλέξετε ένα αντικείμενο για τοπική λήψη του βίντεο (στη συσκευή) ή να το στείλετε μέσω SSH σε έναν απομακρυσμένο υπολογιστή.
+\nΑπαιτήσεις συσκευής προορισμού: Bash και Wget. Επιπλέον πληροφορίες SSH στη συνέχεια.
+\n\n*)Πιέστε παρατεταμένα ένα αντικείμενο και επιλέξτε μεταξύ αντιγραφής στο πρόχειρο ή κοινής χρήσης του συνδέσμου ως κείμενο (π.χ. αποστολή σε άλλη εφαρμογή).
+\nΣημειώστε ότι ένας τέτοιος σύνδεσμος (διαφορετικός από αυτόν που στέλνετε μέσω SSH) μπορεί να χρησιμοποιηθεί μόνο στην ίδια συσκευή στην οποία δημιουργήθηκε Ή στο ίδιο δίκτυο LAN, αν την μοιράζεστε με άλλη συσκευή.\n</string>
+    <string name="loading">Φόρτωση&#8230;</string>
+    <string name="error">Σφάλμα!</string>
+    <string name="information">Πληροφορίες</string>
+    <string name="dialogs_negative">&#913;&#954;&#973;&#961;&#969;&#963;&#951;</string>
+    <string name="wait">Παρακαλώ περιμένετε&#8230;</string>
+    <string name="no_downloads_sys_app">Δε βρέθηκε η εφαρμογή συστήματος \"Λήψεις\".</string>
+    <string name="ytd_useless">Το YTD δεν μπορεί να κατεβάσει αρχεία σε αυτή τη συσκευή.</string>
+    <string name="invalid_url">Αδυναμία ανάκτησης ιστοσελίδας. Η URL μπορεί να μην είναι έγκυρη.</string>
+    <string name="invalid_url_short">Αδυναμία ανάκτησης ιστοσελίδας.</string>
+    <string name="invalid_response">Μη έγκυρη απόκριση διακομιστή HTTP.</string>
+    <string name="bad_link">Ελέγξτε τον παρεχόμενο σύνδεσμο.</string>
+    <string name="bad_link_dialog_msg">Μη έγκυρος σύνδεσμος YouTube.</string>
+    <string name="no_net">Δεν υπάρχει σύνδεση.</string>
+    <string name="no_net_dialog_msg">Παρακαλώ, ενεργοποιήστε πρώτα μια σύνδεση δικτύου.</string>
+    <string name="no_market">Δεν υπάρχει εφαρμογή στο market.</string>
+    <string name="no_market_dialog_msg">Παρακαλώ, εγκαταστήστε το Google Play.</string>
+    <string name="list_click_dialog_title">Επιβεβαίωση λήψης για:</string>
+    <string name="list_click_download_local">Λήψη εδώ</string>
+    <string name="list_click_download_ssh">Αποστολή μέσω SSH</string>
+    <string name="rename_dialog_title">Νέο όνομα αρχείου:</string>
+    <string name="rename_dialog_msg">Μην εισάγετε την κατάληξη του αρχείου (π.χ. .mp4 ή .flv).</string>
+    <string name="unable_save">Αδυναμία αποθήκευσης του βίντεο!</string>
+    <string name="unable_save_dialog_msg">Ο φάκελος προορισμού ΔΕΝ είναι διαθέσιμος και/ή εγγράψιμος.</string>
+    <string name="ssh_info_tutorial_title">Πώς να αποστείλετε μέσω SSH</string>
+    <string name="ssh_info_tutorial_msg">Μια μοναδική μακροεντολή φορτώθηκε στο πρόχειρο.
+\n\nΕπιλέξτε ένα προφίλ στο ConnectBot και μόλις εισέλθετε στην απομακρυσμένη γραμμή εντολών, 
+επιλέξτε τον επιθυμητό φάκελο, αντιγράψτε την εντολή (χρησιμοποιήστε το μενού) και πατήστε ENTER.</string>
+    <string name="callConnectBot_dialog_title">%1$s δεν είναι εγκατεστημένο!</string>
+    <string name="callConnectBot_dialog_msg">Χρειάζεστε αυτή τη δωρεάν εφαρμογή για να αποστείλετε τη λήψη του βίντεο μέσω SSH.</string>
+    <string name="callConnectBot_dialog_positive">Λήψη</string>
+    <string name="download_complete_dialog_msg1">Βίντεο YouTube:\n</string>
+    <string name="download_complete_dialog_msg2">\nΕπιτυχής λήψη.</string>
+    <string name="download_complete_dialog_positive">Άνοιγμα</string>
+    <string name="downloading">Λήψη&#8230;</string>
+    <string name="cancel_download_dialog_title">Ακύρωση λήψης;</string>
+    <string name="video_list_error_toast">Σφάλμα στη λίστα βίντεο.</string>
+    <string name="codec">\n\n\tΚωδικοποιητής:</string>
+    <string name="quality">\n\tΠοιότητα:</string>
+    <string name="size">\n\tΜέγεθος:</string>
+    <string name="notification_downloading_pt1">Λήψη</string>
+    <string name="notification_downloading_pt2">αρχείων βίντεο</string>
+    <string name="notification_no_downloads">Καμία λήψη σε εξέλιξη</string>
+    <string name="long_click_title">Χειρισμός επιλεγμένου συνδέσμου:</string>
+    <string name="extsdcard_info_title">Μη τυπική διαδρομή προορισμού</string>
+    <string name="extsdcard_info_msg">Το αρχείο λαμβάνεται αρχικά στον τυπικό φάκελο λήψεων και μετά θα μετακινηθεί στον επιλεγμένο προορισμό.</string>
+    <string name="ffmpeg_ready">FFmpeg έτοιμος.</string>
+    <string name="confirm_audio_checkbox1">Εξαγωγή ήχου μετά τη λήψη</string>
+    <string name="confirm_audio_checkbox2">\n(όπως καθορίστηκε στις ρυθμίσεις)</string>
+    <string name="login_required">Η σύνδεση στο YouTube είναι απαραίτητη.</string>
+    <string name="login_required_dialog_msg">Το YTD δεν μπορεί να διαχειριστεί αυτό το βίντεο.</string>
+    <string name="no_video_available">Κανένα βίντεο διαθέσιμο.</string>
+    <string name="retry_button_text">Επανάληψη</string>
+    
+    <string-array name="long_click_entries">
+        <item>Αντιγραφή στο πρόχειρο</item>
+        <item>Κοινή χρήση ως κείμενο</item>
+    </string-array>
+    
+    <string-array name="long_click_entries2">
+        <item>Αντιγραφή στο πρόχειρο</item>
+        <item>Κοινή χρήση ως κείμενο</item>
+        <item>Αποστολή μέσω SSH</item>
+    </string-array>
+    
+    <!-- ### SettingsActivity ### -->
+
+    <string name="attention">Προσοχή!</string>
+    <string name="extsdcard_warning">Αδυναμία εγγραφής αρχείων στην αφαιρούμενη κάρτα μνήμης.\nΕπιστροφή στην τυπική κάρτα μνήμης.</string>
+    <string name="system_warning_title">Αυτός είναι ένας φάκελος συστήματος</string>
+    <string name="system_warning_msg">Η επιλεγμένη διαδρομή θα επιστρέψει στο φάκελο λήψεων της τυπικής κάρτας μνήμης.</string>
+    <string name="sdcard_unmounted_warning">Η κάρτα μνήμης ΔΕΝ έχει τοποθετηθεί</string>
+    <string name="update_disabled_summary">Βρέθηκε διαφορετική υπογραφή (F-Droid;)</string>
+    <string name="failed_download">Η αποτυχημένη λήψη διαγράφηκε</string>
+    <string name="new_v_download">βρέθηκε. Λήψη&#8230;</string>
+    <string name="new_v_install">λήφθηκε. Κλικ για εγκατάσταση.</string>
+    <string name="ffmpeg_download_dialog_title">Χρειάζεται ένα επιπλέον αρχείο. Λήψη τώρα;</string>
+    <string name="ffmpeg_download_dialog_msg">Ιστοσελίδα:</string>
+    <string name="ffmpeg_device_not_supported">Η συσκευή δεν υποστηρίζεται ακόμα.</string>
+    <string name="ffmpeg_support_mail">Αποστολή email στον προγραμματιστή; 
+\nΘα δείτε όλες τις πληροφορίες στην εφαρμογή email σας πριν την αποστολή.</string>
+    <string name="ffmpeg_download_notification">Λήψη FFmpeg</string>
+    <string name="ffmpeg_install">Εγκατάσταση πακέτου FFmpeg&#8230;</string>
+    <string name="email_via">Αποστολή email μέσω:</string>
+    
+    <!-- ### UpgradeApkActivity ### -->
+    
+    <string name="upgrade_button_init">Αναβάθμιση</string>
+    <string name="upgrade_button_download">Λήψη\nκαι εγκατάσταση</string>
+    <string name="upgrade_uppertext_searching">Αναζήτηση&#8230;</string>
+    <string name="upgrade_uppertext_init">Εγκατεστημένη έκδοση:\n</string>
+
+    <string name="upgrade_latest">Πιο πρόσφατη:\t</string>
+    <string name="upgrade_installed">\nΕγκατεστημένη:\t</string>
+    <string name="upgraded_dialog_msg">Νέα έκδοση στον τυπικό φάκελο λήψεων της κάρτας μνήμης.\n\nΕγκατάσταση τώρα;</string>
+    <string name="upgraded_dialog_negative">Αργότερα\n(χειροκίνητα)</string>
+    <string name="upgrade_latest_installed">Η πιο πρόσφατη έκδοση είναι ήδη εγκατεστημένη!</string>
+    <string name="upgrade_network_error">Αδυναμία ανάκτησης δεδομένων αναβάθμισης.\nΔοκιμάστε αργότερα.</string>
+    <string name="upgrade_bad_md5_dialog_msg">Το ληφθέν πακέτο είναι φθαρμένο.\nΘα διαγραφεί τώρα.\nΠατήστε ΟΚ για να το κατεβάσετε ξανά.</string>
+    
+    <!-- ### DownloadsService ### -->
+    
+    <string name="ytd_video">Βίντεο YTD</string>
+    <string name="copy_error">Σφάλμα κατά την αντιγραφή.</string>
+    <string name="copy_progress">Αντιγραφή αρχείου σε εξέλιξη&#8230;</string>
+    <string name="copy_ok">Η αντιγραφή αρχείων ολοκληρώθηκε.</string>
+    <string name="download_remove_failed">Σφάλμα: το προσωρινά ληφθέν αρχείο δε διαγράφηκε!</string>
+    <string name="download_failed">Αποτυχία λήψης!</string>
+    <string name="audio_extr_progress">Εξαγωγή ήχου σε εξέλιξη&#8230;</string>
+    <string name="audio_conv_progress">Κωδικοποίηση ήχου σε mp3 σε εξέλιξη&#8230;</string>
+    <string name="audio_extr_completed">Η εξαγωγή ήχου ολοκληρώθηκε.</string>
+    <string name="audio_conv_completed">Η κωδικοποίηση σε mp3 ολοκληρώθηκε.</string>
+    <string name="audio_extr_error">Σφάλμα κατά την εξαγωγή ήχου.</string>
+    <string name="audio_conv_error">Σφάλμα κατά την κωδικοποίηση ήχου σε mp3.</string>
+    
+    <!-- ### DonateActivity ### -->
+    
+    <string name="paypal_item_name">Δωρεά YTD</string>
+    <string name="paypal_title">PayPal</string>
+	<string name="paypal_summary">Υποστήριξη προγραμματιστή του YTD με μια δωρεά</string>
+	
+	<!-- ### FfmpegDownloadService ### -->
+	<string name="ffmpeg_install_failed">Αποτυχία εγκατάστασης FFmpeg.</string>
+	
+	<!-- ### DashboardActivity ### -->
+	<string name="json_status_completed">Ολοκληρώθηκε</string>
+	<string name="json_status_failed">Αποτυχία</string>
+	<string name="json_status_in_progress">Σε εξέλιξη</string>
+	<string name="menu_search">αναζήτηση&#8230;</string>
+	
+	<string-array name="dashboard_click_entries">
+	    <item>Άνοιγμα</item>
+	    <item>Μόνο εξαγωγή ήχου</item>
+        <item>Εξαγωγή και κωδικοποίηση ήχου σε mp3</item>
+    </string-array>
+    
+	<string-array name="dashboard_click_entries_audio">
+	    <item>Άνοιγμα</item>
+        <item>Κωδικοποίηση σε mp3</item>
+    </string-array>
+    
+	<string name="ffmpeg_not_enabled_title">Το FFmpeg δεν είναι εγκατεστημένο ή ενεργοποιημένο:</string>
+	<string name="ffmpeg_not_enabled_msg">Άνοιγμα ρυθμίσεων;</string>
+	<string name="remove_video">Διαγραφή βίντεο μετά την εξαγωγή ήχου (χωρίς επιβεβαίωση!)</string>
+	<string name="edit_id3_tags">Τροποποίηση ετικετών ID3</string>
+	<string name="remove_original_audio">Διαγραφή ήχου μετά την μετατροπή (χωρίς επιβεβαίωση!)</string>
+	
+	<string name="dashboard_long_click_entry_0">Αντιγραφή</string>
+	<string name="dashboard_long_click_entry_1">Μετακίνηση</string>
+	<string name="dashboard_long_click_entry_2">Διαγραφή</string>
+	
+	<string-array name="dashboard_long_click_entries">
+	    <item>Αντιγραφή</item>
+	    <item>Μετακίνηση</item>
+        <item>Μετονομασία</item>
+        <item>Remove from Dashboard</item>
+        <item>Remove and delete file</item>
+    </string-array>
+    
+	<string name="move_error">Σφάλμα κατά τη μετακίνηση.</string>
+    <string name="move_progress">Μετακίνηση αρχείου σε εξέλιξη&#8230;</string>
+    <string name="move_ok">Η μετακίνηση αρχείων ολοκληρώθηκε.</string>
+    <string name="long_press_warning_title">Η διεργασία δεν εκτελέστηκε:</string>
+    <string name="long_press_warning_msg">Οι φάκελοι προέλευσης και προορισμού συμπίπτουν.</string>
+    <string name="long_press_warning_msg2">Υπάρχει ήδη ένα αντίγραφο σε αυτό το φάκελο.</string>
+
+	<string name="delete_video_confirm">Είστε σίγουρος ότι θέλετε να διαγράψετε αυτό το βίντεο;</string>
+	<string name="delete_video_ok">%1$s διαγράφτηκε επιτυχώς.</string>
+	<string name="delete_video_failed">Σφάλμα: %1$s δε διαγράφτηκε.</string>
+	
+	<string name="empty_dashboard">Κανένα ληφθέν βίντεο.</string>
+
+    <!-- ### preferences ### -->
+
+    <!-- -->
+    <string name="dashboard_summary">Ανοίγει τον πίνακα ελέγχου του YTD</string>
+
+    <!-- -->
+    <string name="settings_cat_ui">Διεπαφή χρήστη</string>
+    <string name="lang_title">Γλώσσα</string>
+    <string name="lang_dialog_title">Επιλογή γλώσσας UI:</string>
+    <string name="choose_theme_title">Επιλογή θέματος</string>
+    <string-array name="choose_theme_entries">
+        <item>Σκοτεινό</item>
+        <item>Φωτεινό</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="quick_start_title">Άμεση χρήση</string>
+    <string name="quick_start_summ">Άνοιγμα οδηγού άμεσης χρήσης</string>
+    <string name="quick_start_text">Εδώ είναι οι ρυθμίσεις του\'YouTube Downloader\'.
+\n\nΗ ίδια η εφαρμογή μπορεί να χρησιμοποιηθεί μέσω του κουμπιού share στην εφαρμογή YouTube, ενώ βλέπετε ένα βίντεο.
+\n\nΚατόπιν επιλέξτε\'YouTube Downloader\' και θα έχετε περαιτέρω πληροφορίες χρήσης.
+\n\nΜπορείτε επίσης να μοιραστείτε οποιοδήποτε σύνδεσμο YouTube μέσω οποιαδήποτε άλλης εφαρμογής, π.χ. τον περιηγητή διαδικτύου σας.</string>
+    <string name="general_info_title">Ενεργοποίηση Γενικού Οδηγού</string>
+    <string name="general_info_summary">Εμφάνιση γενικού οδηγού εφαρμογής στην εκκίνηση</string>
+    <string name="show_again_checkbox">Επανεμφάνιση την επόμενη φορά</string>
+    <string name="ssh_info_title">Ενεργοποίηση οδηγού SSH</string>
+    <string name="ssh_info_summary">Εμφάνιση σύντομης οδηγίας για λήψη μέσω SSH</string>
+    <string name="audio_tutorial_title">Οδηγός εξαγωγής ήχου</string>
+    <string name="audio_tutorial_summary">Ανοίγει ένας σύντομος οδηγός για την εξαγωγή ήχου</string>
+    <string name="audio_tutorial_text">Για να εξάγετε ή να μετατρέψετε σε mp3 τον ήχο από ένα ληφθέν βίντεο:
+\n\n*) Ενεργοποιείστε την επιλογή ήχου και κατεβάστε τον FFmpeg,
+\n\n*) Επιλέξτε τον τύπο εξαγωγής:
+\n\n\"Μόνο εξαγωγή\" διατηρεί τον ήχο από το βίντεο ως έχει (τα αρχεία WebM περιέχουν ήχο Ogg Vorbis, 
+τα MP4, 3GPP και μεγάλα/μεσαία FLV περιέχουν ήχο AAC, τα μικρά FLV περιέχουν ήχο mp3)
+\n\n\"Εξαγωγή και κωδικοποίηση σε mp3\" μετατρέπει τον εξαχθέντα ήχο σε mp3, στο επιλεχθέν bitrate.
+\n\nΑπό εδώ και στο εξής, ένα πλαίσιο επιλογής θα εμφανίζεται στο μήνυμα επιβεβαίωσης λήψης βίντεο.
+Όταν θα επιλέγεται, η διαδικασία εξαγωγής του ήχου θα ξεκινάει μετά την ολοκλήρωση λήψης του βίντεο
+(για να κρύψετε το πλαίσιο επιλογής, απενεργοποιείστε την επιλογή εξαγωγής ήχου).
+\n\nΕπιλέξτε στις ρυθμίσεις αν θέλετε να διαγράφεται το βίντεο μετά την επιτυχημένη εξαγωγή ήχου.</string>
+    
+    <!-- -->
+    <string name="settings_cat_folder">Φάκελος λήψεων</string>
+    <string name="standard_location_title">Επιλογή τυπικού φακέλου</string>
+    <string name="chooser_swap_title">Εναλλαγή επιλογέα</string>
+    <string name="chooser_location_title">Άνοιγμα επιλογέα αρχείων</string>
+    <string name="chooser_location_summary">Πιέστε παρατεταμένα για επιλογή φακέλου</string>
+	
+    <!-- -->
+    <string name="settings_cat_files">Αρχεία βίντεο</string>
+    <string name="enable_q_suffix_title">Επισύναψη κατάληξης ποιότητας</string>
+    <string name="enable_q_suffix_summary">Προσθήκη της ποιότητας βίντεο στο τέλος του ονόματος αρχείου</string>
+    <string name="enable_rename_title">Ενεργοποίηση μετονομασίας αρχείου</string>
+    <string name="enable_rename_summary">Μετονομασία του αρχείου βίντεο πριν τη λήψη του (μόνο για τοπική λήψη)</string>
+    <string name="show_size_title">Εμφάνιση μεγέθους αρχείου</string>
+    <string name="show_size_summary">Εμφάνιση μεγέθους αρχείου στο μήνυμα επιβεβαίωσης λήψης (αργό)</string>
+    <string name="show_size_list_title">Εμφάνιση των μεγεθών όλων των βίντεο</string>
+    <string name="show_size_list_summary">Εμφάνιση του μεγέθους αρχείου για κάθε αντικείμενο στη λίστα των διαθέσιμων βίντεο (πιο αργό)</string>
+    <string name="show_thumb_title">Εμφάνιση εικόνας προεπισκόπησης </string>
+    <string name="show_thumb_summary">Λήψη εικόνας προεπισκόπησης μαζί με τη λίστα βίντεο</string>
+    
+    <!-- -->
+    <string name="settings_cat_advanced">Για προχωρημένους</string>
+    <string name="enable_advanced_features_title">Ενεργοποίηση Προχωρημένων Χαρακτηριστικών</string>
+    <string name="enable_advanced_features_summary">Λήψη \"πρόσθετου\" FFmpeg</string>
+    <string name="mp3_bitrate_title">Bitrate κωδικοποίησης mp3:</string>
+    <string name="audio_extraction_type_title">Τύπος εξαγωγής</string>
+    <string name="remove_video_title">Αφαίρεση βίντεο</string>
+    <string name="remove_video_summary">Ενεργοποίηση διαγραφής του αρχείου βίντεο μετά από επιτυχημένη εξαγωγή ήχου (προσοχή: χωρίς επιβεβαίωση!)</string>
+    
+    <!-- -->
+    <string name="settings_cat_notifications">Ειδοποιήσεις</string>
+    <string name="download_manager_notification_title">Διαχείριση ειδοποιήσεων συστήματος</string>
+    <string name="download_manager_notification_dialog_title">Εμφάνιση ειδοποιήσεων διαχειριστή λήψεων συστήματος:</string>
+    
+    <string-array name="download_manager_notification_entries">
+        <item>Κατά τη διάρκεια και μετά την ολοκλήρωση</item>
+        <item>Μόνο κατά τη διάρκεια</item>
+        <item>Ποτέ</item>
+    </string-array>
+    
+    <string name="notification_defaults_title">Προεπιλογές ειδοποιήσεων</string>
+    <string name="notification_defaults_dialog_title">Προεπιλογές ειδοποιήσεων του YTD</string>
+    <string-array name="notification_defaults_entries">
+        <item>Ήχος και δόνηση</item>
+        <item>Ήχος και φως</item>
+        <item>Δόνηση και φως</item>
+        <item>Ήχος, δόνηση και φως</item>
+        <item>Ήχος</item>
+        <item>Δόνηση</item>
+        <item>Φως</item>
+        <item>Τίποτα</item>
+    </string-array>   
+    
+    <!-- -->
+    <string name="settings_cat_updates">Ενημερώσεις</string>
+    <string name="update_title">Έλεγχος για ενημερώσεις</string>
+    <string name="autoupdate_title">Ενεργοποίηση αυτόματης ενημέρωσης</string>
+    <string name="autoupdate_summary">Έλεγχος για αναβαθμίσεις της εφαρμογής στην πρώτη ημερήσια εκτέλεση (θα ληφθεί αυτόματα) </string>
+
+    <!-- -->
+    <string name="settings_cat_app">Εφαρμογή</string>
+    <string name="settings_cat_about_condensed">Σχετικά</string>
+    <string name="title_changelog">Αρχείο αλλαγών</string>
+    <string name="screen_licences_code_title">Άδειες και Κώδικας</string>
+
+    <!-- -->
+    <string name="settings_cat_licenses">Άδειες</string>
+
+    <string name="credits_title">Ευχαριστίες</string>
+    <string name="title_activity_credits_show">Άλλες άδειες και μεταφράσεις</string>
+    
+    <string name="credits_text0">\tΚύριες Άδειες
+\n\n
+Αυτή η εφαρμογή έχει κυκλοφορήσει υπό την GPL-3.0.
+\n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
+\n\n
+Ο κώδικας FFmpeg (<http>http://www.ffmpeg.org/index.html</http>), 
+που χρησιμοποιείται για την εξαγωγή ήχου, έχει κυκλοφορήσει υπό την GPL-3.0.
+\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
+\n\n
+Η βιβλιοθήκη επιλογέα αρχείων έχει κυκλοφορήσει υπό την άδεια MIT.
+\n(android-filechooser Copyright &#169; 2012 Hai Bison).
+\n\n
+Η βιβλιοθήκη liblame, που χρησιμοποιείται για τη μεταγλώττιση του FFmpeg, έχει κυκλοφορήσει υπό την LGPL.
+A GitHub project, <http>https://github.com/intervigilium/liblame</http>,  
+έχει χρησιμοποιηθεί για τη μεταγλώττιση των βιβλιοθηκών lame για το Android.
+\n(liblame Copyright &#169; 2010 Ethan Chen)
+\n(LAME Copyright &#169; 1999-2007 The LAME Project,
+\nCopyright &#169; 1999-2001 Mark Taylor,
+\nCopyright &#169; 1998 Micheal Cheng)
+\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
+\n\n
+Οι ετικέτες mp3 του YTD έχουν γραφτεί με το MyID3: μια Java βιβλιοθήκη ID3 ετικετών
+(<http>http://www.fightingquaker.com/myid3</http> και <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>)
+που έχει κυκλοφορήσει υπό την LGPL, όπως και η βιβλιοθήκη Jakarta Regexp.
+\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
+\n\n
+Για περισσότερες πληροφορίες, ανατρέξτε στα σχετικά μενού και στα διαθέσιμα αρχεία αδειών
+στον πηγαίο κώδικα αυτού του project.
+\n</string>
+    
+    <string name="credits_text1">\tΆδειες αποσπασμάτων κώδικα
+\n\n
+Αυτή η εφαρμογή χρησιμοποιεί ορισμένα τμήματα κώδικα από:
+\n\n
+1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
+\nCopyright &#169; 2012 The CyanogenMod Project, με την άδεια της GNU GPLv2.
+\nΤο κείμενο της άδειας μπορεί να βρεθεί στο αρχείο LICENSE_GPL ή στον <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
+\n\n
+2) Stack Overflow (<http>http://stackoverflow.com</http>), ένας ιστοτόπος ερωταποκρίσεων, όπου όλο το περιεχόμενο
+είναι αδειοδοτημένο κατά CC BY-SA 3.0 (δείτε <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
+\n\n
+Για περισσότερες λεπτομέρειες, κοιτάξτε τα σχόλια στον κώδικα Java του YTD. </string>
+    <string name="credits_translators">\n\tΜεταφράσεις
+\n\nΕπιπλέον, επιπρόσθετες μεταφράσεις χάρη στους:</string>
+    <string name="translators_info">\nΓια περισσότερες πληροφορίες:</string>
+        
+    <!-- -->
+    <string name="settings_cat_code">Πηγαίος Κώδικας</string>
+    <string name="ytd_code_git_title">Το YTD στο GitHub</string>
+    <string name="ytd_code_hg_title">Το YTD στο Sourceforge</string>
+
+    <!-- -->
+    <string name="settings_cat_social">Κοινωνικά</string>
+    <string name="share_title">Μοιραστείτε την εφαρμογή</string>
+    <string name="share_summary">μέσω Twitter, Facebook, Gmail κλπ&#8230;</string>
+    <string name="share_warning">Δε βρέθηκαν κατάλληλες εφαρμογές.</string>
+    <string name="share_message">#YouTubeDownloader
+\nΔωρεάν και Ανοιχτού Κώδικα εφαρμογή Android για λήψη βίντεο του YouTube!
+\nhttps://sourceforge.net/projects/ytdownloader/files/</string>
+	<string name="help_translate_title">Βοηθήστε στη μετάφραση της εφαρμογής</string>
+    <string name="help_translate_summary">Μετάβαση στον www.getlocalization.com/ytdownloader</string>
+    
+    <!-- -->
+    <string name="settings_cat_ssh">SSH</string>
+    <string name="connectbot_flavour_title">Έκδοση ConnectBot προς χρήση</string>
+	<string name="connectbot_flavour_dialog_title">Επιλογή ConnectBot για αποστολή βίντεο μέσω SSH</string>
+	<string name="enable_connectbot_short_cmd_title">Ενεργοποίηση σύντομης SSH cmd</string>
+	<string name="enable_connectbot_short_cmd_summary">Χρήση μιας ελαφρώς συντομότερης αλλά γρηγορότερης εντολής για
+ αντιγραφή στο απομακρυσμένο shell (θα δουλέψει ΜΟΝΟ αν ο υπολογιστής προορισμού βρίσκεται στο ίδιο δίκτυο LAN)</string>
+	<string name="ssh_to_longpress_menu_title">Αποστολή SSH, στο μενού παρατεταμένης πίεσης</string>
+	<string name="ssh_to_longpress_menu_summary">Μεταφορά της εντολής \"Αποστολή μέσω SSH\" στο μενού παρατεταμένης πίεσης στη λίστα βίντεο</string>
+	
+    <!-- -->
+	<string name="settings_cat_system">Σύστημα</string>
+	<string name="enable_logging_title">Ενεργοποίηση καταγραφής</string>
+	<string name="enable_logging_summary">Συμπερίληψη μηνυμάτων του YTD στο αρχείο καταγραφής συστήματος. Υποχρεωτικό για αποστολή logcat στον προγραμματιστή.</string>
+</resources>

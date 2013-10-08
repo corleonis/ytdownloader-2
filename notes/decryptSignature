@@ -1,0 +1,43 @@
+function isString(s) { 
+	return (typeof s==='string'|| s instanceof String); 
+} 
+	 
+function isInteger(n) { 
+	return (typeof n==='number' && n%1==0); 
+} 
+ 
+function decryptSignature(sig, dr) { 
+	function swap(a,b){var c=a[0];a[0]=a[b%a.length];a[b]=c;return a}; 
+	function decode(sig, arr) {
+		if (!isString(sig)) return null; 
+		var sigA=sig.split(''); 
+		for (var i=0;i<arr.length;i++) { 
+			var act=arr[i]; 
+			if (!isInteger(act)) return null; 
+			sigA=(act>0)?swap(sigA, act):((act==0)?sigA.reverse():sigA.slice(-act)); 
+		} 
+		var result=sigA.join(''); 
+		return (result.length==81)?result:sig; 
+	} 
+	 
+	if (sig==null) return '';
+	 
+	var arr=dr.split(','); 
+	if (arr!=null){ 
+		for (var i=0; i<arr.length; i++) { 
+		  arr[i]=parseInt(arr[i], 10); 
+		} 
+		var sig2=decode(sig, arr); 
+		if (sig2!=null && sig2.length==81) return sig2; 
+	} 
+	
+	var decodeArray={92:[-2,0,-3,9,-3,43,-3,0,23], 88:[-2,1,10,0,-2,23,-3,15,34], 
+			87:[-3,0,63,-2,0,-1], 85:[0,-2,17,61,0,-1,7,-1], 83:[24,53,-2,31,4],  
+			81:[34,29,9,0,39,24]}; 
+	var arr=decodeArray[sig.length];	 
+	if (arr!=null) { 
+		sig=decode(sig, arr); 
+	} 
+	return sig;  
+} 
+

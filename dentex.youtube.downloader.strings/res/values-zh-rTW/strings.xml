@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_settings">設定</string>
+    <string name="title_activity_upgrade_apk">升級</string>
+    <string name="title_activity_about">關於</string>
+    <string name="title_activity_donate">捐贈</string>
+    <string name="title_activity_tutorials">教學</string>
+    <string name="title_activity_translators_show">翻譯者</string>    
+
+    <!-- ### ShareActivity ### -->
+
+    <string name="tutorial_title">一般程式教學</string>
+	<string name="tutorial_msg_new">現在你會看到一個目錄列出了影片支援的解碼器和影片素質。你可以：
+\n\n*) 按一個項目以下載影片至裝置上或者透過 SSH 傳送下載至遠程電腦。
+\n目的地機器需求：Bash and Wget。更多 SSH 資訊;
+\n\n*) 長按一個項目並選擇複製至剪貼版或用文字形式分享連結（傳送至其他程式）。
+\n請注意這個連結（與 SSH 傳送的不同）只能在同一個裝置上或者同一個網路上使用，如果你分享它至其他機器。\n</string>
+    <string name="loading">載入中&#8230;</string>
+    <string name="error">錯誤！</string>
+    <string name="information">資訊</string>
+    <string name="dialogs_negative">取消</string>
+    <string name="wait">請稍後&#8230;</string>
+    <string name="no_downloads_sys_app">找不到\"下載\"系統程式。</string>
+    <string name="ytd_useless">YTD 無法在此裝置下載檔案。</string>
+    <string name="invalid_url">無法取得網站頁面。連結可能無效。</string>
+    <string name="invalid_url_short">無法取得網站頁面。</string>
+    <string name="invalid_response">無效的 HTTP 伺服器回應。</string>
+    <string name="bad_link">檢查提供的連結。</string>
+    <string name="bad_link_dialog_msg">YouTube 連結無效。</string>
+    <string name="no_net">沒有可用的網路連線。</string>
+    <string name="no_net_dialog_msg">請先允許網路連接。</string>
+    <string name="no_market">市場程式不可用。</string>
+    <string name="no_market_dialog_msg">請安裝 Google Play</string>
+    <string name="list_click_dialog_title">確定下載：</string>
+    <string name="list_click_download_local">在此下載</string>
+    <string name="list_click_download_ssh">透過 SSH 寄送</string>
+    <string name="rename_dialog_title">新檔案名稱：</string>
+    <string name="rename_dialog_msg">請勿輸入附檔名（像是 .mp4 或 .flv）</string>
+    <string name="unable_save">無法儲存影片！</string>
+    <string name="unable_save_dialog_msg">目的地資料夾不存在或無法存取。</string>
+    <string name="ssh_info_tutorial_title">如何透過 SSH 寄送</string>
+    <string name="ssh_info_tutorial_msg">一個很長的指令已經複製至剪貼版。\n\n在 ConnectBot 選擇一個個人資料，並且在你的 remote shell，瀏覽至想要的目的地，貼上指令（使用選項鍵）然後按 ENTER。</string>
+    <string name="callConnectBot_dialog_title">%1$s 未安裝！</string>
+    <string name="callConnectBot_dialog_msg">你需要這個免費程式來透過 SSH 寄送下載影片。</string>
+    <string name="callConnectBot_dialog_positive">下載</string>
+    <string name="download_complete_dialog_msg1">YouTube 影片:\n</string>
+    <string name="download_complete_dialog_msg2">\n成功下載。</string>
+    <string name="download_complete_dialog_positive">開啟</string>
+    <string name="downloading">下載中&#8230;</string>
+    <string name="cancel_download_dialog_title">取消下載？</string>
+    <string name="video_list_error_toast">影片目錄錯誤。</string>
+    <string name="codec">\n\n\t解碼器：</string>
+    <string name="quality">\n\t畫質：</string>
+    <string name="size">\n\t大小：</string>
+    <string name="notification_downloading_pt1">下載中</string>
+    <string name="notification_downloading_pt2">影片檔案</string>
+    <string name="notification_no_downloads">沒有正在進行中的下載</string>
+    <string name="long_click_title">處理選擇的連結：</string>
+    <string name="extsdcard_info_title">非標準的目的地路徑</string>
+    <string name="extsdcard_info_msg">正在下載檔案至標準下載資料夾。之後會移動檔案至選擇的目的地。</string>
+    <string name="ffmpeg_ready">已準備 FFmpeg。</string>
+    <string name="confirm_audio_checkbox1">下載後提取音效</string>
+    <string name="confirm_audio_checkbox2">\n（和設定中的設置一樣）</string>
+    
+    <string-array name="long_click_entries">
+        <item>複製至剪貼板</item>
+        <item>用文字分享</item>
+    </string-array>
+    
+    <string-array name="long_click_entries2">
+        <item>複製至剪貼板</item>
+        <item>用文字分享</item>
+        <item>透過 SSH 傳送</item>
+    </string-array>
+    
+    <!-- ### SettingsActivity ### -->
+
+    <string name="attention">注意！</string>
+    <string name="extsdcard_warning">無法讀寫可拆卸 SD 卡裏的檔案。\n回到標準 SD 卡。</string>
+    <string name="system_warning_title">這是系統資料夾</string>
+    <string name="system_warning_msg">選擇的路徑將會回到標準 SD 卡的下載資料夾。</string>
+    <string name="sdcard_unmounted_warning">SD 卡未掛載</string>
+    <string name="update_disabled_summary">找到不同的簽名（F-Droid?）</string>
+    <string name="failed_download">移除失敗的下載</string>
+    <string name="new_v_download">已找到。下載中&#8230;</string>
+    <string name="new_v_install">已下載。按此安裝。</string>
+    <string name="ffmpeg_download_dialog_title">需要一個額外的檔案。現在下載？</string>
+    <string name="ffmpeg_download_dialog_msg">網路連結：</string>
+    <string name="ffmpeg_device_not_supported">裝置未被支援。</string>
+    <string name="ffmpeg_support_mail">寄送 email 至開發者？
+\n你會在寄送任何資料之前審查 email 程式的所有資訊。</string>
+    <string name="ffmpeg_download_notification">正在下載 FFmpeg</string>
+    <string name="ffmpeg_install">正在安裝 FFmpeg binary&#8230;</string>
+    <string name="email_via">寄送 email 透過：</string>
+    
+    <!-- ### UpgradeApkActivity ### -->
+    
+    <string name="upgrade_button_init">更新</string>
+    <string name="upgrade_button_download">下載\n和安裝</string>
+    <string name="upgrade_uppertext_searching">搜尋中&#8230;</string>
+    <string name="upgrade_uppertext_init">安裝版本：\n</string>
+
+    <string name="upgrade_latest">最新：\t</string>
+    <string name="upgrade_installed">\n已安裝：\t</string>
+    <string name="upgraded_dialog_msg">新版本存至標準 SD 卡 \'下載\' 資料夾。\n\n現在安裝？</string>
+    <string name="upgraded_dialog_negative">以後再說\n（手動）</string>
+    <string name="upgrade_latest_installed">最新版本已經安裝！</string>
+    <string name="upgrade_network_error">無法取得更新資料。\n稍後重試。</string>
+    <string name="upgrade_bad_md5_dialog_msg">下載包裝已損毀。\n它現在將被刪除。\n按 OK 重新下載。</string>
+    
+    <!-- ### DownloadsService ### -->
+    
+    <string name="ytd_video">YTD 影片</string>
+    <string name="copy_error">複製時錯誤</string>
+    <string name="copy_progress">正在複製檔案&#8230;</string>
+    <string name="copy_ok">複製完成。</string>
+    <string name="download_remove_failed">錯誤：臨時下載檔案未移除！</string>
+    <string name="download_failed">下載失敗！</string>
+    <string name="audio_extr_progress">正在提取音效&#8230;</string>
+    <string name="audio_conv_progress">正在編碼至 mp3&#8230;</string>
+    <string name="audio_extr_completed">音效提取完畢。</string>
+    <string name="audio_conv_completed">音效編碼至 mp3 完成。</string>
+    <string name="audio_extr_error">音效提取時錯誤。</string>
+    <string name="audio_conv_error">音效編碼至 mp3 時錯誤。</string>
+    
+    <!-- ### DonateActivity ### -->
+    
+    <string name="paypal_item_name">YTD 捐贈</string>
+    <string name="paypal_title">PayPal</string>
+	<string name="paypal_summary">用捐贈支持 YTD 的開發者</string>
+	
+	<!-- ### FfmpegDownloadService ### -->
+	<string name="ffmpeg_install_failed">FFmpeg 安裝失敗。</string>
+
+    <!-- ### preferences ### -->
+
+    <!-- -->
+    <string name="dm_title">下載</string>
+    <string name="dm_summary">開啟系統下載管理員</string>
+
+    <!-- -->
+    <string name="settings_cat_ui">使用者介面</string>
+    <string name="lang_title">語言</string>
+    <string name="lang_dialog_title">語言（需要重新啟動程式）：</string>
+    <string name="choose_theme_title">選擇主題</string>
+    <string-array name="choose_theme_entries">
+        <item>黑暗</item>
+        <item>明亮</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="quick_start_title">快速開始</string>
+    <string name="quick_start_summ">開啟快速開始教學</string>
+    <string name="quick_start_text">這裡是 YouTube 下載器的偏好設定。
+\n\n實際程式可以從 YouTube 程式的分享按鈕存取，當你在看影片的時候。
+\n\n然後選擇 YouTube 下載器，您就能進一步獲的使用資訊。
+\n\n您也可以透過任何程式分享任何 YouTube 連結：也就是您的瀏覽器。</string>
+    <string name="general_info_title">允許一般教學</string>
+    <string name="general_info_summary">在開啟時顯示一般程式教學</string>
+    <string name="show_again_checkbox">下次再次顯示</string>
+    <string name="ssh_info_title">允許 SSH 教學</string>
+    <string name="ssh_info_summary">顯示快速提示關於從 SSH 控制下載</string>
+    <string name="audio_tutorial_title">音效提取教學</string>
+    <string name="audio_tutorial_summary">開啟一個關於音效提取功能的簡略指南</string>
+    <string name="audio_tutorial_text">要從已下載的影片提取音效和轉換至 mp3：
+\n\n*) 允許音效設定並下載 FFmpeg；
+\n\n*) 選擇提取類型： 
+\n\n\"只提取\" 會保存原本在影片裏的音頻（WebM 檔案含有 \"Ogg Vorbis\" 音頻；MP4、3GPP 和 大/中 FLV 影片含有 \"AAC\" 音頻；小 FLV 含有 \"mp3\"）；
+\n\n\"提取並編碼至mp3\" 會轉換提取的音效至 mp3，透過選擇的頻率編碼。
+\n\n從現在開始，一個複選框將會顯示在下載確認箱當你從 YTD 的影片目錄按下一個項目。選擇後，音效提取將會在影片下載完成後開始（要隱藏複選框，關閉音效提取選項）。
+\n\n從設定選擇如果你想要在成功音效提取後移除影片檔案。</string>
+    
+    <!-- -->
+    <string name="settings_cat_folder">下載資料夾</string>
+    <string name="standard_location_title">選擇標準資料夾</string>
+    <string name="chooser_swap_title">交換選擇器</string>
+    <string name="chooser_location_title">開啟檔案選擇器</string>
+    <string name="chooser_location_summary">長按以選擇資料夾</string>
+	
+    <!-- -->
+    <string name="settings_cat_files">影片檔案</string>
+    <string name="enable_q_suffix_title">附上影片畫質詞尾</string>
+    <string name="enable_q_suffix_summary">在檔案名稱後面增加影片畫質</string>
+    <string name="enable_rename_title">允許修改檔案名稱</string>
+    <string name="enable_rename_summary">在下載之前更改影片檔案名稱（只限手機下載）</string>
+    <string name="show_size_title">顯示檔案大小</string>
+    <string name="show_size_summary">在下載確認訊息顯示影片檔案大小（較慢）</string>
+    <string name="show_size_list_title">顯示所有影片大小</string>
+    <string name="show_size_list_summary">取得目錄裏所有影片選項的檔案大小（更慢）</string>
+    <string name="show_thumb_title">顯示預覽相片</string>
+    <string name="show_thumb_summary">同時下載預覽相片和影片目錄</string>
+    
+    <!-- -->
+    <string name="settings_cat_audio">音效</string>
+    <string name="enable_audio_extraction_title">允許音效提取</string>
+    <string name="enable_audio_extraction_summary">從下載的影片中提取並轉換音效（只限裝置下載）</string>
+    <string name="mp3_bitrate_title">編碼 MP3 碼率 (kbps)</string>
+    <string name="audio_extraction_type_title">提取類型</string>
+    <string name="enable_audio_q_suffix_title">附上音效音質詞尾</string>
+    <string name="enable_audio_q_suffix_summary">在檔案名稱後面增加音效音質</string>
+    <string name="remove_video_title">移除影片</string>
+    <string name="remove_video_summary">允許在音效提取成功後刪除影片檔案（警告：沒有確認）</string>
+
+    <string-array name="audio_extraction_type_entries">
+        <item>只提取</item>
+        <item>提取並編碼至 mp3</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="settings_cat_notifications">通知</string>
+    <string name="enable_own_notification_title">允許自己的通知</string>
+    <string name="enable_own_notification_summary">顯示關於所有 YTD 下載的全面的通知</string>
+    <string name="download_manager_notification_title">管理系統通知</string>
+    <string name="download_manager_notification_dialog_title">顯示系統下載管理員通知：</string>
+    
+    <string-array name="download_manager_notification_entries">
+        <item>當進行中和完成後</item>
+        <item>當進行中</item>
+        <item>永不</item>
+    </string-array>
+    
+    <string name="notification_defaults_title">預設通知</string>
+    <string name="notification_defaults_dialog_title">YTD 自行的預設通知</string>
+    <string-array name="notification_defaults_entries">
+        <item>聲音和震動</item>
+        <item>聲音和燈光</item>
+        <item>震動和燈光</item>
+        <item>聲音、震動和燈光</item>
+        <item>聲音</item>
+        <item>震動</item>
+        <item>燈光</item>
+        <item>無</item>
+    </string-array>   
+    
+    <!-- -->
+    <string name="settings_cat_updates">更新</string>
+    <string name="update_title">檢查更新</string>
+    <string name="autoupdate_title">允許自動更新</string>
+    <string name="autoupdate_summary">在每日第一次開啟程式時檢查更新（新包裝將會自動下載）</string>
+
+    <!-- -->
+    <string name="settings_cat_app">應用程式</string>
+    <string name="settings_cat_about_condensed">關於</string>
+    <string name="title_changelog">更新紀錄</string>
+    <string name="screen_licences_code_title">執照和原始碼</string>
+
+    <!-- -->
+    <string name="settings_cat_licenses">執照</string>
+
+    <string name="credits_title">感謝</string>
+    <string name="title_activity_credits_show">其他執照和翻譯</string>
+    
+    <string name="credits_text0">\tMain Licenses
+\n\n
+This App is released under the GPL-3.0.
+\n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
+\n\n
+The FFmpeg binary (<http>http://www.ffmpeg.org/index.html</http>), 
+used for the audio extraction feature, is released under the GPL-3.0.
+\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
+\n\n
+The filechooser library is released under the MIT license.
+\n(android-filechooser Copyright &#169; 2012 Hai Bison).
+\n\n
+The liblame library, used to compile FFmpeg, is released under the LGPL.
+A GitHub project, <http>https://github.com/intervigilium/liblame</http>, 
+has been used to compile the lame libraries for Android.
+\n(liblame Copyright &#169; 2010 Ethan Chen)
+\n(LAME Copyright &#169; 1999-2007 The LAME Project,
+\nCopyright &#169; 1999-2001 Mark Taylor,
+\nCopyright &#169; 1998 Micheal Cheng)
+\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
+\n\n
+YTD\'s mp3 tags are written with MyID3: a Java ID3 Tag Library
+(<http>http://www.fightingquaker.com/myid3</http> and <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
+released under the LGPL, as its dependency Jakarta Regexp library.
+\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
+\n\n
+For more informations, refer to the dedicated menus and to the license files 
+available from this project\'s source code.
+\n</string>
+    
+    <string name="credits_text1">\tCode excerpts Licenses
+\n\n
+This App uses some code snippets from: 
+\n\n
+1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
+\nCopyright &#169; 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license.
+\nThe text of the license can be found in the LICENSE_GPL file or at <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
+\n\n
+2) Stack Overflow (<http>http://stackoverflow.com</http>), a question and answer site for programmers where all 
+the content is CC BY-SA 3.0 licensed (see <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
+\n\n
+For more details, look for comments in YTD\'s Java code.</string>
+    <string name="credits_translators">\n\t翻譯
+\n\n同時，更多的在地化 感謝：</string>
+    <string name="translators_info">\n更多資訊：</string>
+        
+    <!-- -->
+    <string name="settings_cat_code">原始碼</string>
+    <string name="ytd_code_git_title">在 GitHub 找 YTD</string>
+    <string name="ytd_code_hg_title">在 Sourceforge 找 YTD</string>
+
+    <!-- -->
+    <string name="settings_cat_social">社交</string>
+    <string name="share_title">分享此程式</string>
+    <string name="share_summary">透過 Twitter, Facebook, Gmail 等&#8230;</string>
+    <string name="share_warning">找不到合適的程式</string>
+    <string name="share_message">#YouTubeDownloader
+\n下載 YouTube 影片的免費、開放原始碼 Android 程式！
+\nhttps://sourceforge.net/projects/ytdownloader/files/</string>
+	<string name="help_translate_title">幫忙翻譯此程式</string>
+    <string name="help_translate_summary">請至 www.getlocalization.com/ytdownloader</string>
+    
+    <!-- -->
+    <string name="settings_cat_ssh">SSH</string>
+    <string name="connectbot_flavour_title">ConnectBot 使用版本</string>
+	<string name="connectbot_flavour_dialog_title">選擇 ConnectBot fork 以透過 SSH 傳送影片</string>
+	<string name="enable_connectbot_short_cmd_title">允許 SSH 縮短 cmd</string>
+	<string name="enable_connectbot_short_cmd_summary">使用稍微縮短但是更快速的指令來貼上至遠程外殼（只能當目的地電腦位於同樣的區域網路）</string>
+	<string name="ssh_to_longpress_menu_title">將透過SSH傳送移至長按選項</string>
+	<string name="ssh_to_longpress_menu_summary">將\"透過SSH傳送\"移至影片目錄的長按選項</string>
+	
+    <!-- -->
+	<string name="settings_cat_advanced">進階</string>
+	<string name="enable_logging_title">允許紀錄</string>
+	<string name="enable_logging_summary">包括 YTD 的資訊進入系統紀錄。強制傳送 logcat 至開發者。</string>
+</resources>

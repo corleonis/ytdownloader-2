@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_settings">Beállítások</string>
+    <string name="title_activity_upgrade_apk">Frissítés</string>
+    <string name="title_activity_about">Névjegy</string>
+    <string name="title_activity_donate">Adományok</string>
+    <string name="title_activity_tutorials">Oktatások</string>
+    <string name="title_activity_translators_show">Fordítók</string>    
+
+    <!-- ### ShareActivity ### -->
+
+    <string name="tutorial_title">Alkalmazás tudnivalók</string>
+	<string name="tutorial_msg_new">Most láthatod a kiválasztott videó elérhető kodekjeinek és minőségeinek listáját. Most:
+\n\n*) Rákattinthatsz egy elemre a letöltéshez, vagy elküldheted a letöltést SSH-n keresztül egy PC-re.
+\nCéleszköz követelmények: Bash és Wget. További SSH információk;
+\n\n*) Hosszan nyomhatsz egy elemre a vágólapra másoláshoz, vagy a link megosztásához (másik appnak).
+\nKérlek vedd figyelembe, hogy az itt létrehozott link csak az azt létrehozó készüléken, vagy az annak hálózatában lévő eszközökön használható.\n</string>
+    <string name="loading">Betöltés&#8230;</string>
+    <string name="error">Hiba!</string>
+    <string name="information">Info</string>
+    <string name="dialogs_negative">Mégse</string>
+    <string name="wait">Kérlek várj&#8230;</string>
+    <string name="no_downloads_sys_app">\"Downloads\" rendszer app nem található.</string>
+    <string name="ytd_useless">YTD cannot download files on this device.</string>
+    <string name="invalid_url">Weboldal nem elérhető. Hibás URL?</string>
+    <string name="invalid_url_short">Weboldal nem elérhető.</string>
+    <string name="invalid_response">Érvénytelen HTTP szerver válasz.</string>
+    <string name="bad_link">Kattints a linkre.</string>
+    <string name="bad_link_dialog_msg">Nem érvényes YouTube link.</string>
+    <string name="no_net">Nincs elérhető kapcsolat.</string>
+    <string name="no_net_dialog_msg">Kérlek, először engedélyezz egy hálózati kapcsolatot.</string>
+    <string name="no_market">Nincs elérhető market app.</string>
+    <string name="no_market_dialog_msg">Kérlek, telepítsd a Play Áruházat</string>
+    <string name="list_click_dialog_title">Letöltés megerősítése ehhez: </string>
+    <string name="list_click_download_local">Letöltés ide</string>
+    <string name="list_click_download_ssh">Küldés SSH-n keresztül</string>
+    <string name="rename_dialog_title">Új fájlnév: </string>
+    <string name="rename_dialog_msg">Ne írd be a fájl kiterjesztését (pl.: .mp4 vagy .flv).</string>
+    <string name="unable_save">A videó nem menthető!</string>
+    <string name="unable_save_dialog_msg">A célkönyvtár nem elérhető, és/vagy nem írható.</string>
+    <string name="ssh_info_tutorial_title">Küldés SSH-n keresztül (segítség)</string>
+    <string name="ssh_info_tutorial_msg">Egy hosszú parancs lett betöltve a vágólapra.
+\n\nVálassz egy profilt a ConnectBot-ban, és amint beléptél, tallózd ki a kívánt könyvtárat, 
+illeszd be a parancsot (a menü gombal), és nyomd meg az ENTER-t.</string>
+    <string name="callConnectBot_dialog_title">%1$s nincs telepítve!</string>
+    <string name="callConnectBot_dialog_msg">Szükséged lesz erre az ingyenes appra az SSH-n való küldéshez.</string>
+    <string name="callConnectBot_dialog_positive">Letöltés</string>
+    <string name="download_complete_dialog_msg1">YouTube videó:\n</string>
+    <string name="download_complete_dialog_msg2">\nSikeresen letöltve.</string>
+    <string name="download_complete_dialog_positive">Megnyitás</string>
+    <string name="downloading">Letöltés folyamatban&#8230;</string>
+    <string name="cancel_download_dialog_title">Letöltés megszakítása?</string>
+    <string name="video_list_error_toast">Hiba a videólistában.</string>
+    <string name="codec">\n\n\tKodek:</string>
+    <string name="quality">\n\tMinőség:</string>
+    <string name="size">\n\tMéret:</string>
+    <string name="notification_downloading_pt1">Letöltés</string>
+    <string name="notification_downloading_pt2">videófájlok</string>
+    <string name="notification_no_downloads">Nincsenek folyamatban letöltések</string>
+    <string name="long_click_title">Kiválasztott link kezelése:</string>
+    <string name="extsdcard_info_title">Nem alapértelmezett letöltési hely</string>
+    <string name="extsdcard_info_msg">A fájl először a letöltések mappába lesz letöltve, majd át lesz helyezve a kiválasztott könyvtárba.</string>
+    <string name="ffmpeg_ready">FFmpeg kész.</string>
+    <string name="confirm_audio_checkbox1">Hang kicsomagolása letöltése után</string>
+    <string name="confirm_audio_checkbox2">\n(ahogy a beállításokban meg lett adva)</string>
+    
+    <string-array name="long_click_entries">
+        <item>Másolás a vágólapra</item>
+        <item>Megosztás szövegként</item>
+    </string-array>
+    
+    <string-array name="long_click_entries2">
+        <item>Másolás a vágólapra</item>
+        <item>Megosztás szövegként</item>
+        <item>Küldés SSH-n keresztül</item>
+    </string-array>
+    
+    <!-- ### SettingsActivity ### -->
+
+    <string name="attention">Figyelem!</string>
+    <string name="extsdcard_warning">Sikertelen a fájlok írásra a külső SD kártyára.\nBelső tárhely használata folyamatban.</string>
+    <string name="system_warning_title">Ez egy rendszermappa</string>
+    <string name="system_warning_msg">A kiválasztott könyvtár helyett az alapértelmezett letöltési mappa lesz használva.</string>
+    <string name="sdcard_unmounted_warning">Az SD kártya nincs csatlakoztatva</string>
+    <string name="update_disabled_summary">Rossz megjelölés (talán az F-Droid miatt?)</string>
+    <string name="failed_download">SIkertelen letöltés törölve</string>
+    <string name="new_v_download">megtalálva. Letöltés folyamatban&#8230;</string>
+    <string name="new_v_install">letöltve. Kattints a telepítéshez.</string>
+    <string name="ffmpeg_download_dialog_title">Szükséges egy kiegészítő fájl. Letöltöd most?</string>
+    <string name="ffmpeg_download_dialog_msg">Web link:</string>
+    <string name="ffmpeg_device_not_supported">Az eszköz még nem támogatott.</string>
+    <string name="ffmpeg_support_mail">Email küldése a fejlesztőnek?
+\nMegnézheted az elküldésre váró emailt, mielőtt elküldöd azt.</string>
+    <string name="ffmpeg_download_notification">FFmpeg letöltése</string>
+    <string name="ffmpeg_install">FFmpeg telepítése&#8230;</string>
+    <string name="email_via">Email küldése ezen keresztül:</string>
+    
+    <!-- ### UpgradeApkActivity ### -->
+    
+    <string name="upgrade_button_init">Frissítés</string>
+    <string name="upgrade_button_download">Letöltés\nés telepítés</string>
+    <string name="upgrade_uppertext_searching">Keresés&#8230;</string>
+    <string name="upgrade_uppertext_init">Telepített verzió:\n</string>
+
+    <string name="upgrade_latest">Legfrissebb:\t</string>
+    <string name="upgrade_installed">\nTelepített:\t</string>
+    <string name="upgraded_dialog_msg">Az új verzió elmentve az sd kártya \'Download\' mappájába.\n\nTelepítse most?</string>
+    <string name="upgraded_dialog_negative">Később\n(sajátkezűleg)</string>
+    <string name="upgrade_latest_installed">A legfroissebb verzió már telepítve van!</string>
+    <string name="upgrade_network_error">Frissítési adatok nem elérhetőek.\nPróbáld később.</string>
+    <string name="upgrade_bad_md5_dialog_msg">Érvénytelen letöltés.\nA fájl most letörlődik.\nMenj az OK-ra, hogy újból letöltsd.</string>
+    
+    <!-- ### DownloadsService ### -->
+    
+    <string name="ytd_video">YTD videó</string>
+    <string name="copy_error">Hiba másolás közben</string>
+    <string name="copy_progress">Fájl másolás folyamatban&#8230;</string>
+    <string name="copy_ok">Sikeres másolás.</string>
+    <string name="download_remove_failed">Hiba: az ideiglenesen letörölt fájl nem lett letörölve.</string>
+    <string name="download_failed">Sikertelen letöltés!</string>
+    <string name="audio_extr_progress">Hang kicsomagolása folyamatban&#8230;</string>
+    <string name="audio_conv_progress">Hang konvertálása mp3-ba folyamatban&#8230;</string>
+    <string name="audio_extr_completed">Sikeres hang kicsomagolás</string>
+    <string name="audio_conv_completed">MP3 konvertálása sikeres.</string>
+    <string name="audio_extr_error">Hiba hangkicsomagolás közben.</string>
+    <string name="audio_conv_error">Hiba mp3-ra konvertálás közben.</string>
+    
+    <!-- ### DonateActivity ### -->
+    
+    <string name="paypal_item_name">YTD adományozás</string>
+    <string name="paypal_title">PayPal</string>
+	<string name="paypal_summary">Támogasd a YTD fejlesztőjét adománnyal</string>
+	
+	<!-- ### FfmpegDownloadService ### -->
+	<string name="ffmpeg_install_failed">FFmpeg telepítése sikertelen</string>
+
+    <!-- ### preferences ### -->
+
+    <!-- -->
+    <string name="dm_title">Letöltések</string>
+    <string name="dm_summary">Letöltéskezelő megnyitása (rendszer)</string>
+
+    <!-- -->
+    <string name="settings_cat_ui">Felhasználói felület</string>
+    <string name="lang_title">Nyelv</string>
+    <string name="lang_dialog_title">Nyelv (újraindítást igényel):</string>
+    <string name="choose_theme_title">Téma választása</string>
+    <string-array name="choose_theme_entries">
+        <item>Sötét</item>
+        <item>Világos</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="quick_start_title">Gyors kezdés</string>
+    <string name="quick_start_summ">Gyorstalpaló megnyitása</string>
+    <string name="quick_start_text">Itt vannak a  \'YouTube Downloader\' beállításai.
+\n\nAz alkalmazás elérhető a YouTube appból, videó nézése közben a megosztás gomb alatt.
+\n\nEzután válaszd ki a  \'YouTube Downloader\' -t, és még több infót kapsz.
+\n\nEzen kívül bármi más módon megoszthatod a YouTube linkeket, pl Böngészőn keresztül.</string>
+    <string name="general_info_title">Segítség engedélyezése</string>
+    <string name="general_info_summary">Tudnivalók mutatása indításkor</string>
+    <string name="show_again_checkbox">Mutasd legközelebb is</string>
+    <string name="ssh_info_title">SSH Tudnivalók engedélyezése</string>
+    <string name="ssh_info_summary">Gyors tipp mutatása az SSH használatáról</string>
+    <string name="audio_tutorial_title">Audio kicsomagolási oktatás</string>
+    <string name="audio_tutorial_summary">Nyisd meg a tudnivalókat a hang kicsomagolásról</string>
+    <string name="audio_tutorial_text">Hogy kicsomagolhasd a hangot és mp3ra konvertálhasd,
+\n\n*) Engedélyezd a hangbeállítást, és töltsd le az FFmpeg-et;
+\n\n*) Válaszd ki a kicsomagolás típusát:
+\n\n\"csak kicsomagolás\" meghagyja a hang eredeti formátumát (WebM fájlokat \"Ogg Vorbis\"-ként; 
+MP4, 3GPP és közepes/nagy FLV videókat  \"AAC\" formátumuként; a kis FLV fájlokat pedig \"mp3\"-ként);
+\n\n\"kicsomagolás és konvertálás mp3-ra\" átkonvertálja a kiválasztott fájlt mp3 formátumban, a beállított minőségben.
+\n\nMostantól kezdve, ha rákattintasz egy elemre, kiválaszthatod, hogy letöltés után mp3-ba konvertálja át a hangsávot
+(kapcsold ki a hang kicsomagolása opciót, hogy ezt megszüntesd).
+\n\nÁllítsd be a beállításokban, ha törölni akarod a videót a hangra konvertálás után.</string>
+    
+    <!-- -->
+    <string name="settings_cat_folder">Letöltési mappa</string>
+    <string name="standard_location_title">Válassz ki egy mappát</string>
+    <string name="chooser_swap_title">Választó felcserélése</string>
+    <string name="chooser_location_title">Fájlválasztó megnyitása</string>
+    <string name="chooser_location_summary">Nyomd hosszan a könyvtárválasztáshoz</string>
+	
+    <!-- -->
+    <string name="settings_cat_files">Videófájlok</string>
+    <string name="enable_q_suffix_title">Minőség utótag mellékelése</string>
+    <string name="enable_q_suffix_summary">Videóminőség hozzáadása a fájlnévhez</string>
+    <string name="enable_rename_title">Fájl átnevezés engedélyezése</string>
+    <string name="enable_rename_summary">Videófájl átnevezése letöltés előtt (csak helyi letöltés esetén)</string>
+    <string name="show_size_title">Fájlméret mutatása</string>
+    <string name="show_size_summary">Videófájl méretének mutatása a letöltés megerősítésekor (lassabb)</string>
+    <string name="show_size_list_title">Minden videóméret mutatása</string>
+    <string name="show_size_list_summary">Minden fájl méretének mutatása az elérhető videók listáján (nagyon lassú)</string>
+    <string name="show_thumb_title">Előzetes kép mutatása</string>
+    <string name="show_thumb_summary">Előzetes kép letöltése a videólistával</string>
+    
+    <!-- -->
+    <string name="settings_cat_audio">Hang</string>
+    <string name="enable_audio_extraction_title">Hang kicsomagolásának engedélyezése</string>
+    <string name="enable_audio_extraction_summary">Hang kicsomagolása és konvertálása a letöltött videóból (csak helyi letöltés esetén)</string>
+    <string name="mp3_bitrate_title">MP3 bitráta (kbps)</string>
+    <string name="audio_extraction_type_title">Kicsomagolás típúsa</string>
+    <string name="enable_audio_q_suffix_title">Hangminőség utótag mellékelése</string>
+    <string name="enable_audio_q_suffix_summary">Hangminőség hozzáadása a fájlnévhez</string>
+    <string name="remove_video_title">Videó eltávolítás</string>
+    <string name="remove_video_summary">Videó törlésének engedélyezése sikeres hang kicsomagoláskor (figyelem: nincs megerősítés)</string>
+
+    <string-array name="audio_extraction_type_entries">
+        <item>Csak kicsomagolás</item>
+        <item>Kicsomagolás és konvertálás mp3-ba</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="settings_cat_notifications">Értesítések</string>
+    <string name="enable_own_notification_title">Saját értesítés engedélyezése</string>
+    <string name="enable_own_notification_summary">Átfogó értesítés mutatása minden letöltésről</string>
+    <string name="download_manager_notification_title">Rendszerértesítések kezelése</string>
+    <string name="download_manager_notification_dialog_title">A rendszer letöltéskezelőjének értesítéseinek mutatása</string>
+    
+    <string-array name="download_manager_notification_entries">
+        <item>Folyamat közben, valamint annak végeztével</item>
+        <item>Csak folyamat közben</item>
+        <item>Soha</item>
+    </string-array>
+    
+    <string name="notification_defaults_title">Értesítési alapbeállítások</string>
+    <string name="notification_defaults_dialog_title">YTD értesítési alapbeállítások</string>
+    <string-array name="notification_defaults_entries">
+        <item>Hang és rezgés</item>
+        <item>Hang és fények</item>
+        <item>Rezgés és fények</item>
+        <item>Hang, rezgés és fények</item>
+        <item>Hang</item>
+        <item>Rezgés</item>
+        <item>Fények</item>
+        <item>Semmi</item>
+    </string-array>   
+    
+    <!-- -->
+    <string name="settings_cat_updates">Frissítések</string>
+    <string name="update_title">Új verzió keresése</string>
+    <string name="autoupdate_title">Auto-frissítés engedélyezése</string>
+    <string name="autoupdate_summary">Frissítések automatikus ellenőrzése megnyitáskor (automatikus letöltéssel)</string>
+
+    <!-- -->
+    <string name="settings_cat_app">Alkalmazás</string>
+    <string name="settings_cat_about_condensed">Névjegy</string>
+    <string name="title_changelog">Változások listája</string>
+    <string name="screen_licences_code_title">Licenszek és kód</string>
+
+    <!-- -->
+    <string name="settings_cat_licenses">Licenszek</string>
+
+    <string name="credits_title">Készítők</string>
+    <string name="title_activity_credits_show">Egyéb licenszek és fordítások</string>
+    
+    <string name="credits_text0">\tFő licenszek
+\n\n
+This App is released under the GPL-3.0.
+\n(YouTubeDownloader for Android Copyright &#169; 2013 Samuele Rini).
+\n\n
+The FFmpeg binary (<http>http://www.ffmpeg.org/index.html</http>), 
+used for the audio extraction feature, is released under the GPL-3.0.
+\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
+\n\n
+The filechooser library is released under the MIT license.
+\n(android-filechooser Copyright &#169; 2012 Hai Bison).
+\n\n
+The liblame library, used to compile FFmpeg, is released under the LGPL.
+A GitHub project, <http>https://github.com/intervigilium/liblame</http>, 
+has been used to compile the lame libraries for Android.
+\n(liblame Copyright &#169; 2010 Ethan Chen)
+\n(LAME Copyright &#169; 1999-2007 The LAME Project,
+\nCopyright &#169; 1999-2001 Mark Taylor,
+\nCopyright &#169; 1998 Micheal Cheng)
+\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
+\n\n
+YTD\'s mp3 tags are written with MyID3: a Java ID3 Tag Library
+(<http>http://www.fightingquaker.com/myid3</http> and <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
+released under the LGPL, as its dependency Jakarta Regexp library.
+\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
+\n\n
+For more informations, refer to the dedicated menus and to the license files 
+available from this project\'s source code.
+\n</string>
+    
+    <string name="credits_text1">\tIdézetek a licenszből
+\n\n
+Ez az alkalmazás licensz részeket használ innen:
+\n\n
+1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
+\nCopyright &#169; 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license.
+\nThe text of the license can be found in the LICENSE_GPL file or at <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
+\n\n
+2) Stack Overflow (<http>http://stackoverflow.com</http>), a question and answer site for programmers where all 
+the content is CC BY-SA 3.0 licensed (see <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
+\n\n
+További infóért nézd meg a YTD Java kódját</string>
+    <string name="credits_translators">\n\tFordítások
+\n\nTovábbi fordításokért köszönet:</string>
+    <string name="translators_info">\nTovábbi infó:</string>
+        
+    <!-- -->
+    <string name="settings_cat_code">Forráskód</string>
+    <string name="ytd_code_git_title">YTD a GitHub-on</string>
+    <string name="ytd_code_hg_title">YTD a SourceForge-on</string>
+
+    <!-- -->
+    <string name="settings_cat_social">Közösségi</string>
+    <string name="share_title">App megosztása</string>
+    <string name="share_summary">Twitteren, Facebookon, Gmailen stb. keresztül&#8230;</string>
+    <string name="share_warning">Nem található megfelelő app.</string>
+    <string name="share_message">#YouTubeDownloader
+\nIngyenes és nyílt forráskódú app, mellyel YouTube videók tölthetőek le!
+\nhttps://sourceforge.net/projects/ytdownloader/files/</string>
+	<string name="help_translate_title">Segíts a fordításban</string>
+    <string name="help_translate_summary">Menj a www.getlocalization.com/ytdownloader oldalra</string>
+    
+    <!-- -->
+    <string name="settings_cat_ssh">SSH</string>
+    <string name="connectbot_flavour_title">Használható ConnectBot verzió</string>
+	<string name="connectbot_flavour_dialog_title">Válaszd ki a ConnectBot elágazást az SSH-n való küldéshez</string>
+	<string name="enable_connectbot_short_cmd_title">SSH rövid parancsok engedélyezése</string>
+	<string name="enable_connectbot_short_cmd_summary">Jóval rövidebb, és gyorsabb parancs használata az
+SSH-n való küldéshez (csak akkor működik, ha a céleszköz ugyanazon a hálózaton van)</string>
+	<string name="ssh_to_longpress_menu_title">Hosszan nyomva SSH küldés menü</string>
+	<string name="ssh_to_longpress_menu_summary">\"Send via SSH\" művelet áthelyezése a hosszan nyomva előjövő menübe.</string>
+	
+    <!-- -->
+	<string name="settings_cat_advanced">Speciális beállítások</string>
+	<string name="enable_logging_title">Naplózás engedélyezése</string>
+	<string name="enable_logging_summary">YTD üzeneteinek felvétele a rendszernaplóba. Kötelező logcat küldéséhez a fejlesztőnek.</string>
+</resources>

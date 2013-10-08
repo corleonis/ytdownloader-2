@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2012 Hai Bison
+
+    See the file LICENSE at the root directory of this project for copying
+    permission.
+-->
+
+<resources>
+
+    <string name="afc_lib_name">منتقي-الملف للاندرويد</string>
+    <string name="afc_cmd_advanced_selection_all">الكل</string>
+    <string name="afc_cmd_advanced_selection_invert">عكس التحديد</string>
+    <string name="afc_cmd_advanced_selection_none">لا شيء</string>
+    <string name="afc_cmd_clear">مسح</string>
+    <string name="afc_cmd_grid_view">عرض الشبكة</string>
+    <string name="afc_cmd_home">الرئيسية</string>
+    <string name="afc_cmd_list_view">عرض القائمة</string>
+    <string name="afc_cmd_new_folder">مجلد جديد&#8230;</string>
+    <string name="afc_cmd_reload">اعادة تحميل</string>
+    <string name="afc_cmd_remove_from_list">ازالة من القائمة</string>
+    <string name="afc_cmd_select_all_files">اختيار كل الملفات</string>
+    <string name="afc_cmd_select_all_folders">اختيار كل المجلدات</string>
+    <string name="afc_cmd_sort">فرز&#8230;</string>
+    <string name="afc_cmd_switch_viewmode">تبديل طريقة العرض</string>
+    <string name="afc_ellipsize">&#8230;</string>
+    <string name="afc_file">ملف</string>
+    <string name="afc_folder">مجلد</string>
+    <string name="afc_hint_double_tap_to_select_file">ضغطة مزدوجة لاختيار ملف/مجلد</string>
+    <string name="afc_hint_folder_name">اسم المجلد</string>
+    <string name="afc_hint_save_as_filename">اسم الملف</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_create_files">هذا التطبيق لايملك تصريح بإنشاء ملفات/مجلدات</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_delete_files">هذا التطبيق لايملك تصريح باحدف ملفات/مجلدات</string>
+    <string name="afc_msg_cancelled">تم الالغاء</string>
+    <string name="afc_msg_cannot_connect_to_file_provider_service">لايمكن الاتصال بمزود الخدمة</string>
+    <string name="afc_msg_done">تم</string>
+    <string name="afc_msg_empty">&#8230;فارغ</string>
+    <string name="afc_msg_filename_is_empty">اسم الملف فارغ</string>
+    <string name="afc_msg_loading">تحميل&#8230;</string>
+    <string name="afc_pmsg_cannot_access_dir">لايمكن الوصول إلى \"%1$s\"</string>
+    <string name="afc_pmsg_cannot_create_folder">لايمكن انشاء مجلد \"%1$s\"</string>
+    <string name="afc_pmsg_cannot_delete_file">لايمكن حذف %1$s \"%2$s\"</string>
+    <string name="afc_pmsg_confirm_delete_file">هل انت متأكد من رغبتك في حذف هذا %1$s \"%2$s\"؟</string>
+    <string name="afc_pmsg_confirm_replace_file">هذا الملف \"%1$s\" موجود بالفعل.\n\nهل تود استبداله؟</string>
+    <string name="afc_pmsg_deleting_file">جاري حذف %1$s \"%2$s\"&#8230;</string>
+    <string name="afc_pmsg_file_has_been_deleted">تم حذف &#8230;%1$s \"%2$s\"</string>
+    <string name="afc_pmsg_filename_is_directory">\"%1$s\" عبارة عن مجلد</string>
+    <string name="afc_pmsg_filename_is_invalid">اسم الملف \"%1$s\" غير صالح</string>
+    <string name="afc_pmsg_max_file_count_allowed">&#8230;به ملفات أكثر، اكبر قدر ممكن به هو: %1$,d</string>
+    <string name="afc_pmsg_unknown_error">خطأ غير معروف: %1$s</string>
+    <string name="afc_pmsg_xxx_items">%1$,d عناصر</string>
+    <string name="afc_root">جذر</string>
+    <string name="afc_title_advanced_selection">اختيار&#8230;</string>
+    <string name="afc_title_alert">تنبيه</string>
+    <string name="afc_title_choose_directories">أختر مجلد</string>
+    <string name="afc_title_choose_files">اختيار ملفات&#8230;</string>
+    <string name="afc_title_choose_files_and_directories">اختيار ملفات/مجلدات&#8230;</string>
+    <string name="afc_title_confirmation">تأكيد</string>
+    <string name="afc_title_date">تاريخ</string>
+    <string name="afc_title_error">خطأ</string>
+    <string name="afc_title_history">تاريخ</string>
+    <string name="afc_title_info">بيانات</string>
+    <string name="afc_title_name">إسم</string>
+    <string name="afc_title_save_as">حفط كـ&#8230;</string>
+    <string name="afc_title_size">الحجم</string>
+    <string name="afc_title_sort_by">فرز بـ&#8230;</string>
+    <string name="afc_yesterday">أمس</string>
+
+</resources>

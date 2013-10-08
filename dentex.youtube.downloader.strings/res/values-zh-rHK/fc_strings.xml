@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2012 Hai Bison
+
+    See the file LICENSE at the root directory of this project for copying
+    permission.
+-->
+
+<resources>
+
+    <string name="afc_lib_name">android-filechooser</string>
+    <string name="afc_cmd_advanced_selection_all">全部</string>
+    <string name="afc_cmd_advanced_selection_invert">反向選擇</string>
+    <string name="afc_cmd_advanced_selection_none">無</string>
+    <string name="afc_cmd_clear">清除</string>
+    <string name="afc_cmd_grid_view">格狀檢視</string>
+    <string name="afc_cmd_home">首頁</string>
+    <string name="afc_cmd_list_view">目錄檢視</string>
+    <string name="afc_cmd_new_folder">新資料夾&#8230;</string>
+    <string name="afc_cmd_reload">重新載入</string>
+    <string name="afc_cmd_remove_from_list">從目錄中移除</string>
+    <string name="afc_cmd_select_all_files">選擇所有檔案</string>
+    <string name="afc_cmd_select_all_folders">選擇所有資料夾</string>
+    <string name="afc_cmd_sort">排列&#8230;</string>
+    <string name="afc_cmd_switch_viewmode">切換檢視模式</string>
+    <string name="afc_ellipsize">&#8230;</string>
+    <string name="afc_file">檔案</string>
+    <string name="afc_folder">資料夾</string>
+    <string name="afc_hint_double_tap_to_select_file">兩次點擊以選擇檔案/資料夾</string>
+    <string name="afc_hint_folder_name">資料夾名稱</string>
+    <string name="afc_hint_save_as_filename">檔案名稱</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_create_files">這個程式不需要任何權限來新增檔案/資料夾</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_delete_files">這個程式不需要任何權限來新增檔案/資料夾</string>
+    <string name="afc_msg_cancelled">已取消</string>
+    <string name="afc_msg_cannot_connect_to_file_provider_service">無法連接至檔案提供者服務</string>
+    <string name="afc_msg_done">完成</string>
+    <string name="afc_msg_empty">&#8230;空的</string>
+    <string name="afc_msg_filename_is_empty">檔案名稱是空的</string>
+    <string name="afc_msg_loading">載入中&#8230;</string>
+    <string name="afc_pmsg_cannot_access_dir">無法存取\"%1$s\"</string>
+    <string name="afc_pmsg_cannot_create_folder">無法新增資料夾\"%1$s\"</string>
+    <string name="afc_pmsg_cannot_delete_file">無法刪除%1$s \"%2$s\"</string>
+    <string name="afc_pmsg_confirm_delete_file">你確定要刪除這個%1$s \"%2$s\"？</string>
+    <string name="afc_pmsg_confirm_replace_file">這個檔案\"%1$s\"已存在。\n\n你想要取代它嗎？</string>
+    <string name="afc_pmsg_deleting_file">正在刪除 %1$s \"%2$s\"&#8230;</string>
+    <string name="afc_pmsg_file_has_been_deleted">&#8230;%1$s \"%2$s\" 已被刪除</string>
+    <string name="afc_pmsg_filename_is_directory">\"%1$s\"是個資料夾</string>
+    <string name="afc_pmsg_filename_is_invalid">檔案名稱\"%1$s\"無效</string>
+    <string name="afc_pmsg_max_file_count_allowed">&#8230; 有更多檔案，最多准許：%1$,d</string>
+    <string name="afc_pmsg_unknown_error">未知錯誤：%1$s</string>
+    <string name="afc_pmsg_xxx_items">%1$,d 項目</string>
+    <string name="afc_root">Root</string>
+    <string name="afc_title_advanced_selection">選擇&#8230;</string>
+    <string name="afc_title_alert">提醒</string>
+    <string name="afc_title_choose_directories">選擇一個資料夾</string>
+    <string name="afc_title_choose_files">選擇檔案&#8230;</string>
+    <string name="afc_title_choose_files_and_directories">選擇檔案/資料夾&#8230;</string>
+    <string name="afc_title_confirmation">確認</string>
+    <string name="afc_title_date">日期</string>
+    <string name="afc_title_error">錯誤</string>
+    <string name="afc_title_history">歷史紀錄</string>
+    <string name="afc_title_info">資訊</string>
+    <string name="afc_title_name">名稱</string>
+    <string name="afc_title_save_as">儲存為&#8230;</string>
+    <string name="afc_title_size">大小</string>
+    <string name="afc_title_sort_by">排列&#8230;</string>
+    <string name="afc_yesterday">昨天</string>
+
+</resources>

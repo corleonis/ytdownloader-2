@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_settings">إعدادات</string>
+    <string name="title_activity_upgrade_apk">ترقية</string>
+    <string name="title_activity_about">حول</string>
+    <string name="title_activity_donate">تبرعات</string>
+    <string name="title_activity_tutorials">تعليم</string>
+    <string name="title_activity_translators_show">المترجمون</string>
+
+    <!-- ### ShareActivity ### -->
+
+    <string name="tutorial_title">البرنامج التعليمي للتطبيق</string>
+	<string name="tutorial_msg_new">الآن سوف يتم رؤية قائمة لكل الترميزات والجودة المتوفرة للفيديو الذي تم اختياره. يمكن:
+\n\n*) الضغط على عنصر لتنزيل الفيديو محلياً (على الجهاز) أو التنزيل عبر SSH إلى جهاز كمبيوتر بعيد.
+\nمتطلبات الجهاز المتلقي: Bash and Wget. معلومات اخرى عن SSH;
+\n\n*) الضغط-المطول على عنصر واختيار بين نسخ إلى الحافظة أو مشاركة الرابط على شكل نص (إرسال إلى تطبيق آخر. الخ.).
+\nالرجاء ملاحظة ان الرابط (خاصة عند الإرسال عبر SSH) يمكن فقط لن يستخدم على نفس الجهاز حيث تم انشاؤه
+أو من نفس شبكة الاتصال، إذا تمت مشاركة الرابط على جهاز آخر.\n
+</string>
+    <string name="loading">تحميل&#8230;</string>
+    <string name="error">خطأ</string>
+    <string name="information">معلومات</string>
+    <string name="dialogs_negative">إلغاء</string>
+    <string name="wait">الرجاء الانتظار&#8230;</string>
+    <string name="no_downloads_sys_app">\"التنزيلات\" تطبيق النظام غير موجود.</string>
+    <string name="ytd_useless">YTD لايمكنه تنزيل ملفات على هذا الجهاز.</string>
+    <string name="invalid_url">غير قادر على جلب صفحة الويب. قد يكون العنوان غير صالح.</string>
+    <string name="invalid_url_short">غير قادر على جلب صفحة الويب.</string>
+    <string name="invalid_response">رد ملقم HTTP غير صالح</string>
+    <string name="bad_link">تأكد من رابط المزود.</string>
+    <string name="bad_link_dialog_msg">رابط يوتيوب غير صالح.</string>
+    <string name="no_net">لايوجد إتصال.</string>
+    <string name="no_net_dialog_msg">الرجاء تمكين إتصال الشبكة اولاً.</string>
+    <string name="no_market">لايوجد تطبيق في الماركت.</string>
+    <string name="no_market_dialog_msg">الرجاء تركيب سوق قوقل بلاي.</string>
+    <string name="list_click_dialog_title">تأكيد تحميل لـ :</string>
+    <string name="list_click_download_local">التنزيل هنا</string>
+    <string name="list_click_download_ssh">إراسل عبر SSH</string>
+    <string name="rename_dialog_title">إسم ملف جديد:</string>
+    <string name="rename_dialog_msg">لاتقم بإضافة صيغة الملف (مثل .mp4 او .flv (.</string>
+    <string name="unable_save">غير قادر على حفظ الفيديو.</string>
+    <string name="unable_save_dialog_msg">المجلد الوجهة غير متوفر / او لايقبل الكتابة عليه.</string>
+    <string name="ssh_info_tutorial_title">كيفية الإرسال عبر SSH</string>
+    <string name="ssh_info_tutorial_msg">امر طويل تم تحويله الى الحافظة.</string>
+    <string name="callConnectBot_dialog_title">%1$s غير مثبت!</string>
+    <string name="callConnectBot_dialog_msg">بحاجة الى هذا التطبيق المجاني لارسال الفيديو المحمل عبر SSH.</string>
+    <string name="callConnectBot_dialog_positive">تنزيل</string>
+    <string name="download_complete_dialog_msg1">فيديو اليوتيوب:\n</string>
+    <string name="download_complete_dialog_msg2">تم تنزيله بنجاح \n</string>
+    <string name="download_complete_dialog_positive">فتح</string>
+    <string name="downloading">تنزيل&#8230;</string>
+    <string name="cancel_download_dialog_title"> إلغاء التنزيل؟</string>
+    <string name="video_list_error_toast">خطأ في قائمة الفيديو</string>
+    <string name="codec">\n\n\tCodec:</string>
+    <string name="quality">\n\tQuality:</string>
+    <string name="size">\n\tSize:</string>
+    <string name="notification_downloading_pt1">جاري التنزيل</string>
+    <string name="notification_downloading_pt2">ملفات الفيديو</string>
+    <string name="notification_no_downloads">لايوجد عمليات تنزيل جارية</string>
+    <string name="long_click_title">التحكم في الرابط الذي تم اختياره:</string>
+    <string name="extsdcard_info_title">لا يوجد مسار قياسي</string>
+    <string name="extsdcard_info_msg">يتم تنزيل الملف بشكل مبدئي في مجلد التنزيل الاساسي ثم سيتم نقله إلى الوجهة التي يتم تحديدها.</string>
+    <string name="ffmpeg_ready">FFmpeg جاهز</string>
+    <string name="confirm_audio_checkbox1">استخراج الصوت بعد التنزيل</string>
+    <string name="confirm_audio_checkbox2">\n(كما هو معرّف في الاعدادات)</string>
+    <string name="login_required">يجب تسجيل الدخول إلى اليوتيوب</string>
+    <string name="login_required_dialog_msg">YTD لايمكنه التعامل مع هذا النوع من ملفات الفيديو.</string>
+    <string name="no_video_available">لايتوفر أي  فيديو.</string>
+    <string name="retry_button_text">إعادة المحاولة</string>
+    
+    <string-array name="long_click_entries">
+        <item>نسخ الى الحافظة</item>
+        <item>مشاركة كـ نص</item>
+    </string-array>
+    
+    <string-array name="long_click_entries2">
+        <item>نسخ الى الحافظة</item>
+        <item>مشاركة كـ نص</item>
+        <item>إرسال عبر SSH</item>
+    </string-array>
+    
+    <!-- ### SettingsActivity ### -->
+
+    <string name="attention">تحذير!</string>
+    <string name="extsdcard_warning">غير قادر على الكتابة على بطاقة الذاكرة.\nالرجوع إلى البطاقة الاساسية.</string>
+    <string name="system_warning_title">هذا مجلد نظام</string>
+    <string name="system_warning_msg">المسار الذي تم اختياره سيعود إلى الذاكرة الاساسية/ مجلد التنزيل.</string>
+    <string name="sdcard_unmounted_warning">بطاقة الذاكرة غير محملة</string>
+    <string name="update_disabled_summary">وُجد توقيع مختلف (F-Droid?)</string>
+    <string name="failed_download">تم إزالة التنزيلات الفاشلة</string>
+    <string name="new_v_download">وُجد. تحت التنزيل&#8230;</string>
+    <string name="new_v_install">اكتمل التحميل. اضغط للتنصيب.</string>
+    <string name="ffmpeg_download_dialog_title">ملفات اضافية مطلوبة. تنزيل الآن؟</string>
+    <string name="ffmpeg_download_dialog_msg">رابط الويب:</string>
+    <string name="ffmpeg_device_not_supported">الجهاز غير مدعوم حتى الآن.</string>
+    <string name="ffmpeg_support_mail">إرسال بريد الكتروني إلى المطورين؟
+\nسوف تقوم بمراجعة كل البيانات في تطبيق البريد الخاص بك قبل ارسال اي بيانات.</string>
+    <string name="ffmpeg_download_notification">تنزيل FFmpeg</string>
+    <string name="ffmpeg_install">جاري تثبيت FFmpeg الثنائي &#8230;</string>
+    <string name="email_via">إرسال بريد الكتروني عبر:</string>
+    
+    <!-- ### UpgradeApkActivity ### -->
+    
+    <string name="upgrade_button_init">تحديث</string>
+    <string name="upgrade_button_download">تحميل\nو تركيب</string>
+    <string name="upgrade_uppertext_searching">بحث&#8230;</string>
+    <string name="upgrade_uppertext_init">النسخة المركبة:\n</string>
+
+    <string name="upgrade_latest">الاخيرة:\t</string>
+    <string name="upgrade_installed">\nتم التركيب:\t</string>
+    <string name="upgraded_dialog_msg">نسخة جديدة تم تحميلها في  \'Download\' مجلد.\n\nهل تود تنصيبها الآن؟</string>
+    <string name="upgraded_dialog_negative">لاحقاً\n(يدوياً)</string>
+    <string name="upgrade_latest_installed">النسخة الاخيرة تم تركيبها!</string>
+    <string name="upgrade_network_error">غير قادر على جلب بيانات التحديث \n عاود المحاولة مرة اخرى لاحقاً</string>
+    <string name="upgrade_bad_md5_dialog_msg">الحزمة التي تم تحميلها تالفة. \n سوف تُحذف الآن. \n اضغط موافق لتحميلها مرة آخرى.</string>
+    
+    <!-- ### DownloadsService ### -->
+    
+    <string name="ytd_video">ملفات فيديو YTD</string>
+    <string name="copy_error">خطأ خلال النسخ.</string>
+    <string name="copy_progress">جاري نسخ الملف&#8230;</string>
+    <string name="copy_ok">اكتمل نسخ الملف.</string>
+    <string name="download_remove_failed">خطأ: لم يتم ازالة ملف التنزيل المؤقت!</string>
+    <string name="download_failed">فشل التحميل!</string>
+    <string name="audio_extr_progress">جاري استخراج الصوت&#8230;</string>
+    <string name="audio_conv_progress">جاري تحويل الصوت إلى MP3 &#8230;</string>
+    <string name="audio_extr_completed">تم استخراج الصوت.</string>
+    <string name="audio_conv_completed">اكتمل تحويل الصوت إلى MP3</string>
+    <string name="audio_extr_error">خطأ خلال استخراج الصوت.</string>
+    <string name="audio_conv_error">خطأ خلال تحويل الصوت</string>
+    
+    <!-- ### DonateActivity ### -->
+    
+    <string name="paypal_item_name">تبرع YTD</string>
+    <string name="paypal_title">PayPal</string>
+	<string name="paypal_summary">دعم فريق مطوري YTD بتبرع</string>
+	
+	<!-- ### FfmpegDownloadService ### -->
+	<string name="ffmpeg_install_failed">فشل تثبيت FFmpeg</string>
+
+    <!-- ### preferences ### -->
+
+
+    <!-- -->
+    <string name="settings_cat_ui">واجهة المستخدم</string>
+    <string name="lang_title">اللغة</string>
+    <string name="lang_dialog_title">اختيار لغة الواجهة:</string>
+    <string name="choose_theme_title">اختر سمة</string>
+    <string-array name="choose_theme_entries">
+        <item>غامق</item>
+        <item>فاتح</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="quick_start_title">بداية سريعة</string>
+    <string name="quick_start_summ">فتح عرض تعليم سريع</string>
+    <string name="quick_start_text">هاهي فقط التفضيلات الخاصة بـ \'YouTube Downloader\'.
+\n\nالتطبيق بذاته يمكن الوصول اليه عبر زر المشاركة في تطبيق اليوتيوب، بينما تشاهدون مقطع الفيديو.
+\n\nثم اختيار \'YouTube Downloader\' وسوف تحصلون على معلومات اضافية للاستخدام.
+\n\nتستطيعون ايضاً مشاركة أي نص رابط لليوتيوب عبر تطبيقات آخرى:متصفح الانترنت.</string>
+    <string name="general_info_title">تفعيل الكيفيات العامة</string>
+    <string name="general_info_summary">عرض البرنامج التعليمي في بداية التشغيل</string>
+    <string name="show_again_checkbox">عرض في المرات القادمة</string>
+    <string name="ssh_info_title">تفعيل كيفية الـ SSH</string>
+    <string name="ssh_info_summary">عرض نصائح سريعة بخصوص التنزيل البعيد عبر SSH</string>
+    <string name="audio_tutorial_title">البرنامج التعليمي لاستخراج الصوت</string>
+    <string name="audio_tutorial_summary">فتح دليل موجز حول ميزة استخراج الصوت</string>
+    <string name="audio_tutorial_text">لاستخراج الصوت او تحويله إلى صيغة mp3 من ملف فيديو تم تنزيله:
+\n\n*) يجب تمكين تفضيلات الصوت ومن ثم تنزيل FFmpeg;
+\n\n*) اختيار نوع الاستخراج:
+\n\n\"استخراج فقط\" من شأنها حفظ دفق الصوت من الفيديو كما هو (ملفات WebM تحتوي على \"Ogg Vorbis\"
+صوت ; MP4, 3GPP و وبحجم كبير/متوسط من ملفات FLV تحتوي على \"AAC\" دفق صوتي; و ملفات FLV صغيرة تحتوي على \"mp3\");
+\n\n\"استخراج وترميز إلى صيغة mp3\" سوف يتم تحويل ملفات الصوت المستخرج إلى mp3، وترميزه بنسبة البت التي يتم اختيارها.
+\n\nمن الآن وصاعداً، سوف يظهر مربع اختيار في صندوق تأكيد التنزيل عندما يتم الضغط على عنصر
+في قائمة فيديو YTD. عندما يتم تحديد هذا المربع، وظيفة استخراج الصوت سوف تبدأ بعد اكتمال عملية التنزيل للفيديو
+(لاخفاء مربع الاختيار، يجب تعطيل خيار استخراج الصوت).
+\n\nيتم الاختيار من الاعدادات اذا اريد ان يتم ازالة الفيديو بعد عملية استخراج صوت ناجحة.</string>
+    
+    <!-- -->
+    <string name="settings_cat_folder">مجلد التحميل</string>
+    <string name="standard_location_title">اختر المجلد الاساسي</string>
+    <string name="chooser_swap_title">تبديل المنتقي</string>
+    <string name="chooser_location_title">فتح منتقي-الملف</string>
+    <string name="chooser_location_summary">ضغطة طويلة لاختيار مجلد</string>
+	
+    <!-- -->
+    <string name="settings_cat_files">ملفات الفيديو</string>
+    <string name="enable_q_suffix_title">إلحاق لاحقة الجودة</string>
+    <string name="enable_q_suffix_summary">اضافة جودة الفيديو في نهاية اسم الملف</string>
+    <string name="enable_rename_title">تفعيل تغيير اسم الملف</string>
+    <string name="enable_rename_summary">إعادة تسمية ملف الفيديو قبل تنزيله (للتحميل المحلي فقط)
+</string>
+    <string name="show_size_title">عرض حجم المف</string>
+    <string name="show_size_summary">جلب حجم الفيديو على رسالة تأكيد التنزيل (ابطأ)</string>
+    <string name="show_size_list_title">عرض جميع احجام الفيدو</string>
+    <string name="show_size_list_summary">جلب احجام ملفات العناصر في القائمة لملفات الفيديو (أبطأ)</string>
+    <string name="show_thumb_title">عرض صورة العرض</string>
+    <string name="show_thumb_summary">تنزيل صورة عرض مصاحبة لقائمة الفيديو</string>
+    
+    <!-- -->
+    <string name="settings_cat_advanced">متقدم</string>
+    <string name="mp3_bitrate_title">معدل البت في الترميز للـ mp3:</string>
+    <string name="audio_extraction_type_title">نوع الاستخراج</string>
+    <string name="remove_video_title">إزالة الفيديو</string>
+    <string name="remove_video_summary">تمكين حذف الفيديو بعد استخراج الصوت بنجاح (تحذير: بدون تأكيد)</string>
+    
+    <!-- -->
+    <string name="settings_cat_notifications">إشعارات</string>
+    <string name="download_manager_notification_title">إدارة نظام/نظمة الإخطارات
+</string>
+    <string name="download_manager_notification_dialog_title">عرض إشعار التنزيل الخاص بالنظام:</string>
+    
+    <string-array name="download_manager_notification_entries">
+        <item>خلال العمل وبعد الاكتمال</item>
+        <item>فقط خلال العمل</item>
+        <item>مطلقاً</item>
+    </string-array>
+    
+    <string name="notification_defaults_title">افتراضيات الاعلام</string>
+    <string name="notification_defaults_dialog_title">افتراضيات إعلام YTD الخاصة</string>
+    <string-array name="notification_defaults_entries">
+        <item>الصوت والاهتزاز</item>
+        <item>الصوت و الاضاءة</item>
+        <item>الاهتزاز والاضاءة</item>
+        <item>الصوت، الاهتزاز والإضاءة</item>
+        <item>الصوت</item>
+        <item>الاهتزاز</item>
+        <item>الإضاءة</item>
+        <item>لاشيء</item>
+    </string-array>   
+    
+    <!-- -->
+    <string name="settings_cat_updates">التحديثات</string>
+    <string name="update_title">تأكد من التحديثات</string>
+    <string name="autoupdate_title">تفعيل التحديث التلقائي</string>
+    <string name="autoupdate_summary">تحقق من التحديثات خلال اول تشغيل للتطبيق في اليوم (الحزمة الجديدة سوف يتم تنزيلها تلقائياً)</string>
+
+    <!-- -->
+    <string name="settings_cat_app">التطبيق</string>
+    <string name="settings_cat_about_condensed">حول</string>
+    <string name="title_changelog">التغييرات</string>
+    <string name="screen_licences_code_title">الرخص والرمز</string>
+
+    <!-- -->
+    <string name="settings_cat_licenses">الرخص</string>
+
+    <string name="credits_title">فريق العمل</string>
+    <string name="title_activity_credits_show">الرخص الاخرى والترجمات</string>
+    
+    <string name="credits_text0">\tالرخصة الاساسية
+\n\n
+هذا التطبيق تم اطلاقة تحت رخصة GPL-3.0.
+\حقوق n(YouTubeDownloader للاندرويد &#169; 2013 Samuele Rini).
+\n\n
+ثنائيات FFmpeg (<http>http://www.ffmpeg.org/index.html</http>).
+تستخدم في ميزات استخراج الصوت، اطلقت تحت رخصة GPL-3.0.
+\n(FFmpeg version 1.2 Copyright &#169; 2000-2013 the FFmpeg developers).
+\n\n
+مكتبة اختيار الملفات اطلقت تحت رخصة MIT.
+\n(android-filechooser Copyright &#169; 2012 Hai Bison).
+\n\n
+The liblame library, used to compile FFmpeg, is released under the LGPL.
+A GitHub project, <http>https://github.com/intervigilium/liblame</http>,
+has been used to compile the lame libraries for Android.
+\n(liblame Copyright &#169; 2010 Ethan Chen)
+\n(LAME Copyright &#169; 1999-2007 The LAME Project,
+\nCopyright &#169; 1999-2001 Mark Taylor,
+\nCopyright &#169; 1998 Micheal Cheng)
+\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
+\n\n
+YTD\'s mp3 tags are written with MyID3: a Java ID3 Tag Library
+(<http>http://www.fightingquaker.com/myid3</http> and <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>)
+released under the LGPL, as its dependency Jakarta Regexp library.
+\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts\'ai).
+\n\n
+For more informations, refer to the dedicated menus and to the license files
+available from this project\'s source code.
+\n</string>
+    
+    <string name="credits_text1">\tرمز مقتطفات التراخيص
+\n\n
+يستخدم هذا التطبيق بعض مقتطفات الشفرة من:
+\n\n
+1) روم CyanogenMod المخصص (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
+\nCopyright &#169; 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license.
+\nنص الرخصة يمكن ايجاده في ملف LICENSE_GPL على <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
+\n\n
+2) تكدس السعة (<http>http://stackoverflow.com</http>)، موقع خاص بالاسئلة والاجوبة للمبرمجين حيث كل المحتويات هي CC BY-SA 3.0 مرخصة (انظر إلى <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
+\n\n
+للمزيد من التفاصيل، تابع التعليقات في اكواد الجافا الخاصة بـ YTD.</string>
+    <string name="credits_translators">\n\tالترجمة
+\n\nشكراً لـ:</string>
+    <string name="translators_info">\nللمزيد من المعلومات:</string>
+        
+    <!-- -->
+    <string name="settings_cat_code">رمز المصدر</string>
+    <string name="ytd_code_git_title">YTD على GitHub</string>
+    <string name="ytd_code_hg_title">YTD على Sourceforge</string>
+
+    <!-- -->
+    <string name="settings_cat_social">إجتماعي</string>
+    <string name="share_title">مشاركة هذا التطبيق</string>
+    <string name="share_summary">عبر تويتر، فيسبوك، جي ميل، الخ#8230;</string>
+    <string name="share_warning">لاتوجد تطبيقات مناسبة.</string>
+    <string name="share_message">#YouTubeDownloader
+\nتطبيق مجاني ومفتوح المصدر للاندرويد لتنزيل ملفات فيديو من اليوتيوب!
+\nhttps://sourceforge.net/projects/ytdownloader/files/</string>
+	<string name="help_translate_title">ساعد في ترجمة هذا التطبيق</string>
+    <string name="help_translate_summary">Go to www.getlocalization.com/ytdownloader</string>
+    
+    <!-- -->
+    <string name="settings_cat_ssh">SSH</string>
+    <string name="connectbot_flavour_title">نسخة ConnectBot المستخدمة</string>
+	<string name="connectbot_flavour_dialog_title">استخدام شوكة ConnectBot لارسال الفيديو عبر SSH</string>
+	<string name="enable_connectbot_short_cmd_title">تمكين امر SSH القصير</string>
+	<string name="enable_connectbot_short_cmd_summary">استخدام امر قصير نسبياً ولكن اسرع لـ
+اللصق في التحكم البعيد (سوف يعمل فقط إذا كان الكمبيوتر المستقبل يستخدم نفس الشبكة)</string>
+	<string name="ssh_to_longpress_menu_title">ارسال SSH إلى قائمة الضغط المطول</string>
+	<string name="ssh_to_longpress_menu_summary">امر نقل \"Send via SSH\" في الضغطة المطولة متوفر في قائمة الفيديو</string>
+	
+    <!-- -->
+	<string name="enable_logging_title">تمكين السجل</string>
+	<string name="enable_logging_summary">تضمين رسلائل YTD في سجل النظام. إلزامي لارسال سجل إلى المطورين.</string>
+</resources>

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_settings">Configuración</string>
+    <string name="title_activity_upgrade_apk">Actualizar</string>
+    <string name="title_activity_about">Información </string>
+    <string name="title_activity_donate">Donaciones</string>
+    <string name="title_activity_tutorials">Tutoriales</string>
+    <string name="title_activity_translators_show">Traductores</string>    
+
+    <!-- ### ShareActivity ### -->
+
+    <string name="tutorial_title">Tutorial general de la aplicación</string>
+	<string name="tutorial_msg_new">Ahora verá a una lista con todos los códecs y cualidades disponibles para el video elegido. Podrá:
+\n\n*) Seleccionar un artículo para descargar el video localmente (al dispositivo) o para mandarlo a descargar vía SSH a una computadora remoto. 
+\nRequisitos de la máquina remoto: Bash y Wget. Información de SSH requerido más adelante;
+\n\n*)Mantenga pulsado un artículo y escoga entre copiarlo al portapapeles o compartir un enlace de texto (ej. para enviar a otra app). 
+\nNote que un enlace (diferente de cúando lo envia por SSH) sólo puede usarse en el mismo dispositivo que lo creó O en la misma RAL (red de área local), si es que lo comparte con otra máquina.\n</string>
+    <string name="loading">Cargando&#8320;</string>
+    <string name="error">¡Error!</string>
+    <string name="information">Información</string>
+    <string name="dialogs_negative">Cancelar</string>
+    <string name="wait">Por favor espere&#8230;</string>
+    <string name="no_downloads_sys_app">\"Downloads\" App del sistema no fue encontrada.</string>
+    <string name="ytd_useless">YTD no puede descargar archivos en este dispositivo</string>
+    <string name="invalid_url">La página de web no se puede accesar. El URL puede ser inválido.</string>
+    <string name="invalid_url_short">La página de web no se puede accesar. </string>
+    <string name="invalid_response">Respuesta inválida del servidor HTTP.</string>
+    <string name="bad_link">Verifique el enlace.</string>
+    <string name="bad_link_dialog_msg">No es un enlace de YouTube válido.</string>
+    <string name="no_net">No hay conexión disponible.</string>
+    <string name="no_net_dialog_msg">Por favor, habilite una conexión de red primero.</string>
+    <string name="no_market">No hay ninguna aplicación del mercado disponible.</string>
+    <string name="no_market_dialog_msg">Por favor instale Google Play</string>
+    <string name="list_click_dialog_title">Confirmar descarga para:</string>
+    <string name="list_click_download_local">Descargar aquí</string>
+    <string name="list_click_download_ssh">Enviar vía SSH</string>
+    <string name="rename_dialog_title">Nuevo nombre de archivo:</string>
+    <string name="rename_dialog_msg">No introduzcas extensiónes de archivos (como .mp4 o .flv).</string>
+    <string name="unable_save">¡No se ha podido guardar el video!</string>
+    <string name="unable_save_dialog_msg">La carpeta de destino no esta disponible y/o no se puede escribir.</string>
+    <string name="ssh_info_tutorial_title">Como enviar vía SSH</string>
+    <string name="ssh_info_tutorial_msg">Una línea de comando ha sido copiado al portapapeles.
+\n\nEscoga un perfil en ConnectBot y una vez iniciado el shell remoto (SSH), debe navigar al 
+directorio deseado, COPIE la línea (use el botón de menú) y teclee ENTER. </string>
+    <string name="callConnectBot_dialog_title">¡%1$s no esta instalado!</string>
+    <string name="callConnectBot_dialog_msg">Necesitas esta aplicación gratuita para mandar los videos descargados vía SSH.</string>
+    <string name="callConnectBot_dialog_positive">Descargar</string>
+    <string name="download_complete_dialog_msg1">Video de YouTube:\n</string>
+    <string name="download_complete_dialog_msg2">\nDescargado éxitosamente.</string>
+    <string name="download_complete_dialog_positive">Abrir</string>
+    <string name="downloading">Descargando&#8230;</string>
+    <string name="cancel_download_dialog_title">¿Cancelar la descarga?</string>
+    <string name="video_list_error_toast">Error en la lista de videos.</string>
+    <string name="codec">\n\n\tCódec:</string>
+    <string name="quality">\n\tCalidad:</string>
+    <string name="size">\n\tTamaño:</string>
+    <string name="notification_downloading_pt1">Descargando</string>
+    <string name="notification_downloading_pt2">archivos de video</string>
+    <string name="notification_no_downloads">No hay descargas en proceso</string>
+    <string name="long_click_title">¿Qué desea hacer con el enlace?</string>
+    <string name="extsdcard_info_title">Ruta de destino no estándar</string>
+    <string name="extsdcard_info_msg">El Archivo va a ser descargado inicialmente a la carpeta de Descargas y después será trasladado a la destinación seleccionada.</string>
+    <string name="ffmpeg_ready">FFmpeg listo.</string>
+    <string name="confirm_audio_checkbox1">Extraer el audio después de descargar</string>
+    <string name="confirm_audio_checkbox2">\n(definido en preferencias)</string>
+    
+    <string-array name="long_click_entries">
+        <item>Copiar al portapapeles</item>
+        <item>Compartir texto plano</item>
+    </string-array>
+    
+    <string-array name="long_click_entries2">
+        <item>Copiar al portapapeles</item>
+        <item>Compartir texto plano</item>
+        <item>Enviar vía SSH</item>
+    </string-array>
+    
+    <!-- ### SettingsActivity ### -->
+
+    <string name="attention">¡Atención!</string>
+    <string name="extsdcard_warning">No se puede escribir archivos en la tarjeta SD externo. Revertiendo a la tarjeta SD estándar.</string>
+    <string name="system_warning_title">Ésta es una carpeta de sistema</string>
+    <string name="system_warning_msg">Ruta escogida revertirá a carpeta de Descargas en la tarjeta SD estándar.</string>
+    <string name="sdcard_unmounted_warning">Tarjeta SD no montada</string>
+    <string name="update_disabled_summary">Se encontró una firma diferente (¿F-Droid?)</string>
+    <string name="failed_download">Descarga fallada fue eliminada</string>
+    <string name="new_v_download">encontrado. Descargando&#8230;</string>
+    <string name="new_v_install">descargado. Haga clic para instalar. </string>
+    <string name="ffmpeg_download_dialog_title">Se requiere un archivo adicional. ¿Descargarlo ahora?</string>
+    <string name="ffmpeg_download_dialog_msg">Vínculo de web:</string>
+    <string name="ffmpeg_device_not_supported">Dispositivo aún no soportado.</string>
+    <string name="ffmpeg_support_mail">¿Mandar correo al programador?
+\nPodrá revisar toda la información en su aplicación de correo electónico antes de enviar los datos.</string>
+    <string name="ffmpeg_download_notification">Descargar FFmpeg</string>
+    <string name="ffmpeg_install">Instalando binario&amp;#8230 de FFmpeg;</string>
+    <string name="email_via">Mandar vía correo:</string>
+    
+    <!-- ### UpgradeApkActivity ### -->
+    
+    <string name="upgrade_button_init">Actualizar</string>
+    <string name="upgrade_button_download">Descargar\ne instalar</string>
+    <string name="upgrade_uppertext_searching">Buscando&#8230;</string>
+    <string name="upgrade_uppertext_init">Versión instalada:\n</string>
+
+    <string name="upgrade_latest">Última:\t</string>
+    <string name="upgrade_installed">\nInstalado:\t</string>
+    <string name="upgraded_dialog_msg">La nueva versión esta guardada en la carpeta de la tarjeta SD llamado \'Descargas\' .\n\n¿Instalar ahora?</string>
+    <string name="upgraded_dialog_negative">Después\n(manualmente)</string>
+    <string name="upgrade_latest_installed">¡La versión más reciente ya esta instalada!</string>
+    <string name="upgrade_network_error">No se pudo recibir datos de actualización.\nVuelva a intentar después.</string>
+    <string name="upgrade_bad_md5_dialog_msg">Paquete descargada esta corrompida.\n\nSerá eliminada ahora.\nSeleccione OK para decargarlo de nuevo.</string>
+    
+    <!-- ### DownloadsService ### -->
+    
+    <string name="ytd_video">Video de YTD</string>
+    <string name="copy_error">Error al copiar</string>
+    <string name="copy_progress">Copia de archivo en progreso&#8230;</string>
+    <string name="copy_ok">Copie completado.</string>
+    <string name="download_remove_failed">Error: ¡El archivo temporal descargado no fue eliminada!</string>
+    <string name="download_failed">¡Descarga fallada!</string>
+    <string name="audio_extr_progress">Extracción de audio en progreso&#8230;</string>
+    <string name="audio_conv_progress">Codificación de audio a mp3 en progreso&#8230;</string>
+    <string name="audio_extr_completed">Extracción de audio terminado.</string>
+    <string name="audio_conv_completed">Codificación de audio a mp3 terminado.</string>
+    <string name="audio_extr_error">Error en extracción de audio.</string>
+    <string name="audio_conv_error">Error en la codificación de audio a mp3. </string>
+    
+    <!-- ### DonateActivity ### -->
+    
+    <string name="paypal_item_name">Donación a YTD</string>
+    <string name="paypal_title">PayPal</string>
+	<string name="paypal_summary">Apoyar al programadaor de YTD con una donación</string>
+	
+	<!-- ### FfmpegDownloadService ### -->
+	<string name="ffmpeg_install_failed">Instalación de FFmpeg falló.</string>
+
+    <!-- ### preferences ### -->
+
+    <!-- -->
+    <string name="dm_title">Descargas</string>
+    <string name="dm_summary">Abrir el Administrador de Descargas del sistema</string>
+
+    <!-- -->
+    <string name="settings_cat_ui">Interfaz de Usuario</string>
+    <string name="lang_title">Lenguaje</string>
+    <string name="lang_dialog_title">Lenguaje (requiere reinicio de la aplicación):</string>
+    <string name="choose_theme_title">Elija un tema</string>
+    <string-array name="choose_theme_entries">
+        <item>Oscuro</item>
+        <item>Claro</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="quick_start_title">Inicio rápido</string>
+    <string name="quick_start_summ">Abrir tutorial sobre el inicio rápido</string>
+    <string name="quick_start_text">Aquí se encuentran las preferencias para \"YouTube Downloader\".
+\n\nLa aplicaciön en sí se accesa usando el botón de compartir en la app de YouTube, mientras esta viendo un video. 
+\n\nLuego escoja \"YouTube Downloader\" y verá más información de uso.
+\n\nTambién podrá compartir cualquier vínculo de texto plano de YouTube mientras esté usando otra app (ej. su navegador)</string>
+    <string name="general_info_title">Habiliar ayuda general</string>
+    <string name="general_info_summary">Mostrar una tutorial general de la app al iniciar. </string>
+    <string name="show_again_checkbox">Mostrar la siguiente vez</string>
+    <string name="ssh_info_title">Habiliar tutorial de SSH</string>
+    <string name="ssh_info_summary">Mostrar consejos sobre descarga remota por SSH.</string>
+    <string name="audio_tutorial_title">Tutorial sobre extracción de audio</string>
+    <string name="audio_tutorial_summary">Abrir una guía breve sobre la función de extracción de audio</string>
+    <string name="audio_tutorial_text">Para extraer o convertir el audio de un video descargado a mp3:
+\n\n*) Habilite la función de audio y descargar FFmpeg;
+\n\n*) Eliga el tipo de extracción:
+\n\n\"Extraer solamente\" conservará la transmisión de audio del video tal como es (archivos de WebM contienen audio \"Ogg Vorbis\" 
+; MP4, 3GPP y videos grandes/medianos de FLV contienen transmisión de audio tipo \"AAC\"; FLV de tamaños pequeños contienen un \"mp3\");
+\n\n\"Extraer y códificar a mp3\" convertirá el audio extraído a un mp3, codificándolo con la seleccionada tasa de transmisión (bitrate).
+\n\nA partir de ahora, una caja aparecerá en la confirmación de descarga que será visible cuando hace clic en un artículo
+en la lista de videos de YTD.  Cuando seleccionado, la extracción de audio comenzará cuando la descarga termina
+(para escodar la caja, deshabilite la opción de extracción de audio)
+\n\nPuede configurar las preferencias si quiere eliminar el video después de exitosamente extraer el audio.</string>
+    
+    <!-- -->
+    <string name="settings_cat_folder">Carpeta de descargas</string>
+    <string name="standard_location_title">Escoja carpeta estándar</string>
+    <string name="chooser_swap_title">Cambiar el selector</string>
+    <string name="chooser_location_title">Abrir escogedor de archivos</string>
+    <string name="chooser_location_summary">Mantenga pulsado para seleccionar una carpeta</string>
+	
+    <!-- -->
+    <string name="settings_cat_files">Archivos de video</string>
+    <string name="enable_q_suffix_title">Añadir sufijo de calidad</string>
+    <string name="enable_q_suffix_summary">Añadir la calidad del video al final del nombre del archivo</string>
+    <string name="enable_rename_title">Habilitar cambios de nombre de archivos</string>
+    <string name="enable_rename_summary">Renombrar el archivo de video antes de descargarlo (para las descargas locales solamente)</string>
+    <string name="show_size_title">Mostrar el tamaño del archivo</string>
+    <string name="show_size_summary">Mostrar el tamaño del archivo de video después del mensaje de confimación de descarga (más lento)</string>
+    <string name="show_size_list_title">Mostrar todos los tamaños de vídeo</string>
+    <string name="show_size_list_summary">Mostrar los tamaños de los archivos para cada artículo en la lista de videos disponibles (más lento)</string>
+    <string name="show_thumb_title">Mostrar vista preliminar</string>
+    <string name="show_thumb_summary">Descargar una imágen de visualización junto con la lista de videos</string>
+    
+    <!-- -->
+    <string name="settings_cat_audio">Audio</string>
+    <string name="enable_audio_extraction_title">Habilitar extracción de audio</string>
+    <string name="enable_audio_extraction_summary">Extraer y convertir el audio del video descargado (para la descarga local solamente)</string>
+    <string name="mp3_bitrate_title">Tasa de transferencia (bitrate) para codificar a mp3 (kbps)</string>
+    <string name="audio_extraction_type_title">Tipo de extracción</string>
+    <string name="enable_audio_q_suffix_title">Añadir sufijo de calidad de audio</string>
+    <string name="enable_audio_q_suffix_summary">Añadir la calidad de audio al final del nombre del archivo</string>
+    <string name="remove_video_title">Eliminación de video</string>
+    <string name="remove_video_summary">Habilitar eliminación del archivo de video después de extraer el audio (caución: no hay confirmación)</string>
+
+    <string-array name="audio_extraction_type_entries">
+        <item>Extraer solamente</item>
+        <item>Extraer y codificar a mp3</item>
+    </string-array>
+    
+    <!-- -->
+    <string name="settings_cat_notifications">Notificaciones</string>
+    <string name="enable_own_notification_title">Habilitar notificación propia</string>
+    <string name="enable_own_notification_summary">Mostrar una notificación comprensiva sobre todas las descargas de YTD </string>
+    <string name="download_manager_notification_title">Administrar notificaciones de sistema</string>
+    <string name="download_manager_notification_dialog_title">Mostrar notificaciones del Administrador de Descargas del sistema:</string>
+    
+    <string-array name="download_manager_notification_entries">
+        <item>Mientras en progreso y después de completar</item>
+        <item>Mientras en progreso únicamente</item>
+        <item>Nunca</item>
+    </string-array>
+    
+    <string name="notification_defaults_title">Notificaciones por defecto</string>
+    <string name="notification_defaults_dialog_title">Notificaciones por defecto de YTD</string>
+    <string-array name="notification_defaults_entries">
+        <item>Sonido y Vibración</item>
+        <item>Sonido y Luces</item>
+        <item>Vibración y Luces</item>
+        <item>Sonido, Vibración y Luces</item>
+        <item>Sonido</item>
+        <item>Vibración</item>
+        <item>Luces</item>
+        <item>Nada</item>
+    </string-array>   
+    
+    <!-- -->
+    <string name="settings_cat_updates">Actualizaciones</string>
+    <string name="update_title">Chequear para actualizaciones</string>
+    <string name="autoupdate_title">Habilitar actualizaciones automáticas</string>
+    <string name="autoupdate_summary">Checar para actualizaciones a la primera ejecución de la aplicación del día (el nuevo paquete será descargado automáticamente)</string>
+
+    <!-- -->
+    <string name="settings_cat_app">Aplicación</string>
+    <string name="settings_cat_about_condensed">Información </string>
+    <string name="title_changelog">Registro de cambios</string>
+    <string name="screen_licences_code_title">Licencias y Código</string>
+
+    <!-- -->
+    <string name="settings_cat_licenses">Licencias</string>
+
+    <string name="credits_title">Créditos</string>
+    <string name="title_activity_credits_show">Otras licencias y traducciones</string>
+    
+    <string name="credits_text0">\tLicencias Principales
+\n\n
+Esta aplicación se distribuye bajo GPL-3.0.
+\n(YouTubeDownloader para Android Copyright &#169; 2013 Samuele Rini).
+\n\n
+El binario de FFmpeg (<http>http://www.ffmpeg.org/index.html</http>), 
+usada para la función de extraer el audio, se distibuye bajo GPL-3.0.
+\n(FFmpeg versión 1.2 Copyright &#169; 2000-2013 los desarrolladores de FFmpeg).
+\n\n
+La biblioteca de filechooser se distribuye bajo la licencia de MIT.
+\n(android-filechooser Copyright &#169; 2012 Hai Bison).
+\n\n
+La biblioteca liblame, usado para compilar FFmpeg, se distribuye bajo LGPL.
+Un proyecto de GitHub, <http>https://github.com/intervigilium/liblame</http>, 
+fue usado para compliar las bibliotecas lame para Android. 
+\n(liblame Copyright &#169; 2010 Ethan Chen)
+\n(LAME Copyright &#169; 1999-2007 El Proyecto LAME,
+\nCopyright &#169; 1999-2001 Mark Taylor,
+\nCopyright &#169; 1998 Micheal Cheng)
+\n(mpglib Copyright &#169; 1995-1997 Michael Hipp).
+\n\n
+Las etiquetas de mp3 de YTD son escritas con MyID3: una Biblioteca de Etiqueta ID3 de Java
+(<http>http://www.fightingquaker.com/myid3</http> y <http>https://sites.google.com/site/eternalsandbox/myid3-for-android</http>) 
+se distibuye bajo LGPL, tal como la biblioteca de dependencia Jakarta Regexp.
+\n(MyID3 Copyright &#169; 2008 Charles M. Chen, adaptada para Android por Romulus Urakagi Ts\'ai).
+\n\n
+Para más información, véase los menús dedicados y a los archivos de licencia
+disponibles en el código de fuente de éste proyecto.
+\n</string>
+    
+    <string name="credits_text1">\tLicencias de Extractos de Código
+\n\n
+Esta App usa unos extractos de código de:
+\n\n
+1) CyanogenMod custom ROM (<http>https://github.com/CyanogenMod/android_packages_apps_CMUpdater</http>)
+\nCopyright &#169; 2012 The CyanogenMod Project, licencidadpo bajo la licencia GNU GPLv2.
+\nEl texto de la licencia se encuentra en el archivo LICENSE_GPL o en <http>https://www.gnu.org/licenses/gpl-3.0.txt</http>
+\n\n
+2) Stack Overflow (<http>http://stackoverflow.com</http>), un sitio de pregunta y respuesta para programadores donde todo 
+el contenido es licenciado por CC BY-SA 3.0 (véase <http>http://creativecommons.org/licenses/by-sa/3.0</http>).
+\n\n
+Para más detalles, véase los comentarios en el código de Java de YTD.</string>
+    <string name="credits_translators">\n\tTraducciones
+\n\nAdemás, localizaciones adicionales gracias a:</string>
+    <string name="translators_info">\nPara más información:</string>
+        
+    <!-- -->
+    <string name="settings_cat_code">Código Fuente</string>
+    <string name="ytd_code_git_title">YTD en GitHub</string>
+    <string name="ytd_code_hg_title">YTD en Sourceforge</string>
+
+    <!-- -->
+    <string name="settings_cat_social">Social</string>
+    <string name="share_title">Compartir esta app</string>
+    <string name="share_summary">por Twitter, Facebook, Gmail, etc&#8230;</string>
+    <string name="share_warning">No hay aplicaciones adecuadas encontrados.</string>
+    <string name="share_message">#YouTubeDownloader
+\n¡Una aplicación de Android gratis y de código abierto para descargar videos de YouTube!
+\nhttps://sourceforge.net/projects/ytdownloader/files/</string>
+	<string name="help_translate_title">Ayuda a traducir ésta app</string>
+    <string name="help_translate_summary">Vaya a www.getlocalization.com/ytdownloader</string>
+    
+    <!-- -->
+    <string name="settings_cat_ssh">SSH</string>
+    <string name="connectbot_flavour_title">Versión de ConnectBot a utilizar</string>
+	<string name="connectbot_flavour_dialog_title">Seleccione el fork de ConnectBot para enviar el video por SSH</string>
+	<string name="enable_connectbot_short_cmd_title">Habilitar cmd corto de SSH</string>
+	<string name="enable_connectbot_short_cmd_summary">Use un comando un poco más corto pero más rápido para
+pegar al shell remoto (solo funcionará si la computadora de destinación se encuentra sobre la misma RAL)</string>
+	<string name="ssh_to_longpress_menu_title">Cambiar la acción de \'Enviar por SSH\' al menú de pulsación larga</string>
+	<string name="ssh_to_longpress_menu_summary">Cambiar la acción de \"Enviar por SSH\" al menú de pulsación larga disponible en la lista de videos</string>
+	
+    <!-- -->
+	<string name="settings_cat_advanced">Avanzado</string>
+	<string name="enable_logging_title">Habilitar registros</string>
+	<string name="enable_logging_summary">Incluir mensajes de YTD en el registro del sistema. Obligatorio para mandar reporte de logcat al programador. </string>
+</resources>

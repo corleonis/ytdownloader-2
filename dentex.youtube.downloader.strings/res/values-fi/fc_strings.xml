@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2012 Hai Bison
+
+    See the file LICENSE at the root directory of this project for copying
+    permission.
+-->
+
+<resources>
+
+    <string name="afc_lib_name">android-filechooser</string>
+    <string name="afc_cmd_advanced_selection_all">All</string>
+    <string name="afc_cmd_advanced_selection_invert">Invert selection</string>
+    <string name="afc_cmd_advanced_selection_none">None</string>
+    <string name="afc_cmd_clear">Clear</string>
+    <string name="afc_cmd_grid_view">Grid view</string>
+    <string name="afc_cmd_home">Home</string>
+    <string name="afc_cmd_list_view">List view</string>
+    <string name="afc_cmd_new_folder">Uusi kansio&#8230;</string>
+    <string name="afc_cmd_reload">Reload</string>
+    <string name="afc_cmd_remove_from_list">Remove from list</string>
+    <string name="afc_cmd_select_all_files">Select all files</string>
+    <string name="afc_cmd_select_all_folders">Select all folders</string>
+    <string name="afc_cmd_sort">Sort&#8230;</string>
+    <string name="afc_cmd_switch_viewmode">Switch Viewmode</string>
+    <string name="afc_ellipsize">&#8230;</string>
+    <string name="afc_file">file</string>
+    <string name="afc_folder">Kansio</string>
+    <string name="afc_hint_double_tap_to_select_file">Double tap to select file/ folder</string>
+    <string name="afc_hint_folder_name">Kansion nimi</string>
+    <string name="afc_hint_save_as_filename">Tiedoston nimi</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_create_files">This application does not have permission to create files/ folders</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_delete_files">This application does not have permission to delete files/ folders</string>
+    <string name="afc_msg_cancelled">Peruttu</string>
+    <string name="afc_msg_cannot_connect_to_file_provider_service">Can not connect to file provider service</string>
+    <string name="afc_msg_done">Valmis</string>
+    <string name="afc_msg_empty">&#8230;Tyhjä</string>
+    <string name="afc_msg_filename_is_empty">Tiedoston nimi on tyhjä</string>
+    <string name="afc_msg_loading">Ladataan&#8230;</string>
+    <string name="afc_pmsg_cannot_access_dir">Can not access \"%1$s\"</string>
+    <string name="afc_pmsg_cannot_create_folder">Can not create folder \"%1$s\"</string>
+    <string name="afc_pmsg_cannot_delete_file">Can not delete %1$s \"%2$s\"</string>
+    <string name="afc_pmsg_confirm_delete_file">Are you sure you want to delete this %1$s \"%2$s\"?</string>
+    <string name="afc_pmsg_confirm_replace_file">This file \"%1$s\" already exists.\n\nDo you want to replace it?</string>
+    <string name="afc_pmsg_deleting_file">Poistetaan %1$s \"%2$s\"&#8230;</string>
+    <string name="afc_pmsg_file_has_been_deleted">&#8230;%1$s \"%2$s\" on poistettu</string>
+    <string name="afc_pmsg_filename_is_directory">\"%1$s\" is a folder</string>
+    <string name="afc_pmsg_filename_is_invalid">File name \"%1$s\" is invalid</string>
+    <string name="afc_pmsg_max_file_count_allowed">&#8230;on ylimääräisiä tiedostoja, max sallittu: %1$,d</string>
+    <string name="afc_pmsg_unknown_error">Unknown error: %1$s</string>
+    <string name="afc_pmsg_xxx_items">%1$,d items</string>
+    <string name="afc_root">Root</string>
+    <string name="afc_title_advanced_selection">Valitse&#8230;</string>
+    <string name="afc_title_alert">Alert</string>
+    <string name="afc_title_choose_directories">Choose a folder</string>
+    <string name="afc_title_choose_files">Valitse tiedosto&#8230;</string>
+    <string name="afc_title_choose_files_and_directories">Valitse tiedosto/ Kansio&#8230;</string>
+    <string name="afc_title_confirmation">Confirmation</string>
+    <string name="afc_title_date">Päivämäärä</string>
+    <string name="afc_title_error">Virhe</string>
+    <string name="afc_title_history">Historia</string>
+    <string name="afc_title_info">Lisätiedot</string>
+    <string name="afc_title_name">Nimi</string>
+    <string name="afc_title_save_as">Tallenna nimellä&#8230;</string>
+    <string name="afc_title_size">Koko</string>
+    <string name="afc_title_sort_by">Järjestä&#8230;</string>
+    <string name="afc_yesterday">Eilen</string>
+
+</resources>

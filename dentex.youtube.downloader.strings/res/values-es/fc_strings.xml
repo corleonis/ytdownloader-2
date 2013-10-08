@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2012 Hai Bison
+
+    See the file LICENSE at the root directory of this project for copying
+    permission.
+-->
+
+<resources>
+
+    <string name="afc_lib_name">Selector de archivos de android</string>
+    <string name="afc_cmd_advanced_selection_all">Todos</string>
+    <string name="afc_cmd_advanced_selection_invert">Invertir selección</string>
+    <string name="afc_cmd_advanced_selection_none">Ninguno</string>
+    <string name="afc_cmd_clear">Borrar</string>
+    <string name="afc_cmd_grid_view">Cuadrícula</string>
+    <string name="afc_cmd_home">Inicio</string>
+    <string name="afc_cmd_list_view">Lista</string>
+    <string name="afc_cmd_new_folder">Nueva carpeta&#8230;</string>
+    <string name="afc_cmd_reload">Recargar</string>
+    <string name="afc_cmd_remove_from_list">Eliminar de la lista</string>
+    <string name="afc_cmd_select_all_files">Seleccionar todos los archivos</string>
+    <string name="afc_cmd_select_all_folders">Seleccionar todas las carpetas</string>
+    <string name="afc_cmd_sort">Ordenar&#8230;</string>
+    <string name="afc_cmd_switch_viewmode">Cambie modo de vista</string>
+    <string name="afc_ellipsize">&#8230;</string>
+    <string name="afc_file">archivo</string>
+    <string name="afc_folder">carpeta</string>
+    <string name="afc_hint_double_tap_to_select_file">Double tap to select file/ folder</string>
+    <string name="afc_hint_folder_name">nombre de carpeta</string>
+    <string name="afc_hint_save_as_filename">nombre de archivo</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_create_files">La aplicación no tiene permisos para crear archivos/carpetas</string>
+    <string name="afc_msg_app_doesnot_have_permission_to_delete_files">La aplicación no tiene permisos para eliminar archivos/carpetas</string>
+    <string name="afc_msg_cancelled">Cancelado</string>
+    <string name="afc_msg_cannot_connect_to_file_provider_service">No se ha podido contactar con el proveedor de archivos</string>
+    <string name="afc_msg_done">Completado</string>
+    <string name="afc_msg_empty">&#8320;vacío</string>
+    <string name="afc_msg_filename_is_empty">Nombre del archivo está en blanco</string>
+    <string name="afc_msg_loading">Cargando&#8320;</string>
+    <string name="afc_pmsg_cannot_access_dir">No se puede acceder a \"%1$s\"</string>
+    <string name="afc_pmsg_cannot_create_folder">No se puede crear el directorio \"%1$s\"</string>
+    <string name="afc_pmsg_cannot_delete_file">No se puede borrar %1$s \"%2$s\"</string>
+    <string name="afc_pmsg_confirm_delete_file">¿Estas seguro de que deseas eliminar este %1$s \"%2$s\"?</string>
+    <string name="afc_pmsg_confirm_replace_file">El fichero \"%1$s\" ya existe.\n\n¿Quieres reemplazarlo?</string>
+    <string name="afc_pmsg_deleting_file">Eliminando %1$s \"%2$s\"…</string>
+    <string name="afc_pmsg_file_has_been_deleted">%1$s \"%2$s\" ha sido eliminado</string>
+    <string name="afc_pmsg_filename_is_directory">\"%1$s\" es un directorio</string>
+    <string name="afc_pmsg_filename_is_invalid">El nombre de fichero \"%1$s\" no es válido</string>
+    <string name="afc_pmsg_max_file_count_allowed">&#8320;tiene mas ficheros, máximos permitidos: %1$,d</string>
+    <string name="afc_pmsg_unknown_error">Error desconocido: %1$s</string>
+    <string name="afc_pmsg_xxx_items">%1$,d elementos</string>
+    <string name="afc_root">Root</string>
+    <string name="afc_title_advanced_selection">Seleccionar&#8320;</string>
+    <string name="afc_title_alert">Alerta</string>
+    <string name="afc_title_choose_directories">Escoga una carpeta</string>
+    <string name="afc_title_choose_files">Seleccionar archivos&#8230;</string>
+    <string name="afc_title_choose_files_and_directories">Seleccionar archivos/carpetas&#8230;</string>
+    <string name="afc_title_confirmation">Confirmación</string>
+    <string name="afc_title_date">Fecha</string>
+    <string name="afc_title_error">Error</string>
+    <string name="afc_title_history">Historial</string>
+    <string name="afc_title_info">Información</string>
+    <string name="afc_title_name">Nombre</string>
+    <string name="afc_title_save_as">Guardar como&#8320;</string>
+    <string name="afc_title_size">Tamaño</string>
+    <string name="afc_title_sort_by">Ordenar por&#8320;</string>
+    <string name="afc_yesterday">Ayer</string>
+
+</resources>
