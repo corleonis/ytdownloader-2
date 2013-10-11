@@ -1,43 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Ytdownloader by dentex</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Ytdownloader : YouTube Downloader for Android" />
 
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Ytdownloader</title>
   </head>
+
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/dentex/ytdownloader">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/dentex/ytdownloader/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/dentex/ytdownloader/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
 
-    <div class="wrapper">
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dentex/ytdownloader">View on GitHub</a>
 
-      <section>
-        <div id="title">
-          <h1>Ytdownloader</h1>
-          <p>YouTube Downloader for Android</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/dentex">dentex</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+          <h1 id="project_title">Ytdownloader</h1>
+          <h2 id="project_tagline">YouTube Downloader for Android</h2>
 
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/dentex/ytdownloader/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/dentex/ytdownloader/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>
 <a name="youtube-downloader-for-android-_-by-dentex" class="anchor" href="#youtube-downloader-for-android-_-by-dentex"><span class="octicon octicon-link"></span></a>YouTube Downloader for Android _ by dentex</h1>
 
@@ -46,11 +39,11 @@ For Android 4+ </p>
 
 <p><em>Free and without Ads</em></p>
 
-<p><code>versionCode="62"</code></p>
+<p><code>versionCode="64"</code></p>
 
-<p><code>versionName="3.0"</code></p>
+<p><code>versionName="3.0.2"</code></p>
 
-<p>MD5 checksum: <code>4a38e2703bd7c3b90becd64b3e17c0e4</code> dentex.youtube.downloader_v3.0.apk</p>
+<p>MD5 checksum: <code>fdf3896c6a0cebe3524392f958c505e3</code> dentex.youtube.downloader_v3.0.2.apk</p>
 
 <h1>
 <a name="notice" class="anchor" href="#notice"><span class="octicon octicon-link"></span></a>NOTICE</h1>
@@ -110,8 +103,7 @@ YTD`s mp3 tags are written with MyID3: a Java ID3 Tag Library
 (http://www.fightingquaker.com/myid3 and 
 https://sites.google.com/site/eternalsandbox/myid3-for-android)
 released under the Apache license, as its dependency Jakarta Regexp library. 
-(MyID3 Copyright (C) 2008 Charles M. Chen, 
-adapted for Android by Romulus Urakagi Ts`ai) 
+(MyID3 Copyright (C) 2008 Charles M. Chen, adapted for Android by Romulus Urakagi Ts`ai) 
 
 Picasso: Image downloading and caching library
 Copyright 2013 Square, Inc. - http://square.github.io/picasso/ 
@@ -124,35 +116,28 @@ https://github.com/matsuhiro/AndroidDownloadManger (released "unlicensed").
 
     Code excerpts Licenses 
 
-Stack Overflow (http://stackoverflow.com), 
-a question and answer site for programmers where
-all the content is CC BY-SA 3.0 licensed 
-(see http://creativecommons.org/licenses/by-sa/3.0) 
+Stack Overflow (http://stackoverflow.com), a question and answer site for programmers where
+all the content is CC BY-SA 3.0 licensed (see http://creativecommons.org/licenses/by-sa/3.0) 
 
-checkMD5(...) &amp calculateMD5(...): 
+checkMD5(...) &amp; calculateMD5(...): 
 https://github.com/CyanogenMod/android_packages_apps_CMUpdater
 Copyright (C) 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license 
 
-FfmpegController.java: GPL-3.0
-Copyright (C) 2009, Nathan Freitas, Orbot / The Guardian Project
-http://openideals.com/guardian
-https://github.com/guardianproject/android-ffmpeg-java 
+FfmpegController.java: GPL-3.0 - Copyright (C) 2009, Nathan Freitas, Orbot / The Guardian Project
+http://openideals.com/guardian - https://github.com/guardianproject/android-ffmpeg-java 
 
 Observer.java: reference - https://gist.github.com/shirou/659180 
 
 SectionedAdapter.java: GPL-3.0
-Copyright (C) 2008-2010 CommonsWare, LLC
-portions Copyright (C) 2008 Jeffrey Sharkey 
+Copyright (C) 2008-2010 CommonsWare, LLC - portions Copyright (C) 2008 Jeffrey Sharkey 
 
-Utils.getCpuInfo(): 
-http://www.roman10.net/how-to-get-cpu-information-on-android
-by Liu Feipeng 
+Utils.getCpuInfo(): http://www.roman10.net/how-to-get-cpu-information-on-android/ - by Liu Feipeng 
 
 Utils.scanMedia(...):
 http://www.grokkingandroid.com/adding-files-to-androids-media-library-using-the-mediascanner/
 by Wolfram Rittmeyer 
 
-DashboardAdapter.java &amp DashboardListItem.java: 
+DashboardAdapter.java &amp; DashboardListItem.java: 
 code adapted from https://github.com/survivingwithandroid/Surviving-with-android/
 by Francesco Azzola (JFrankie) 
 
@@ -169,12 +154,29 @@ http://userscripts.org/scripts/show/25105 (MIT License) - by Gantt
 For more info go to: 
 www.getlocalization.com/ytdownloader 
 forum.xda-developers.com/showthread.php?p=37708791
+
+Note:
+the device-framed screenshots in the project's directory have 
+been generated with the "Device Frame Generator" Android App by 
+Prateek Srivastava, available at 
+&lt;https://github.com/f2prateek/Device-Frame-Generator/&gt;.
+The generated artwork is released ander the "Creative Commons 
+Attribution 3.0 Unported" license (CC BY).
 </code></pre>
 
 <h1>
 <a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>CHANGELOG</h1>
 
-<pre><code> v3.0 - Oct 08 2013 
+<pre><code> v3.0.2 - Oct 11 2013 
+----------------------------------- 
+[x] small fix 
+
+ v3.0.1 - Oct 10 2013 
+----------------------------------- 
+[x] layout fix for API 14,15,16 
+[x] other bug fixes 
+
+ v3.0 - Oct 08 2013 
 ----------------------------------- 
 [x] Dashboard for interaction 
  with downloaded video: 
@@ -456,8 +458,8 @@ forum.xda-developers.com/showthread.php?p=37708791
 [ ] use icon/logo to identify codecs available (expand the custom ShareActivity adapter)
 [ ] make the App tablet friendly
 [ ] handle SourceForge servers down; fallback on GitHub for apk download:
-    https://github.com/dentex/ytdownloader
-    https://github.com/dentex/ytdownloader/blob/master/dentex.youtube.downloader_v.*.apk?raw=true
+    page: https://github.com/dentex/ytdownloader
+    file: https://github.com/dentex/ytdownloader/blob/master/dentex.youtube.downloader_v.*.apk?raw=true
 [ ] use custom DM for other download tasks (apk update, ffmpeg binary [wip])
 [ ] option to include downloaded videos into dashboard backup (or make menu entry "archive")
 </code></pre>
@@ -472,9 +474,16 @@ forum.xda-developers.com/showthread.php?p=37708791
     may be forced to PAUSE. In this case a manual resume is needed
 </code></pre>
       </section>
-
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ytdownloader maintained by <a href="https://github.com/dentex">dentex</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -485,6 +494,7 @@ forum.xda-developers.com/showthread.php?p=37708791
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+
 
   </body>
 </html>
