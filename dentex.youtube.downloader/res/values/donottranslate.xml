@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="changelog">
+        \n v3.0.2 - Oct 11 2013
+        \n-----------------------------------
+        \n[x] small fix
+        \n
         \n v3.0.1 - Oct 10 2013
         \n-----------------------------------
         \n[x] layout fix for API 14,15,16
@@ -443,7 +447,7 @@
         \nStack Overflow (http://stackoverflow.com), a question and answer site for programmers where all 
         	the content is CC BY-SA 3.0 licensed (see http://creativecommons.org/licenses/by-sa/3.0)
         \n
-        \ncheckMD5(&#8230;) &amp; calculateMD5(&#8230;): 
+        \ncheckMD5(&#8230;) and calculateMD5(&#8230;): 
         	https://github.com/CyanogenMod/android_packages_apps_CMUpdater
         	 - Copyright &#169; 2012 The CyanogenMod Project, 
         	licensed under the GNU GPLv2 license
@@ -465,7 +469,7 @@
 			http://www.grokkingandroid.com/adding-files-to-androids-media-library-using-the-mediascanner/
 			 - by Wolfram Rittmeyer
         \n
-		\nDashboardAdapter.java &amp; DashboardListItem.java: code adapted from 
+		\nDashboardAdapter.java and DashboardListItem.java: code adapted from 
 			https://github.com/survivingwithandroid/Surviving-with-android/ - by Francesco Azzola (JFrankie)
         \n
 		\nRhino.jar: open-source implementation of JavaScript written entirely in Java; 

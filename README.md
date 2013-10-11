@@ -8,11 +8,11 @@ For Android 4+
 
 ################################################################
 
-`versionCode="63"`
+`versionCode="64"`
 
-`versionName="3.0.1"`
+`versionName="3.0.2"`
 
-MD5 checksum: `06d44c692541d3dba67670a6226dda03` dentex.youtube.downloader_v3.0.1.apk
+MD5 checksum: `fdf3896c6a0cebe3524392f958c505e3` dentex.youtube.downloader_v3.0.2.apk
 
 NOTICE
 ================================================================
@@ -120,9 +120,22 @@ OTHER LICENSES
     www.getlocalization.com/ytdownloader 
     forum.xda-developers.com/showthread.php?p=37708791
 
+    Note:
+    the device-framed screenshots in the project's directory have 
+    been generated with the "Device Frame Generator" Android App by 
+    Prateek Srivastava, available at 
+    <https://github.com/f2prateek/Device-Frame-Generator/>.
+    The generated artwork is released ander the "Creative Commons 
+    Attribution 3.0 Unported" license (CC BY).
+
+
 CHANGELOG
 ================================================================
     
+     v3.0.2 - Oct 11 2013 
+    ----------------------------------- 
+    [x] small fix 
+     
      v3.0.1 - Oct 10 2013 
     ----------------------------------- 
     [x] layout fix for API 14,15,16 

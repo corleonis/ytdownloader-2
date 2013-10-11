@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dest=README.md
+dest=README_.md
 
 echo "YouTube Downloader for Android _ by dentex
 ================================================================
@@ -54,20 +54,21 @@ echo "
 OTHER LICENSES
 ================================================================
     Additional licenses informations about code used in this project
-    is available from within the App's \"About\" menu:" >> $dest
+    is available from within the App's \"About\" menu:
+" >> $dest
 
 text0=`sed -n '/string name="credits_text"/,/<\/string>/p' dentex.youtube.downloader/res/values/donottranslate.xml | grep -v -E '\/string|string name'`
-echo -e $text0 | sed -e 's/^/    /' -e 's/&#169;/(C)/g' -e 's/<http>//g' -e 's/<\/http>//g' -e 's/\\./`/g' >> $dest
+echo -e $text0 | sed -e 's/^/    /' -e 's/&#169;/(C)/g' -e 's/&amp;/&/g' -e 's/&#8230;/.../g' -e 's/<http>//g' -e 's/<\/http>//g' -e 's/\\./`/g' >> $dest
 
-#echo "
-#    Additional note:
-#    1) the device-framed screenshots in the project's directory have 
-#    been generated with the \"Device Frame Generator\" Android App by 
-#    Prateek Srivastava, available at 
-#    <https://github.com/f2prateek/Device-Frame-Generator/>.
-#    The generated artwork is released ander the \"Creative Commons 
-#    Attribution 3.0 Unported\" license (CC BY).
-#" >> $dest
+echo "
+    Note:
+    the device-framed screenshots in the project's directory have 
+    been generated with the \"Device Frame Generator\" Android App by 
+    Prateek Srivastava, available at 
+    <https://github.com/f2prateek/Device-Frame-Generator/>.
+    The generated artwork is released ander the \"Creative Commons 
+    Attribution 3.0 Unported\" license (CC BY).
+" >> $dest
 
 echo "
 CHANGELOG
