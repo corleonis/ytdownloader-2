@@ -2,7 +2,7 @@
 <resources>
 
     <string name="title_activity_settings">Nastavenia</string>
-    <string name="title_activity_upgrade_apk">Aktivovať</string>
+    <string name="title_activity_upgrade_apk">Aktualizácia</string>
     <string name="title_activity_about">O aplikácii</string>
     <string name="title_activity_donate">Dary</string>
     <string name="title_activity_tutorials">Návody</string>
@@ -107,7 +107,7 @@ adresár, vložte príkaz (použite tlačidlo menu), a stlačte kláves ENTER.</
     <string name="upgrade_uppertext_init">Nainštalovaná verzia:\n</string>
 
     <string name="upgrade_latest">Najnovšia:\t</string>
-    <string name="upgrade_installed">\nNainštalovaná:\t</string>
+    <string name="upgrade_installed">\nVaša:\t</string>
     <string name="upgraded_dialog_msg">Nová verzia je uložená na internej SD-karte v adresári \'Download\'.\n\nInštalovať teraz?</string>
     <string name="upgraded_dialog_negative">Neskôr\n(manuálne)</string>
     <string name="upgrade_latest_installed">Najnovšia verzia je už nainštalovaná!</string>
@@ -249,16 +249,16 @@ adresár, vložte príkaz (použite tlačidlo menu), a stlačte kláves ENTER.</
 \n\nSamotná aplikácia je prístupná cez tlačítko Zdieľať v aplikácii YouTube pri sledovaní videa.
 \n\nPotom zvoľte \'YouTube Downloader\' a zobrazia sa vám ďalšie informácie.
 \n\nTaktiež môžete zdieľať YouTube odkaz cez akúkoľvek aplikáciu, napr. internetový prehliadač.</string>
-    <string name="general_info_title">Povoliť všeobecný návod</string>
-    <string name="general_info_summary">Zobraziť všeobecný návod pri spustení</string>
+    <string name="general_info_title">Zobraziť všeobecný návod</string>
+    <string name="general_info_summary">Pri spustení zobrazí všeobecný návod</string>
     <string name="show_again_checkbox">Zobraziť aj nabudúce</string>
     <string name="ssh_info_title">Zobraziť SSH návod</string>
-    <string name="ssh_info_summary">Zobraziť rýchly tip ako diaľkovo sťahovať cez SSH</string>
+    <string name="ssh_info_summary">Zobrazí rýchly tip ako diaľkovo sťahovať cez SSH</string>
     <string name="audio_tutorial_title">Návod pre extrahovanie audia</string>
     <string name="audio_tutorial_summary">Otvorí stručného sprievodcu ohľadom extrahovaní audia</string>
     
     <!-- -->
-    <string name="settings_cat_folder">Zložka pre stiahnutie</string>
+    <string name="settings_cat_folder">Adresár pre stiahnutie</string>
     <string name="standard_location_title">Zvoľte štandardný adresár</string>
     <string name="chooser_swap_title">Zvoliť vlastný adresár</string>
     <string name="chooser_location_title">Zvoľte vlastný adresár</string>
@@ -274,7 +274,7 @@ adresár, vložte príkaz (použite tlačidlo menu), a stlačte kláves ENTER.</
     <string name="show_size_summary">Načítať veľkosť súboru v správe potvrdenia (pomalé)</string>
     <string name="show_size_list_title">Zobraziť všetky veľkosti videa</string>
     <string name="show_size_list_summary">Načítať veľkosť súborov pre každú položku v zozname dostupných videí (veľmi pomalé)</string>
-    <string name="show_thumb_title">Zobraziž obrázok náhľadu</string>
+    <string name="show_thumb_title">Zobraziť obrázok náhľadu</string>
     <string name="show_thumb_summary">Stiahnuť obrázok náhľadu spolu so zoznamom videa</string>
     <string name="show_resolutions_title">Zobraziť rozlíšenie videa</string>
     <string name="show_resolutions_summary">Zameniť indikátor kvality za rozlíšenie videa</string>
@@ -292,7 +292,7 @@ adresár, vložte príkaz (použite tlačidlo menu), a stlačte kláves ENTER.</
     <string name="settings_cat_notifications">Oznámenia</string>
     
     <string name="notification_defaults_title">Prednastavenia oznámení</string>
-    <string name="notification_defaults_dialog_title">Prednastavenia YTD vlastných oznámení</string>
+    <string name="notification_defaults_dialog_title">Prednastavenia YTD oznámení</string>
     <string-array name="notification_defaults_entries">
         <item>Zvuk a vibrácie</item>
         <item>Zvuk a svetlá</item>

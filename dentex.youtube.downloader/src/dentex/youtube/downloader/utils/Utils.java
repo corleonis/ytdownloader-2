@@ -46,8 +46,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-import com.bugsense.trace.BugSenseHandler;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Notification;
@@ -212,34 +210,6 @@ public class Utils {
 			}
 		}
     }
-    
-    public static void removeIdUpdateNotification(long id) {
-    	try {
-	    	if (id != 0) {
-				if (YTD.sequence.remove(id)) {
-					logger("d", "ID " + id + " REMOVED from Notification", DEBUG_TAG);
-				} else {
-					logger("d", "ID " + id + " Already REMOVED from Notification", DEBUG_TAG);
-				}
-			} else {
-				Utils.logger("w", "ID  not found!", DEBUG_TAG);
-			}
-			
-			setNotificationDefaults(YTD.mBuilder);
-
-			if (YTD.sequence.size() > 0) {
-				YTD.mBuilder.setContentText(YTD.pt1 + " " + YTD.sequence.size() + " " + YTD.pt2).setOngoing(true);
-				YTD.mNotificationManager.notify(1, YTD.mBuilder.build());
-			} else {
-				YTD.mBuilder.setContentText(YTD.noDownloads).setOngoing(false);
-				YTD.mNotificationManager.notify(1, YTD.mBuilder.build());
-				Utils.logger("d", "No downloads in progress.", DEBUG_TAG);
-			}
-		} catch (NullPointerException e) {
-			Log.e(DEBUG_TAG, "NPE at removeIdUpdateNotification: " + e.getMessage());
-			BugSenseHandler.sendExceptionMessage("NPE at removeIdUpdateNotification", e.getMessage(), e);
-		}
-	}
     
     // --------------------------------------------------------------------------
     

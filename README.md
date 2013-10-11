@@ -8,11 +8,11 @@ For Android 4+
 
 ################################################################
 
-`versionCode="62"`
+`versionCode="63"`
 
-`versionName="3.0"`
+`versionName="3.0.1"`
 
-MD5 checksum: `4a38e2703bd7c3b90becd64b3e17c0e4` dentex.youtube.downloader_v3.0.apk
+MD5 checksum: `06d44c692541d3dba67670a6226dda03` dentex.youtube.downloader_v3.0.1.apk
 
 NOTICE
 ================================================================
@@ -84,7 +84,7 @@ OTHER LICENSES
     Stack Overflow (http://stackoverflow.com), a question and answer site for programmers where
     all the content is CC BY-SA 3.0 licensed (see http://creativecommons.org/licenses/by-sa/3.0) 
      
-    checkMD5(...) &amp; calculateMD5(...): 
+    checkMD5(...) & calculateMD5(...): 
     https://github.com/CyanogenMod/android_packages_apps_CMUpdater
     Copyright (C) 2012 The CyanogenMod Project, licensed under the GNU GPLv2 license 
      
@@ -102,7 +102,7 @@ OTHER LICENSES
     http://www.grokkingandroid.com/adding-files-to-androids-media-library-using-the-mediascanner/
     by Wolfram Rittmeyer 
      
-    DashboardAdapter.java &amp; DashboardListItem.java: 
+    DashboardAdapter.java & DashboardListItem.java: 
     code adapted from https://github.com/survivingwithandroid/Surviving-with-android/
     by Francesco Azzola (JFrankie) 
      
@@ -123,6 +123,11 @@ OTHER LICENSES
 CHANGELOG
 ================================================================
     
+     v3.0.1 - Oct 10 2013 
+    ----------------------------------- 
+    [x] layout fix for API 14,15,16 
+    [x] other bug fixes 
+     
      v3.0 - Oct 08 2013 
     ----------------------------------- 
     [x] Dashboard for interaction 

@@ -45,6 +45,7 @@ import android.view.WindowManager;
 import com.bugsense.trace.BugSenseHandler;
 
 import dentex.youtube.downloader.utils.PopUps;
+import dentex.youtube.downloader.utils.Utils;
 
 public class YTD extends Application {
 	
@@ -134,7 +135,7 @@ public class YTD extends Application {
 			JSON_FILE.delete();
 			videoinfo.edit().clear().apply();
 		} else {
-			reduceFactor = Double.parseDouble(YTD.settings.getString("REDUCE_FACTOR", "1"));
+			reduceFactor = Double.parseDouble(settings.getString("REDUCE_FACTOR", "1"));
 			Log.d(DEBUG_TAG, "Retrieved a REDUCE_FACTOR of " + reduceFactor + " from prefs");
 		}
 	}
@@ -184,5 +185,33 @@ public class YTD extends Application {
     	PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0, notificationIntent, 0);
     	mBuilder.setContentIntent(contentIntent);
     	mNotificationManager.notify(1, mBuilder.build());
+	}
+    
+    public static void removeIdUpdateNotification(long id) {
+    	try {
+	    	if (id != 0) {
+				if (sequence.remove(id)) {
+					Utils.logger("d", "ID " + id + " REMOVED from Notification", DEBUG_TAG);
+				} else {
+					Utils.logger("d", "ID " + id + " Already REMOVED from Notification", DEBUG_TAG);
+				}
+			} else {
+				Utils.logger("w", "ID  not found!", DEBUG_TAG);
+			}
+			
+	    	Utils.setNotificationDefaults(mBuilder);
+
+			if (sequence.size() > 0) {
+				mBuilder.setContentText(pt1 + " " + sequence.size() + " " + pt2).setOngoing(true);
+				mNotificationManager.notify(1, mBuilder.build());
+			} else {
+				mBuilder.setContentText(noDownloads).setOngoing(false);
+				mNotificationManager.notify(1, mBuilder.build());
+				Utils.logger("d", "No downloads in progress.", DEBUG_TAG);
+			}
+		} catch (NullPointerException e) {
+			Log.e(DEBUG_TAG, "NPE at removeIdUpdateNotification: " + e.getMessage());
+			BugSenseHandler.sendExceptionMessage("NPE at removeIdUpdateNotification", e.getMessage(), e);
+		}
 	}
 }

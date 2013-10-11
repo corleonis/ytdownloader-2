@@ -921,7 +921,7 @@ public class ShareActivity extends Activity {
 				if (DashboardActivity.isDashboardRunning)
 					DashboardActivity.refreshlist(DashboardActivity.sDashboard);
 				
-				Utils.removeIdUpdateNotification(ID);
+				YTD.removeIdUpdateNotification(ID);
 				
 				YTD.videoinfo.edit().remove(String.valueOf(ID) + "_link").commit();
 				//YTD.videoinfo.edit().remove(String.valueOf(ID) + "_position").commit();
@@ -941,7 +941,7 @@ public class ShareActivity extends Activity {
 				
 				String status;
 				String size;
-				if (error.getMessage().equals("http error code: 403")) {
+				if (error != null && error.getMessage().equals("http error code: 403")) {
 					status = YTD.JSON_DATA_STATUS_FAILED;
 					size = "-";
 				} else {
@@ -978,7 +978,7 @@ public class ShareActivity extends Activity {
 				if (DashboardActivity.isDashboardRunning)
 					DashboardActivity.refreshlist(DashboardActivity.sDashboard);
 				
-				Utils.removeIdUpdateNotification(ID);
+				YTD.removeIdUpdateNotification(ID);
 			}
 		};
 		
@@ -1161,22 +1161,22 @@ public class ShareActivity extends Activity {
         boolean showRes = YTD.settings.getBoolean("show_resolutions", false);
     	
         while (codecsIter.hasNext()) {
-        	String size;
-        	
-			//if (showSize) {
+        	/*String size;
+			if (showSize) {
         		size = sizesIter.next();
-        	/*} else {
+        	} else {
         		size = "";
         	}*/
         	
-        	String res;
-			if (showRes) {
-        		res = itagsIter.next();
-        	} else {
-        		res = qualitiesIter.next();
-        	}
-        	
         	try {
+	        	String size = sizesIter.next();
+	        	
+	        	String res;
+				if (showRes) {
+	        		res = itagsIter.next();
+	        	} else {
+	        		res = qualitiesIter.next();
+	        	}
 				listEntries.add(codecsIter.next().toUpperCase(Locale.ENGLISH).replace("WEBM", "WebM") + 
 						" - " + res + stereoIter.next() + size);
         	} catch (NoSuchElementException e) {
@@ -1229,7 +1229,7 @@ public class ShareActivity extends Activity {
         				Pattern sigPattern5 = Pattern.compile("\\\\u0026s=(.+?)\\\\u0026");
         	    		Matcher sigMatcher5 = sigPattern5.matcher(block);
         	    		if (sigMatcher5.find()) {
-        	    			Utils.logger("d", "ecrypted signature found on step 2; length is " + sigMatcher5.group(1).length(), DEBUG_TAG);
+        	    			Utils.logger("d", "encrypted signature found on step 2; length is " + sigMatcher5.group(1).length(), DEBUG_TAG);
         	    			sig = "signature=" + decryptExpSig(sigMatcher5.group(1));
         	    		} else {
         	    			Pattern sigPattern6 = Pattern.compile("\\\\u0026s=(.+?)$");

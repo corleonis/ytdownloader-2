@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Constructor;
 import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
@@ -16,14 +15,11 @@ import java.net.URLConnection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.http.HttpResponseCache;
 import android.util.Log;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 
 public class NetworkUtils {
 	
@@ -264,11 +260,11 @@ public class NetworkUtils {
         if (mUserAgent instanceof String) {
             return mUserAgent;
         }
-        mUserAgent = getDefaultUserAgentString(context);
+        mUserAgent = "Mozilla/5.0 (X11; Linux i686; rv:10.0) Gecko/20100101 Firefox/10.0";//getDefaultUserAgentString(context);
         return mUserAgent;
     }
 
-    public static String getDefaultUserAgentString(Context context) {
+    /*public static String getDefaultUserAgentString(Context context) {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
             String userAgent = NewApiWrapperForUserAgent.getUserAgentJellyBeanMR1(context);
             return userAgent;
@@ -324,5 +320,5 @@ public class NetworkUtils {
                 return userAgent;
             }
         }
-    }
+    }*/
 }

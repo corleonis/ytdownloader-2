@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="changelog">
+        \n v3.0.1 - Oct 10 2013
+        \n-----------------------------------
+        \n[x] layout fix for API 14,15,16
+        \n[x] other bug fixes
+        \n
         \n v3.0 - Oct 08 2013
         \n-----------------------------------
         \n[x] Dashboard for interaction

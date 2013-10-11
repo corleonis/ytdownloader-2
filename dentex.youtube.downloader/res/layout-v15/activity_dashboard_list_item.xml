@@ -61,29 +61,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
+           
+		<!-- ##################### -->
         
-		<RelativeLayout
-            android:id="@+id/h"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textIsSelectable="false"
+                android:textStyle="bold" />
 
-			<TextView
+            <TextView
                 android:id="@+id/speed"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
                 android:textIsSelectable="false" />
-			
-			<TextView
-	            android:id="@+id/size"
-	            android:layout_toLeftOf="@id/speed"
-	            android:layout_width="fill_parent"
-	            android:layout_height="match_parent"
-	            android:textIsSelectable="false"
-	            android:textStyle="bold" />
-   
-        </RelativeLayout>
+            
+		<!-- ##################### -->
 
         <TextView
             android:id="@+id/path"
@@ -98,7 +92,6 @@
             android:layout_height="match_parent"
             android:textIsSelectable="false"
             android:textSize="12sp" />
-
     </LinearLayout>
 
 </RelativeLayout>

@@ -688,24 +688,38 @@ public class DashboardActivity extends Activity{
 	private void pauseresume(final DashboardListItem currentItem) {
 		
 		final String itemID = currentItem.getId();
+		long itemIDlong = Long.parseLong(itemID);
+		
 		Utils.logger("d", "pauseresume on id " + itemID, DEBUG_TAG);
 		
 		if (currentItem.getStatus().equals(getString(R.string.json_status_in_progress))) {
 			BugSenseHandler.leaveBreadcrumb("...pausing");
+			
 			try {
-				DownloadTask dt = Maps.dtMap.get(Long.parseLong(itemID));
-				dt.cancel();
+				if (Maps.dtMap.containsKey(itemIDlong)) {
+					DownloadTask dt = Maps.dtMap.get(itemIDlong);
+					dt.cancel();
+				} else {
+					if (Maps.dtMap.size() > 0) {
+						// cancel (pause) every dt found
+						Utils.logger("w", "pauseresume: id not found into 'dtMap'; canceling all tasks", DEBUG_TAG);
+						for (Iterator<DownloadTask> iterator = Maps.dtMap.values().iterator(); iterator.hasNext();) {
+							DownloadTask dt = (DownloadTask) iterator.next();
+							dt.cancel();
+						}
+					}
+				}
 			} catch (NullPointerException e) {
 		    	Log.e(DEBUG_TAG, "dt.cancel() @ pauseresume: " + e.getMessage());
 		    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> dt.cancel() @ pauseresume: ", e.getMessage(), e);
 		    }
 			
-			Utils.removeIdUpdateNotification(Long.parseLong(itemID));
+			YTD.removeIdUpdateNotification(itemIDlong);
 			
 			// update the JSON file entry
 			Json.addEntryToJsonFile(
 					DashboardActivity.this,
-					currentItem.getId(), 
+					itemID, 
 					currentItem.getType(),
 					currentItem.getYtId(), 
 					currentItem.getPos(),
@@ -716,7 +730,6 @@ public class DashboardActivity extends Activity{
 					currentItem.getAudioExt(),
 					currentItem.getSize(), 
 					false);
-			
 		}
 		
 		if (currentItem.getStatus().equals(getString(R.string.json_status_paused))) {
@@ -788,7 +801,7 @@ public class DashboardActivity extends Activity{
 						if (DashboardActivity.isDashboardRunning)
 							DashboardActivity.refreshlist(sDashboard);
 						
-						Utils.removeIdUpdateNotification(ID);
+						YTD.removeIdUpdateNotification(ID);
 						
 						YTD.videoinfo.edit().remove(ID + "_link").apply();
 						//YTD.videoinfo.edit().remove(ID + "_position").apply();
@@ -803,7 +816,7 @@ public class DashboardActivity extends Activity{
 							
 						Utils.logger("w", "__errorDownload on ID: " + ID, DEBUG_TAG);
 						
-						if (error instanceof InvalidYoutubeLinkException) {
+						if (error != null && error instanceof InvalidYoutubeLinkException) {
 							Toast.makeText(sDashboard,  nameOfVideo
 									+ ": " + getString(R.string.downloading) 
 									+ "\n"+ getString(R.string.wait), 
@@ -845,17 +858,17 @@ public class DashboardActivity extends Activity{
 							if (DashboardActivity.isDashboardRunning)
 								DashboardActivity.refreshlist(sDashboard);
 							
-							Utils.removeIdUpdateNotification(ID);
+							YTD.removeIdUpdateNotification(ID);
 						}
 					}
 				};
 				
 				//TODO
 				try {
-					DownloadTask dt = new DownloadTask(this, Long.parseLong(itemID), link, 
+					DownloadTask dt = new DownloadTask(this, itemIDlong, link, 
 							currentItem.getFilename(), currentItem.getPath(), 
 							dtl, true);
-					Maps.dtMap.put(Long.parseLong(itemID), dt);
+					Maps.dtMap.put(itemIDlong, dt);
 					dt.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 				} catch (MalformedURLException e) {
 					Log.e(DEBUG_TAG, "unable to start Download Manager -> " + e.getMessage());
@@ -1146,8 +1159,20 @@ public class DashboardActivity extends Activity{
 		if (currentItem.getStatus().equals(getString(R.string.json_status_in_progress))) {
 			// stop download, remove temp file and update notification
 			try {
-				DownloadTask dt = Maps.dtMap.get(id);
-				dt.cancel();
+				if (Maps.dtMap.containsKey(id)) {
+					DownloadTask dt = Maps.dtMap.get(id);
+					dt.cancel();
+				} else {
+					if (Maps.dtMap.size() > 0) {
+						// cancel (pause) every dt found
+						Utils.logger("w", "doDelete: id not found into 'dtMap'; canceling all tasks", DEBUG_TAG);
+						for (Iterator<DownloadTask> iterator = Maps.dtMap.values().iterator(); iterator.hasNext();) {
+							DownloadTask dt = (DownloadTask) iterator.next();
+							dt.cancel();
+						}
+					}
+				}
+				
 				isResultOk = removeTemp(fileToDel, id);
 			} catch (NullPointerException e) {
 				Log.e(DEBUG_TAG, "dt.cancel(): " + e.getMessage());
@@ -1173,7 +1198,7 @@ public class DashboardActivity extends Activity{
 
 	private boolean removeTemp(File fileToDel, long id) {
 		// update notification
-		Utils.removeIdUpdateNotification(id);
+		YTD.removeIdUpdateNotification(id);
 		
 		//remove YouTube link from prefs
 		YTD.videoinfo.edit().remove(String.valueOf(id) + "_link").apply();
@@ -1876,37 +1901,40 @@ public class DashboardActivity extends Activity{
 					long speed = 0;
 					
 					try {
-						bytes_downloaded = Maps.mDownloadSizeMap.get(idlong);	//YTD.downloadPartialSizeMap.get(idlong);
-						bytes_total = Maps.mTotalSizeMap.get(idlong);			//YTD.downloadTotalSizeMap.get(idlong);
-						progress = (int) Maps.mDownloadPercentMap.get(idlong);	//YTD.downloadPercentMap.get(idlong);
-						speed = Maps.mNetworkSpeedMap.get(idlong);
-					} catch (NullPointerException e) {
-						countdown--;
-						Utils.logger("w", "updateProgressBars: waiting for DM Maps; " + countdown, DEBUG_TAG);
-						progress = 0;
-						bytes_downloaded = 0;
-						bytes_total = 0;
-						speed = 0;
-						
-						DownloadTask dt = Maps.dtMap.get(idlong);
-						//Status isConnected = dt.getStatus();
-						
-						if (countdown == 0 && dt == null) {
-							BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> countdown == 0 && dt == null", e.getMessage(), e);
-							Json.addEntryToJsonFile(
-									sDashboard,
-									idstr, 
-									typeEntries.get(i),
-									linkEntries.get(i), 
-									posEntries.get(i),
-									YTD.JSON_DATA_STATUS_PAUSED,
-									pathEntries.get(i), 
-									filenameEntries.get(i),
-									basenameEntries.get(i), 
-									audioExtEntries.get(i),
-									sizeEntries.get(i), 
-									false);
+						if (Maps.mDownloadSizeMap.get(idlong) != null) {
+							bytes_downloaded = Maps.mDownloadSizeMap.get(idlong); //YTD.downloadPartialSizeMap.get(idlong);
+							bytes_total = Maps.mTotalSizeMap.get(idlong);			//YTD.downloadTotalSizeMap.get(idlong);
+							progress = (int) Maps.mDownloadPercentMap.get(idlong);	//YTD.downloadPercentMap.get(idlong);
+							speed = Maps.mNetworkSpeedMap.get(idlong);
+						} else {
+							countdown--;
+							Utils.logger("w", "updateProgressBars: waiting for DM Maps on id " + idstr + " # " + countdown, DEBUG_TAG);
+							progress = 0;
+							bytes_downloaded = 0;
+							bytes_total = 0;
+							speed = 0;
+							
+							DownloadTask dt = Maps.dtMap.get(idlong);
+							
+							if (countdown == 0 && dt == null) {
+								Utils.logger("w", "countdown == 0 && dt == null; setting STATUS_PAUSED on id " + idstr, DEBUG_TAG);
+								Json.addEntryToJsonFile(
+										sDashboard,
+										idstr, 
+										typeEntries.get(i),
+										linkEntries.get(i), 
+										posEntries.get(i),
+										YTD.JSON_DATA_STATUS_PAUSED,
+										pathEntries.get(i), 
+										filenameEntries.get(i),
+										basenameEntries.get(i), 
+										audioExtEntries.get(i),
+										sizeEntries.get(i), 
+										false);
+							}
 						}
+					} catch (NullPointerException e) {
+						Log.e(DEBUG_TAG, "NPE @ updateProgressBars");
 					}
 					
 					String readableBytesDownloaded = Utils.MakeSizeHumanReadable(bytes_downloaded, false);
