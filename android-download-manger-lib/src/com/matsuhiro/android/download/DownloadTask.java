@@ -318,7 +318,7 @@ public class DownloadTask extends AsyncTask<Void, Integer, Long> {
 		/*
          * check file length
          */
-        String userAgent = NetworkUtils.getUserAgent(mContext);
+        String userAgent = "Mozilla/5.0 (X11; Linux i686; rv:10.0) Gecko/20100101 Firefox/10.0"; //NetworkUtils.getUserAgent(mContext);
         mConnection = (HttpURLConnection) mURL.openConnection();
         mConnection.setRequestMethod("GET");
         mConnection.setRequestProperty("User-Agent", userAgent);

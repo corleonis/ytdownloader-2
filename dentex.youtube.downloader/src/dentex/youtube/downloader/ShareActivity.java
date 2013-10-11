@@ -404,7 +404,8 @@ public class ShareActivity extends Activity {
     	Pattern pattern = Pattern.compile("(http://|https://).*(v=.{11}).*");
         Matcher matcher = pattern.matcher(sharedText);
         if (matcher.find()) {
-            validatedLink = matcher.group(1) + "www.youtube.com/watch?" + matcher.group(2);
+            //validatedLink = matcher.group(1) + "www.youtube.com/watch?" + matcher.group(2);
+            validatedLink = "http://www.youtube.com/watch?" + matcher.group(2);
             videoId = matcher.group(2).replace("v=", "");
             return validatedLink;
         }
@@ -617,7 +618,6 @@ public class ShareActivity extends Activity {
 		                    	    	adb.show();
 		                    	    }
 	                            } else {
-	                            	//vFilename = composeVideoFilename();
 	                            	callDownloadManager(links.get(pos), pos, vFilename);
 	                            }
                         	} catch (IndexOutOfBoundsException e) {
@@ -939,26 +939,28 @@ public class ShareActivity extends Activity {
 				Toast.makeText(sShare,  nameOfVideo + ": " + getString(R.string.download_failed), 
 						Toast.LENGTH_LONG).show();
 				
-				String status;
-				String size;
-				if (error != null && error.getMessage().equals("http error code: 403")) {
-					status = YTD.JSON_DATA_STATUS_FAILED;
-					size = "-";
-				} else {
-					status = YTD.JSON_DATA_STATUS_PAUSED;
-
-					try {
-						Long bytes_downloaded = Maps.mDownloadSizeMap.get(ID);
-						Long bytes_total = Maps.mTotalSizeMap.get(ID);
-						String progress = String.valueOf(Maps.mDownloadPercentMap.get(ID));
-						String readableBytesDownloaded = Utils.MakeSizeHumanReadable(bytes_downloaded, false);
-						String readableBytesTotal = Utils.MakeSizeHumanReadable(bytes_total, false);
-						String progressRatio = readableBytesDownloaded + "/" + readableBytesTotal;
-						size = progressRatio + " (" + progress + "%)";
-					} catch (NullPointerException e) {
-						Utils.logger("w", "errorDownload: NPE @ DM Maps", DEBUG_TAG);
-						size = "-";
+				String status = YTD.JSON_DATA_STATUS_PAUSED;
+				String size = "-";
+				
+				if (error.getMessage() != null) {
+					Pattern httpPattern = Pattern.compile("http error code: (400|403|404|405|410|411)");
+					Matcher httpMatcher = httpPattern.matcher(error.getMessage());
+					if (httpMatcher.find()) {
+						status = YTD.JSON_DATA_STATUS_FAILED;
+						Utils.logger("w", httpMatcher.group(1) + " Client Error for ID: " + ID, DEBUG_TAG);
 					}
+				}
+
+				try {
+					Long bytes_downloaded = Maps.mDownloadSizeMap.get(ID);
+					Long bytes_total = Maps.mTotalSizeMap.get(ID);
+					String progress = String.valueOf(Maps.mDownloadPercentMap.get(ID));
+					String readableBytesDownloaded = Utils.MakeSizeHumanReadable(bytes_downloaded, false);
+					String readableBytesTotal = Utils.MakeSizeHumanReadable(bytes_total, false);
+					String progressRatio = readableBytesDownloaded + "/" + readableBytesTotal;
+					size = progressRatio + " (" + progress + "%)";
+				} catch (NullPointerException e) {
+					Utils.logger("w", "errorDownload: NPE @ DM Maps", DEBUG_TAG);
 				}
 				
 				Json.addEntryToJsonFile(
@@ -1253,12 +1255,6 @@ public class ShareActivity extends Activity {
 
 		links.add(composedLink);
 		//Utils.logger("i", composedLink);
-		
-		/*if (YTD.settings.getBoolean("show_size_list", false) && !asyncDownload.isCancelled()) {
-			String size = getVideoFileSize(composedLink);
-			sizes.add(size);
-        	Utils.logger("d", "size " + i + ": " + size, DEBUG_TAG);
-		}*/
 		
 		sizes.add("");
 	}

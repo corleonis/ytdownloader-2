@@ -254,17 +254,17 @@ public class NetworkUtils {
         //}
     }
 
-    private static String mUserAgent;
+    /*private static String mUserAgent;
 
     public static String getUserAgent(Context context) {
         if (mUserAgent instanceof String) {
             return mUserAgent;
         }
-        mUserAgent = "Mozilla/5.0 (X11; Linux i686; rv:10.0) Gecko/20100101 Firefox/10.0";//getDefaultUserAgentString(context);
+        mUserAgent = getDefaultUserAgentString(context);
         return mUserAgent;
     }
 
-    /*public static String getDefaultUserAgentString(Context context) {
+    public static String getDefaultUserAgentString(Context context) {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
             String userAgent = NewApiWrapperForUserAgent.getUserAgentJellyBeanMR1(context);
             return userAgent;

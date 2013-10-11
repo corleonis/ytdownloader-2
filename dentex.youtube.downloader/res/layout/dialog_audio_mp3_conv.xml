@@ -3,37 +3,30 @@
     android:id="@+id/layout_root"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
-    
-    <LinearLayout
-        android:id="@+id/bitrate_a"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:padding="10dp">
+    android:orientation="vertical"
+    android:padding="5dp">
 
         <TextView
             android:id="@+id/mp3_info_a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:paddingRight="10dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
             android:text="@string/mp3_bitrate_title" 
             android:textAppearance="@android:style/TextAppearance.Widget.TextView"/>
 
         <Spinner
             android:id="@+id/mp3_spinner_a"
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_gravity="right"
+            android:layout_gravity="center_horizontal"
             android:entries="@array/mp3_bitrate_entries"
             android:saveEnabled="true"/>
-        
-    </LinearLayout>
 
     <Button
         android:id="@+id/id3_button_a"
+        android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
