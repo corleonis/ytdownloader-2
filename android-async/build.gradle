@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        maven { url 'http://repo1.maven.org/maven2' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.4.+'
+    }
+}
+apply plugin: 'android-library'
+
+dependencies {
+}
+
+android {
+  sourceSets {
+      main {
+          manifest.srcFile 'AndroidManifest.xml'
+      
+          java {
+              srcDir 'src/'
+          }
+      }
+  }
+
+    compileSdkVersion 17
+    buildToolsVersion "17"
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 16
+    }
+}
+
+// upload to maven task
+if (System.getenv().I_AM_KOUSH == 'true') {
+  apply from: 'https://raw.github.com/koush/mvn-repo/master/maven.gradle'
+}

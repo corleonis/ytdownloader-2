@@ -33,7 +33,6 @@ import group.pals.android.lib.ui.filechooser.services.IFileProvider;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -101,9 +100,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bugsense.trace.BugSenseHandler;
+import com.koushikdutta.async.future.Future;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+import com.koushikdutta.ion.ProgressCallback;
 import com.matsuhiro.android.download.DownloadTask;
-import com.matsuhiro.android.download.DownloadTaskListener;
-import com.matsuhiro.android.download.InvalidYoutubeLinkException;
 import com.matsuhiro.android.download.Maps;
 
 import dentex.youtube.downloader.ffmpeg.FfmpegController;
@@ -178,6 +179,7 @@ public class DashboardActivity extends Activity{
 	//long TotalTxBeforeTest = TrafficStats.getUidTxBytes(YTD.uid);
 	
 	private Timer autoUpdate;
+	private Future<File> ionJob;
 	public static boolean isLandscape;
 
 	@Override
@@ -193,6 +195,9 @@ public class DashboardActivity extends Activity{
 		
 		// Language init
     	Utils.langInit(this);
+    	
+    	// Enable global Ion logging
+        Ion.getDefault(this).setLogging("Ion_" + DEBUG_TAG, Log.INFO);
     	
     	// Detect screen orientation
     	int or = this.getResources().getConfiguration().orientation;
@@ -688,7 +693,7 @@ public class DashboardActivity extends Activity{
 	private void pauseresume(final DashboardListItem currentItem) {
 		
 		final String itemID = currentItem.getId();
-		long itemIDlong = Long.parseLong(itemID);
+		final long itemIDlong = Long.parseLong(itemID);
 		
 		Utils.logger("d", "pauseresume on id " + itemID, DEBUG_TAG);
 		
@@ -696,7 +701,7 @@ public class DashboardActivity extends Activity{
 			BugSenseHandler.leaveBreadcrumb("...pausing");
 			
 			try {
-				if (Maps.dtMap.containsKey(itemIDlong)) {
+				/*if (Maps.dtMap.containsKey(itemIDlong)) {
 					DownloadTask dt = Maps.dtMap.get(itemIDlong);
 					dt.cancel();
 				} else {
@@ -708,10 +713,23 @@ public class DashboardActivity extends Activity{
 							dt.cancel();
 						}
 					}
+				}*/
+				if (YTD.ionMap.containsKey(itemIDlong)) {
+					Future<File> ion = YTD.ionMap.get(itemIDlong);
+					ion.cancel();
+				} else {
+					if (YTD.ionMap.size() > 0) {
+						// cancel (pause) every task found
+						Utils.logger("w", "pauseresume: id not found into 'ionMap'; canceling all tasks", DEBUG_TAG);
+						for (Iterator<Future<File>> iterator = YTD.ionMap.values().iterator(); iterator.hasNext();) {
+							Future<File> ion = (Future<File>) iterator.next();
+							ion.cancel();
+						}
+					}
 				}
 			} catch (NullPointerException e) {
-		    	Log.e(DEBUG_TAG, "dt.cancel() @ pauseresume: " + e.getMessage());
-		    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> dt.cancel() @ pauseresume: ", e.getMessage(), e);
+		    	Log.e(DEBUG_TAG, "pauseresume: " + e.getMessage());
+		    	BugSenseHandler.sendExceptionMessage(DEBUG_TAG + "-> pauseresume: ", e.getMessage(), e);
 		    }
 			
 			YTD.removeIdUpdateNotification(itemIDlong);
@@ -737,7 +755,7 @@ public class DashboardActivity extends Activity{
 			String link = YTD.videoinfo.getString(String.valueOf(itemID) + "_link", null);
 					
 			if (link != null) {
-				DownloadTaskListener dtl = new DownloadTaskListener() {
+				/*DownloadTaskListener dtl = new DownloadTaskListener() {
 					
 					@Override
 					public void preDownload(DownloadTask task) {
@@ -767,9 +785,7 @@ public class DashboardActivity extends Activity{
 					
 					@Override
 					public void updateProcess(DownloadTask task) {
-						/*YTD.downloadPercentMap = task.getDownloadPercentMap();
-						YTD.downloadTotalSizeMap = task.getTotalSizeMap();
-						YTD.downloadPartialSizeMap = task.getDownloadSizeMap();*/
+						//
 					}
 					
 					@Override
@@ -861,10 +877,10 @@ public class DashboardActivity extends Activity{
 							YTD.removeIdUpdateNotification(ID);
 						}
 					}
-				};
+				};*/
 				
 				//TODO
-				try {
+				/*try {
 					DownloadTask dt = new DownloadTask(this, itemIDlong, link, 
 							currentItem.getFilename(), currentItem.getPath(), 
 							dtl, true);
@@ -872,7 +888,85 @@ public class DashboardActivity extends Activity{
 					dt.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 				} catch (MalformedURLException e) {
 					Log.e(DEBUG_TAG, "unable to start Download Manager -> " + e.getMessage());
-				}
+				}*/
+				
+				// preDownload
+				Utils.logger("d", "__preDownload on ID: " + itemID, DEBUG_TAG);
+				Maps.mNetworkSpeedMap.put(itemIDlong, (long) 0);
+				Json.addEntryToJsonFile(
+						sDashboard,
+						itemID,
+						currentItem.getType(),
+						currentItem.getYtId(), 
+						currentItem.getPos(),
+						YTD.JSON_DATA_STATUS_IN_PROGRESS,
+						currentItem.getPath(), 
+						currentItem.getFilename(),
+						currentItem.getBasename(), 
+						currentItem.getAudioExt(),
+						currentItem.getSize(), 
+						false);
+				YTD.sequence.add(itemIDlong);
+				YTD.NotificationHelper();
+				
+				// Ion download job
+				ionJob = Ion.with(DashboardActivity.this, link).progressHandler(new ProgressCallback() {
+					
+	                @Override
+	                public void onProgress(int downloaded, int total) {
+	                    Maps.mDownloadSizeMap.put(itemIDlong, (long) downloaded);
+	                    Maps.mTotalSizeMap.put(itemIDlong, (long) total);
+	                    Maps.mDownloadPercentMap.put(itemIDlong, downloaded * 100 / total);
+	                    Maps.mNetworkSpeedMap.put(itemIDlong, (long) 1);
+	                }
+	            }).write(new File(currentItem.getPath(), currentItem.getFilename()))
+	              .setCallback(new FutureCallback<File>() {
+	            	
+	                @Override
+	                public void onCompleted(Exception e, File result) {
+
+	                    if (e != null) {
+	                        Utils.logger("w", "__error downloading ID: " + itemID + " -> " + e.getMessage(), DEBUG_TAG);
+	                        return;
+	                    } else {
+	                    	Utils.logger("d", "__finishDownload on ID: " + itemID, DEBUG_TAG);
+							
+							Utils.scanMedia(getApplicationContext(), 
+									new String[] { currentItem.getPath() + File.separator + currentItem.getFilename() }, 
+									new String[] {"video/*"});
+							
+							long downloadTotalSize = Maps.mTotalSizeMap.get(itemIDlong);
+							String size = String.valueOf(Utils.MakeSizeHumanReadable(downloadTotalSize, false));
+							
+							Json.addEntryToJsonFile(
+									sDashboard, 
+									itemID, 
+									currentItem.getType(),
+									currentItem.getYtId(), 
+									currentItem.getPos(),
+									YTD.JSON_DATA_STATUS_COMPLETED, 
+									currentItem.getPath(), 
+									currentItem.getFilename(),
+									currentItem.getBasename(), 
+									currentItem.getAudioExt(), 
+									size, 
+									false);
+							
+							if (DashboardActivity.isDashboardRunning)
+								DashboardActivity.refreshlist(sDashboard);
+							
+							YTD.removeIdUpdateNotification(itemIDlong);
+							
+							YTD.videoinfo.edit().remove(itemID + "_link").apply();
+							//YTD.videoinfo.edit().remove(ID + "_position").apply();
+							
+							Maps.removeFromAllMaps(itemIDlong);
+	                    }
+	                }
+	            });
+				
+				YTD.ionMap.put(itemIDlong, ionJob);
+				
 			} else {
 				//notifyOpsNotSupported();
 				reDownload(currentItem, "AUTO");
@@ -1185,7 +1279,7 @@ public class DashboardActivity extends Activity{
 			isResultOk = removeCompleted(fileToDel);
 		}
 		
-		if (removeFromJsonAlso && isResultOk) {
+		if (removeFromJsonAlso/* && isResultOk*/) {
 			// remove entry from JSON and reload Dashboard
 			Json.removeEntryFromJsonFile(DashboardActivity.this, currentItem.getId());
 		}

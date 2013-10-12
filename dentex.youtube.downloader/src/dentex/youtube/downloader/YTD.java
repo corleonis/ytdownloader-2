@@ -28,7 +28,9 @@ package dentex.youtube.downloader;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.app.Application;
 import android.app.NotificationManager;
@@ -43,6 +45,7 @@ import android.util.Log;
 import android.view.WindowManager;
 
 import com.bugsense.trace.BugSenseHandler;
+import com.koushikdutta.async.future.Future;
 
 import dentex.youtube.downloader.utils.PopUps;
 import dentex.youtube.downloader.utils.Utils;
@@ -101,6 +104,8 @@ public class YTD extends Application {
 
 	public static final String THUMBS_FOLDER = "thumbs";
 	public static double reduceFactor;
+	
+	public static Map<Long, Future<File>> ionMap = new HashMap<Long, Future<File>>();
 	
 	@Override
 	public void onCreate() {

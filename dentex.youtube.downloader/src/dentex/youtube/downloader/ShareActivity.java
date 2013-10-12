@@ -33,7 +33,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLDecoder;
@@ -82,8 +81,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bugsense.trace.BugSenseHandler;
-import com.matsuhiro.android.download.DownloadTask;
-import com.matsuhiro.android.download.DownloadTaskListener;
+import com.koushikdutta.async.future.Future;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
+import com.koushikdutta.ion.ProgressCallback;
 import com.matsuhiro.android.download.Maps;
 
 import dentex.youtube.downloader.menu.AboutActivity;
@@ -151,11 +152,13 @@ public class ShareActivity extends Activity {
 	private String decryptionRule;
 	private String decryptionFunction;
 	protected String ytid;
-	private DownloadTaskListener dtl;
+	//private DownloadTaskListener dtl;
 	private boolean autoModeEnabled = false;
 	private boolean restartModeEnabled = false;
 	private String extraId;
 	//public String[] lv_arr;
+	
+	Future<File> ionJob;
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -195,6 +198,9 @@ public class ShareActivity extends Activity {
 
         // YTD update initialization
         updateInit();
+        
+        // Enable global Ion logging
+        Ion.getDefault(this).setLogging("Ion_" + DEBUG_TAG, Log.INFO);
         
         // Get intent, action and MIME type
         Intent intent = getIntent();
@@ -525,7 +531,7 @@ public class ShareActivity extends Activity {
             	assignPath();
             	
             	try {
-            		callDownloadManager(links.get(pos), pos, vFilename);
+            		callDownloadManager2(links.get(pos), vFilename);
             	} catch (IndexOutOfBoundsException e) {
             		Toast.makeText(ShareActivity.this, getString(R.string.video_list_error_toast), Toast.LENGTH_SHORT).show();
             		launchDashboardActivity();
@@ -604,7 +610,7 @@ public class ShareActivity extends Activity {
 		                    	    	public void onClick(DialogInterface dialog, int which) {
 		                    	    		basename = userFilename.getText().toString();
 		                    	    		vFilename = composeVideoFilename();
-											callDownloadManager(links.get(pos), pos, vFilename);
+											callDownloadManager2(links.get(pos), vFilename);
 		                    	    	}
 		                    	    });
 		                    	    
@@ -618,7 +624,7 @@ public class ShareActivity extends Activity {
 		                    	    	adb.show();
 		                    	    }
 	                            } else {
-	                            	callDownloadManager(links.get(pos), pos, vFilename);
+	                            	callDownloadManager2(links.get(pos), vFilename);
 	                            }
                         	} catch (IndexOutOfBoundsException e) {
     							Toast.makeText(ShareActivity.this, getString(R.string.video_list_error_toast), Toast.LENGTH_SHORT).show();
@@ -852,7 +858,108 @@ public class ShareActivity extends Activity {
 		}
 	}
     
-    private void callDownloadManager(final String link, final int position, final String nameOfVideo) {
+    private void callDownloadManager2(final String link, final String nameOfVideo) {
+    	final String aExt = findAudioCodec();
+    	File dest = new File(path, vFilename);
+		//File destTemp = new File(path, vFilename + DownloadTask.TEMP_SUFFIX);
+		String previousJson = Json.readJsonDashboardFile(sShare);
+		
+		long ID = 0;
+		if (dest.exists() || previousJson.contains(dest.getName()) && !autoModeEnabled && !restartModeEnabled) {
+			Toast.makeText(ShareActivity.this, getString(R.string.menu_import_double), Toast.LENGTH_LONG).show();
+		} else {	
+			if (autoModeEnabled || restartModeEnabled) {
+				ID = Long.parseLong(extraId);
+			} else {
+				ID = System.currentTimeMillis();
+			}
+			
+			final long fID = ID;
+			
+			// preDownload
+			Utils.logger("d", "__preDownload on ID: " + ID, DEBUG_TAG);
+			Maps.mNetworkSpeedMap.put(ID, (long) 0);
+			Json.addEntryToJsonFile(
+					sShare, 
+					String.valueOf(ID), 
+					YTD.JSON_DATA_TYPE_V, 
+					videoId,
+					pos, 
+					YTD.JSON_DATA_STATUS_IN_PROGRESS, 
+					path.getAbsolutePath(), 
+					nameOfVideo, 
+					basename, 
+					aExt, 
+					"-", 
+					false);
+			writeThumbToDisk();
+			if (!autoModeEnabled) YTD.sequence.add(ID);
+			YTD.NotificationHelper();
+			
+			// Ion download job
+			ionJob = Ion.with(ShareActivity.this, link).progressHandler(new ProgressCallback() {
+				
+                @Override
+                public void onProgress(int downloaded, int total) {
+                    //downloadCount.setText("" + downloaded + " / " + total);
+                    Maps.mDownloadSizeMap.put(fID, (long) downloaded);
+                    Maps.mTotalSizeMap.put(fID, (long) total);
+                    Maps.mDownloadPercentMap.put(fID, downloaded * 100 / total);
+                    Maps.mNetworkSpeedMap.put(fID, (long) 1);
+                }
+            }).write(dest).setCallback(new FutureCallback<File>() {
+            	
+                @Override
+                public void onCompleted(Exception e, File result) {
+
+                    if (e != null) {
+                        Utils.logger("w", "__error downloading ID: " + fID + " -> " + e.getMessage(), DEBUG_TAG);
+                        return;
+                    } else {
+                    	Utils.logger("d", "__finishDownload on ID: " + fID, DEBUG_TAG);
+        				
+        				Utils.scanMedia(getApplicationContext(), 
+        						new String[] { path.getPath() + File.separator + nameOfVideo }, 
+        						new String[] {"video/*"});
+        				
+        				long downloadTotalSize = Maps.mTotalSizeMap.get(fID);
+        				String size = String.valueOf(Utils.MakeSizeHumanReadable(downloadTotalSize, false));
+        				
+        				Json.addEntryToJsonFile(
+        						sShare, 
+        						String.valueOf(fID), 
+        						YTD.JSON_DATA_TYPE_V, 
+        						videoId, 
+        						pos, 
+        						YTD.JSON_DATA_STATUS_COMPLETED, 
+        						path.getPath(), 
+        						nameOfVideo, 
+        						basename, 
+        						aExt, 
+        						size, 
+        						false);
+        				
+        				if (DashboardActivity.isDashboardRunning)
+        					DashboardActivity.refreshlist(DashboardActivity.sDashboard);
+        				
+        				YTD.removeIdUpdateNotification(fID);
+        				
+        				YTD.videoinfo.edit().remove(String.valueOf(fID) + "_link").commit();
+        				//YTD.videoinfo.edit().remove(String.valueOf(fID) + "_position").commit();
+        				
+        				Maps.removeFromAllMaps(fID);
+                    }
+                }
+            });
+			
+			YTD.ionMap.put(ID, ionJob);
+			YTD.videoinfo.edit().putString(String.valueOf(ID) + "_link", link).apply();
+		}
+		
+		if (autoModeEnabled) launchDashboardActivity();
+    }
+    
+    /*private void callDownloadManager(final String link, final String nameOfVideo) {
     	BugSenseHandler.leaveBreadcrumb("callDownloadManager");
     	final String aExt = findAudioCodec();
     	
@@ -1017,7 +1124,7 @@ public class ShareActivity extends Activity {
 		if (autoModeEnabled && !blockDashboardLaunch) {
 			launchDashboardActivity();
 		}
-    }
+    }*/
     
     private String findAudioCodec() {
     	String aExt = null;
