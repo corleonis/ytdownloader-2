@@ -28,7 +28,9 @@ package dentex.youtube.downloader;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.app.Application;
 import android.app.NotificationManager;
@@ -78,6 +80,7 @@ public class YTD extends Application {
 	public static final String JSON_DATA_SIZE = "size";
 	
 	public static final String ffmpegBinName = "ffmpeg";
+	public static Map<Long, Integer> ffmpegPercentMap = new HashMap<Long, Integer>();
 	
 	public static SharedPreferences settings;
 	public static SharedPreferences videoinfo;

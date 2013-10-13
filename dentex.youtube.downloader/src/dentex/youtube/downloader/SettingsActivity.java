@@ -434,7 +434,7 @@ public class SettingsActivity extends Activity {
             DownloadTaskListener dtl = new DownloadTaskListener() {
             	
     			@Override
-    			public void finishDownload(DownloadTask task) {
+    			public void finishDownload(TestTask task) {
 
     				String md5 = null;
     				if (cpuVers == 7) md5 = "33fcf4d5a3b2e5193bd42c2c1fc2abc7";
@@ -452,7 +452,7 @@ public class SettingsActivity extends Activity {
     			}
 
     			@Override
-    			public void preDownload(DownloadTask task) {
+    			public void preDownload(TestTask task) {
     				aBuilder =  new NotificationCompat.Builder(sSettings);
     				aNotificationManager = (NotificationManager) sSettings.getSystemService(Context.NOTIFICATION_SERVICE);
     				aBuilder.setSmallIcon(R.drawable.ic_stat_ytd);
@@ -464,26 +464,26 @@ public class SettingsActivity extends Activity {
     			}
     			
     			@Override
-    			public void updateProcess(DownloadTask task) {
+    			public void updateProcess(TestTask task) {
     				progress = Maps.mDownloadPercentMap.get(id);
     				aBuilder.setProgress(100, progress, false);
     				aNotificationManager.notify(3, aBuilder.build());
     			}
 
     			@Override
-    			public void errorDownload(DownloadTask task, Throwable error) {
+    			public void errorDownload(TestTask task, Throwable error) {
     				Log.e(DEBUG_TAG, YTD.ffmpegBinName + " download FAILED");
     				Toast.makeText(sSettings,  YTD.ffmpegBinName + ": " + getString(R.string.download_failed), Toast.LENGTH_LONG).show();
     				
     				dstFile.delete();
-    				File temp = new File(dstFile.getAbsolutePath() + DownloadTask.TEMP_SUFFIX);
+    				File temp = new File(dstFile.getAbsolutePath() + TestTask.TEMP_SUFFIX);
     				temp.delete();
     				
     				SettingsActivity.SettingsFragment.touchAdvPref(true, false);
     			}
 
     			@Override
-    			public void resumeFromDifferentIp(DownloadTask task, Throwable error) {
+    			public void resumeFromDifferentIp(TestTask task, Throwable error) {
     				// nothing to do
     			}
             	
@@ -491,7 +491,7 @@ public class SettingsActivity extends Activity {
             
             id = System.currentTimeMillis();
             try {
-            	DownloadTask dt = new DownloadTask(sSettings, id, link, YTD.ffmpegBinName, srcDir.getPath(), dtl, false);
+            	TestTask dt = new TestTask(sSettings, id, link, YTD.ffmpegBinName, srcDir.getPath(), dtl, false);
     			Maps.dtMap.put(id, dt);
     			dt.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
     		} catch (MalformedURLException e) {
